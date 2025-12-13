@@ -9,6 +9,7 @@ import ExperiencesSection from "@/app/components/ExperiencesSection";
 import PlannedForYou from "@/app/components/PlannedForYou";
 import ReserveSection from "@/app/components/ReserveSection";
 import Footer from "@/components/Footer";
+import RoomsSection from "./components/RoomsSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <HeroSection />
       <WelcomeSection />
       <InfiniteSlider />
+      <RoomsSection />
       <MoreThanStay />
       <ExperiencesSection />
       <PlannedForYou />
