@@ -1,0 +1,32 @@
+"use client";
+
+import Link from "next/link";
+
+export default function Navbar() {
+    return (
+        <nav className="absolute font-poppins text-md top-0 left-0 w-full z-40 bg-transparent py-6 px-12 text-white">
+            <div className="relative flex items-center">
+
+                {/* Left */}
+                <div>
+                    The Avanya
+                </div>
+
+                {/* Center */}
+                <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex gap-8">
+                    <Link href="#" className="hover:opacity-80 transition-opacity">Stays</Link>
+                    <Link href="#" className="hover:opacity-80 transition-opacity">Experiences</Link>
+                    <Link href="#" className="hover:opacity-80 transition-opacity">Wellness</Link>
+                    <Link href="#" className="hover:opacity-80 transition-opacity">Architecture</Link>
+                    <Link href="#" className="hover:opacity-80 transition-opacity">Journal</Link>
+                    <Link href="#" className="hover:opacity-80 transition-opacity">Reserve</Link>
+                </div>
+                {/* Right */}
+                <div className="ml-auto hidden md:block">
+                    By Appointment Only
+                </div>
+
+            </div>
+        </nav>
+    );
+}
