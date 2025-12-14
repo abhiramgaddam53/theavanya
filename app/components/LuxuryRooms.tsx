@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import CommonRoomCard from "../../components/RoomCard";
 import Button from "@/components/Button";
 

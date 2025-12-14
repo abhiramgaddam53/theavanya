@@ -2,130 +2,15 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import GoogleMapReact from 'google-map-react';
-
-const AnyReactComponent = ({ text }: { text: string }) => (
-    <div className="flex flex-col items-center justify-center transform -translate-x-1/2 -translate-y-1/2">
-        <div className="text-3xl text-[#1a1a1a]">
-            ✦
-        </div>
-    </div>
-);
 
 export default function MapSection() {
-    const defaultProps = {
-        center: {
-            lat: 11.5484832,
-            lng: 76.1360053
-        },
-        zoom: 13
-    };
-
     return (
         <section className="w-full bg-[#E5E1D8] text-[#1a1a1a]">
             <div className="relative w-full h-[600px] md:h-[700px] overflow-hidden">
 
-                {/* Google Map Container */}
+                {/* Google Map Iframe */}
                 <div className="absolute inset-0 z-0">
-                    <GoogleMapReact
-                        bootstrapURLKeys={{ key: "" }} // User needs to provide key, or it works in dev mode with warning
-                        defaultCenter={defaultProps.center}
-                        defaultZoom={defaultProps.zoom}
-                        options={{
-                            styles: [
-                                {
-                                    "elementType": "geometry",
-                                    "stylers": [{ "color": "#f5f5f5" }]
-                                },
-                                {
-                                    "elementType": "labels.icon",
-                                    "stylers": [{ "visibility": "off" }]
-                                },
-                                {
-                                    "elementType": "labels.text.fill",
-                                    "stylers": [{ "color": "#616161" }]
-                                },
-                                {
-                                    "elementType": "labels.text.stroke",
-                                    "stylers": [{ "color": "#f5f5f5" }]
-                                },
-                                {
-                                    "featureType": "administrative.land_parcel",
-                                    "elementType": "labels.text.fill",
-                                    "stylers": [{ "color": "#bdbdbd" }]
-                                },
-                                {
-                                    "featureType": "poi",
-                                    "elementType": "geometry",
-                                    "stylers": [{ "color": "#eeeeee" }]
-                                },
-                                {
-                                    "featureType": "poi",
-                                    "elementType": "labels.text.fill",
-                                    "stylers": [{ "color": "#757575" }]
-                                },
-                                {
-                                    "featureType": "poi.park",
-                                    "elementType": "geometry",
-                                    "stylers": [{ "color": "#e5e5e5" }]
-                                },
-                                {
-                                    "featureType": "poi.park",
-                                    "elementType": "labels.text.fill",
-                                    "stylers": [{ "color": "#9e9e9e" }]
-                                },
-                                {
-                                    "featureType": "road",
-                                    "elementType": "geometry",
-                                    "stylers": [{ "color": "#ffffff" }]
-                                },
-                                {
-                                    "featureType": "road.arterial",
-                                    "elementType": "labels.text.fill",
-                                    "stylers": [{ "color": "#757575" }]
-                                },
-                                {
-                                    "featureType": "road.highway",
-                                    "elementType": "geometry",
-                                    "stylers": [{ "color": "#dadada" }]
-                                },
-                                {
-                                    "featureType": "road.highway",
-                                    "elementType": "labels.text.fill",
-                                    "stylers": [{ "color": "#616161" }]
-                                },
-                                {
-                                    "featureType": "road.local",
-                                    "elementType": "labels.text.fill",
-                                    "stylers": [{ "color": "#9e9e9e" }]
-                                },
-                                {
-                                    "featureType": "transit.line",
-                                    "elementType": "geometry",
-                                    "stylers": [{ "color": "#e5e5e5" }]
-                                },
-                                {
-                                    "featureType": "transit.station",
-                                    "elementType": "geometry",
-                                    "stylers": [{ "color": "#eeeeee" }]
-                                },
-                                {
-                                    "featureType": "water",
-                                    "elementType": "geometry",
-                                    "stylers": [{ "color": "#c9c9c9" }]
-                                },
-                                {
-                                    "featureType": "water",
-                                    "elementType": "labels.text.fill",
-                                    "stylers": [{ "color": "#9e9e9e" }]
-                                }
-                            ]
-                        }}
-                    >
-                        <AnyReactComponent
-                            text="Avanya"
-                        />
-                    </GoogleMapReact>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.450072682199!2d78.48088157463017!3d17.533745798573385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb854db6e91eff%3A0xff94bacf06626aa5!2sAsterisks%20Inc%20%7C%20Creative%20Digital%20Studio!5e0!3m2!1sen!2sin!4v1765706513189!5m2!1sen!2sin" width="600" height="450" loading="lazy" className="w-full h-full object-cover"></iframe>
                 </div>
 
                 {/* Overlay Card for Location Info */}
