@@ -22,12 +22,12 @@ const rooms = [
 
 export default function LuxuryRooms() {
     return (
-        <section className="w-full bg-[#F5F2EA] py-24 px-6 md:px-16">
+        <section className="w-full bg-primary-bg py-24 px-6 md:px-16">
             <div className="max-w-[1400px] mx-auto">
 
                 {/* Header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
-                    <h2 className="font-serif text-6xl text-[#1a1a1a]">
+                <div className="flex items-center justify-between mb-12 gap-8">
+                    <h2 className="font-serif text-5xl tracking-tighter leading-tighter text-[#1a1a1a]">
                         Spaces Designed for Stillness.
                     </h2>
 

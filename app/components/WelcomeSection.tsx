@@ -5,7 +5,7 @@ import Signature from "../../components/Signature";
 
 export default function WelcomeSection() {
     return (
-        <section className="relative w-full bg-[#F5F2EA] py-32 px-6 overflow-hidden text-[#4A4A4A] ">
+        <section className="relative w-full bg-primary-bg py-32 px-6 md:px-16 overflow-hidden text-[#4A4A4A] ">
 
             <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center text-[#1a1a1a]">
 
@@ -26,8 +26,8 @@ export default function WelcomeSection() {
                 </h3>
 
                 {/* Main Heading */}
-                <h2 className="font-serif text-6xl leading-tight mb-8 text-[#4A4A4A]">
-                    Where Luxury Learns to Disappear.
+                <h2 className="font-serif text-5xl leading-tight tracking-tighter mb-8 text-[#4A4A4A]">
+                    Where Luxury Learns <br />to Disappear.
                 </h2>
 
                 {/* Letter Body */}

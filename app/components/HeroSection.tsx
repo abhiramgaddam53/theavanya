@@ -12,8 +12,6 @@ export const HeroSection = () => {
         offset: ["start start", "end start"],
     });
 
-    // Parallax: Logo moves slightly slower/faster to create depth.
-    // Mapping 0-1 scroll to 0-150px Y offset (moves down as you scroll)
     const yParallax = useTransform(scrollYProgress, [0, 1], [0, 150]);
 
     return (

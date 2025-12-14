@@ -49,13 +49,13 @@ const rooms = [
 
 export default function RoomsSection() {
     return (
-        <section className="w-full bg-[#F5F2EA] py-24 px-6 md:px-12">
-            <div className="max-w-7xl mx-auto">
+        <section className="w-full bg-primary-bg py-24 px-6 md:px-16">
+            <div className="max-w-[1400px] mx-auto">
 
                 {/* Section Heading */}
                 <div className="mb-16">
-                    <h2 className="font-serif text-6xl text-[#1a1a1a] leading-tight">
-                        Private Villas. Singular Experiences.
+                    <h2 className="font-serif text-5xl tracking-tighter text-[#1a1a1a] leading-tight">
+                        Private Villas.<br /> Singular Experiences.
                     </h2>
                 </div>
 

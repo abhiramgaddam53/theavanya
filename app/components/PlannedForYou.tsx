@@ -17,7 +17,7 @@ export default function PlannedForYou() {
     const opacity = useTransform(scrollYProgress, [0.2, 0.5, 0.8], [0, 1, 0]);
 
     return (
-        <section ref={containerRef} className="relative h-[200vh]">
+        <section ref={containerRef} className="relative h-[200vh] bg-primary-bg">
             <div className="sticky top-0 h-screen w-full overflow-hidden">
 
                 {/* Background Image */}

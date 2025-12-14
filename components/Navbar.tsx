@@ -5,8 +5,8 @@ import Button from "./Button";
 
 export default function Navbar() {
     return (
-        <nav className="absolute font-poppins text-md top-0 left-0 w-full z-40 bg-transparent py-6 px-12 text-white">
-            <div className="relative flex items-center">
+        <nav className="absolute font-poppins text-md top-0 left-0 w-full z-40 bg-transparent py-6 px-6 md:px-16 text-white">
+            <div className="max-w-[1400px] mx-auto relative flex items-center">
 
                 {/* Left */}
                 <div>
@@ -24,10 +24,10 @@ export default function Navbar() {
                 <div className="ml-auto hidden md:block">
                     <Button
                         text="Private Concierge Line · 24/7 · By Appointment Only"
-                        variant="primary"
+                        variant="secondary"
                         size="sm"
                         marquee={true}
-                        className="max-w-[250px]"
+                        className="max-w-[164px] text-white"
                     />
                 </div>
 

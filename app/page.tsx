@@ -10,11 +10,13 @@ import ReserveSection from "@/app/components/ReserveSection";
 import Footer from "@/components/Footer";
 import RoomsSection from "./components/RoomsSection";
 import MapSection from "@/app/components/MapSection";
+import { GrainOverlay } from "@/components/GrainOverlay";
 
 export default function Home() {
   return (
     <>
       <Preloader />
+      <GrainOverlay />
       <HeroSection />
       <WelcomeSection />
       <InfiniteSlider />

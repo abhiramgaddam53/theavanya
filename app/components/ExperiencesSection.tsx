@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Button from "@/components/Button";
 
@@ -40,7 +40,7 @@ const ExperienceItem = ({
     return (
         <div ref={ref} className="py-12 border-b border-[#1a1a1a]/10">
             <motion.h3
-                className="font-serif text-5xl md:text-6xl transition-colors duration-500 cursor-pointer"
+                className="font-serif text-5xl transition-colors duration-500 cursor-pointer"
                 animate={{
                     color: isInView ? "#1a1a1a" : "rgba(26, 26, 26, 0.2)",
                 }}
@@ -55,12 +55,12 @@ export default function ExperiencesSection() {
     const [activeId, setActiveId] = useState(experiences[0].id);
 
     return (
-        <section className="bg-[#F5F2EA] py-32 px-6 md:px-16">
-            <div className="max-w-7xl mx-auto">
+        <section className="bg-primary-bg py-32 px-6 md:px-16">
+            <div className="max-w-[1400px] mx-auto">
 
                 {/* Header */}
-                <div className="mb-20">
-                    <h2 className="font-serif text-7xl text-[#1a1a1a]">
+                <div className="mb-12">
+                    <h2 className="font-serif text-5xl tracking-tighter leading-tighter text-[#1a1a1a]">
                         Luxury, <span className="italic">Rewritten.</span>
                     </h2>
                 </div>

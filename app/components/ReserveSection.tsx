@@ -37,7 +37,7 @@ export default function ReserveSection() {
                 {/* Popup Card */}
                 <motion.div
                     style={{ rotate, y }}
-                    className="bg-[#F5F2EA] px-16 py-24 max-w-2xl text-center shadow-2xl origin-bottom"
+                    className="bg-primary-bg px-16 py-24 max-w-2xl text-center shadow-2xl origin-bottom"
                 >
                     {/* Icon */}
                     <div className="flex justify-center mb-6 text-[#1a1a1a]">
@@ -52,7 +52,7 @@ export default function ReserveSection() {
                     </div>
 
                     {/* Title */}
-                    <h2 className="font-serif text-6xl text-black mb-6 scale-y-[1.2]">
+                    <h2 className="font-serif text-5xl tracking-tighter leading-tighter text-black mb-6 scale-y-[1.2]">
                         Reserve Your Stay
                     </h2>
 

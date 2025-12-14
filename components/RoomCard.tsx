@@ -59,7 +59,7 @@ export default function CommonRoomCard({
                         </h3>
 
                         {/* Icons (Bottom Right) */}
-                        {(bed || capacity) && (
+                        {!cta && (bed || capacity) && (
                             <div className="flex items-center gap-4 text-xs md:text-sm font-poppins font-light opacity-90">
                                 {bed && (
                                     <div className="flex items-center gap-2 drop-shadow-md">
@@ -90,14 +90,39 @@ export default function CommonRoomCard({
                             <p className="font-poppins text-sm font-light text-gray-200 leading-relaxed mb-4 max-w-xl drop-shadow-sm">
                                 {description}
                             </p>
-                            {cta && (
-                                <Button
-                                    text={cta}
-                                    variant="underline-white"
-                                    size="none"
-                                    className="pointer-events-auto drop-shadow-md text-xs"
-                                />
-                            )}
+                            <div className="flex justify-between items-center">
+                                {cta && (
+                                    <Button
+                                        text={cta}
+                                        variant="underline-white"
+                                        size="none"
+                                        className="pointer-events-auto drop-shadow-md text-xs"
+                                    />
+                                )}
+                                {(bed || capacity) && (
+                                    <div className="flex items-center gap-4 text-xs md:text-sm font-poppins font-light opacity-90">
+                                        {bed && (
+                                            <div className="flex items-center gap-2 drop-shadow-md">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path d="M22 17v1c0 .5-.5 1-1 1H3c-.5 0-1-.5-1-1v-1" />
+                                                    <path d="M2 10a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2z" />
+                                                    <path d="M4 12v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2" />
+                                                </svg>
+                                                <span className="hidden md:inline">{bed}</span>
+                                            </div>
+                                        )}
+                                        {capacity && (
+                                            <div className="flex items-center gap-2 drop-shadow-md">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                                    <circle cx="12" cy="7" r="4" />
+                                                </svg>
+                                                <span className="hidden md:inline">{capacity}</span>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     )}
                 </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
-    variant?: "primary" | "outline-light" | "outline-dark" | "outline-rounded-dark" | "underline-dark" | "underline-white" | "link-arrow" | "glass";
+    variant?: "primary" | "secondary" | "outline-light" | "outline-dark" | "outline-rounded-dark" | "underline-dark" | "underline-white" | "link-arrow" | "glass";
     size?: "sm" | "md" | "lg" | "none";
     text: string;
     href?: string;
@@ -36,6 +36,7 @@ export default function Button({
         "underline-white": "bg-transparent border-b border-white text-white hover:opacity-70 rounded-none !px-0 !py-1 h-auto",
         "link-arrow": "bg-transparent text-gray-600 hover:text-black p-0 !tracking-widest text-[10px] gap-2 !justify-start",
         "glass": "bg-white/20 backdrop-blur-md border border-white/30 text-white hover:bg-white/30 rounded-sm",
+        "secondary": `bg-transparent border-none text-[#1a1a1a] hover:opacity-70 ${radiusClass}`,
     };
 
     const sizes = {

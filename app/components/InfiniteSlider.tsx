@@ -20,10 +20,10 @@ const images = [
 
 export default function InfiniteSlider() {
     return (
-        <section className="w-full h-screen bg-[#F5F2EA] flex items-center justify-center overflow-hidden">
+        <section className="w-full bg-primary-bg flex items-center justify-center overflow-hidden">
 
             {/* Slider wrapper — controls visible area */}
-            <div className="w-full max-w-[90vw] h-[90vh] overflow-hidden">
+            <div className="w-full max-w-[95vw] h-fit mx-auto overflow-hidden">
                 <motion.div
                     className="flex gap-8 items-center"
                     animate={{ x: ["0%", "-50%"] }}
