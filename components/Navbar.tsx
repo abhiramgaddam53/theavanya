@@ -15,10 +15,10 @@ export default function Navbar() {
 
                 {/* Center */}
                 <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex gap-8">
-                    <Link href="#" className="hover:opacity-80 transition-opacity">Stays</Link>
-                    <Link href="#" className="hover:opacity-80 transition-opacity">Experiences</Link>
+                    <Link href="/" className="hover:opacity-80 transition-opacity">Stays</Link>
+                    <Link href="/" className="hover:opacity-80 transition-opacity">Experiences</Link>
                     <Link href="/wellness" className="hover:opacity-80 transition-opacity">Wellness</Link>
-                    <Link href="#" className="hover:opacity-80 transition-opacity">Architecture</Link>
+                    <Link href="/" className="hover:opacity-80 transition-opacity">Architecture</Link>
                 </div>
                 {/* Right */}
                 <div className="ml-auto hidden md:block">
