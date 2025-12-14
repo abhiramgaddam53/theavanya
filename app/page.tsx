@@ -1,5 +1,4 @@
 import Preloader from "../components/Preloader";
-import MobileBlocker from "../components/MobileBlocker";
 import { HeroSection } from "./components/HeroSection";
 import InfiniteSlider from "@/app/components/InfiniteSlider";
 import WelcomeSection from "@/app/components/WelcomeSection";
@@ -10,12 +9,12 @@ import PlannedForYou from "@/app/components/PlannedForYou";
 import ReserveSection from "@/app/components/ReserveSection";
 import Footer from "@/components/Footer";
 import RoomsSection from "./components/RoomsSection";
+import MapSection from "@/app/components/MapSection";
 
 export default function Home() {
   return (
     <>
       <Preloader />
-      <MobileBlocker />
       <HeroSection />
       <WelcomeSection />
       <InfiniteSlider />
@@ -24,6 +23,7 @@ export default function Home() {
       <ExperiencesSection />
       <PlannedForYou />
       <LuxuryRooms />
+      <MapSection />
       <ReserveSection />
       <Footer />
     </>

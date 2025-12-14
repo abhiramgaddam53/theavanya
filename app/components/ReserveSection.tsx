@@ -2,8 +2,8 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
+import Button from "@/components/Button";
 
 export default function ReserveSection() {
     const containerRef = useRef(null);
@@ -14,6 +14,9 @@ export default function ReserveSection() {
 
     // Rotation from tilted left (-15deg) to straight (0deg) based on scroll
     const rotate = useTransform(scrollYProgress, [0, 1], [-15, 0]);
+
+    // Slight downward movement to center it as we scroll, but stopping "in the middle"
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
 
     return (
         <section ref={containerRef} className="relative w-full h-[150vh]">
@@ -29,18 +32,23 @@ export default function ReserveSection() {
             </div>
 
             {/* Sticky Container for the Card */}
-            <div className="sticky top-0 h-screen w-full flex items-start justify-center z-10 px-4 pt-[40vh]">
+            <div className="sticky top-0 h-screen w-full flex items-start justify-center z-10 px-4 pt-[20vh]">
 
                 {/* Popup Card */}
                 <motion.div
-                    style={{ rotate }}
+                    style={{ rotate, y }}
                     className="bg-[#F5F2EA] px-16 py-24 max-w-2xl text-center shadow-2xl origin-bottom"
                 >
                     {/* Icon */}
                     <div className="flex justify-center mb-6 text-[#1a1a1a]">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" />
-                        </svg>
+                        <Image
+                            src="/logos/king.png"
+                            alt="Logo"
+                            height={50}
+                            width={50}
+                            className="object-cover"
+                            priority
+                        />
                     </div>
 
                     {/* Title */}
@@ -54,11 +62,13 @@ export default function ReserveSection() {
                     </p>
 
                     {/* Button */}
-                    <Link href="#" className="inline-block group border-b border-black hover:opacity-70 transition-opacity">
-                        <span className="font-poppins text-md font-bold uppercase tracking-widest text-black">
-                            Book Now
-                        </span>
-                    </Link>
+                    <Button
+                        text="Book Now"
+                        variant="underline-dark"
+                        size="none"
+                        href="#"
+                        className="font-bold text-md"
+                    />
 
                 </motion.div>
             </div>

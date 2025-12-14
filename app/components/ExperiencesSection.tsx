@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import Image from "next/image";
+import Button from "@/components/Button";
 
 
 const experiences = [
@@ -37,11 +38,11 @@ const ExperienceItem = ({
     }, [isInView, item.id, setActiveId]);
 
     return (
-        <div ref={ref} className="py-8 border-b border-black/15">
+        <div ref={ref} className="py-12 border-b border-[#1a1a1a]/10">
             <motion.h3
-                className="font-serif text-6xl transition-colors duration-500"
+                className="font-serif text-5xl md:text-6xl transition-colors duration-500 cursor-pointer"
                 animate={{
-                    color: isInView ? "#1a1a1a" : "rgba(0,0,0,0.25)",
+                    color: isInView ? "#1a1a1a" : "rgba(26, 26, 26, 0.2)",
                 }}
             >
                 {item.title}
@@ -58,16 +59,16 @@ export default function ExperiencesSection() {
             <div className="max-w-7xl mx-auto">
 
                 {/* Header */}
-                <div className="mb-32">
-                    <h2 className="font-serif text-center text-7xl text-[#1a1a1a]">
-                        Luxury, Rewritten.
+                <div className="mb-20">
+                    <h2 className="font-serif text-7xl text-[#1a1a1a]">
+                        Luxury, <span className="italic">Rewritten.</span>
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-2 gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
                     {/* Left – Sticky Image */}
-                    <div className="sticky top-32 h-fit self-start">
+                    <div className="sticky top-32 h-fit self-start hidden md:block">
                         <div className="relative aspect-3/4 w-full overflow-hidden">
                             {experiences.map((exp) => (
                                 <motion.div
@@ -86,6 +87,7 @@ export default function ExperiencesSection() {
                                         src={exp.image}
                                         alt={exp.title}
                                         fill
+                                        objectFit="cover"
                                         className="object-cover"
                                         priority={exp.id === 1}
                                     />
@@ -95,7 +97,7 @@ export default function ExperiencesSection() {
                     </div>
 
                     {/* Right – List */}
-                    <div className="flex flex-col">
+                    <div className="flex flex-col pb-24 relative">
                         {experiences.map((exp) => (
                             <ExperienceItem
                                 key={exp.id}
@@ -103,9 +105,23 @@ export default function ExperiencesSection() {
                                 setActiveId={setActiveId}
                             />
                         ))}
-                    </div>
 
+                        {/* Footer Text & CTA */}
+                        <div className="mt-24 max-w-md">
+                            <p className="font-poppins text-sm font-light text-[#1a1a1a]/70 leading-relaxed mb-8">
+                                The Avanya presents a curated collection of experiences, from serene rainforest strolls to immersive art and culture tours designed to reconnect you with the rhythms of nature.
+                            </p>
+                            <Button
+                                text="View All Activities"
+                                variant="underline-dark"
+                                size="none"
+                                href="#"
+                                className="font-bold text-xs"
+                            />
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
     );
@@ -116,5 +132,3 @@ export default function ExperiencesSection() {
 function cn(...classes: (string | undefined | null | false)[]) {
     return classes.filter(Boolean).join(' ');
 }
-
-

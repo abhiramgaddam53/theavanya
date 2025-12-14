@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Button from "./Button";
 
 export default function Navbar() {
     return (
@@ -18,12 +19,16 @@ export default function Navbar() {
                     <Link href="#" className="hover:opacity-80 transition-opacity">Experiences</Link>
                     <Link href="#" className="hover:opacity-80 transition-opacity">Wellness</Link>
                     <Link href="#" className="hover:opacity-80 transition-opacity">Architecture</Link>
-                    <Link href="#" className="hover:opacity-80 transition-opacity">Journal</Link>
-                    <Link href="#" className="hover:opacity-80 transition-opacity">Reserve</Link>
                 </div>
                 {/* Right */}
                 <div className="ml-auto hidden md:block">
-                    By Appointment Only
+                    <Button
+                        text="Private Concierge Line · 24/7 · By Appointment Only"
+                        variant="primary"
+                        size="sm"
+                        marquee={true}
+                        className="max-w-[250px]"
+                    />
                 </div>
 
             </div>

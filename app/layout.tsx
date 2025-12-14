@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
+import MobileBlocker from "@/components/MobileBlocker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,6 +43,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${playfair.variable} ${playfair.className} antialiased`}
       >
         <SmoothScrolling>
+          <MobileBlocker />
           {children}
         </SmoothScrolling>
       </body>

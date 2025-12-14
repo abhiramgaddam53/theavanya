@@ -1,13 +1,27 @@
+"use client";
+
+import { useRef } from "react";
 import Navbar from "@/components/Navbar";
-import Button from "@/components/Button";
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export const HeroSection = () => {
-    return (
-        <div className="relative min-h-screen w-full overflow-hidden bg-black text-white">
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end start"],
+    });
 
-            {/* Background Image Placeholder - Replace src with actual image */}
+    // Parallax: Logo moves slightly slower/faster to create depth.
+    // Mapping 0-1 scroll to 0-150px Y offset (moves down as you scroll)
+    const yParallax = useTransform(scrollYProgress, [0, 1], [0, 150]);
+
+    return (
+        <div ref={containerRef} className="relative h-screen w-full overflow-hidden font-serif text-[#F5F2EA]">
+
+            {/* Background Image */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center brightness-[0.6]"></div>
+                <Image src="/miscellaneous/Hero.jpg" alt="Hero Background" fill className="object-cover" priority />
                 {/* Bottom Shadow / Gradient */}
                 <div className="absolute bottom-0 left-0 w-full h-150 bg-linear-to-t from-black/60 to-transparent"></div>
             </div>
@@ -15,11 +29,24 @@ export const HeroSection = () => {
             <Navbar />
 
             <main className="relative z-10 flex min-h-screen flex-col items-center justify-center text-center px-4">
-                <h1 className="mb-4 text-6xl font-light tracking-tight">
-                    Return to Your Elements.
-                </h1>
-                <p className="font-poppins text-sm">This is not a destination you visit.It is a state you return to.</p>
-                <Button className="relative z-10 mt-4" variant="primary" text="Reserve Your Sanctuary" />
+                {/* Parallax Wrapper */}
+                <motion.div style={{ y: yParallax }}>
+                    {/* Entrance Animation Wrapper */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 100 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1.5, ease: "easeOut", delay: 2.6 }}
+                    >
+                        <Image
+                            src="/logos/white.png"
+                            alt="Logo"
+                            height={720}
+                            width={720}
+                            className="object-cover"
+                            priority
+                        />
+                    </motion.div>
+                </motion.div>
             </main>
         </div>
     );

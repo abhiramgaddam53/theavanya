@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Signature from "../../components/Signature";
 
@@ -10,9 +9,15 @@ export default function WelcomeSection() {
 
             <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center text-[#1a1a1a]">
 
-                {/* Small Icon / Logo Marker */}
                 <div className="mb-3">
-                    <span className="text-2xl font-serif">❦</span>
+                    <Image
+                        src="/logos/king.png"
+                        alt="Logo"
+                        height={50}
+                        width={50}
+                        className="object-cover"
+                        priority
+                    />
                 </div>
 
                 {/* Subtitle */}
