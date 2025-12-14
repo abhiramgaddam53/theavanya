@@ -6,6 +6,7 @@ import MobileBlocker from "@/components/MobileBlocker";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { GrainOverlay } from "@/components/GrainOverlay";
+import ScrollToTop from "@/components/ScrollToTop";
 import NavigationLoader from "@/components/NavigationLoader";
 
 const geistSans = Geist({
@@ -53,8 +54,10 @@ export default function RootLayout({
           {/* <GrainOverlay /> */}
           {children}
           <Footer />
+          <ScrollToTop />
         </SmoothScrolling>
       </body>
     </html>
   );
 }
+
