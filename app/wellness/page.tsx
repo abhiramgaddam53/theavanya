@@ -3,6 +3,7 @@ import CuratedDetailsSection from "./components/CuratedDetailsSection";
 import FAQSection from "@/components/FAQSection";
 import ParallaxImageSection from "./components/ParallaxImageSection";
 import DesignedForYouSection from "./components/DesignedForYouSection";
+import ReserveSection from "../components/ReserveSection";
 
 const wellnessFAQs = [
     {
@@ -46,6 +47,7 @@ export default function WellnessPage() {
             <ParallaxImageSection />
             <DesignedForYouSection />
             <CuratedDetailsSection />
+            <ReserveSection />
             <FAQSection
                 tagline="Thoughtfully Answered."
                 description="Because true luxury anticipates questions before they are asked."
