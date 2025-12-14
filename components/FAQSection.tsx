@@ -12,7 +12,7 @@ function FAQItem({ question, answer }: FAQItemProps) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="border-b border-[#1a1a1a]/20 py-8 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+        <div className="border-b border-[#1a1a1a]/20 py-5 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="w-full flex items-center justify-between text-left group cursor-pointer"
@@ -59,7 +59,7 @@ interface FAQSectionProps {
 
 export default function FAQSection({ tagline, description, faqs }: FAQSectionProps) {
     return (
-        <section className="bg-primary-bg py-24 px-6 md:px-16">
+        <section className="bg-primary-bg py-18 px-6 md:px-16">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
                 <div className="mb-12 space-y-6">
