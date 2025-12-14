@@ -6,20 +6,21 @@ interface WellnessCardProps {
     image: string;
     title: string;
     description: string;
+    tag?: string;
 }
 
-export default function WellnessCard({ image, title, description }: WellnessCardProps) {
+export default function WellnessCard({ image, title, description, tag }: WellnessCardProps) {
     return (
-        <div className="min-w-[480px] h-[80vh] flex flex-col gap-6 relative group">
+        <div className="min-w-[480px] h-full flex flex-col gap-6 relative group">
             <div className="relative w-full h-[65vh] shrink-0 overflow-hidden">
                 <Image
                     src={image}
                     alt={title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1">
                 <h3 className="font-serif text-3xl">{title}</h3>
                 <p className="font-poppins text-sm font-light leading-relaxed">
                     {description}

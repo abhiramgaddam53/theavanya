@@ -87,3 +87,44 @@ body {
 @utility font-poppins {
   font-family: var(--font-poppins), sans-serif;
 }
+
+/* Custom Selection Color */
+::selection {
+  background-color: #bea585 !important;
+  color: #1a1a1a !important;
+}
+
+::-moz-selection {
+  background-color: #bea585 !important;
+  color: #1a1a1a !important;
+}
+
+/* Custom Scrollbar */
+/* For Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #bea585 transparent;
+}
+
+/* For Webkit Browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bea585;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a38c6d;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}

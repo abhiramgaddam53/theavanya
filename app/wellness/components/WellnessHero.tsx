@@ -35,19 +35,28 @@ export default function WellnessHero() {
             {/* Main Title - Centered with Parallax */}
             <div className="relative z-10 h-full flex flex-col items-center justify-center text-center">
                 <motion.div style={{ y: yParallax }}>
-                    <h1 className="font-serif text-[#F5F2EA] leading-[0.9]">
-                        <span className="block text-9xl font-light tracking-tight">Where Stillness </span>
-                        <span className="block text-9xl italic font-light tracking-tight">Becomes Medicine</span>
-                    </h1>
+                    <motion.h1
+                        initial={{ y: 100, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 2.7, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                        className="font-serif text-[#F5F2EA] leading-[0.9]"
+                    >
+                        <span className="block text-9xl font-light tracking-tight">Discover & Do</span>
+                    </motion.h1>
                 </motion.div>
             </div>
 
             {/* Subtitle - Pinned to Bottom */}
             <div className="absolute bottom-20 left-0 w-full z-10 flex justify-center text-center px-4">
                 <motion.div style={{ y: yParallax }} className="max-w-lg">
-                    <p className="text-[#F5F2EA] text-2xl font-light tracking-wide opacity-90">
+                    <motion.p
+                        initial={{ y: 50, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 2.8, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                        className="text-[#F5F2EA] text-2xl font-light opacity-90"
+                    >
                         A deeply personal approach to wellness, guided by nature, silence, and ancient intelligence.
-                    </p>
+                    </motion.p>
                 </motion.div>
             </div>
         </section>

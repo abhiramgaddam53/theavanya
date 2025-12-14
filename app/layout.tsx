@@ -6,6 +6,7 @@ import MobileBlocker from "@/components/MobileBlocker";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { GrainOverlay } from "@/components/GrainOverlay";
+import NavigationLoader from "@/components/NavigationLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,6 +47,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${playfair.variable} ${playfair.className} antialiased`}
       >
         <SmoothScrolling>
+          <NavigationLoader />
           <MobileBlocker />
           <Navbar />
           {/* <GrainOverlay /> */}

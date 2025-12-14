@@ -7,16 +7,16 @@ import Button from "@/components/Button";
 
 
 const experiences = [
-    { id: 1, title: "Seclusion", image: "/slider/1.jpg" },
-    { id: 2, title: "Silence", image: "/slider/2.jpg" },
-    { id: 3, title: "Privacy", image: "/slider/3.jpg" },
-    { id: 4, title: "Stillness", image: "/slider/4.jpg" },
-    { id: 5, title: "Restoration", image: "/slider/5.jpg" },
-    { id: 6, title: "Wellness", image: "/slider/6.jpg" },
-    { id: 7, title: "Craft", image: "/slider/7.jpg" },
-    { id: 8, title: "Nature", image: "/slider/8.jpg" },
-    { id: 9, title: "Ritual", image: "/slider/9.jpg" },
-    { id: 10, title: "Presence", image: "/slider/10.jpg" },
+    { id: 1, title: "Seclusion", image: "/experiences/1.jpg" },
+    { id: 2, title: "Silence", image: "/experiences/2.jpg" },
+    { id: 3, title: "Privacy", image: "/experiences/3.jpg" },
+    { id: 4, title: "Stillness", image: "/experiences/4.jpg" },
+    { id: 5, title: "Restoration", image: "/experiences/5.jpg" },
+    { id: 6, title: "Wellness", image: "/experiences/6.jpg" },
+    { id: 7, title: "Craft", image: "/experiences/7.jpg" },
+    { id: 8, title: "Nature", image: "/experiences/8.jpg" },
+    { id: 9, title: "Ritual", image: "/experiences/9.jpg" },
+    { id: 10, title: "Presence", image: "/experiences/10.jpg" },
 ];
 
 const ExperienceItem = ({
@@ -38,7 +38,7 @@ const ExperienceItem = ({
     }, [isInView, item.id, setActiveId]);
 
     return (
-        <div ref={ref} className="py-12 border-b border-[#1a1a1a]/10">
+        <div ref={ref} className="py-10 border-b border-[#1a1a1a]/10">
             <motion.h3
                 className="font-serif text-5xl transition-colors duration-500 cursor-pointer"
                 animate={{
@@ -68,8 +68,8 @@ export default function ExperiencesSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
                     {/* Left – Sticky Image */}
-                    <div className="sticky top-32 h-fit self-start hidden md:block">
-                        <div className="relative aspect-3/4 w-full overflow-hidden">
+                    <div className="sticky top-32 self-start hidden md:block">
+                        <div className="relative aspect-[4/3] w-full overflow-hidden">
                             {experiences.map((exp) => (
                                 <motion.div
                                     key={exp.id}
@@ -97,7 +97,7 @@ export default function ExperiencesSection() {
                     </div>
 
                     {/* Right – List */}
-                    <div className="flex flex-col pb-24 relative">
+                    <div className="flex flex-col relative">
                         {experiences.map((exp) => (
                             <ExperienceItem
                                 key={exp.id}
@@ -125,10 +125,4 @@ export default function ExperiencesSection() {
             </div>
         </section>
     );
-}
-
-
-// Simple internal helper for class names
-function cn(...classes: (string | undefined | null | false)[]) {
-    return classes.filter(Boolean).join(' ');
 }

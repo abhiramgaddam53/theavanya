@@ -4,6 +4,7 @@ import FAQSection from "@/components/FAQSection";
 import ParallaxImageSection from "./components/ParallaxImageSection";
 import DesignedForYouSection from "./components/DesignedForYouSection";
 import ReserveSection from "../components/ReserveSection";
+import NatureParallaxSection from "./components/NatureParallaxSection";
 
 const wellnessFAQs = [
     {
@@ -47,6 +48,7 @@ export default function WellnessPage() {
             <ParallaxImageSection />
             <DesignedForYouSection />
             <CuratedDetailsSection />
+            <NatureParallaxSection />
             <ReserveSection />
             <FAQSection
                 tagline="Thoughtfully Answered."

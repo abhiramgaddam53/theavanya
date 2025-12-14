@@ -47,9 +47,8 @@ export default function CommonRoomCard({
                 </div>
             )}
 
-            {/* Bottom Content Area */}
             <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 flex flex-col justify-end text-white h-full pointer-events-none">
-                <div className="mt-auto w-full">
+                <div className="mt-auto w-full flex flex-col gap-4">
 
                     {/* Title & Icons Row */}
                     <div className="flex items-center justify-between w-full">
@@ -86,8 +85,8 @@ export default function CommonRoomCard({
 
                     {/* Description & CTA (Below Title) */}
                     {description && (
-                        <div className="mt-4">
-                            <p className="font-poppins text-sm font-light text-gray-200 leading-relaxed mb-4 max-w-xl drop-shadow-sm">
+                        <div className="flex flex-col gap-4">
+                            <p className="font-poppins text-sm font-light text-gray-200 leading-relaxed max-w-xl drop-shadow-sm">
                                 {description}
                             </p>
                             <div className="flex justify-between items-center">
