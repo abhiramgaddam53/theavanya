@@ -3,6 +3,9 @@ import { Geist, Geist_Mono, Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import MobileBlocker from "@/components/MobileBlocker";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { GrainOverlay } from "@/components/GrainOverlay";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,7 +47,10 @@ export default function RootLayout({
       >
         <SmoothScrolling>
           <MobileBlocker />
+          <Navbar />
+          {/* <GrainOverlay /> */}
           {children}
+          <Footer />
         </SmoothScrolling>
       </body>
     </html>

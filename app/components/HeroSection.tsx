@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -24,7 +23,7 @@ export const HeroSection = () => {
                 <div className="absolute bottom-0 left-0 w-full h-150 bg-linear-to-t from-black/60 to-transparent"></div>
             </div>
 
-            <Navbar />
+
 
             <main className="relative z-10 flex min-h-screen flex-col items-center justify-center text-center px-4">
                 {/* Parallax Wrapper */}

@@ -94,7 +94,7 @@ export default function Preloader() {
                             animate="animate"
                         >
                             <div className="flex justify-center">
-                                <span className="text-[14px] uppercase tracking-[0.2em] text-[#4a4a4a]">Ultra Luxury Eco Heritage Wellness</span>
+                                <span className="text-[16px] uppercase tracking-[0.2em] text-[#4a4a4a]">Ultra Luxury <br />Eco Heritage Wellness</span>
                             </div>
                         </motion.div>
 

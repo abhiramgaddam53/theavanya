@@ -7,7 +7,7 @@ export const GrainOverlay = () => {
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.15 }}
-            className="fixed inset-0 z-0 pointer-events-none mix-blend-overlay"
+            className="fixed inset-0 z-1 pointer-events-none mix-blend-overlay"
         >
             <motion.div
                 className="w-full h-full"
