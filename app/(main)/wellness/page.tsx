@@ -3,8 +3,8 @@ import CuratedDetailsSection from "./components/CuratedDetailsSection";
 import FAQSection from "@/components/FAQSection";
 import ParallaxImageSection from "./components/ParallaxImageSection";
 import DesignedForYouSection from "./components/DesignedForYouSection";
-import ReserveSection from "../components/ReserveSection";
 import NatureParallaxSection from "./components/NatureParallaxSection";
+import ReserveSection from "@/app/components/ReserveSection";
 
 const wellnessFAQs = [
     {

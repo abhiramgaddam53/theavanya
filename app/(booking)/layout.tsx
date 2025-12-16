@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import BookingNavbar from "@/components/BookingNavbar";
 import MinimalLoader from "@/components/MinimalLoader";
 
@@ -10,7 +11,9 @@ export default function BookingLayout({
 }) {
     return (
         <div className="bg-white min-h-screen">
-            <MinimalLoader />
+            <Suspense fallback={null}>
+                <MinimalLoader />
+            </Suspense>
             <BookingNavbar />
             <main>
                 {children}
