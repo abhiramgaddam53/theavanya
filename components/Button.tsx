@@ -3,7 +3,7 @@ import Link from "next/link";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
-    variant?: "primary" | "secondary" | "outline-light" | "outline-dark" | "outline-rounded-dark" | "underline-dark" | "underline-white" | "link-arrow" | "glass";
+    variant?: "primary" | "secondary" | "outline-light" | "outline-dark" | "outline-white" | "outline-rounded-dark" | "underline-dark" | "underline-white" | "link-arrow" | "glass";
     size?: "sm" | "md" | "lg" | "none";
     text: string;
     href?: string;
@@ -32,6 +32,7 @@ export default function Button({
         "outline-light": `bg-transparent border border-[#F5F2EA] text-[#F5F2EA] hover:bg-[#F5F2EA] hover:text-black ${radiusClass}`,
         "outline-dark": `bg-transparent border border-[#1a1a1a] text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white ${radiusClass}`,
         "outline-rounded-dark": "bg-transparent border border-[#1a1a1a]/30 text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white rounded-full",
+        "outline-white": `bg-transparent border border-white text-white hover:bg-white hover:text-black ${radiusClass}`,
         "underline-dark": "bg-transparent border-b border-black text-black hover:opacity-70 rounded-none !px-0 !py-1 h-auto",
         "underline-white": "bg-transparent border-b border-white text-white hover:opacity-70 rounded-none !px-0 !py-1 h-auto",
         "link-arrow": "bg-transparent text-gray-600 hover:text-black p-0 !tracking-widest text-[10px] gap-2 !justify-start",

@@ -6,15 +6,14 @@ import { motion, AnimatePresence } from "framer-motion";
 interface FAQItemProps {
     question: string;
     answer: string;
+    isOpen: boolean;
+    toggle: () => void;
 }
 
-function FAQItem({ question, answer }: FAQItemProps) {
-    const [isOpen, setIsOpen] = useState(false);
-
+function FAQItem({ question, answer, isOpen, toggle }: FAQItemProps) {
     return (
-        <div className="border-b border-[#1a1a1a]/20 py-5 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+        <div className="border-b border-[#1a1a1a]/20 py-5 cursor-pointer" onClick={toggle}>
             <button
-                onClick={() => setIsOpen(!isOpen)}
                 className="w-full flex items-center justify-between text-left group cursor-pointer"
             >
                 <h3 className="font-serif text-3xl text-[#1a1a1a] pr-8 leading-tight">
@@ -58,8 +57,14 @@ interface FAQSectionProps {
 }
 
 export default function FAQSection({ tagline, description, faqs }: FAQSectionProps) {
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+    const handleToggle = (index: number) => {
+        setOpenIndex(prevIndex => (prevIndex === index ? null : index));
+    };
+
     return (
-        <section className="bg-primary-bg py-18 px-6 md:px-16">
+        <section className="bg-primary-bg py-6">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
                 <div className="mb-12 space-y-6">
@@ -74,7 +79,13 @@ export default function FAQSection({ tagline, description, faqs }: FAQSectionPro
                 {/* FAQ List */}
                 <div className="w-full">
                     {faqs.map((faq, index) => (
-                        <FAQItem key={index} question={faq.question} answer={faq.answer} />
+                        <FAQItem
+                            key={index}
+                            question={faq.question}
+                            answer={faq.answer}
+                            isOpen={openIndex === index}
+                            toggle={() => handleToggle(index)}
+                        />
                     ))}
                 </div>
             </div>

@@ -2,12 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
-import MobileBlocker from "@/components/MobileBlocker";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { GrainOverlay } from "@/components/GrainOverlay";
-import ScrollToTop from "@/components/ScrollToTop";
-import NavigationLoader from "@/components/NavigationLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,13 +42,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${playfair.variable} ${playfair.className} antialiased`}
       >
         <SmoothScrolling>
-          <NavigationLoader />
-          <MobileBlocker />
-          <Navbar />
-          {/* <GrainOverlay /> */}
           {children}
-          <Footer />
-          <ScrollToTop />
         </SmoothScrolling>
       </body>
     </html>
