@@ -6,7 +6,7 @@ import CustomContainer from "../over-view/components/CustomContainer";
 const OUTLETS = [
   {
     id: 1,
-    title: "Heavenly Spa by avanya™",
+    title: "Heavenlyy Spa by avanya™",
     image:
       "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop",
     type: "Included",
