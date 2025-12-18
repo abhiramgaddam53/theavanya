@@ -37,7 +37,7 @@ const HeroSplit = () => {
       </section>
 
       {/* Bottom Content Section */}
-      <section className="bg-white py-20 min-h-[50vh]">
+      <section className="bg-primary-bg py-20 min-h-[50vh]">
         <CustomContainer>
           <div className="flex flex-col items-center">
             {/* Welcome Text */}
@@ -49,11 +49,11 @@ const HeroSplit = () => {
               className="text-center w-full mb-16"
             >
               <h2 className="text-1xl md:text-5xl lg:text-6xl font-serif leading-tight mb-6 text-neutral-900 whitespace-normal md:whitespace-nowrap">
-                Experience wellness at our luxury hotel <br /> in the heart of HITEC
-                City.
+                Experience wellness at our luxury hotel <br /> in the heart of
+                HITEC City.
               </h2>
               <p className="text-neutral-500 font-poppins font-light text-lg leading-relaxed max-w-5xl mx-auto">
-                Located in the heart of Raheja Mindspace IT Park, The Westin
+                Located in the heart of Raheja Mindspace IT Park, The avanya
                 Hyderabad Mindspace is a luxurious hotel with 427 rooms catering
                 to business and leisure travellers. The hotel in HITEC City
                 offers state-of-the-art facilities and a sanctuary of calm.
@@ -67,14 +67,14 @@ const HeroSplit = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="border border-neutral-200 rounded-lg p-8 flex flex-col md:flex-row items-start md:items-center gap-6 shadow-sm bg-white"
+                className="border border-neutral-200 rounded-lg p-8 flex flex-col md:flex-row items-start md:items-center gap-6 shadow-sm bg-[#f5f1eb]"
               >
-                <div className="p-3 bg-neutral-100 rounded-full text-neutral-600">
+                <div className="p-3 bg-[#ede8df] rounded-full text-neutral-600">
                   <Gift size={24} />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-serif font-bold text-neutral-900 mb-2">
-                    Festive Celebrations at Westin
+                    Festive Celebrations at avanya
                   </h3>
                   <p className="text-sm font-poppins text-neutral-600 leading-relaxed">
                     Indulge in the joy of the season with curated cuisine,
@@ -94,7 +94,7 @@ const HeroSplit = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="border border-neutral-200 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm bg-white"
+                className="border border-neutral-200 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm bg-[#f5f1eb]"
               >
                 <div className="flex items-center gap-6 w-full">
                   <div className="w-16 h-10 bg-neutral-900 rounded-md relative overflow-hidden flex-shrink-0">

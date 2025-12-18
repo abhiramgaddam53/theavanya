@@ -6,6 +6,7 @@ export interface Room {
     imageSrc: string;
     features: string[];
     type: string; // "Guest Room" | "Suite" | "Villa" | "Residence"
+    bookedDates?: string[];
 }
 
 export interface Villa {
@@ -21,6 +22,7 @@ export interface Villa {
     cta: string;
     facilities: { title: string; description: string }[];
     availableRooms: Room[];
+    bookedDates?: string[];
     // FAQ Section Data
     faqTagline: string;
     faqDescription: string;
@@ -41,7 +43,7 @@ export const villas: Villa[] = [
         cta: "Explore Villa",
         facilities: [
             { title: "Working Desk", description: "Make our well-appointed Hyderabad hotel rooms and suites your business or social hub in India" },
-            { title: "Heavenly Beds", description: "All our hotel rooms in Hyderabad, India, feature signature Westin Heavenly Beds™ for a restful sleep" },
+            { title: "Heavenly Beds", description: "All our hotel rooms in Hyderabad, India, feature signature avanya Heavenly Beds™ for a restful sleep" },
             { title: "Smart TVs", description: "Our Hyderabad hotel rooms feature 42-inch smart TVs and modern bathrooms with Heavenly Showers" }
         ],
         availableRooms: [

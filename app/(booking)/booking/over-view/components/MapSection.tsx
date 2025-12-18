@@ -13,7 +13,7 @@ const MapSection = () => {
 
             <div className="space-y-6 font-poppins text-neutral-300">
               <p className="leading-relaxed">
-                The Westin Hyderabad Mindspace
+                The avanya Hyderabad Mindspace
                 <br />
                 Raheja IT Park, Hitec City, Madhapur,
                 <br />
@@ -65,7 +65,7 @@ const MapSection = () => {
               className="w-full h-full"
               style={{ border: 0 }}
               allowFullScreen
-              title="The Westin Hyderabad Mindspace Location"
+              title="The avanya Hyderabad Mindspace Location"
             />
           </div>
         </div>

@@ -142,14 +142,14 @@ export const WAYS_TO_ENJOY = [
   {
     id: 'spa',
     label: 'Spa',
-    title: 'Heavenly Spa by Westin™',
-    desc: 'Treat yourself to a full day of spa services for total body wellness at Heavenly Spa by Westin. Choose invigorating a la carte treatments for a peaceful moment away from the hustle and bustle of Hitech City.',
+    title: 'Heavenly Spa by avanya™',
+    desc: 'Treat yourself to a full day of spa services for total body wellness at Heavenly Spa by avanya. Choose invigorating a la carte treatments for a peaceful moment away from the hustle and bustle of Hitech City.',
     image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop'
   },
   {
     id: 'fitness',
     label: 'Fitness',
-    title: 'WestinWORKOUT® Fitness Studio',
+    title: 'avanyaWORKOUT® Fitness Studio',
     desc: 'Fuel your day with a workout in our state-of-the-art fitness center, featuring free weights, cardiovascular equipment, and plenty of space to stretch and move.',
     image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop'
   },
@@ -170,7 +170,7 @@ export const AWARDS = [
 
 export const FAQS = [
   { q: "What are the check-in and check-out times?", a: "Check-in is at 3:00 pm and Check-out is at 12:00 pm." },
-  { q: "Does The Westin Hyderabad Mindspace allow pets?", a: "Pets are not allowed at our property." },
+  { q: "Does The avanya Hyderabad Mindspace allow pets?", a: "Pets are not allowed at our property." },
   { q: "What are the parking options?", a: "We offer complimentary on-site parking and valet parking for all guests." },
   { q: "What property amenities are available?", a: "Guests can enjoy our fitness center, outdoor pool, multiple restaurants, and the Heavenly Spa." },
   { q: "Does the hotel have in-room Wi-Fi?", a: "Yes, complimentary high-speed Wi-Fi is available in all guest rooms and public areas." }

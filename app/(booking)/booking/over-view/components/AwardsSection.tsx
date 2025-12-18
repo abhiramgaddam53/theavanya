@@ -13,7 +13,7 @@ const AwardsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-3 mt-16 items-start justify-items-center">
           {AWARDS.map((award, idx) => {
             const baseClass =
-              "flex items-center p-6 bg-white border border-neutral-100 shadow-lg rounded-xl gap-4 hover:shadow-xl transition-all duration-300 w-full max-w-[520px]";
+              "flex items-center p-6 bg-[#f5f1eb] border border-neutral-200 shadow-lg rounded-xl gap-4 hover:shadow-xl transition-all duration-300 w-full max-w-[520px]";
             const thirdClass = "md:col-span-2 justify-self-center";
 
             return (
@@ -22,7 +22,7 @@ const AwardsSection = () => {
                 whileHover={{ y: -5 }}
                 className={`${baseClass} ${idx === 2 ? thirdClass : ""}`}
               >
-                <div className="p-4 bg-neutral-50 rounded-full text-[#c6a87c]">
+                <div className="p-4 bg-[#ede8df] rounded-full text-[#c6a87c]">
                   <award.icon size={24} />
                 </div>
                 <h4 className="font-serif text-lg leading-tight text-neutral-800">

@@ -7,7 +7,7 @@ import { AMENITIES } from "../constants";
 
 const AmenitiesSection = () => {
   return (
-    <section className="py-24 bg-[#1a1a1a] text-white">
+    <section className="py-12 bg-[#1a1a1a] text-white">
       <CustomContainer>
         <div className="grid md:grid-cols-2 gap-16 items-start mb-20">
           <div>
@@ -22,12 +22,12 @@ const AmenitiesSection = () => {
               every detail is designed to elevate your stay. Experience a
               seamless blend of productivity and relaxation.
             </p>
-            <button className="px-8 py-4 bg-white text-secondary-bg text-xs font-bold uppercase tracking-widest hover:bg-gray-100 transition-colors">
+            <button className="px-8 py-4 bg-[#f5f1eb] text-secondary-bg text-xs font-bold uppercase tracking-widest hover:bg-[#ede8df] transition-colors">
               Explore All Amenities
             </button>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-8 gap-y-12">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:pt-12">
             {AMENITIES.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -37,7 +37,7 @@ const AmenitiesSection = () => {
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                 className="flex items-start gap-4"
               >
-                <div className="p-3 bg-white rounded-full shadow-sm text-neutral-800">
+                <div className="p-3 bg-[#f5f1eb] rounded-full shadow-sm text-neutral-800">
                   <item.icon size={20} strokeWidth={1.5} />
                 </div>
                 <div>

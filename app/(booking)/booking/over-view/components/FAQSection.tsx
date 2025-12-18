@@ -23,11 +23,11 @@ const FAQSection = () => {
             {FAQS.map((faq, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-neutral-200 rounded-lg overflow-hidden shadow-sm"
+                className="bg-[#f5f1eb] border border-neutral-200 rounded-lg overflow-hidden shadow-sm"
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-neutral-50 transition-colors"
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-[#ede8df] transition-colors"
                 >
                   <span className="font-serif text-lg text-neutral-800">
                     {faq.q}
@@ -46,7 +46,7 @@ const FAQSection = () => {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden"
                     >
-                      <div className="p-6 pt-0 text-neutral-500 font-poppins text-sm leading-relaxed border-t border-dashed border-neutral-100 mt-2">
+                      <div className="p-6 pt-0 text-neutral-500 font-poppins text-sm leading-relaxed border-t border-dashed border-neutral-200 mt-2">
                         {faq.a}
                       </div>
                     </motion.div>
