@@ -28,23 +28,80 @@ export const ROOMS = [
   {
     id: 1,
     name: "Guest Room",
-    image: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop",
     bed: "1 King Bed",
-    guests: "Up to 2 Guests"
+    capacity: "Up to 2 Guests",
+    guests: "Up to 2 Guests",
+    price: "From ₹35,000 / Night",
+    description:
+      "Minimal accents and calm palettes set the stage for an easy, uninterrupted stay in the heart of the hotel.",
+    cta: "View Guest Room"
   },
   {
     id: 2,
     name: "Executive Lounge",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop",
     bed: "1 King Bed",
-    guests: "Up to 2 Guests"
+    capacity: "Up to 2 Guests",
+    guests: "Up to 2 Guests",
+    price: "From ₹42,000 / Night",
+    description:
+      "Lavish lounge seating, dedicated workspaces, and priority service make the Executive Lounge a calm headquarters for business or leisure.",
+    cta: "View Executive Lounge"
   },
   {
     id: 3,
     name: "The Canopy Villa",
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2070&auto=format&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=2070&auto=format&fit=crop",
     bed: "1 King Bed",
-    guests: "Up to 2 Guests"
+    capacity: "Up to 2 Guests",
+    guests: "Up to 2 Guests",
+    price: "From ₹55,000 / Night",
+    description:
+      "Suspended just above the treetops, this villa is designed for guests who prefer their peace with a hint of drama.",
+    cta: "Explore Villa"
+  },
+  {
+    id: 4,
+    name: "Horizon Loft",
+    image:
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2070&auto=format&fit=crop",
+    bed: "1 King Bed + Daybed",
+    capacity: "Up to 3 Guests",
+    guests: "Up to 3 Guests",
+    price: "From ₹62,000 / Night",
+    description:
+      "Double-height ceilings and curated art pieces keep the Horizon Loft airy and intimate at the same time.",
+    cta: "See The Loft"
+  },
+  {
+    id: 5,
+    name: "Rainforest Suite",
+    image:
+      "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=2070&auto=format&fit=crop",
+    bed: "1 King Bed",
+    capacity: "Up to 3 Guests",
+    guests: "Up to 3 Guests",
+    price: "From ₹68,000 / Night",
+    description:
+      "Artfully integrated greenery and a private plunge pool make this suite a favorite for those needing a reset.",
+    cta: "Discover Suite"
+  },
+  {
+    id: 6,
+    name: "Sky Terrace Penthouse",
+    image:
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2070&auto=format&fit=crop",
+    bed: "1 King Bed + Living Gallery",
+    capacity: "Up to 4 Guests",
+    guests: "Up to 4 Guests",
+    price: "From ₹75,000 / Night",
+    description:
+      "Panoramic views and a private dining gallery make the Penthouse a dramatic setting for unforgettable evenings.",
+    cta: "View Penthouse"
   }
 ];
 

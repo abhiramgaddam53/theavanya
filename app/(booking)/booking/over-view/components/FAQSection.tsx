@@ -11,7 +11,7 @@ const FAQSection = () => {
   const toggle = (idx: number) => setOpenIndex(openIndex === idx ? null : idx);
 
   return (
-    <section className="py-24 bg-[#faf9f6]">
+    <section className="py-24 bg-primary-bg">
       <CustomContainer>
         <div className="max-w-4xl mx-auto">
           <SectionHeading

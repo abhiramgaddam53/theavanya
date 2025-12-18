@@ -9,7 +9,7 @@ const CustomContainer: React.FC<CustomContainerProps> = ({
   children,
   className = "",
 }) => (
-  <div className={`w-full pl-[78px] pr-[65px] ${className}`}>{children}</div>
+  <div className={`w-full pl-[64px] pr-[64px] ${className}`}>{children}</div>
 );
 
 export default CustomContainer;

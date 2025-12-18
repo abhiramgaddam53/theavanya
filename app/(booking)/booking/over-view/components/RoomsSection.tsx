@@ -7,7 +7,7 @@ import { ROOMS } from "../constants";
 
 const RoomsSection = () => {
   return (
-    <section className="py-24 bg-[#f9f9f9]">
+    <section className="py-24 bg-primary-bg">
       <CustomContainer>
         <SectionHeading sub="Accommodations" title="Rooms & Suites" />
 

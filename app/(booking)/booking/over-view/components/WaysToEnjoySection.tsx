@@ -8,7 +8,7 @@ const WaysToEnjoySection = () => {
   const [activeTab, setActiveTab] = useState("spa");
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-primary-bg text-neutral-900">
       <CustomContainer>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif mb-12">
@@ -16,7 +16,7 @@ const WaysToEnjoySection = () => {
           </h2>
 
           {/* Tabs */}
-          <div className="flex justify-center space-x-12 border-b border-neutral-200 inline-flex w-full md:w-auto">
+          <div className="flex justify-center space-x-12 border-b border-neutral-200 w-full md:w-auto">
             {WAYS_TO_ENJOY.map((item) => (
               <button
                 key={item.id}
@@ -31,7 +31,8 @@ const WaysToEnjoySection = () => {
                 {activeTab === item.id && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#c6a87c]"
+                    className="absolute bottom-0 left-0 right-0 bg-[#c6a87c]"
+                    style={{ height: 3 }}
                   />
                 )}
               </button>
@@ -53,7 +54,10 @@ const WaysToEnjoySection = () => {
                     transition={{ duration: 0.4 }}
                     className="flex flex-col md:flex-row items-center gap-16 text-left"
                   >
-                    <div className="w-full md:w-1/2 overflow-hidden rounded-xl h-[500px] shadow-lg">
+                    <div
+                      className="w-full md:w-1/2 overflow-hidden rounded-xl shadow-lg"
+                      style={{ height: 500 }}
+                    >
                       <img
                         src={item.image}
                         alt={item.title}
