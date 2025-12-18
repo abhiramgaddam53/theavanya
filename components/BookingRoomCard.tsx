@@ -10,6 +10,7 @@ interface BookingRoomCardProps {
     bed?: string;
     price?: string;
     description?: string;
+    isAvailable?: boolean;
 }
 
 export default function BookingRoomCard({
@@ -19,9 +20,10 @@ export default function BookingRoomCard({
     bed,
     price,
     description,
+    isAvailable = true,
 }: BookingRoomCardProps) {
     return (
-        <div className="relative aspect-[4/3] w-full overflow-hidden group cursor-pointer border border-[#1a1a1a]/10">
+        <div className={`relative aspect-[4/3] w-full overflow-hidden group cursor-pointer border border-[#1a1a1a]/10 ${!isAvailable ? 'grayscale-[0.5]' : ''}`}>
             <Image
                 src={image}
                 alt={name}
@@ -32,8 +34,16 @@ export default function BookingRoomCard({
             {/* Gradient Overlay - Lighter for this card to show more detail */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80" />
 
+            {!isAvailable && (
+                <div className="absolute inset-0 z-20 bg-black/40 flex items-center justify-center pointer-events-none">
+                    <span className="bg-red-500 text-white px-4 py-2 text-xs font-bold uppercase tracking-widest rounded shadow-md transform -rotate-12 border border-white/20">
+                        Sold Out
+                    </span>
+                </div>
+            )}
+
             {/* Content Container */}
-            <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 flex flex-col justify-end text-white h-full pointer-events-none">
+            <div className={`absolute bottom-0 left-0 w-full p-6 md:p-8 flex flex-col justify-end text-white h-full pointer-events-none ${!isAvailable ? 'opacity-80' : ''}`}>
                 <div className="mt-auto w-full flex flex-col gap-3">
 
                     {/* Title */}
@@ -83,10 +93,11 @@ export default function BookingRoomCard({
                     {/* View Rates Button - Distinctive Style */}
                     <div className="mt-2 pointer-events-auto">
                         <Button
-                            text="View Rates"
+                            text={isAvailable ? "View Rates" : "Unavailable"}
                             variant="outline-white"
                             size="sm"
-                            className="bg-white/10 backdrop-blur-md hover:bg-white hover:text-black transition-colors border-white/40"
+                            className={`bg-white/10 backdrop-blur-md transition-colors border-white/40 ${isAvailable ? 'hover:bg-white hover:text-black' : 'cursor-not-allowed opacity-50'}`}
+                            disabled={!isAvailable}
                         />
                     </div>
                 </div>

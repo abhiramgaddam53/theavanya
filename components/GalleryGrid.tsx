@@ -14,7 +14,7 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
 
     return (
         <>
-            <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-2 space-y-2">
                 {images.map((src, index) => (
                     <motion.div
                         key={index}
@@ -52,7 +52,7 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
                     >
                         <button
                             onClick={() => setSelectedImage(null)}
-                            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-50 p-2"
+                            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-50 p-2 cursor-pointer"
                         >
                             <X size={32} />
                         </button>

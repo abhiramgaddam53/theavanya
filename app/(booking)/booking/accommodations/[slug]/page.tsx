@@ -10,15 +10,21 @@ interface PageProps {
     params: Promise<{
         slug: string;
     }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default async function VillaPage({ params }: PageProps) {
+export default async function VillaPage({ params, searchParams }: PageProps) {
     const { slug } = await params;
+    const { checkIn, checkOut } = await searchParams;
+
     const villa = villas.find((v) => v.slug === slug);
 
     if (!villa) {
         notFound();
     }
+
+    const checkInDate = typeof checkIn === 'string' ? new Date(checkIn) : null;
+    const checkOutDate = typeof checkOut === 'string' ? new Date(checkOut) : null;
 
     return (
         <main className="w-full bg-[#f9f9f9]">
@@ -58,26 +64,46 @@ export default async function VillaPage({ params }: PageProps) {
                         <h3 className="font-serif text-3xl md:text-4xl text-[#1a1a1a] tracking-tight">
                             Available Accommodations
                         </h3>
+                        {checkInDate && checkOutDate && (
+                            <p className="mt-2 text-sm font-poppins text-gray-500">
+                                Checking availability for <span className="font-medium text-black">{checkInDate.toLocaleDateString()}</span> - <span className="font-medium text-black">{checkOutDate.toLocaleDateString()}</span>
+                            </p>
+                        )}
                     </div>
 
                     {/* Rooms Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
-                        {villa.availableRooms.map((room) => (
-                            <Link
-                                key={room.id}
-                                href={`/booking/accommodations/${villa.slug}/rates`}
-                                className="block group"
-                            >
-                                <BookingRoomCard
-                                    image={room.imageSrc}
-                                    name={room.title}
-                                    price={room.price}
-                                    description={room.description}
-                                    bed={room.features[0]}
-                                    capacity={room.features[1]}
-                                />
-                            </Link>
-                        ))}
+                        {villa.availableRooms.map((room) => {
+                            let isAvailable = true;
+                            if (checkInDate && checkOutDate && room.bookedDates) {
+                                const isBooked = room.bookedDates.some(dateStr => {
+                                    const bookedDate = new Date(dateStr);
+                                    return bookedDate >= checkInDate && bookedDate < checkOutDate;
+                                });
+                                if (isBooked) isAvailable = false;
+                            }
+
+                            if (!isAvailable) return null;
+
+                            return (
+                                <Link
+                                    key={room.id}
+                                    href={`/booking/accommodations/${villa.slug}/rates?checkIn=${checkIn || ''}&checkOut=${checkOut || ''}`}
+                                    className="block group"
+                                >
+                                    <BookingRoomCard
+                                        image={room.imageSrc}
+                                        name={room.title}
+                                        price={room.price}
+                                        description={room.description}
+                                        bed={room.features[0]}
+                                        capacity={room.features[1]}
+                                        isAvailable={true}
+                                    />
+                                </Link>
+                            );
+                        })}
+                        {/* Fallback if all are filtered out? Optional but good UX. */}
                     </div>
 
                     {/* Back Button */}

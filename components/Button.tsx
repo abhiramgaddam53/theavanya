@@ -47,7 +47,7 @@ export default function Button({
         none: "p-0 text-md",
     };
 
-    const combinedClasses = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
+    const combinedClasses = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className} ${props.disabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`;
 
     // Content Rendering (Marquee vs Normal)
     const content = marquee ? (

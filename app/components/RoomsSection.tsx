@@ -20,7 +20,7 @@ export default function RoomsSection() {
 
                 {/* Grid Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
-                    {villas.map((room) => (
+                    {villas.slice(0, 4).map((room) => (
                         <Link href={`/booking/accommodations/${room.slug}`} key={room.id} className="block group">
                             <CommonRoomCard
                                 image={room.imageSrc}
@@ -41,7 +41,7 @@ export default function RoomsSection() {
                         text="See All Rooms"
                         variant="link-arrow"
                         size="none"
-                        href="#"
+                        href="/booking/accommodations"
                     />
                 </div>
 

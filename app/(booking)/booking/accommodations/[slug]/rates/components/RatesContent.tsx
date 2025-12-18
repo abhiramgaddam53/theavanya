@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import FiltersBar from "./FiltersBar";
 import RateCard from "./RateCard";
 import FAQSection from "@/components/FAQSection";
@@ -11,6 +12,10 @@ interface RatesContentProps {
 }
 
 export default function RatesContent({ villa }: RatesContentProps) {
+    const searchParams = useSearchParams();
+    const checkInParam = searchParams.get("checkIn");
+    const checkOutParam = searchParams.get("checkOut");
+
     const [bedType, setBedType] = useState("all");
     const [accommodationType, setAccommodationType] = useState("all");
     const [priceRange, setPriceRange] = useState("all");
@@ -30,23 +35,48 @@ export default function RatesContent({ villa }: RatesContentProps) {
     };
 
     // Filter logic
-    const filteredRooms = villa.availableRooms.filter((room) => {
-        // Bed Type Filter
-        if (bedType !== "all" && room.features[0] !== bedType) return false;
+    const filteredRooms = useMemo(() => {
+        const start = checkInParam ? new Date(checkInParam) : null;
+        const end = checkOutParam ? new Date(checkOutParam) : null;
 
-        // Accommodation Type Filter
-        if (accommodationType !== "all" && room.type !== accommodationType) return false;
+        const roomsWithStatus = villa.availableRooms.map(room => {
+            // Check Date Availability
+            let isAvailable = true;
+            if (start && end && room.bookedDates) {
+                const isBooked = room.bookedDates.some(dateStr => {
+                    const bookedDate = new Date(dateStr);
+                    return bookedDate >= start && bookedDate < end;
+                });
+                if (isBooked) isAvailable = false;
+            }
+            return { ...room, isAvailable };
+        });
 
-        // Price Range Filter
-        if (priceRange !== "all") {
-            const price = parsePrice(room.price);
-            if (priceRange === "low" && price >= 50000) return false;
-            if (priceRange === "mid" && (price < 50000 || price > 80000)) return false;
-            if (priceRange === "high" && price <= 80000) return false;
-        }
+        // Apply other filters AND Availability Filter (User Request: "don't show the rates for it")
+        const filtered = roomsWithStatus.filter((room) => {
+            // 1. Availability Filter
+            if (!room.isAvailable) return false;
 
-        return true;
-    });
+            // Bed Type Filter
+            if (bedType !== "all" && room.features[0] !== bedType) return false;
+
+            // Accommodation Type Filter
+            if (accommodationType !== "all" && room.type !== accommodationType) return false;
+
+            // Price Range Filter
+            if (priceRange !== "all") {
+                const price = parsePrice(room.price);
+                if (priceRange === "low" && price >= 50000) return false;
+                if (priceRange === "mid" && (price < 50000 || price > 80000)) return false;
+                if (priceRange === "high" && price <= 80000) return false;
+            }
+
+            return true;
+        });
+
+        return filtered;
+    }, [villa.availableRooms, bedType, accommodationType, priceRange, checkInParam, checkOutParam]);
+
 
     return (
         <div className="bg-primary-bg min-h-screen">
@@ -56,6 +86,13 @@ export default function RatesContent({ villa }: RatesContentProps) {
                 <div className="mb-4">
                     <h3 className="font-serif text-2xl md:text-3xl text-[#1a1a1a] mb-2">Available Rooms</h3>
                     <p className="font-poppins text-[#1a1a1a]/70 mb-8">Select your room and rate</p>
+
+                    {checkInParam && checkOutParam && (
+                        <div className="mb-6 bg-white p-3 rounded-md shadow-sm border border-gray-100 inline-block">
+                            <span className="font-poppins text-xs uppercase tracking-wider text-gray-500 mr-2">Dates Selected:</span>
+                            <span className="font-poppins text-sm font-medium">{checkInParam} <span className="mx-1">→</span> {checkOutParam}</span>
+                        </div>
+                    )}
                 </div>
 
                 {/* 3. Filters */}
@@ -72,7 +109,7 @@ export default function RatesContent({ villa }: RatesContentProps) {
                 {/* Count Header */}
                 <div className="flex justify-between items-center mb-6 px-2">
                     <span className="font-poppins text-sm font-medium text-[#1a1a1a]">
-                        {filteredRooms.length} Room Types Available
+                        {filteredRooms.length} Room Types Found
                     </span>
                 </div>
 
@@ -85,6 +122,7 @@ export default function RatesContent({ villa }: RatesContentProps) {
                             villaName={villa.title}
                             villaSlug={villa.slug}
                             villaImages={villa.images}
+                            isAvailable={room.isAvailable}
                         />
                     ))}
                     {filteredRooms.length === 0 && (

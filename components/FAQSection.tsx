@@ -12,7 +12,7 @@ interface FAQItemProps {
 
 function FAQItem({ question, answer, isOpen, toggle }: FAQItemProps) {
     return (
-        <div className="border-b border-[#1a1a1a]/20 py-5 cursor-pointer" onClick={toggle}>
+        <div className="border-b border-[#1a1a1a]/20 py-5 cursor-pointer last:border-0" onClick={toggle}>
             <button
                 className="w-full flex items-center justify-between text-left group cursor-pointer"
             >

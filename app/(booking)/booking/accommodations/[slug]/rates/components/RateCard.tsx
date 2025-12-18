@@ -19,9 +19,10 @@ interface RateCardProps {
     villaName: string;
     villaSlug: string;
     villaImages: string[];
+    isAvailable?: boolean;
 }
 
-export default function RateCard({ room, villaName, villaSlug, villaImages }: RateCardProps) {
+export default function RateCard({ room, villaName, villaSlug, villaImages, isAvailable = true }: RateCardProps) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isRoomDetailsOpen, setIsRoomDetailsOpen] = useState(false);
     const [rateDetailsState, setRateDetailsState] = useState<{ isOpen: boolean, name: string, price: string }>({ isOpen: false, name: "", price: "" });
@@ -53,7 +54,15 @@ export default function RateCard({ room, villaName, villaSlug, villaImages }: Ra
 
     return (
         <>
-            <div className="bg-white rounded-lg shadow-sm border border-[#1a1a1a]/10 overflow-hidden flex flex-col md:flex-row transition-all hover:shadow-md">
+            <div className={`bg-white rounded-lg shadow-sm border border-[#1a1a1a]/10 overflow-hidden flex flex-col md:flex-row transition-all hover:shadow-md ${!isAvailable ? 'opacity-70 grayscale-[0.5]' : ''} relative`}>
+
+                {!isAvailable && (
+                    <div className="absolute inset-0 z-50 bg-white/50 flex items-center justify-center backdrop-blur-[1px] cursor-not-allowed">
+                        <div className="bg-red-50 px-6 py-3 rounded-full border border-red-100 shadow-sm">
+                            <p className="text-red-600 font-bold font-poppins text-sm uppercase tracking-widest">Unavailable for selected dates</p>
+                        </div>
+                    </div>
+                )}
 
                 {/* Left: Image Carousel */}
                 <div className="relative w-full md:w-[40%] aspect-[4/3] md:aspect-auto">
@@ -113,15 +122,12 @@ export default function RateCard({ room, villaName, villaSlug, villaImages }: Ra
                     {/* Rates List */}
                     <div className="mt-auto flex flex-col gap-6">
 
-                        {/* Rate Option 1: Member */}
-                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-100 pb-4 last:border-0 last:pb-0">
+                        {/* Rate Option: Flexible Rate */}
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                             <div className="flex flex-col gap-1">
-                                <div className="flex items-center gap-2">
-                                    <span className="font-poppins font-semibold text-[#1a1a1a]">Member Flexible Rate</span>
-                                    <Tag size={14} className="text-[#BEA585]" />
-                                </div>
+                                <span className="font-poppins font-semibold text-[#1a1a1a]">Flexible Rate</span>
                                 <button
-                                    onClick={() => openRateDetails("Member Flexible Rate", `₹${basePriceStr}`)}
+                                    onClick={() => openRateDetails("Flexible Rate", `₹${basePriceStr}`)}
                                     className="text-left text-[10px] font-poppins underline text-gray-400 hover:text-gray-600"
                                 >
                                     Rate Details
@@ -135,40 +141,18 @@ export default function RateCard({ room, villaName, villaSlug, villaImages }: Ra
                                     </span>
                                     <span className="text-[10px] text-gray-400 font-poppins">INR / Night</span>
                                 </div>
-                                <Link
-                                    href={createLink("Member Flexible Rate", `₹${basePriceStr}`)}
-                                    className="bg-[#1a1a1a] text-white px-8 py-3 rounded-full text-xs font-poppins font-medium tracking-wide hover:bg-[#1a1a1a]/80 transition-colors"
-                                >
-                                    Select
-                                </Link>
-                            </div>
-                        </div>
-
-                        {/* Rate Option 2: Standard */}
-                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                            <div className="flex flex-col gap-1">
-                                <span className="font-poppins font-semibold text-[#1a1a1a]">Flexible Rate</span>
-                                <button
-                                    onClick={() => openRateDetails("Standard Flexible Rate", `₹${parseInt(basePriceStr.replace(/,/g, '')) + 2000}`)}
-                                    className="text-left text-[10px] font-poppins underline text-gray-400 hover:text-gray-600"
-                                >
-                                    Rate Details
-                                </button>
-                            </div>
-
-                            <div className="flex items-center justify-between md:justify-end gap-6 w-full md:w-auto">
-                                <div className="text-right">
-                                    <span className="block font-poppins font-bold text-lg text-[#1a1a1a]">
-                                        ₹{parseInt(basePriceStr.replace(/,/g, '')) + 2000}
-                                    </span>
-                                    <span className="text-[10px] text-gray-400 font-poppins">INR / Night</span>
-                                </div>
-                                <Link
-                                    href={createLink("Standard Flexible Rate", `₹${parseInt(basePriceStr.replace(/,/g, '')) + 2000}`)}
-                                    className="bg-[#1a1a1a] text-white px-8 py-3 rounded-full text-xs font-poppins font-medium tracking-wide hover:bg-[#1a1a1a]/80 transition-colors"
-                                >
-                                    Select
-                                </Link>
+                                {isAvailable ? (
+                                    <Link
+                                        href={createLink("Flexible Rate", `₹${basePriceStr}`)}
+                                        className="bg-[#1a1a1a] text-white px-8 py-3 rounded-full text-xs font-poppins font-medium tracking-wide hover:bg-[#1a1a1a]/80 transition-colors"
+                                    >
+                                        Select
+                                    </Link>
+                                ) : (
+                                    <button disabled className="bg-gray-300 text-white px-8 py-3 rounded-full text-xs font-poppins font-medium tracking-wide cursor-not-allowed">
+                                        Sold Out
+                                    </button>
+                                )}
                             </div>
                         </div>
 
@@ -176,6 +160,7 @@ export default function RateCard({ room, villaName, villaSlug, villaImages }: Ra
                 </div>
 
             </div>
+
             <RateDetailsDialog
                 isOpen={rateDetailsState.isOpen}
                 onClose={() => setRateDetailsState(prev => ({ ...prev, isOpen: false }))}
