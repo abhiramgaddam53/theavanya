@@ -126,6 +126,27 @@ export const OFFERS = [
     title: "Weekend Escape",
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2000&auto=format&fit=crop",
     desc: "Rejuvenate with our exclusive spa package."
+  },
+  {
+    id: 4,
+    category: "Adventure",
+    title: "Explore Hyderabad",
+    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2000&auto=format&fit=crop",
+    desc: "Discover the best attractions and experiences in the city."
+  },
+  {
+    id: 5,
+    category: "Corporate",
+    title: "Business Retreat",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop",
+    desc: "Perfect venue for team building and corporate events."
+  },
+  {
+    id: 6,
+    category: "Romance",
+    title: "Honeymoon Bliss",
+    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2000&auto=format&fit=crop",
+    desc: "Create unforgettable memories with your special someone."
   }
 ];
 

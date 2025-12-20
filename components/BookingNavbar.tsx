@@ -85,6 +85,16 @@ export default function BookingNavbar() {
           >
             Events
           </Link>
+          <Link
+            href="/booking/wellness"
+            className={`${
+              isActive("/booking/wellness")
+                ? "opacity-100 font-bold border-b border-black pb-0.5"
+                : "hover:opacity-100 transition-opacity"
+            }`}
+          >
+            Wellness
+          </Link>
         </div>
       </div>
 

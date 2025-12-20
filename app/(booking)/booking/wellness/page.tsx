@@ -1,6 +1,11 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus, Minus } from "lucide-react";
 import CustomContainer from "../over-view/components/CustomContainer";
+import SectionHeading from "../over-view/components/SectionHeading";
 
 // Mock Data
 const OUTLETS = [
@@ -31,6 +36,7 @@ const OUTLETS = [
     image:
       "https://images.unsplash.com/photo-1572331165267-854da2b00ca1?q=80&w=2070&auto=format&fit=crop",
     type: "Included",
+    link: "View Pool",
   },
 ];
 
@@ -80,30 +86,35 @@ const LOCAL_ATTRACTIONS = [
 
 const FAQS = [
   {
-    question:
-      "Does The avanya Hyderabad Mindspace have a fitness center on-site?",
-    answer: "Yes, we offer a state-of-the-art fitness center open 24/7.",
+    q: "What are the check-in and check-out times?",
+    a: "Check-in is at 3:00 pm and Check-out is at 12:00 pm.",
   },
   {
-    question: "Does The avanya Hyderabad Mindspace have a pool on-site?",
-    answer: "Yes, enjoy our outdoor swimming pool and kids pool.",
+    q: "Does The avanya Hyderabad Mindspace allow pets?",
+    a: "Pets are not allowed at our property.",
   },
   {
-    question: "Does The avanya Hyderabad Mindspace have an on-site spa?",
-    answer: "Yes, the Heavenly Spa by avanya™ offers a variety of treatments.",
+    q: "What are the parking options?",
+    a: "We offer complimentary on-site parking and valet parking for all guests.",
   },
   {
-    question:
-      "What are some local attractions and things to do near The avanya Hyderabad Mindspace?",
-    answer: "We are close to Inorbit Mall, Golconda Fort, and Shilparamam.",
+    q: "What property amenities are available?",
+    a: "Guests can enjoy our fitness center, outdoor pool, multiple restaurants, and the Heavenly Spa.",
+  },
+  {
+    q: "Does the hotel have in-room Wi-Fi?",
+    a: "Yes, complimentary high-speed Wi-Fi is available in all guest rooms and public areas.",
   },
 ];
 
 export default function WellnessPage() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggle = (idx: number) => setOpenIndex(openIndex === idx ? null : idx);
   return (
-    <div className="w-full bg-primary-bg pb-32">
+    <div className="w-full bg-white pb-32">
       {/* 1. Hero Image Section */}
-      <div className="relative w-full h-[40vh] md:h-[60vh] bg-gray-200">
+      <div className="relative w-full h-[65vh] bg-gray-200">
         <Image
           src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop"
           alt="Wellness Hero"
@@ -116,23 +127,22 @@ export default function WellnessPage() {
       {/* 2. Intro Text Section */}
       <div className="w-full max-w-[1400px] mx-auto">
         <CustomContainer>
-          <div className="max-w-[900px] mx-auto py-16 md:py-10 text-center">
-            <p className="text-[#4A4A4A] tracking-tight text-sm md:text-base mb-6 font-medium font-poppins">
+          <div className="max-w-[900px] mx-auto py-32 md:py-32 text-center">
+            <p className="text-[#4A4A4A] tracking-tight text-sm md:text-base mb-8 font-medium font-poppins">
               Welcome to The avanya Hyderabad Mindspace
             </p>
-             <h2 className="text-2xl md:text-4xl lg:text-5xl font-serif leading-snug mb-6 text-neutral-900 max-w-4xl">
-  Explore notable attractions from our spa hotel in Hyderabad
-</h2>
-
+            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight mb-8 text-neutral-900 max-w-4xl mx-auto">
+              Explore notable attractions from our spa hotel in Hyderabad
+            </h2>
           </div>
         </CustomContainer>
       </div>
 
       {/* 3. On-Site Outlets Section */}
-      <div className="w-full mb-20">
+      <div className="w-full py-16 min-h-screen flex items-center">
         <CustomContainer>
-          <div className="flex justify-between items-end mb-8">
-            <h2 className="text-[1.5rem] md:text-2xl lg:text-[2.5rem] font-serif text-[#1a1a1a] leading-tight">
+          <div className="flex justify-between items-end mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#1a1a1a] leading-tight">
               On-Site Outlets
             </h2>
             <div className="hidden md:flex gap-4 text-sm text-[#4A4A4A]">
@@ -141,11 +151,14 @@ export default function WellnessPage() {
             </div>
           </div>
 
-          <div className="flex overflow-x-auto gap-6 pb-8 snap-x md:grid md:grid-cols-4 md:overflow-visible scrollbar-hide">
+          <div
+            className="flex overflow-x-auto gap-6 pb-8 snap-x md:grid md:grid-cols-4 md:overflow-visible scrollbar-hide [&::-webkit-scrollbar]:hidden"
+            style={{ msOverflowStyle: "none" }}
+          >
             {OUTLETS.map((outlet) => (
               <div
                 key={outlet.id}
-                className="relative min-w-[280px] md:min-w-0 h-[400px] rounded-lg overflow-hidden group cursor-pointer snap-center"
+                className="relative min-w-[280px] md:min-w-0 h-[450px] rounded-lg overflow-hidden group cursor-pointer snap-center"
               >
                 <div className="absolute inset-0 bg-gray-300">
                   <Image
@@ -156,15 +169,15 @@ export default function WellnessPage() {
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
-                <div className="absolute bottom-0 left-0 p-6 w-full">
+                <div className="absolute bottom-0 left-0 p-8 w-full">
                   <span className="inline-block px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-[10px] uppercase tracking-wider rounded mb-3">
                     {outlet.type}
                   </span>
-                  <h3 className="text-white font-serif text-[1.25rem] md:text-xl leading-tight mb-4">
+                  <h3 className="text-white font-serif text-lg md:text-xl leading-tight mb-4">
                     {outlet.title}
                   </h3>
                   <button className="text-white text-sm border border-white/50 rounded-full px-4 py-2 hover:bg-white hover:text-black transition-colors duration-300">
-                    Learn More +
+                    {outlet.link || "Learn More +"}
                   </button>
                 </div>
               </div>
@@ -174,13 +187,13 @@ export default function WellnessPage() {
       </div>
 
       {/* 4. Informational Text Strip */}
-      <div className="w-full mb-24 border-t border-[#1a1a1a]/10 pt-12">
+      <div className="w-full py-16 border-t border-[#1a1a1a]/30">
         <CustomContainer>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {INFO_BLURBS.map((text, i) => (
               <div
                 key={i}
-                className="text-[#4A4A4A] font-serif text-[1rem] md:text-[1.125rem] leading-[1.6]"
+                className="text-[#4A4A4A] font-serif text-base md:text-lg leading-relaxed"
               >
                 {text}
                 <a href="#" className="ml-1 underline text-[#1a1a1a]">
@@ -193,13 +206,13 @@ export default function WellnessPage() {
       </div>
 
       {/* 5. Nearby Things To Do */}
-      <div className="w-full mb-24">
+      <div className="w-full py-16">
         <CustomContainer>
-          <div className="text-center mb-10">
-            <h2 className="text-[1.5rem] md:text-2xl lg:text-[2.5rem] font-serif text-[#1a1a1a] leading-tight mb-6">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#1a1a1a] leading-tight mb-12">
               Nearby Things To Do
             </h2>
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
               {[
                 "All",
                 "Family & Children's Activities",
@@ -214,7 +227,7 @@ export default function WellnessPage() {
                   ${
                     i === 0
                       ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
-                      : "bg-[#f5f1eb] text-[#4A4A4A] border-[#1a1a1a]/10 hover:border-[#1a1a1a]/30"
+                      : "bg-white text-[#4A4A4A] border-[#1a1a1a]/20 hover:border-[#1a1a1a]/40"
                   }`}
                 >
                   {filter}
@@ -227,18 +240,18 @@ export default function WellnessPage() {
             {NEARBY_THINGS.map((item, i) => (
               <div
                 key={i}
-                className="bg-[#f5f1eb] p-8 rounded-xl shadow-sm border border-[#1a1a1a]/10 hover:shadow-md transition-shadow"
+                className="bg-white p-8 rounded-xl shadow-sm border border-[#1a1a1a]/10 hover:shadow-md transition-shadow"
               >
                 <span className="text-[10px] uppercase tracking-widest text-[#4A4A4A]/60 mb-2 block font-poppins">
                   {item.category}
                 </span>
-                <h3 className="font-serif text-[1.125rem] font-medium text-[#1a1a1a] leading-tight mb-1">
+                <h3 className="font-serif text-lg font-medium text-[#1a1a1a] leading-tight mb-1">
                   {item.title}
                 </h3>
                 <p className="text-xs font-bold text-[#1a1a1a] mb-4">
                   {item.distance}
                 </p>
-                <p className="text-[1rem] md:text-[1.125rem] font-serif text-[#4A4A4A] border-t border-[#1a1a1a]/10 pt-4 leading-[1.6]">
+                <p className="font-serif text-base md:text-lg text-[#4A4A4A] border-t border-[#1a1a1a]/30 pt-4 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -248,10 +261,10 @@ export default function WellnessPage() {
       </div>
 
       {/* 6. Local Attractions */}
-      <div className="w-full mb-24">
+      <div className="w-full py-16">
         <CustomContainer>
           <div className="text-center mb-10">
-            <h2 className="text-[1.5rem] md:text-2xl lg:text-[2.5rem] font-serif text-[#1a1a1a] leading-tight">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#1a1a1a] leading-tight">
               Local Attractions
             </h2>
           </div>
@@ -259,9 +272,9 @@ export default function WellnessPage() {
             {LOCAL_ATTRACTIONS.map((attr, i) => (
               <div
                 key={i}
-                className="p-6 bg-[#f5f1eb] rounded border border-[#1a1a1a]/10 hover:bg-[#f5f1eb] transition-colors"
+                className="bg-white p-8 rounded border border-[#1a1a1a]/20 hover:shadow-md transition-all"
               >
-                <h3 className="font-serif text-[1.125rem] font-medium text-[#1a1a1a] leading-tight mb-1">
+                <h3 className="font-serif text-lg font-medium text-[#1a1a1a] leading-tight mb-1">
                   {attr.name}
                 </h3>
                 <p className="text-xs text-[#4A4A4A]/70 uppercase font-poppins">
@@ -274,42 +287,53 @@ export default function WellnessPage() {
       </div>
 
       {/* 7. FAQ Section */}
-      <div className="w-full mb-24 pl-[64px] pr-[64px]">
-        <h2 className="text-[1.5rem] md:text-2xl lg:text-[2.5rem] font-serif text-[#1a1a1a] leading-tight mb-8">
-          Frequently Asked Questions
-        </h2>
-        <div className="space-y-4">
-          {FAQS.map((faq, i) => (
-            <details
-              key={i}
-              className="group border-b border-[#1a1a1a]/10 pb-4 cursor-pointer"
-            >
-              <summary className="flex justify-between items-center font-serif font-medium text-[#1a1a1a] list-none leading-tight">
-                <span className="text-[1rem] md:text-[1.125rem]">
-                  {faq.question}
-                </span>
-                <span className="transition group-open:rotate-180">
-                  <svg
-                    width="12"
-                    height="8"
-                    viewBox="0 0 12 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+      <section className="py-24 bg-white">
+        <CustomContainer>
+          <div className="max-w-4xl mx-auto">
+            <SectionHeading
+              sub="Information"
+              title="Frequently Asked Questions"
+            />
+
+            <div className="space-y-4">
+              {FAQS.map((faq, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white border border-neutral-200 rounded-lg overflow-hidden shadow-sm"
+                >
+                  <button
+                    onClick={() => toggle(idx)}
+                    className="w-full flex items-center justify-between p-6 text-left hover:bg-neutral-50 transition-colors"
                   >
-                    <path
-                      d="M1.41 0.589996L6 5.17L10.59 0.589996L12 2L6 8L0 2L1.41 0.589996Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>
-              </summary>
-              <p className="text-[#4A4A4A] font-serif text-[1rem] md:text-[1.125rem] mt-4 leading-[1.6]">
-                {faq.answer}
-              </p>
-            </details>
-          ))}
-        </div>
-      </div>
+                    <span className="font-serif text-lg text-neutral-800">
+                      {faq.q}
+                    </span>
+                    {openIndex === idx ? (
+                      <Minus size={20} className="text-[#c6a87c]" />
+                    ) : (
+                      <Plus size={20} className="text-neutral-400" />
+                    )}
+                  </button>
+                  <AnimatePresence>
+                    {openIndex === idx && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="p-6 pt-0 text-neutral-500 font-poppins text-sm leading-relaxed border-t border-dashed border-neutral-200 mt-2">
+                          {faq.a}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
+          </div>
+        </CustomContainer>
+      </section>
     </div>
   );
 }

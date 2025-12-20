@@ -16,8 +16,8 @@ const HeroSplit = () => {
 
   return (
     <>
-      {/* Top 50% VH Image Carousel */}
-      <section className="relative h-[50vh] w-full overflow-hidden bg-neutral-900">
+      {/* Top 70% VH Image Carousel */}
+      <section className="relative h-[70vh] w-full overflow-hidden bg-neutral-900">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -37,7 +37,7 @@ const HeroSplit = () => {
       </section>
 
       {/* Bottom Content Section */}
-      <section className="bg-primary-bg py-20 min-h-[50vh]">
+      <section className="bg-white py-32 min-h-[30vh]">
         <CustomContainer>
           <div className="flex flex-col items-center">
             {/* Welcome Text */}
@@ -46,9 +46,9 @@ const HeroSplit = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-center w-full mb-16"
+              className="text-center w-full mb-20"
             >
-              <h2 className="text-1xl md:text-5xl lg:text-6xl font-serif leading-tight mb-6 text-neutral-900 whitespace-normal md:whitespace-nowrap">
+              <h2 className="text-xl md:text-5xl lg:text-6xl font-serif leading-tight mb-6 text-neutral-900 whitespace-normal md:whitespace-nowrap">
                 Experience wellness at our luxury hotel <br /> in the heart of
                 HITEC City.
               </h2>
@@ -67,9 +67,9 @@ const HeroSplit = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="border border-neutral-200 rounded-lg p-8 flex flex-col md:flex-row items-start md:items-center gap-6 shadow-sm bg-[#f5f1eb]"
+                className="border border-neutral-200 rounded-lg p-8 flex flex-col md:flex-row items-start md:items-center gap-6 shadow-sm bg-white"
               >
-                <div className="p-3 bg-[#ede8df] rounded-full text-neutral-600">
+                <div className="p-3 bg-neutral-100 rounded-full text-neutral-600">
                   <Gift size={24} />
                 </div>
                 <div className="flex-1">
@@ -94,7 +94,7 @@ const HeroSplit = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="border border-neutral-200 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm bg-[#f5f1eb]"
+                className="border border-neutral-200 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm bg-white"
               >
                 <div className="flex items-center gap-6 w-full">
                   <div className="w-16 h-10 bg-neutral-900 rounded-md relative overflow-hidden flex-shrink-0">

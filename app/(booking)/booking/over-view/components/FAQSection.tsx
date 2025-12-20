@@ -11,7 +11,7 @@ const FAQSection = () => {
   const toggle = (idx: number) => setOpenIndex(openIndex === idx ? null : idx);
 
   return (
-    <section className="py-24 bg-primary-bg">
+    <section className="py-24 bg-white">
       <CustomContainer>
         <div className="max-w-4xl mx-auto">
           <SectionHeading
@@ -23,11 +23,11 @@ const FAQSection = () => {
             {FAQS.map((faq, idx) => (
               <div
                 key={idx}
-                className="bg-[#f5f1eb] border border-neutral-200 rounded-lg overflow-hidden shadow-sm"
+                className="bg-white border border-neutral-200 rounded-lg overflow-hidden shadow-sm"
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-[#ede8df] transition-colors"
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-neutral-50 transition-colors"
                 >
                   <span className="font-serif text-lg text-neutral-800">
                     {faq.q}
