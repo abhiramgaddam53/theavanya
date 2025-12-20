@@ -37,7 +37,7 @@ const AmenitiesSection = () => {
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                 className="flex items-start gap-4"
               >
-                <div className="p-3 bg-[#f5f1eb] rounded-full shadow-sm text-neutral-800">
+                <div className="p-3 bg-neutral-100 rounded-full shadow-sm text-neutral-800">
                   <item.icon size={20} strokeWidth={1.5} />
                 </div>
                 <div>

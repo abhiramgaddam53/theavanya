@@ -8,7 +8,7 @@ const WaysToEnjoySection = () => {
   const [activeTab, setActiveTab] = useState("spa");
 
   return (
-    <section className="py-24 bg-primary-bg text-neutral-900">
+    <section className="py-24 bg-white text-neutral-900">
       <CustomContainer>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif mb-12">

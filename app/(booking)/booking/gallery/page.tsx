@@ -375,11 +375,11 @@ const SectionHeader = ({
   description?: string;
 }) => (
   <div className="flex flex-col items-center justify-center mb-6 md:mb-8 text-center">
-    <h3 className="text-[#4A4A4A] tracking-tight text-sm md:text-base mb-4 font-medium font-poppins">
+    <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl  mb-4 font-medium font-poppins">
       {title}
-    </h3>
+    </h2>
     {description && (
-      <p className="font-serif text-3xl md:text-4xl leading-tight tracking-tighter text-[#1a1a1a] mb-6">
+      <p className="font-serif   text-[#1a1a1a] mb-6">
         {description}
       </p>
     )}
@@ -435,7 +435,7 @@ const GallerySection = ({ category }: { category: GalleryCategory }) => {
 
 export default function GalleryPage() {
   return (
-    <div className="min-h-screen bg-primary-bg pt-32 pb-32">
+    <div className="min-h-screen bg-white pt-32 pb-32">
       <CustomContainer>
         <div className="flex flex-col">
           {galleryData.map((category) => (

@@ -19,7 +19,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.8 }}
-    className={`mb-4 ${align === "center" ? "text-center" : "text-left"}`}
+    className={`mb-6 ${align === "center" ? "text-center" : "text-left"}`}
   >
     <span
       className={`block text-xs font-bold tracking-[0.2em] uppercase mb-1 font-poppins ${
