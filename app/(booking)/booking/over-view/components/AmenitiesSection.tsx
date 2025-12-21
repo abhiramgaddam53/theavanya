@@ -7,9 +7,9 @@ import { AMENITIES } from "../constants";
 
 const AmenitiesSection = () => {
   return (
-    <section className="py-12 bg-[#1a1a1a] text-white">
+    <section className="py-8 md:py-16 bg-[#1a1a1a] text-white">
       <CustomContainer>
-        <div className="grid md:grid-cols-2 gap-16 items-start mb-20">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start mb-12 md:mb-12">
           <div>
             <SectionHeading
               sub="Amenities"
@@ -17,7 +17,7 @@ const AmenitiesSection = () => {
               align="left"
               light={true}
             />
-            <p className="text-gray-300 font-poppins mb-12 leading-relaxed max-w-md">
+            <p className="text-gray-300 font-poppins mb-8 md:mb-12 leading-relaxed max-w-md text-sm md:text-base">
               From our world-class fitness studio to the serene outdoor pool,
               every detail is designed to elevate your stay. Experience a
               seamless blend of productivity and relaxation.
@@ -27,7 +27,7 @@ const AmenitiesSection = () => {
             </button>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:pt-12">
+          <div className="grid grid-cols-2 gap-x-4 md:gap-x-8 gap-y-6 md:gap-y-8 md:pt-6">
             {AMENITIES.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -52,11 +52,11 @@ const AmenitiesSection = () => {
         </div>
 
         {/* HOTEL INFORMATION SUB-SECTION */}
-        <div className="border-t border-gray-600 pt-16 mt-8">
-          <h3 className="text-2xl font-serif text-white mb-8 uppercase tracking-widest font-bold">
+        <div className="border-t border-gray-600 pt-8 md:pt-12 mt-4 md:mt-6">
+          <h3 className="text-xl md:text-2xl font-serif text-white mb-6 md:mb-6 uppercase tracking-widest font-bold">
             Hotel Information
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 font-poppins text-sm text-gray-300">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 font-poppins text-xs md:text-sm text-gray-300">
             {/* Check-in/Out */}
             <div className="space-y-4">
               <div className="flex items-start gap-3">

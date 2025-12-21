@@ -17,7 +17,7 @@ const HeroSplit = () => {
   return (
     <>
       {/* Top 70% VH Image Carousel */}
-      <section className="relative h-[70vh] w-full overflow-hidden bg-neutral-900">
+      <section className="relative h-[50vh] md:h-[70vh] w-full overflow-hidden bg-neutral-900">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -37,7 +37,7 @@ const HeroSplit = () => {
       </section>
 
       {/* Bottom Content Section */}
-      <section className="bg-white py-32 min-h-[30vh]">
+      <section className="bg-white py-12 md:py-32 min-h-[30vh]">
         <CustomContainer>
           <div className="flex flex-col items-center">
             {/* Welcome Text */}
@@ -46,13 +46,13 @@ const HeroSplit = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-center w-full mb-20"
+              className="text-center w-full mb-8 md:mb-20"
             >
-              <h2 className="text-xl md:text-5xl lg:text-6xl font-serif leading-tight mb-6 text-neutral-900 whitespace-normal md:whitespace-nowrap">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif leading-tight mb-4 md:mb-6 text-neutral-900">
                 Experience wellness at our luxury hotel <br /> in the heart of
                 HITEC City.
               </h2>
-              <p className="text-neutral-500 font-poppins font-light text-lg leading-relaxed max-w-5xl mx-auto">
+              <p className="text-neutral-500 font-poppins font-light text-sm md:text-lg leading-relaxed max-w-5xl mx-auto px-2">
                 Located in the heart of Raheja Mindspace IT Park, The avanya
                 Hyderabad Mindspace is a luxurious hotel with 427 rooms catering
                 to business and leisure travellers. The hotel in HITEC City
@@ -67,16 +67,16 @@ const HeroSplit = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="border border-neutral-200 rounded-lg p-8 flex flex-col md:flex-row items-start md:items-center gap-6 shadow-sm bg-white"
+                className="border border-neutral-200 rounded-lg p-4 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 shadow-sm bg-white"
               >
                 <div className="p-3 bg-neutral-100 rounded-full text-neutral-600">
                   <Gift size={24} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-serif font-bold text-neutral-900 mb-2">
+                  <h3 className="text-lg md:text-xl font-serif font-bold text-neutral-900 mb-2">
                     Festive Celebrations at avanya
                   </h3>
-                  <p className="text-sm font-poppins text-neutral-600 leading-relaxed">
+                  <p className="text-xs md:text-sm font-poppins text-neutral-600 leading-relaxed">
                     Indulge in the joy of the season with curated cuisine,
                     crafted beverages, and spirited celebrations. Your perfect
                     holiday moments await across our festive feasts and
@@ -94,14 +94,14 @@ const HeroSplit = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="border border-neutral-200 rounded-lg p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm bg-white"
+                className="border border-neutral-200 rounded-lg p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 shadow-sm bg-white"
               >
                 <div className="flex items-center gap-6 w-full">
                   <div className="w-16 h-10 bg-neutral-900 rounded-md relative overflow-hidden flex-shrink-0">
                     <div className="absolute top-2 left-2 w-4 h-3 bg-[#c6a87c] rounded-[2px]" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-serif font-bold text-neutral-900">
+                    <h3 className="text-base md:text-lg font-serif font-bold text-neutral-900">
                       Earn up to 4 Free Nights and Silver Elite Status
                     </h3>
                     <p className="text-xs font-poppins text-neutral-500 mt-1">

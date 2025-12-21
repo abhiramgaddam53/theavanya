@@ -19,7 +19,9 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.8 }}
-    className={`mb-6 ${align === "center" ? "text-center" : "text-left"}`}
+    className={`mb-4 md:mb-6 ${
+      align === "center" ? "text-center" : "text-left"
+    }`}
   >
     <span
       className={`block text-xs font-bold tracking-[0.2em] uppercase mb-1 font-poppins ${
@@ -30,7 +32,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
     </span>
 
     <h2
-      className={`text-4xl md:text-5xl font-serif leading-tight ${
+      className={`text-2xl md:text-4xl lg:text-5xl font-serif leading-tight ${
         light ? "text-white" : "text-neutral-900"
       }`}
     >

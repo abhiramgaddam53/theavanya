@@ -112,9 +112,9 @@ export default function WellnessPage() {
 
   const toggle = (idx: number) => setOpenIndex(openIndex === idx ? null : idx);
   return (
-    <div className="w-full bg-white pb-32">
+    <div className="w-full bg-white pb-16 md:pb-32">
       {/* 1. Hero Image Section */}
-      <div className="relative w-full h-[65vh] bg-gray-200">
+      <div className="relative w-full h-[50vh] md:h-[65vh] bg-gray-200">
         <Image
           src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop"
           alt="Wellness Hero"
@@ -127,11 +127,11 @@ export default function WellnessPage() {
       {/* 2. Intro Text Section */}
       <div className="w-full max-w-[1400px] mx-auto">
         <CustomContainer>
-          <div className="max-w-[900px] mx-auto py-32 md:py-32 text-center">
+          <div className="max-w-[900px] mx-auto py-12 md:py-32 text-center">
             <p className="text-[#4A4A4A] tracking-tight text-sm md:text-base mb-8 font-medium font-poppins">
               Welcome to The avanya Hyderabad Mindspace
             </p>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-tight mb-8 text-neutral-900 max-w-4xl mx-auto">
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6 md:mb-8 text-neutral-900 max-w-4xl mx-auto">
               Explore notable attractions from our spa hotel in Hyderabad
             </h2>
           </div>
@@ -139,10 +139,10 @@ export default function WellnessPage() {
       </div>
 
       {/* 3. On-Site Outlets Section */}
-      <div className="w-full py-16 min-h-screen flex items-center">
+      <div className="w-full py-8 md:py-16 min-h-screen flex items-center">
         <CustomContainer>
-          <div className="flex justify-between items-end mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#1a1a1a] leading-tight">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-4">
+            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-[#1a1a1a] leading-tight">
               On-Site Outlets
             </h2>
             <div className="hidden md:flex gap-4 text-sm text-[#4A4A4A]">
@@ -152,13 +152,13 @@ export default function WellnessPage() {
           </div>
 
           <div
-            className="flex overflow-x-auto gap-6 pb-8 snap-x md:grid md:grid-cols-4 md:overflow-visible scrollbar-hide [&::-webkit-scrollbar]:hidden"
+            className="flex overflow-x-auto gap-4 md:gap-6 pb-8 snap-x md:grid md:grid-cols-4 md:overflow-visible scrollbar-hide [&::-webkit-scrollbar]:hidden"
             style={{ msOverflowStyle: "none" }}
           >
             {OUTLETS.map((outlet) => (
               <div
                 key={outlet.id}
-                className="relative min-w-[280px] md:min-w-0 h-[450px] rounded-lg overflow-hidden group cursor-pointer snap-center"
+                className="relative min-w-[250px] md:min-w-0 h-[400px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer snap-center"
               >
                 <div className="absolute inset-0 bg-gray-300">
                   <Image
@@ -169,11 +169,11 @@ export default function WellnessPage() {
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
-                <div className="absolute bottom-0 left-0 p-8 w-full">
+                <div className="absolute bottom-0 left-0 p-4 md:p-8 w-full">
                   <span className="inline-block px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-[10px] uppercase tracking-wider rounded mb-3">
                     {outlet.type}
                   </span>
-                  <h3 className="text-white font-serif text-lg md:text-xl leading-tight mb-4">
+                  <h3 className="text-white font-serif text-base md:text-lg lg:text-xl leading-tight mb-3 md:mb-4">
                     {outlet.title}
                   </h3>
                   <button className="text-white text-sm border border-white/50 rounded-full px-4 py-2 hover:bg-white hover:text-black transition-colors duration-300">
@@ -187,9 +187,9 @@ export default function WellnessPage() {
       </div>
 
       {/* 4. Informational Text Strip */}
-      <div className="w-full py-16 border-t border-[#1a1a1a]/30">
+      <div className="w-full py-8 md:py-16 border-t border-[#1a1a1a]/30">
         <CustomContainer>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
             {INFO_BLURBS.map((text, i) => (
               <div
                 key={i}
@@ -208,11 +208,11 @@ export default function WellnessPage() {
       {/* 5. Nearby Things To Do */}
       <div className="w-full py-16">
         <CustomContainer>
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#1a1a1a] leading-tight mb-12">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-[#1a1a1a] leading-tight mb-8 md:mb-12">
               Nearby Things To Do
             </h2>
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12">
               {[
                 "All",
                 "Family & Children's Activities",
@@ -236,11 +236,11 @@ export default function WellnessPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {NEARBY_THINGS.map((item, i) => (
               <div
                 key={i}
-                className="bg-white p-8 rounded-xl shadow-sm border border-[#1a1a1a]/10 hover:shadow-md transition-shadow"
+                className="bg-white p-4 md:p-8 rounded-xl shadow-sm border border-[#1a1a1a]/10 hover:shadow-md transition-shadow"
               >
                 <span className="text-[10px] uppercase tracking-widest text-[#4A4A4A]/60 mb-2 block font-poppins">
                   {item.category}
@@ -261,18 +261,18 @@ export default function WellnessPage() {
       </div>
 
       {/* 6. Local Attractions */}
-      <div className="w-full py-16">
+      <div className="w-full py-8 md:py-16">
         <CustomContainer>
-          <div className="text-center mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#1a1a1a] leading-tight">
+          <div className="text-center mb-6 md:mb-10">
+            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-[#1a1a1a] leading-tight">
               Local Attractions
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
             {LOCAL_ATTRACTIONS.map((attr, i) => (
               <div
                 key={i}
-                className="bg-white p-8 rounded border border-[#1a1a1a]/20 hover:shadow-md transition-all"
+                className="bg-white p-4 md:p-8 rounded border border-[#1a1a1a]/20 hover:shadow-md transition-all"
               >
                 <h3 className="font-serif text-lg font-medium text-[#1a1a1a] leading-tight mb-1">
                   {attr.name}
@@ -287,7 +287,7 @@ export default function WellnessPage() {
       </div>
 
       {/* 7. FAQ Section */}
-      <section className="py-24 bg-white">
+      <section className="py-12 md:py-24 bg-white">
         <CustomContainer>
           <div className="max-w-4xl mx-auto">
             <SectionHeading
@@ -295,7 +295,7 @@ export default function WellnessPage() {
               title="Frequently Asked Questions"
             />
 
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4 mt-6 md:mt-0">
               {FAQS.map((faq, idx) => (
                 <div
                   key={idx}
@@ -303,9 +303,9 @@ export default function WellnessPage() {
                 >
                   <button
                     onClick={() => toggle(idx)}
-                    className="w-full flex items-center justify-between p-6 text-left hover:bg-neutral-50 transition-colors"
+                    className="w-full flex items-center justify-between p-4 md:p-6 text-left hover:bg-neutral-50 transition-colors"
                   >
-                    <span className="font-serif text-lg text-neutral-800">
+                    <span className="font-serif text-base md:text-lg text-neutral-800 pr-2">
                       {faq.q}
                     </span>
                     {openIndex === idx ? (
@@ -322,7 +322,7 @@ export default function WellnessPage() {
                         exit={{ height: 0, opacity: 0 }}
                         className="overflow-hidden"
                       >
-                        <div className="p-6 pt-0 text-neutral-500 font-poppins text-sm leading-relaxed border-t border-dashed border-neutral-200 mt-2">
+                        <div className="p-4 md:p-6 pt-0 text-neutral-500 font-poppins text-xs md:text-sm leading-relaxed border-t border-dashed border-neutral-200 mt-2">
                           {faq.a}
                         </div>
                       </motion.div>

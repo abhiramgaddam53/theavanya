@@ -11,7 +11,7 @@ const FAQSection = () => {
   const toggle = (idx: number) => setOpenIndex(openIndex === idx ? null : idx);
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 md:py-24 bg-white">
       <CustomContainer>
         <div className="max-w-4xl mx-auto">
           <SectionHeading
@@ -19,7 +19,7 @@ const FAQSection = () => {
             title="Frequently Asked Questions"
           />
 
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4 mt-6 md:mt-0">
             {FAQS.map((faq, idx) => (
               <div
                 key={idx}
@@ -27,9 +27,9 @@ const FAQSection = () => {
               >
                 <button
                   onClick={() => toggle(idx)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-neutral-50 transition-colors"
+                  className="w-full flex items-center justify-between p-4 md:p-6 text-left hover:bg-neutral-50 transition-colors"
                 >
-                  <span className="font-serif text-lg text-neutral-800">
+                  <span className="font-serif text-base md:text-lg text-neutral-800 pr-2">
                     {faq.q}
                   </span>
                   {openIndex === idx ? (
@@ -46,7 +46,7 @@ const FAQSection = () => {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden"
                     >
-                      <div className="p-6 pt-0 text-neutral-500 font-poppins text-sm leading-relaxed border-t border-dashed border-neutral-200 mt-2">
+                      <div className="p-4 md:p-6 pt-0 text-neutral-500 font-poppins text-xs md:text-sm leading-relaxed border-t border-dashed border-neutral-200 mt-2">
                         {faq.a}
                       </div>
                     </motion.div>

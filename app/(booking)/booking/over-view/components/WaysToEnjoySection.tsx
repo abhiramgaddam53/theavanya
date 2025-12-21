@@ -8,20 +8,20 @@ const WaysToEnjoySection = () => {
   const [activeTab, setActiveTab] = useState("spa");
 
   return (
-    <section className="py-24 bg-white text-neutral-900">
+    <section className="py-12 md:py-24 bg-white text-neutral-900">
       <CustomContainer>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif mb-12">
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-serif mb-8 md:mb-12">
             More Ways to Enjoy Your Stay
           </h2>
 
           {/* Tabs */}
-          <div className="flex justify-center space-x-12 border-b border-neutral-200 w-full md:w-auto">
+          <div className="flex justify-center space-x-4 md:space-x-12 border-b border-neutral-200 w-full md:w-auto">
             {WAYS_TO_ENJOY.map((item) => (
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`pb-4 text-sm font-bold uppercase tracking-widest transition-all relative ${
+                className={`pb-3 md:pb-4 text-xs md:text-sm font-bold uppercase tracking-widest transition-all relative ${
                   activeTab === item.id
                     ? "text-neutral-900"
                     : "text-neutral-400 hover:text-neutral-600"
@@ -52,12 +52,19 @@ const WaysToEnjoySection = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.4 }}
-                    className="flex flex-col md:flex-row items-center gap-16 text-left"
+                    className="flex flex-col md:flex-row items-center gap-8 md:gap-16 text-left"
                   >
                     <div
                       className="w-full md:w-1/2 overflow-hidden rounded-xl shadow-lg"
-                      style={{ height: 500 }}
+                      style={{ height: "300px" }}
                     >
+                      <style jsx>{`
+                        @media (min-width: 768px) {
+                          div {
+                            height: 500px !important;
+                          }
+                        }
+                      `}</style>
                       <img
                         src={item.image}
                         alt={item.title}
@@ -68,12 +75,14 @@ const WaysToEnjoySection = () => {
                       <span className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500 mb-4 block">
                         {item.label.toUpperCase()}
                       </span>
-                      <h3 className="text-4xl font-serif mb-8">{item.title}</h3>
-                      <p className="text-neutral-500 font-poppins leading-relaxed mb-10 text-lg">
+                      <h3 className="text-2xl md:text-4xl font-serif mb-4 md:mb-8">
+                        {item.title}
+                      </h3>
+                      <p className="text-neutral-500 font-poppins leading-relaxed mb-6 md:mb-10 text-sm md:text-lg">
                         {item.desc}
                       </p>
-                      <div className="flex items-center gap-6">
-                        <button className="px-8 py-4 bg-neutral-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-[#c6a87c] transition-colors shadow-lg">
+                      <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3 md:gap-6">
+                        <button className="px-6 md:px-8 py-3 md:py-4 bg-neutral-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-[#c6a87c] transition-colors shadow-lg">
                           Book Now
                         </button>
                         <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:text-[#c6a87c] transition-colors">

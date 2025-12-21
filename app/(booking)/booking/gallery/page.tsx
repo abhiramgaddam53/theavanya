@@ -374,12 +374,12 @@ const SectionHeader = ({
   title: string;
   description?: string;
 }) => (
-  <div className="flex flex-col items-center justify-center mb-6 md:mb-8 text-center">
-    <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl  mb-4 font-medium font-poppins">
+  <div className="flex flex-col items-center justify-center mb-4 md:mb-6 lg:mb-8 text-center">
+    <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-3 md:mb-4 font-medium font-poppins">
       {title}
     </h2>
     {description && (
-      <p className="font-serif   text-[#1a1a1a] mb-6">
+      <p className="font-serif text-sm md:text-base text-[#1a1a1a] mb-4 md:mb-6">
         {description}
       </p>
     )}
@@ -390,13 +390,16 @@ const GallerySection = ({ category }: { category: GalleryCategory }) => {
   const { images } = category;
 
   return (
-    <section id={category.id} className="mb-32 last:mb-0 scroll-mt-32">
+    <section
+      id={category.id}
+      className="mb-16 md:mb-32 last:mb-0 scroll-mt-16 md:scroll-mt-32"
+    >
       <SectionHeader
         title={category.title}
         description={category.description}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 auto-rows-[300px]">
+      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-[250px] md:auto-rows-[300px]">
         {images.map((image, index) => {
           // Set default aspect ratio and size
           let sizes =
@@ -435,7 +438,7 @@ const GallerySection = ({ category }: { category: GalleryCategory }) => {
 
 export default function GalleryPage() {
   return (
-    <div className="min-h-screen bg-white pt-32 pb-32">
+    <div className="min-h-screen bg-white pt-12 md:pt-32 pb-16 md:pb-32">
       <CustomContainer>
         <div className="flex flex-col">
           {galleryData.map((category) => (
