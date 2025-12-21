@@ -48,7 +48,7 @@ export default function BookingSummaryCard({
                     className="object-cover"
                 />
             </div>
-            <div className="bg-[#F2EFEC] flex flex-col gap-4 p-6 w-full h-fit">
+            <div className="flex flex-col gap-4 p-6 w-full h-fit">
 
                 {/* 2. Room Title & Details Link */}
                 <div className="">
