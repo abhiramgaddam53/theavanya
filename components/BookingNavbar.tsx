@@ -39,6 +39,7 @@ export default function BookingNavbar() {
 
   // Hide booking widget on complete-booking page
   const isCompleteBookingPage = pathname.includes("/complete-booking");
+  const isGallaryPage = pathname.includes("/gallery");
 
   return (
     <header className="w-full bg-white border-b border-gray-200 text-[#1a1a1a]">
@@ -47,51 +48,37 @@ export default function BookingNavbar() {
         <div className="flex gap-8 opacity-70">
           <Link
             href="/booking/over-view"
-            className={`${
-              isActive("/booking/over-view")
-                ? "opacity-100 font-bold border-b border-black pb-0.5"
-                : "hover:opacity-100 transition-opacity"
-            }`}
+            className={`${isActive("/booking/over-view")
+              ? "opacity-100 font-bold border-b border-black pb-0.5"
+              : "hover:opacity-100 transition-opacity"
+              }`}
           >
             Overview
           </Link>
           <Link
             href="/booking/gallery"
-            className={`${
-              isActive("/booking/gallery")
-                ? "opacity-100 font-bold border-b border-black pb-0.5"
-                : "hover:opacity-100 transition-opacity"
-            }`}
+            className={`${isActive("/booking/gallery")
+              ? "opacity-100 font-bold border-b border-black pb-0.5"
+              : "hover:opacity-100 transition-opacity"
+              }`}
           >
             Gallery
           </Link>
           <Link
             href="/booking/accommodations"
-            className={`${
-              isActive("/booking/accommodations")
-                ? "opacity-100 font-bold border-b border-black pb-0.5"
-                : "hover:opacity-100 transition-opacity"
-            }`}
+            className={`${isActive("/booking/accommodations")
+              ? "opacity-100 font-bold border-b border-black pb-0.5"
+              : "hover:opacity-100 transition-opacity"
+              }`}
           >
             Accommodations
           </Link>
           <Link
-            href="/booking/events"
-            className={`${
-              isActive("/booking/events")
-                ? "opacity-100 font-bold border-b border-black pb-0.5"
-                : "hover:opacity-100 transition-opacity"
-            }`}
-          >
-            Events
-          </Link>
-          <Link
             href="/booking/wellness"
-            className={`${
-              isActive("/booking/wellness")
-                ? "opacity-100 font-bold border-b border-black pb-0.5"
-                : "hover:opacity-100 transition-opacity"
-            }`}
+            className={`${isActive("/booking/wellness")
+              ? "opacity-100 font-bold border-b border-black pb-0.5"
+              : "hover:opacity-100 transition-opacity"
+              }`}
           >
             Wellness
           </Link>
@@ -139,7 +126,7 @@ export default function BookingNavbar() {
       </div>
 
       {/* 3. Bottom Bar: Booking Widget */}
-      {!isCompleteBookingPage && (
+      {(!isCompleteBookingPage && !isGallaryPage) && (
         <div className="bg-white border-t border-gray-100 px-6 md:px-16 py-4 shadow-sm">
           <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Dates */}

@@ -128,7 +128,7 @@ export default function RatesContent({ villa }: RatesContentProps) {
         </div>
 
         {/* 4. Rates List */}
-        <div className="flex flex-col gap-8 mb-24">
+        <div className="flex flex-col gap-8 mb-6">
           {filteredRooms.map((room) => (
             <RateCard
               key={room.id}

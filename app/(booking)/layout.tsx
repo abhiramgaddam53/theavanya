@@ -13,7 +13,7 @@ export default function BookingLayout({
 }) {
   return (
     <BookingProvider>
-      <div className="bg-white min-h-screen">
+      <div className=" min-h-screen">
         <Suspense fallback={null}>
           <MinimalLoader />
         </Suspense>

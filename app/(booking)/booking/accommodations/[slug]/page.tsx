@@ -27,12 +27,12 @@ export default async function VillaPage({ params, searchParams }: PageProps) {
   const checkOutDate = typeof checkOut === "string" ? new Date(checkOut) : null;
 
   return (
-    <main className="w-full bg-[#f9f9f9]">
+    <main className="w-full bg-primary-bg">
       {/* Hero Section */}
       <HeroCarousel images={villa.images} title={villa.title} />
 
       {/* Content Section */}
-      <section className="w-full bg-white py-24 px-6">
+      <section className="w-full bg-primary-bg py-24 px-6">
         <div className="max-w-[1400px] mx-auto">
           {/* Intro / Description */}
           <div className="mb-20 max-w-4xl mx-auto text-center">
@@ -46,13 +46,12 @@ export default async function VillaPage({ params, searchParams }: PageProps) {
 
           {/* Facilities Section */}
           {villa.facilities && villa.facilities.length > 0 && (
-            <div className="mb-24 grid grid-cols-1 md:grid-cols-3 gap-8 border-y border-[#1a1a1a]/10 py-12">
+            <div className="mb-12 grid grid-cols-1 md:grid-cols-3 gap-8 border-y border-[#1a1a1a]/10 py-12">
               {villa.facilities.map((facility, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col gap-4 px-6 ${
-                    index !== 2 ? "md:border-r border-[#1a1a1a]/10" : ""
-                  }`}
+                  className={`flex flex-col gap-4 px-6 ${index !== 2 ? "md:border-r border-[#1a1a1a]/10" : ""
+                    }`}
                 >
                   <h4 className="font-serif text-2xl text-[#1a1a1a] italic">
                     {facility.title}
@@ -66,7 +65,7 @@ export default async function VillaPage({ params, searchParams }: PageProps) {
           )}
 
           {/* Available Rooms Header */}
-          <div className="mb-12 border-b border-[#1a1a1a]/10 pb-6">
+          <div className="mb-8">
             <h3 className="font-serif text-3xl md:text-4xl text-[#1a1a1a] tracking-tight">
               Available Accommodations
             </h3>
@@ -101,9 +100,8 @@ export default async function VillaPage({ params, searchParams }: PageProps) {
               return (
                 <Link
                   key={room.id}
-                  href={`/booking/accommodations/${villa.slug}/rates?checkIn=${
-                    checkIn || ""
-                  }&checkOut=${checkOut || ""}`}
+                  href={`/booking/accommodations/${villa.slug}/rates?checkIn=${checkIn || ""
+                    }&checkOut=${checkOut || ""}`}
                   className="block group"
                 >
                   <BookingRoomCard
@@ -127,7 +125,7 @@ export default async function VillaPage({ params, searchParams }: PageProps) {
               text="Back to Villas"
               variant="link-arrow"
               size="none"
-              href="/"
+              href="/booking/accommodations"
             />
           </div>
         </div>

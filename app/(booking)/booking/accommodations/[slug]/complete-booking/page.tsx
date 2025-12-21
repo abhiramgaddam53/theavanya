@@ -22,7 +22,7 @@ function CompleteBookingContent() {
   const price = priceString.replace(/[^0-9.]/g, "");
 
   return (
-    <main className="bg-white min-h-screen pt-32 pb-24 px-6 md:px-16">
+    <main className=" min-h-screen pt-32 pb-24 px-6 md:px-16">
       <div className="max-w-[1400px] mx-auto">
         <h1 className="font-poppins text-5xl md:text-6xl text-[#1a1a1a] mb-12">
           Complete Your Booking
