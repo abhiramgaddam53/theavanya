@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Pencil, MoreVertical, Funnel, Upload } from 'lucide-react';
 import dashboardData from "@/lib/data.json";
 import { getStatusBg } from "@/lib/adminUtils";
+import { getHeaderIcon } from '@/lib/headerIcons';
 
 interface Guest {
     reservationId: string;
@@ -113,7 +114,7 @@ export default function GuestListPage() {
     };
 
     return (
-        <div>
+        <div className='bg-[#F3F4F6]'>
             <section className="dash-header">
                 <div>
                     <h1 className="dash-title">Guest List</h1>
@@ -121,7 +122,7 @@ export default function GuestListPage() {
                 </div>
             </section>
 
-            <section className="overview-section font-poppins" style={{ minHeight: '80vh' }}>
+            <section className="overview-section font-poppins">
                 <header className="overview-header" style={{ paddingBottom: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
 
                     {/* Left side: Tabs */}
@@ -197,35 +198,40 @@ export default function GuestListPage() {
                             <tr>
                                 <th>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        <img src="/miscellaneous/grid.png" alt="" style={{ width: '16px' }} onError={(e) => e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB4PSIzIiB5PSIzIiB3aWR0aD0iNyIgaGVpZ2h0PSI3IiBzdHJva2U9IiMzNzQxNTEiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjE0IiB5PSIzIiB3aWR0aD0iNyIgaGVpZ2h0PSI3IiBzdHJva2U9IiMzNzQxNTEiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjE0IiB5PSIxNCIgd2lkdGg9IjciIGhlaWdodD0iNyIgc3Ryb2tlPSIjMzc0MTUxIiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIzIiB5PSIxNCIgd2lkdGg9IjciIGhlaWdodD0iNyIgc3Ryb2tlPSIjMzc0MTUxIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4='} />
+                                        {getHeaderIcon('Reservation ID')}
                                         Reservation ID
                                     </div>
                                 </th>
                                 <th>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        <img src="/miscellaneous/user.png" alt="" style={{ width: '16px' }} onError={(e) => e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjAgMjF2LTJhNCA0IDAgMCAwLTQtNEg4YTQgNCAwIDAgMC00IDR2MiIgc3Ryb2tlPSIjMzc0MTUxIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjciIHI9IjQiIHN0cm9rZT0iIzM3NDE1MSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+'} />
+                                        {getHeaderIcon('Guest Name')}
                                         Guest Name
                                     </div>
                                 </th>
                                 <th>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        <img src="/miscellaneous/bed.png" alt="" style={{ width: '16px' }} onError={(e) => e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMiA0djE2IiBzdHJva2U9IiMzNzQxNTEiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0yIDhoMjB2OGgzIiBzdHJva2U9IiMzNzQxNTEiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0yIDhoMTB2OCIgc3Ryb2tlPSIjMzc0MTUxIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMiA0djEyIiBzdHJva2U9IiMzNzQxNTEiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg=='} />
+                                        {getHeaderIcon('Room Number')}
                                         Room Number
                                     </div>
                                 </th>
                                 <th>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        <img src="/miscellaneous/wallet.png" alt="" style={{ width: '16px' }} onError={(e) => e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB4PSIxIiB5PSI0IiB3aWR0aD0iMjIiIGhlaWdodD0iMTYiIHJ4PSIyIiByeT0iMiIgc3Ryb2tlPSIjMzc0MTUxIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMSIgeTE9IjEwIiB4Mj0iMjMiIHkyPSIxMCIgc3Ryb2tlPSIjMzc0MTUxIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4='} />
+                                        {getHeaderIcon('Total Amount')}
                                         Total Amount
                                     </div>
                                 </th>
                                 <th>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        <img src="/miscellaneous/wallet.png" alt="" style={{ width: '16px' }} onError={(e) => e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB4PSIxIiB5PSI0IiB3aWR0aD0iMjIiIGhlaWdodD0iMTYiIHJ4PSIyIiByeT0iMiIgc3Ryb2tlPSIjMzc0MTUxIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMSIgeTE9IjEwIiB4Mj0iMjMiIHkyPSIxMCIgc3Ryb2tlPSIjMzc0MTUxIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4='} />
+                                        {getHeaderIcon('Amount Paid')}
                                         Amount Paid
                                     </div>
                                 </th>
-                                <th>Status</th>
+                                <th>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        {getHeaderIcon('Status')}
+                                        Status
+                                    </div>
+                                </th>
                                 <th>Actions</th>
                             </tr>
                         </thead>

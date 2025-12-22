@@ -11,7 +11,7 @@ export default function DashboardLayout({
         <>
             <DashNavbar />
             <Sidebar />
-            <main className="dashboard-main">
+            <main className="dashboard-main font-poppins">
                 {children}
             </main>
         </>

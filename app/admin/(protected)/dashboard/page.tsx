@@ -1,6 +1,7 @@
 
 import RevenueChart from "@/components/RevenueChart";
 import dashboardData from "@/lib/data.json";
+import { getHeaderIcon } from '@/lib/headerIcons';
 
 export default function Home() {
     const { header, summaryCards, revenue, rooms, todayOverview, roomStatus, feedback } =
@@ -123,14 +124,54 @@ export default function Home() {
                     <table className="overview-table">
                         <thead>
                             <tr>
-                                <th>Booking ID</th>
-                                <th>Guest Name</th>
-                                <th>Contact</th>
-                                <th>Room Number</th>
-                                <th>Expected Check In</th>
-                                <th>Check-In Time</th>
-                                <th>Status</th>
-                                <th>Check-Out Time</th>
+                                <th>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        {getHeaderIcon('Booking ID')}
+                                        Booking ID
+                                    </div>
+                                </th>
+                                <th>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        {getHeaderIcon('Guest Name')}
+                                        Guest Name
+                                    </div>
+                                </th>
+                                <th>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        {getHeaderIcon('Contact')}
+                                        Contact
+                                    </div>
+                                </th>
+                                <th>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        {getHeaderIcon('Room Number')}
+                                        Room Number
+                                    </div>
+                                </th>
+                                <th>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        {getHeaderIcon('Expected Check In')}
+                                        Expected Check In
+                                    </div>
+                                </th>
+                                <th>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        {getHeaderIcon('Check-In Time')}
+                                        Check-In Time
+                                    </div>
+                                </th>
+                                <th>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        {getHeaderIcon('Status')}
+                                        Status
+                                    </div>
+                                </th>
+                                <th>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        {getHeaderIcon('Check-Out Time')}
+                                        Check-Out Time
+                                    </div>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>

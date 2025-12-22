@@ -31,9 +31,12 @@ const Sidebar = () => {
                     >
                         <Home className="icon" size={18} color={isActive('/admin/dashboard') ? '#fff' : '#5b5a64'} />
                     </Link>
-                    <button className="sidebar-item">
-                        <BedDouble className="icon" size={18} color="#5b5a64" />
-                    </button>
+                    <Link
+                        href="/admin/desk"
+                        className={`sidebar-item ${isActive('/admin/desk') ? 'sidebar-item-active' : ''}`}
+                    >
+                        <BedDouble className="icon" size={18} color={isActive('/admin/desk') ? '#fff' : '#5b5a64'} />
+                    </Link>
                     <button className="sidebar-item">
                         <GripVertical className="icon" size={18} color="#5b5a64" />
                     </button>

@@ -5,6 +5,13 @@
   padding: 24px 32px 32px;
   background-color: #f3f4f6;
   overflow-y: auto;
+  min-height: calc(100vh - 56px);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.dashboard-main::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .dash-header {
