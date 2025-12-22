@@ -6,31 +6,58 @@ import { AWARDS } from "../constants";
 
 const AwardsSection = () => {
   return (
-    <section className="py-16 bg-white border-t border-neutral-100">
+    <section className="py-8 md:py-16 bg-white border-t border-neutral-100">
       <CustomContainer>
         <SectionHeading sub="Recognition" title="Awards" align="center" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 items-start justify-items-center">
-          {AWARDS.map((award, idx) => {
-            const baseClass =
-              "flex items-center p-6 bg-white border border-neutral-200 shadow-lg rounded-lg gap-4 hover:shadow-xl transition-all duration-300 w-full max-w-[520px]";
-            const thirdClass = "md:col-span-2 justify-self-center";
-
-            return (
+        <div className="mt-8 md:mt-12 flex flex-col gap-6 md:gap-12 items-center">
+          {/* Row 1 */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 w-full">
+            {AWARDS.slice(0, 2).map((award) => (
               <motion.div
                 key={award.id}
-                whileHover={{ y: -5 }}
-                className={`${baseClass} ${idx === 2 ? thirdClass : ""}`}
+                className="
+                  flex items-center gap-4 p-6
+                  bg-white border border-neutral-200
+                  shadow-lg rounded-lg hover:shadow-xl
+                  transition-all duration-300
+                  w-full max-w-[520px]
+                "
               >
-                <div className="p-4 bg-neutral-100 rounded-full text-[#c6a87c]">
+                <div className="p-4 bg-neutral-100 rounded-full text-[#c6a87c] shrink-0">
                   <award.icon size={24} />
                 </div>
-                <h4 className="font-serif text-lg leading-tight text-neutral-800">
+
+                <h4 className="font-serif text-lg text-neutral-800">
                   {award.title}
                 </h4>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
+
+          {/* Row 2 */}
+          <div className="flex justify-center w-full">
+            {AWARDS.slice(2, 3).map((award) => (
+              <motion.div
+                key={award.id}
+                className="
+                  flex items-center gap-4 p-6
+                  bg-white border border-neutral-200
+                  shadow-lg rounded-lg hover:shadow-xl
+                  transition-all duration-300
+                  w-full max-w-[520px]
+                "
+              >
+                <div className="p-4 bg-neutral-100 rounded-full text-[#c6a87c] shrink-0">
+                  <award.icon size={24} />
+                </div>
+
+                <h4 className="font-serif text-lg text-neutral-800">
+                  {award.title}
+                </h4>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </CustomContainer>
     </section>

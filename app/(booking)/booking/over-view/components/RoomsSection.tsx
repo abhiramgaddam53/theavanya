@@ -10,13 +10,13 @@ const RoomsSection = () => {
   const row2 = ROOMS.slice(3, 6);
 
   return (
-    <section className="py-16 bg-white min-h-screen flex items-center">
+    <section className="py-8 md:py-16 bg-white min-h-screen flex items-center">
       <CustomContainer>
         {/* Heading */}
         <SectionHeading sub="Accommodations" title="Rooms & Suites" />
 
         {/* First Row of Cards */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+        <div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-6">
           {row1.map((room) => (
             <motion.div
               key={room.id}
@@ -30,7 +30,7 @@ const RoomsSection = () => {
               <img
                 src={room.image}
                 alt={room.name}
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                className="w-full h-full object-cover"
               />
 
               {/* Overlay */}
@@ -65,7 +65,7 @@ const RoomsSection = () => {
         </div>
 
         {/* Second Row of Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {row2.map((room) => (
             <motion.div
               key={room.id}
@@ -79,7 +79,7 @@ const RoomsSection = () => {
               <img
                 src={room.image}
                 alt={room.name}
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                className="w-full h-full object-cover"
               />
 
               {/* Overlay */}
