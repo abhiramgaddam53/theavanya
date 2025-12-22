@@ -6,6 +6,7 @@ import './dashstyle.css'
 import RevenueChart from "@/components/RevenueChart";
 import dashboardData from "@/lib/data.json";
 import { useEffect, useState } from "react";
+import OverviewTable from "@/components/TableList";
 
 export default function Home() {
     const { header, summaryCards, revenue, rooms, todayOverview, roomStatus, feedback } =
@@ -183,7 +184,7 @@ export default function Home() {
                     </header>
 
                     <div className="overview-table-wrapper">
-                        <table className="overview-table">
+                        {/* <table className="overview-table">
                             <thead>
                                 <tr>
                                     <th >Booking ID</th>
@@ -269,7 +270,9 @@ export default function Home() {
                                 <button className="page-btn">‹</button>
                                 <button className="page-btn">›</button>
                             </div>
-                        </footer>
+                        </footer> */}
+                        <OverviewTable todayOverview={dashboardData.todayOverview} />
+
                     </div>
                 </section>
                 <section className="bottom-section">
