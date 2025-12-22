@@ -51,20 +51,109 @@
     "total": 189798,
     "monthlyAvg": 189798,
     "weeklyAvg": 189798,
-    "period": "Yearly",
-    "points": [
-      { "month": "Jan", "value": 4.5 },
-      { "month": "Feb", "value": 7.2 },
-      { "month": "Mar", "value": 6.4 },
-      { "month": "Apr", "value": 9.8 },
-      { "month": "May", "value": 9.0 },
-      { "month": "Jun", "value": 9.4 },
-      { "month": "Jul", "value": 9.8 },
-      { "month": "Aug", "value": 3.8 },
-      { "month": "Sep", "value": 5.6, "highlight": true },
-      { "month": "Oct", "value": 6.9 },
-      { "month": "Nov", "value": 2.2 },
-      { "month": "Dec", "value": 11.8 }
+    "period": [
+      "Yearly",
+      "Monthly"
+    ],
+    "monthlyPoints": [
+      {
+        "label": "Jan",
+        "value": 130
+      },
+      {
+        "label": "Feb",
+        "value": 175
+      },
+      {
+        "label": "Mar",
+        "value": 100
+      },
+      {
+        "label": "Apr",
+        "value": 125
+      },
+      {
+        "label": "May",
+        "value": 150
+      },
+      {
+        "label": "Jun",
+        "value": 115
+      },
+      {
+        "label": "Jul",
+        "value": 200
+      },
+      {
+        "label": "Aug",
+        "value": 225
+      },
+      {
+        "label": "Sep",
+        "value": 250
+      },
+      {
+        "label": "Oct",
+        "value": 175
+      },
+      {
+        "label": "Nov",
+        "value": 300
+      },
+      {
+        "label": "Dec",
+        "value": 225
+      }
+    ],
+    "yearlyPoints": [
+      {
+        "label": "2013",
+        "value": 820
+      },
+      {
+        "label": "2014",
+        "value": 900
+      },
+      {
+        "label": "2015",
+        "value": 760
+      },
+      {
+        "label": "2016",
+        "value": 880
+      },
+      {
+        "label": "2017",
+        "value": 940
+      },
+      {
+        "label": "2018",
+        "value": 1020
+      },
+      {
+        "label": "2019",
+        "value": 1100
+      },
+      {
+        "label": "2020",
+        "value": 980
+      },
+      {
+        "label": "2021",
+        "value": 1200
+      },
+      {
+        "label": "2022",
+        "value": 1350
+      },
+      {
+        "label": "2023",
+        "value": 1500
+      },
+      {
+        "label": "2024",
+        "value": 1650
+      }
     ]
   },
   "rooms": [
@@ -117,11 +206,17 @@
         "roomNumber": "204 - A",
         "expectedCheckIn": "2025-11-05",
         "checkInTime": "02:09:08",
-        "checkInDelta": { "text": "+00:09:08", "type": "positive" },
+        "checkInDelta": {
+          "text": "+00:09:08",
+          "type": "positive"
+        },
         "status": "Checked-Out",
         "statusColor": "#5643C7",
         "checkOutTime": "12:09:08",
-        "checkOutDelta": { "text": "+01:09:08", "type": "negative" }
+        "checkOutDelta": {
+          "text": "+01:09:08",
+          "type": "negative"
+        }
       },
       {
         "bookingId": "#654328",
@@ -143,11 +238,17 @@
         "roomNumber": "210 - C",
         "expectedCheckIn": "2025-11-05",
         "checkInTime": "02:05:42",
-        "checkInDelta": { "text": "+01:55:18", "type": "negative" },
+        "checkInDelta": {
+          "text": "+01:55:18",
+          "type": "negative"
+        },
         "status": "Expected",
         "statusColor": "#F8C313",
         "checkOutTime": "10:05:42",
-        "checkOutDelta": { "text": "+01:55:18", "type": "positive" }
+        "checkOutDelta": {
+          "text": "+01:55:18",
+          "type": "positive"
+        }
       },
       {
         "bookingId": "#654330",
@@ -156,7 +257,10 @@
         "roomNumber": "220 - A",
         "expectedCheckIn": "2025-11-05",
         "checkInTime": "12:05:42",
-        "checkInDelta": { "text": "+01:55:18", "type": "negative" },
+        "checkInDelta": {
+          "text": "+01:55:18",
+          "type": "negative"
+        },
         "status": "Expected",
         "statusColor": "#F8C313",
         "checkOutTime": "02:05:42",
@@ -241,9 +345,7 @@
         "checkOutDelta": null
       }
     ]
-  }
-,
-
+  },
   "roomStatus": {
     "totalRooms": 100,
     "occupiedRooms": 84,
