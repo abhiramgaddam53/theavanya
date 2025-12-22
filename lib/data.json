@@ -7,50 +7,53 @@
   "summaryCards": [
     {
       "id": "todayCheckIn",
-      "label": "Today's Check In",
-      "value": 124,
-      "changePct": 8.7,
+      "label": "Today's Check-Ins",
+      "value": 56,
+      "changePct": 6.4,
       "direction": "up",
+      "insight": "New arrivals from Kochi & Mumbai private charters.",
       "compareText": "from last week"
     },
     {
       "id": "todayCheckOut",
-      "label": "Today's Check Out",
-      "value": 124,
-      "changePct": 8.7,
-      "direction": "up",
+      "label": "Today's Check-Outs",
+      "value": 38,
+      "changePct": -2.1,
+      "direction": "down",
+      "insight": "Extended stays trending this week.",
       "compareText": "from last week"
     },
     {
       "id": "totalInResort",
-      "label": "Total in Resort",
-      "value": 124,
-      "changePct": 8.7,
+      "label": "Total Guests in Resort",
+      "value": 204,
+      "changePct": 8.1,
       "direction": "up",
+      "insight": "88% villas",
       "compareText": "from last week"
     },
     {
       "id": "totalAvailableRooms",
-      "label": "Total Available Rooms",
-      "value": 10,
-      "changePct": 8.7,
-      "direction": "up",
+      "label": "Available Villas",
+      "value": 12,
+      "changePct": -4.3,
+      "direction": "down",
       "compareText": "from last week"
     },
     {
-      "id": "totalOccupiedRooms",
-      "label": "Total Occupied Rooms",
-      "value": 2,
-      "changePct": -8.7,
-      "direction": "down",
+     "id": "totalOccupiedRooms",
+      "label": "Occupied Villas",
+      "value": 84,
+      "changePct": 4.7,
+      "direction": "up",
       "compareText": "from last week"
     }
   ],
   "revenue": {
-    "currency": "INR",
-    "total": 189798,
-    "monthlyAvg": 189798,
-    "weeklyAvg": 189798,
+  "currency": "INR",
+    "total": 27599700,
+    "monthlyAvg": 2299975,
+    "weeklyAvg": 532800,
     "period": [
       "Yearly",
       "Monthly"
@@ -156,229 +159,365 @@
       }
     ]
   },
-  "rooms": [
+ "rooms": [
     {
-      "id": "singleSharing1",
+      "id": "canopyVilla",
       "badge": "2 Deals",
-      "type": "Single Sharing",
-      "occupied": 2,
-      "total": 30,
-      "pricePerDay": 8400,
+      "type": "Canopy Villa",
+      "occupied": 24,
+      "total": 28,
+      "pricePerDay": 28400,
       "currency": "INR"
     },
     {
-      "id": "executive",
+      "id": "heritageCourtyard",
       "badge": "3 Deals",
-      "type": "Executive",
-      "occupied": 2,
-      "total": 30,
-      "pricePerDay": 8400,
+      "type": "Heritage Courtyard",
+      "occupied": 18,
+      "total": 24,
+      "pricePerDay": 26200,
       "currency": "INR"
     },
     {
-      "id": "executiveDeluxe",
+      "id": "rainforestPavilion",
       "badge": "3 Deals",
-      "type": "Executive Deluxe",
-      "occupied": 2,
-      "total": 30,
-      "pricePerDay": 8400,
+      "type": "Rainforest Pavilion",
+      "occupied": 15,
+      "total": 20,
+      "pricePerDay": 31000,
       "currency": "INR"
     },
     {
-      "id": "singleSharing2",
-      "badge": "3 Deals",
-      "type": "Single Sharing",
-      "occupied": 2,
-      "total": 30,
-      "pricePerDay": 8400,
+      "id": "serenityEstate",
+      "badge": "1 Deal",
+      "type": "Serenity Estate",
+      "occupied": 12,
+      "total": 14,
+      "pricePerDay": 38700,
       "currency": "INR"
     }
   ],
-  "todayOverview": {
+"todayOverview": {
     "page": 1,
-    "pageSize": 10,
-    "totalResults": 37,
+    "pageSize": 20,
+    "totalResults": 20,
     "rows": [
       {
-        "bookingId": "#65432327",
-        "guestName": "Pradhyumn Dhondi",
-        "contact": "+91 99860 70124",
-        "roomNumber": "204 - A",
-        "expectedCheckIn": "2025-11-05",
-        "checkInTime": "02:09:08",
-        "checkInDelta": {
-          "text": "+00:09:08",
-          "type": "positive"
-        },
-        "status": "Checked-Out",
-        "statusColor": "#5643C7",
-        "checkOutTime": "12:09:08",
-        "checkOutDelta": {
-          "text": "+01:09:08",
-          "type": "negative"
-        }
-      },
-      {
-        "bookingId": "#33654328",
-        "guestName": "Ananya Sharma",
-        "contact": "+91 90000 11111",
-        "roomNumber": "205 - B",
-        "expectedCheckIn": "2025-11-05",
-        "checkInTime": "02:05:42",
+        "bookingId": "#AVN-23104",
+        "guestName": "Aryan Mehta",
+        "contact": "+91 98161 23804",
+        "roomNumber": "A108",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "10:42:08",
         "checkInDelta": null,
         "status": "Checked-In",
         "statusColor": "#0D824B",
-        "checkOutTime": "02:05:42",
-        "checkOutDelta": null
-      },
-      {
-        "bookingId": "#63354329",
-        "guestName": "Rahul Verma",
-        "contact": "+91 90000 22222",
-        "roomNumber": "210 - C",
-        "expectedCheckIn": "2025-11-05",
-        "checkInTime": "02:05:42",
-        "checkInDelta": {
-          "text": "+01:55:18",
-          "type": "negative"
-        },
-        "status": "Expected",
-        "statusColor": "#F8C313",
-        "checkOutTime": "10:05:42",
-        "checkOutDelta": {
-          "text": "+01:55:18",
-          "type": "positive"
-        }
-      },
-      {
-        "bookingId": "#12654330",
-        "guestName": "Sneha Patil",
-        "contact": "+91 90000 33333",
-        "roomNumber": "220 - A",
-        "expectedCheckIn": "2025-11-05",
-        "checkInTime": "12:05:42",
-        "checkInDelta": {
-          "text": "+01:55:18",
-          "type": "negative"
-        },
-        "status": "Expected",
-        "statusColor": "#F8C313",
-        "checkOutTime": "02:05:42",
-        "checkOutDelta": null
-      },
-      {
-        "bookingId": "#34654331",
-        "guestName": "Amit Kumar",
-        "contact": "+91 90000 44444",
-        "roomNumber": "222 - B",
-        "expectedCheckIn": "2025-11-05",
-        "checkInTime": "02:05:42",
-        "checkInDelta": null,
-        "status": "Checked-In",
-        "statusColor": "#0D824B",
-        "checkOutTime": "02:05:42",
-        "checkOutDelta": null
-      },
-      {
-        "bookingId": "#67654332",
-        "guestName": "Neha Gupta",
-        "contact": "+91 90000 55555",
-        "roomNumber": "225 - C",
-        "expectedCheckIn": "2025-11-05",
-        "checkInTime": "02:05:42",
-        "checkInDelta": null,
-        "status": "Cancelled",
-        "statusColor": "#12607D",
-        "checkOutTime": "02:05:42",
-        "checkOutDelta": null
-      },
-      {
-        "bookingId": "#45654333",
-        "guestName": "Vikram Joshi",
-        "contact": "+91 90000 66666",
-        "roomNumber": "230 - A",
-        "expectedCheckIn": "2025-11-05",
-        "checkInTime": "02:05:42",
-        "checkInDelta": null,
-        "status": "Expected",
-        "statusColor": "#F8C313",
-        "checkOutTime": "02:05:42",
-        "checkOutDelta": null
-      },
-      {
-        "bookingId": "#6543434",
-        "guestName": "Riya Singh",
-        "contact": "+91 90000 77777",
-        "roomNumber": "232 - B",
-        "expectedCheckIn": "2025-11-05",
-        "checkInTime": "02:05:42",
-        "checkInDelta": null,
-        "status": "Expected",
-        "statusColor": "#F8C313",
-        "checkOutTime": "02:05:42",
-        "checkOutDelta": null
-      },
-      {
-        "bookingId": "#6548335",
-        "guestName": "Karan Mehta",
-        "contact": "+91 90000 88888",
-        "roomNumber": "235 - C",
-        "expectedCheckIn": "2025-11-05",
-        "checkInTime": "-",
-        "checkInDelta": null,
-        "status": "No-Show",
-        "statusColor": "#CD3636",
         "checkOutTime": "-",
         "checkOutDelta": null
       },
       {
-        "bookingId": "#6543396",
-        "guestName": "Priya Desai",
-        "contact": "+91 90000 99999",
-        "roomNumber": "240 - A",
-        "expectedCheckIn": "2025-11-05",
-        "checkInTime": "-",
+        "bookingId": "#AVN-23105",
+        "guestName": "Rhea Fernandes",
+        "contact": "+91 99254 70144",
+        "roomNumber": "B202",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "11:18:11",
         "checkInDelta": null,
-        "status": "Cancelled",
-        "statusColor": "#12607D",
+        "status": "Checked-In",
+        "statusColor": "#0D824B",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23106",
+        "guestName": "Dr. Vivek Iyer",
+        "contact": "+91 99703 89057",
+        "roomNumber": "E307",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "12:09:41",
+        "checkInDelta": null,
+        "status": "Checked-In",
+        "statusColor": "#0D824B",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23107",
+        "guestName": "Eleanor Gupta",
+        "contact": "+91 98960 77152",
+        "roomNumber": "F402",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "12:41:22",
+        "checkInDelta": null,
+        "status": "Checked-In",
+        "statusColor": "#0D824B",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23108",
+        "guestName": "Sameer Rathod",
+        "contact": "+91 99221 43120",
+        "roomNumber": "C103",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "13:08:10",
+        "checkInDelta": null,
+        "status": "Pending",
+        "statusColor": "#F8C313",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23109",
+        "guestName": "Lavanya Rao",
+        "contact": "+91 99372 91232",
+        "roomNumber": "H302",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "13:33:44",
+        "checkInDelta": null,
+        "status": "Checked-In",
+        "statusColor": "#0D824B",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23110",
+        "guestName": "Luka D’Souza",
+        "contact": "+91 98109 74562",
+        "roomNumber": "D210",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "14:04:55",
+        "checkInDelta": null,
+        "status": "Checked-Out",
+        "statusColor": "#5643C7",
+        "checkOutTime": "07:02:19",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23111",
+        "guestName": "Mehul Sharma",
+        "contact": "+91 99288 10421",
+        "roomNumber": "K408",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "14:08:11",
+        "checkInDelta": null,
+        "status": "Checked-In",
+        "statusColor": "#0D824B",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23112",
+        "guestName": "Priyanka Chib",
+        "contact": "+91 99993 81172",
+        "roomNumber": "L101",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "14:14:09",
+        "checkInDelta": null,
+        "status": "Pending",
+        "statusColor": "#F8C313",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23113",
+        "guestName": "Alisha Nambiar",
+        "contact": "+91 99662 70832",
+        "roomNumber": "A406",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "14:18:50",
+        "checkInDelta": null,
+        "status": "Checked-Out",
+        "statusColor": "#5643C7",
+        "checkOutTime": "09:14:21",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23114",
+        "guestName": "Rohan Khanna",
+        "contact": "+91 98983 18900",
+        "roomNumber": "D109",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "15:02:41",
+        "checkInDelta": null,
+        "status": "Checked-In",
+        "statusColor": "#0D824B",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23115",
+        "guestName": "Mirai Kapoor",
+        "contact": "+91 99300 44908",
+        "roomNumber": "G210",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "15:17:25",
+        "checkInDelta": null,
+        "status": "Pending",
+        "statusColor": "#F8C313",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23116",
+        "guestName": "Eva Krishnan",
+        "contact": "+91 99860 90012",
+        "roomNumber": "C407",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "15:24:30",
+        "checkInDelta": null,
+        "status": "Checked-In",
+        "statusColor": "#0D824B",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23117",
+        "guestName": "Ayaan Merchant",
+        "contact": "+91 98108 10283",
+        "roomNumber": "F406",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "15:27:18",
+        "checkInDelta": null,
+        "status": "Checked-Out",
+        "statusColor": "#5643C7",
+        "checkOutTime": "08:59:47",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23118",
+        "guestName": "Sofia Pinto",
+        "contact": "+91 98760 44409",
+        "roomNumber": "J208",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "15:32:21",
+        "checkInDelta": null,
+        "status": "Checked-In",
+        "statusColor": "#0D824B",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23119",
+        "guestName": "Raj Malhotra",
+        "contact": "+91 99002 31724",
+        "roomNumber": "K303",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "15:38:42",
+        "checkInDelta": null,
+        "status": "Checked-In",
+        "statusColor": "#0D824B",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23120",
+        "guestName": "Ishaan Ghosh",
+        "contact": "+91 99104 70148",
+        "roomNumber": "D506",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "15:45:50",
+        "checkInDelta": null,
+        "status": "Checked-Out",
+        "statusColor": "#5643C7",
+        "checkOutTime": "07:11:24",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23121",
+        "guestName": "Anumita Basu",
+        "contact": "+91 98861 33002",
+        "roomNumber": "L107",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "15:54:09",
+        "checkInDelta": null,
+        "status": "Checked-In",
+        "statusColor": "#0D824B",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23122",
+        "guestName": "Tanya Bedi",
+        "contact": "+91 98139 74811",
+        "roomNumber": "A114",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "16:10:15",
+        "checkInDelta": null,
+        "status": "Pending",
+        "statusColor": "#F8C313",
+        "checkOutTime": "-",
+        "checkOutDelta": null
+      },
+      {
+        "bookingId": "#AVN-23123",
+        "guestName": "Harsh Vora",
+        "contact": "+91 99212 64009",
+        "roomNumber": "C208",
+        "expectedCheckIn": "2025-12-22",
+        "checkInTime": "16:31:08",
+        "checkInDelta": null,
+        "status": "Checked-In",
+        "statusColor": "#0D824B",
         "checkOutTime": "-",
         "checkOutDelta": null
       }
     ]
   },
-  "roomStatus": {
+ "roomStatus": {
     "totalRooms": 100,
-    "occupiedRooms": 84,
-    "availableRooms": 16,
-    "blockedRooms": 5,
-    "occupiedPct": 84.0,
-    "availablePct": 16.0,
-    "blockedPct": 5.0
+    "occupiedRooms": 82,
+    "availableRooms": 14,
+    "blockedRooms": 4,
+    "occupiedPct": 82.0,
+    "availablePct": 14.0,
+    "blockedPct": 4.0,
+    "note": "Serenity Suites undergoing minor acoustic calibration upgrades until 24 Dec."
+  },
+ "guestMix": {
+    "indianResidentsPct": 62,
+    "internationalPct": 38
   },
   "feedback": [
     {
       "id": 1,
-      "guestName": "Pradhyumn Dhondi",
-      "roomNumber": "A201",
-      "comment": "Food could be better.",
-      "rating": 3.5,
-      "date": "2025-11-05"
+      "guestName": "Maya Kapoor",
+      "roomNumber": "A112",
+      "comment": "The forest bath ritual was transcendent. Extend spa hours please.",
+      "rating": 4.8,
+      "date": "2025-12-22"
     },
     {
       "id": 2,
-      "guestName": "Pradhyumn Dhondi",
-      "roomNumber": "A202",
-      "comment": "Staff was very helpful and friendly.",
-      "rating": 4.5,
-      "date": "2025-11-04"
+      "guestName": "Jonas Rodrigues",
+      "roomNumber": "F204",
+      "comment": "Chef Arjun’s no-menu dinner was extraordinary.",
+      "rating": 5.0,
+      "date": "2025-12-22"
     },
     {
       "id": 3,
-      "guestName": "Ananya Sharma",
-      "roomNumber": "B305",
-      "comment": "Room was clean, view was great.",
-      "rating": 4.2,
-      "date": "2025-11-03"
+      "guestName": "Dr. Renu Krishnan",
+      "roomNumber": "B407",
+      "comment": "Loved the silence mode switch — finally slept 9 hours straight.",
+      "rating": 4.9,
+      "date": "2025-12-22"
+    },
+    {
+      "id": 4,
+      "guestName": "Liam Chatterjee",
+      "roomNumber": "C110",
+      "comment": "Would appreciate heater controls more intuitive for older guests.",
+      "rating": 4.1,
+      "date": "2025-12-22"
+    },
+    {
+      "id": 5,
+      "guestName": "Riya Mehta",
+      "roomNumber": "D302",
+      "comment": "Rainforest view from canopy villa unmatched — thank you for the upgrade!",
+      "rating": 5.0,
+      "date": "2025-12-22"
     }
   ]
 }
