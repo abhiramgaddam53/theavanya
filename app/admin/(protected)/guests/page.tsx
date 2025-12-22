@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
 import React, { useState } from 'react';
 import { Pencil, MoreVertical, Funnel, Upload } from 'lucide-react';
 import dashboardData from "@/lib/data.json";
 import { getStatusBg } from "@/lib/adminUtils";
-import { getHeaderIcon } from '@/lib/headerIcons';
+import { AdminTable, Column } from '@/app/admin/components/AdminTable';
 
 interface Guest {
     reservationId: string;
@@ -17,6 +17,7 @@ interface Guest {
     statusColor: string;
     checkInDate: string;
     checkOutDate: string;
+    [key: string]: string | number | undefined;
 }
 
 // Ensure unique reservation IDs for the key prop
@@ -51,8 +52,6 @@ const MOCK_GUESTS: Guest[] = [
 export default function GuestListPage() {
     const [activeTab, setActiveTab] = useState<'Check In' | 'Check Out'>('Check In');
     const [searchQuery, setSearchQuery] = useState('');
-    const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(10);
 
     const filteredGuests = MOCK_GUESTS.filter((guest) => {
         // Tab logic
@@ -70,19 +69,6 @@ export default function GuestListPage() {
 
         return matchesTab && matchesSearch;
     });
-
-    // Pagination Logic
-    const totalResults = filteredGuests.length;
-    const totalPages = Math.ceil(totalResults / itemsPerPage);
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = filteredGuests.slice(indexOfFirstItem, indexOfLastItem);
-
-    const handlePageChange = (newPage: number) => {
-        if (newPage >= 1 && newPage <= totalPages) {
-            setCurrentPage(newPage);
-        }
-    };
 
     const handleExportCSV = () => {
         const headers = ["Reservation ID", "Guest Name", "Room Number", "Total Amount", "Amount Paid", "Status", "Check In", "Check Out"];
@@ -113,6 +99,52 @@ export default function GuestListPage() {
         document.body.removeChild(link);
     };
 
+    const columns: Column<Guest>[] = [
+        { key: 'originalId', header: 'Reservation ID' },
+        { key: 'guestName', header: 'Guest Name' },
+        { key: 'roomNumber', header: 'Room Number' },
+        {
+            key: 'totalAmount',
+            header: 'Total Amount',
+            render: (row) => `₹${row.totalAmount.toLocaleString('en-IN')}.00`
+        },
+        {
+            key: 'amountPaid',
+            header: 'Amount Paid',
+            render: (row) => `₹${row.amountPaid.toLocaleString('en-IN')}.00`
+        },
+        {
+            key: 'status',
+            header: 'Status',
+            render: (row) => (
+                <span
+                    className="status-pill"
+                    style={{
+                        color: row.statusColor,
+                        backgroundColor: getStatusBg(row.statusColor),
+                    }}
+                >
+                    {row.status}
+                </span>
+            )
+        },
+        {
+            key: 'actions',
+            header: 'Actions',
+            sortable: false,
+            render: (row) => (
+                <div style={{ display: 'flex', gap: '8px' }}>
+                    <button style={{ border: 'none', background: 'none', cursor: 'pointer', color: '#6B7280' }}>
+                        <Pencil size={16} />
+                    </button>
+                    <button style={{ border: 'none', background: 'none', cursor: 'pointer', color: '#6B7280' }}>
+                        <MoreVertical size={16} />
+                    </button>
+                </div>
+            )
+        }
+    ];
+
     return (
         <div className='bg-[#F3F4F6]'>
             <section className="dash-header">
@@ -128,7 +160,7 @@ export default function GuestListPage() {
                     {/* Left side: Tabs */}
                     <div style={{ display: 'flex', gap: '24px' }}>
                         <button
-                            onClick={() => { setActiveTab('Check In'); setCurrentPage(1); }}
+                            onClick={() => { setActiveTab('Check In'); }}
                             style={{
                                 border: 'none',
                                 background: 'none',
@@ -143,7 +175,7 @@ export default function GuestListPage() {
                             Check In
                         </button>
                         <button
-                            onClick={() => { setActiveTab('Check Out'); setCurrentPage(1); }}
+                            onClick={() => { setActiveTab('Check Out'); }}
                             style={{
                                 border: 'none',
                                 background: 'none',
@@ -168,7 +200,7 @@ export default function GuestListPage() {
                                 placeholder="Search Rooms, Transactions"
                                 className="navbar-search-input"
                                 value={searchQuery}
-                                onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
+                                onChange={(e) => { setSearchQuery(e.target.value); }}
                             />
                         </div>
 
@@ -192,120 +224,12 @@ export default function GuestListPage() {
                     </div>
                 </header>
 
-                <div className="overview-table-wrapper">
-                    <table className="overview-table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Reservation ID')}
-                                        Reservation ID
-                                    </div>
-                                </th>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Guest Name')}
-                                        Guest Name
-                                    </div>
-                                </th>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Room Number')}
-                                        Room Number
-                                    </div>
-                                </th>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Total Amount')}
-                                        Total Amount
-                                    </div>
-                                </th>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Amount Paid')}
-                                        Amount Paid
-                                    </div>
-                                </th>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Status')}
-                                        Status
-                                    </div>
-                                </th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {currentItems.map((guest) => (
-                                <tr key={guest.reservationId}>
-                                    <td>{guest.originalId}</td>
-                                    <td>{guest.guestName}</td>
-                                    <td>{guest.roomNumber}</td>
-                                    <td>₹{guest.totalAmount.toLocaleString('en-IN')}.00</td>
-                                    <td>₹{guest.amountPaid.toLocaleString('en-IN')}.00</td>
-                                    <td>
-                                        <span
-                                            className="status-pill"
-                                            style={{
-                                                color: guest.statusColor,
-                                                backgroundColor: getStatusBg(guest.statusColor),
-                                            }}
-                                        >
-                                            {guest.status}
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <div style={{ display: 'flex', gap: '8px' }}>
-                                            <button style={{ border: 'none', background: 'none', cursor: 'pointer', color: '#6B7280' }}>
-                                                <Pencil size={16} />
-                                            </button>
-                                            <button style={{ border: 'none', background: 'none', cursor: 'pointer', color: '#6B7280' }}>
-                                                <MoreVertical size={16} />
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-
-                <footer className="overview-footer" style={{ marginTop: '20px' }}>
-                    <div className="overview-show">
-                        Show
-                        <select
-                            value={itemsPerPage}
-                            onChange={(e) => { setItemsPerPage(Number(e.target.value)); setCurrentPage(1); }}
-                            style={{ margin: '0 8px', padding: '4px', borderRadius: '4px', border: '1px solid #e5e7eb' }}
-                        >
-                            <option value={10}>10</option>
-                            <option value={20}>20</option>
-                            <option value={50}>50</option>
-                        </select>
-                        <span style={{ color: '#48494C', marginLeft: '10px' }}>
-                            {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, totalResults)} of {totalResults} results
-                        </span>
-                    </div>
-
-                    <div className="overview-pagination">
-                        <button
-                            className="page-btn"
-                            onClick={() => handlePageChange(currentPage - 1)}
-                            disabled={currentPage === 1}
-                            style={{ opacity: currentPage === 1 ? 0.5 : 1 }}
-                        >
-                            ‹
-                        </button>
-                        <button
-                            className="page-btn"
-                            onClick={() => handlePageChange(currentPage + 1)}
-                            disabled={currentPage === totalPages}
-                            style={{ opacity: currentPage === totalPages ? 0.5 : 1 }}
-                        >
-                            ›
-                        </button>
-                    </div>
-                </footer>
+                <AdminTable
+                    key={activeTab + searchQuery} // Force reset pagination when filters change
+                    data={filteredGuests}
+                    columns={columns}
+                    defaultItemsPerPage={10}
+                />
             </section>
         </div>
     );

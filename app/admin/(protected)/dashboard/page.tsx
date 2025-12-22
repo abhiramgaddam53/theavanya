@@ -1,27 +1,64 @@
+"use client"
 
 import RevenueChart from "@/components/RevenueChart";
 import dashboardData from "@/lib/data.json";
-import { getHeaderIcon } from '@/lib/headerIcons';
+import { AdminTable, Column } from "@/app/admin/components/AdminTable";
+import { getStatusBg } from "@/lib/adminUtils";
 
 export default function Home() {
     const { header, summaryCards, revenue, rooms, todayOverview, roomStatus, feedback } =
         dashboardData;
-    const getStatusBg = (hex: string) => {
-        switch (hex) {
-            case "#5643C7":
-                return "#EEEAFE";
-            case "#0D824B":
-                return "#E3F7EE";
-            case "#F8C313":
-                return "#FFF6D6";
-            case "#12607D":
-                return "#E3F3FA";
-            case "#CD3636":
-                return "#FDE5E5";
-            default:
-                return "#F3F4F6";
+
+    const columns: Column<typeof todayOverview.rows[0]>[] = [
+        { key: 'bookingId', header: 'Booking ID' },
+        { key: 'guestName', header: 'Guest Name' },
+        { key: 'contact', header: 'Contact' },
+        { key: 'roomNumber', header: 'Room Number' },
+        { key: 'expectedCheckIn', header: 'Expected Check In' },
+        {
+            key: 'checkInTime',
+            header: 'Check-In Time',
+            render: (row) => (
+                <div className="time-cell">
+                    <span>{row.checkInTime}</span>
+                    {row.checkInDelta && (
+                        <span className={`time-pill ${row.checkInDelta.type === "positive" ? "time-pill-positive" : "time-pill-negative"}`}>
+                            {row.checkInDelta.text}
+                        </span>
+                    )}
+                </div>
+            )
+        },
+        {
+            key: 'status',
+            header: 'Status',
+            render: (row) => (
+                <span
+                    className="status-pill"
+                    style={{
+                        color: row.statusColor,
+                        backgroundColor: getStatusBg(row.statusColor),
+                    }}
+                >
+                    {row.status}
+                </span>
+            )
+        },
+        {
+            key: 'checkOutTime',
+            header: 'Check-Out Time',
+            render: (row) => (
+                <div className="time-cell">
+                    <span>{row.checkOutTime}</span>
+                    {row.checkOutDelta && (
+                        <span className={`time-pill ${row.checkOutDelta.type === "positive" ? "time-pill-positive" : "time-pill-negative"}`}>
+                            {row.checkOutDelta.text}
+                        </span>
+                    )}
+                </div>
+            )
         }
-    };
+    ];
 
     return (
         <>
@@ -120,130 +157,11 @@ export default function Home() {
                     </div>
                 </header>
 
-                <div className="overview-table-wrapper">
-                    <table className="overview-table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Booking ID')}
-                                        Booking ID
-                                    </div>
-                                </th>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Guest Name')}
-                                        Guest Name
-                                    </div>
-                                </th>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Contact')}
-                                        Contact
-                                    </div>
-                                </th>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Room Number')}
-                                        Room Number
-                                    </div>
-                                </th>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Expected Check In')}
-                                        Expected Check In
-                                    </div>
-                                </th>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Check-In Time')}
-                                        Check-In Time
-                                    </div>
-                                </th>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Status')}
-                                        Status
-                                    </div>
-                                </th>
-                                <th>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Check-Out Time')}
-                                        Check-Out Time
-                                    </div>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {todayOverview.rows.map((row) => (
-                                <tr key={row.bookingId}>
-                                    <td>{row.bookingId}</td>
-                                    <td>{row.guestName}</td>
-                                    <td>{row.contact}</td>
-                                    <td>{row.roomNumber}</td>
-                                    <td>{row.expectedCheckIn}</td>
-                                    <td>
-                                        <div className="time-cell">
-                                            <span>{row.checkInTime}</span>
-                                            {row.checkInDelta && (
-                                                <span
-                                                    className={`time-pill ${row.checkInDelta.type === "positive"
-                                                        ? "time-pill-positive"
-                                                        : "time-pill-negative"
-                                                        }`}
-                                                >
-                                                    {row.checkInDelta.text}
-                                                </span>
-                                            )}
-                                        </div>
-                                    </td>                   <td>
-                                        <span
-                                            className="status-pill"
-                                            style={{
-                                                color: row.statusColor,
-                                                backgroundColor: getStatusBg(row.statusColor),
-                                            }}
-                                        >
-                                            {row.status}
-                                        </span>
-                                    </td>
-
-                                    <td>
-                                        <div className="time-cell">
-                                            <span>{row.checkOutTime}</span>
-                                            {row.checkOutDelta && (
-                                                <span
-                                                    className={`time-pill ${row.checkOutDelta.type === "positive"
-                                                        ? "time-pill-positive"
-                                                        : "time-pill-negative"
-                                                        }`}
-                                                >
-                                                    {row.checkOutDelta.text}
-                                                </span>
-                                            )}
-                                        </div>
-                                    </td>                  </tr>
-                            ))}
-                        </tbody>
-                    </table>
-
-                    <footer className="overview-footer">
-                        <div className="overview-show">
-                            Show
-                            <select defaultValue={todayOverview.pageSize}>
-                                <option>10</option>
-                                <option>20</option>
-                                <option>50</option>
-                            </select>
-                            <span style={{ color: '#48494C', marginLeft: '10px' }}>{todayOverview.page} to {todayOverview.pageSize} of{" "}
-                                {todayOverview.totalResults} results        </span>      </div>
-
-                        <div className="overview-pagination">
-                            <button className="page-btn">‹</button>
-                            <button className="page-btn">›</button>
-                        </div>
-                    </footer>
-                </div>
+                <AdminTable
+                    data={todayOverview.rows}
+                    columns={columns}
+                    defaultItemsPerPage={todayOverview.pageSize}
+                />
             </section>
             <section className="bottom-section">
                 <div className="room-status-card">

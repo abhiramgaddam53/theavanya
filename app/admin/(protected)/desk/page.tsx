@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
 import React, { useState } from 'react';
-import { Pencil, MoreVertical, Upload, Calendar as CalendarIcon, SlidersHorizontal, ChevronLeft, ChevronRight, ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
-import { getHeaderIcon } from '@/lib/headerIcons';
+import { Pencil, MoreVertical, Upload, Calendar as CalendarIcon, SlidersHorizontal, MoreHorizontal } from 'lucide-react';
+import { AdminTable, Column } from '@/app/admin/components/AdminTable';
 
 interface FrontDeskRow {
     roomNumber: string;
@@ -61,66 +61,75 @@ const getHKStatusColor = (status: string) => {
     }
 };
 
-type SortConfig = {
-    key: string;
-    direction: 'asc' | 'desc';
-} | null;
-
 export default function FrontDeskPage() {
     const [activeTab, setActiveTab] = useState('All Rooms');
-    const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(10);
-    const [sortConfig, setSortConfig] = useState<SortConfig>(null);
 
-    // Sorting Logic
-    const sortedData = React.useMemo(() => {
-        let sortableItems = [...MOCK_FRONT_DESK_DATA];
-        if (sortConfig !== null) {
-            sortableItems.sort((a, b) => {
-                const aValue = a[sortConfig.key] || '';
-                const bValue = b[sortConfig.key] || '';
+    // Simple filter logic for demonstration
+    const filteredData = MOCK_FRONT_DESK_DATA.filter(item => {
+        if (activeTab === 'All Rooms') return true;
+        return item.roomType.includes(activeTab); // Simple string match
+    });
 
-                if (aValue < bValue) {
-                    return sortConfig.direction === 'asc' ? -1 : 1;
-                }
-                if (aValue > bValue) {
-                    return sortConfig.direction === 'asc' ? 1 : -1;
-                }
-                return 0;
-            });
+    const columns: Column<FrontDeskRow>[] = [
+        { key: 'roomNumber', header: 'Room No.' },
+        { key: 'roomType', header: 'Room Type' },
+        {
+            key: 'status',
+            header: 'Status',
+            render: (row) => {
+                const style = getStatusColor(row.status);
+                return (
+                    <span className="status-pill" style={{ backgroundColor: style.bg, color: style.text }}>
+                        {row.status}
+                    </span>
+                );
+            }
+        },
+        { key: 'guestName', header: 'Current Guest' },
+        {
+            key: 'checkOutTime',
+            header: 'Check-Out Time',
+            render: (row) => (
+                <>
+                    {row.checkOutTime}
+                    {row.checkOutDelay && (
+                        <span className="ml-2 text-[10px] text-red-500 bg-red-50 px-1 py-0.5 rounded">
+                            {row.checkOutDelay}
+                        </span>
+                    )}
+                </>
+            )
+        },
+        { key: 'nextCheckIn', header: 'Next Check-In' },
+        { key: 'occupancy', header: 'Occupancy' },
+        {
+            key: 'houseKeeping',
+            header: 'House-Keeping',
+            render: (row) => {
+                const style = getHKStatusColor(row.houseKeeping);
+                return (
+                    <span className="status-pill" style={{ backgroundColor: style.bg, color: style.text }}>
+                        {row.houseKeeping}
+                    </span>
+                );
+            }
+        },
+        {
+            key: 'actions',
+            header: 'Actions',
+            sortable: false,
+            render: () => (
+                <div style={{ display: 'flex', gap: '8px' }}>
+                    <button style={{ border: 'none', background: 'none', cursor: 'pointer', color: '#6B7280' }}>
+                        <Pencil size={16} />
+                    </button>
+                    <button style={{ border: 'none', background: 'none', cursor: 'pointer', color: '#6B7280' }}>
+                        <MoreVertical size={16} />
+                    </button>
+                </div>
+            )
         }
-        return sortableItems;
-    }, [sortConfig]);
-
-    const requestSort = (key: string) => {
-        let direction: 'asc' | 'desc' = 'asc';
-        if (sortConfig && sortConfig.key === key && sortConfig.direction === 'asc') {
-            direction = 'desc';
-        }
-        setSortConfig({ key, direction });
-    };
-
-    const getSortIcon = (key: string) => {
-        if (!sortConfig || sortConfig.key !== key) {
-            return <ArrowUpDown size={14} className="ml-1 text-gray-400" />;
-        }
-        return sortConfig.direction === 'asc' ?
-            <ArrowUp size={14} className="ml-1 text-blue-600" /> :
-            <ArrowDown size={14} className="ml-1 text-blue-600" />;
-    };
-
-    // Pagination Logic
-    const totalResults = sortedData.length;
-    const totalPages = Math.ceil(totalResults / itemsPerPage);
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = sortedData.slice(indexOfFirstItem, indexOfLastItem);
-
-    const handlePageChange = (newPage: number) => {
-        if (newPage >= 1 && newPage <= totalPages) {
-            setCurrentPage(newPage);
-        }
-    };
+    ];
 
     return (
         <div className="bg-[#F3F4F6] min-h-[calc(100vh-56px)] pb-8">
@@ -241,155 +250,11 @@ export default function FrontDeskPage() {
                 </div>
 
                 {/* Table */}
-                <div className="overview-table-wrapper">
-                    <table className="overview-table">
-                        <thead>
-                            <tr className="border-b border-gray-200">
-                                <th onClick={() => requestSort('roomNumber')} className="cursor-pointer hover:bg-gray-50">
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Room No.')}
-                                        <span>Room No.</span>
-                                        {getSortIcon('roomNumber')}
-                                    </div>
-                                </th>
-                                <th onClick={() => requestSort('roomType')} className="cursor-pointer hover:bg-gray-50">
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Room Type')}
-                                        <span>Room Type</span>
-                                        {getSortIcon('roomType')}
-                                    </div>
-                                </th>
-                                <th onClick={() => requestSort('status')} className="cursor-pointer hover:bg-gray-50">
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Status')}
-                                        <span>Status</span>
-                                        {getSortIcon('status')}
-                                    </div>
-                                </th>
-                                <th onClick={() => requestSort('guestName')} className="cursor-pointer hover:bg-gray-50">
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Current Guest')}
-                                        <span>Current Guest</span>
-                                        {getSortIcon('guestName')}
-                                    </div>
-                                </th>
-                                <th onClick={() => requestSort('checkOutTime')} className="cursor-pointer hover:bg-gray-50">
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Check-Out Time')}
-                                        <span>Check-Out Time</span>
-                                        {getSortIcon('checkOutTime')}
-                                    </div>
-                                </th>
-                                <th onClick={() => requestSort('nextCheckIn')} className="cursor-pointer hover:bg-gray-50">
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Next Check-In')}
-                                        <span>Next Check-In</span>
-                                        {getSortIcon('nextCheckIn')}
-                                    </div>
-                                </th>
-                                <th onClick={() => requestSort('occupancy')} className="cursor-pointer hover:bg-gray-50">
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('Occupancy')}
-                                        <span>Occupancy</span>
-                                        {getSortIcon('occupancy')}
-                                    </div>
-                                </th>
-                                <th onClick={() => requestSort('houseKeeping')} className="cursor-pointer hover:bg-gray-50">
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        {getHeaderIcon('House-Keeping')}
-                                        <span>House-Keeping</span>
-                                        {getSortIcon('houseKeeping')}
-                                    </div>
-                                </th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {currentItems.map((row) => {
-                                const statusStyle = getStatusColor(row.status);
-                                const hkStyle = getHKStatusColor(row.houseKeeping);
-                                return (
-                                    <tr key={row.id}>
-                                        <td>{row.roomNumber}</td>
-                                        <td>{row.roomType}</td>
-                                        <td>
-                                            <span
-                                                className="status-pill"
-                                                style={{ backgroundColor: statusStyle.bg, color: statusStyle.text }}
-                                            >
-                                                {row.status}
-                                            </span>
-                                        </td>
-                                        <td>{row.guestName}</td>
-                                        <td>
-                                            {row.checkOutTime}
-                                            {row.checkOutDelay && <span className="ml-2 text-[10px] text-red-500 bg-red-50 px-1 py-0.5 rounded">{row.checkOutDelay}</span>}
-                                        </td>
-                                        <td>{row.nextCheckIn}</td>
-                                        <td>{row.occupancy}</td>
-                                        <td>
-                                            <span
-                                                className="status-pill"
-                                                style={{ backgroundColor: hkStyle.bg, color: hkStyle.text }}
-                                            >
-                                                {row.houseKeeping}
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div style={{ display: 'flex', gap: '8px' }}>
-                                                <button style={{ border: 'none', background: 'none', cursor: 'pointer', color: '#6B7280' }}>
-                                                    <Pencil size={16} />
-                                                </button>
-                                                <button style={{ border: 'none', background: 'none', cursor: 'pointer', color: '#6B7280' }}>
-                                                    <MoreVertical size={16} />
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                )
-                            })}
-                        </tbody>
-                    </table>
-                </div>
-
-                {/* Footer / Pagination */}
-                <footer className="overview-footer" style={{ marginTop: '20px' }}>
-                    <div className="overview-show">
-                        Show
-                        <select
-                            value={itemsPerPage}
-                            onChange={(e) => { setItemsPerPage(Number(e.target.value)); setCurrentPage(1); }}
-                            style={{ margin: '0 8px', padding: '4px', borderRadius: '4px', border: '1px solid #e5e7eb' }}
-                        >
-                            <option value={10}>10</option>
-                            <option value={20}>20</option>
-                            <option value={50}>50</option>
-                        </select>
-                        <span style={{ color: '#48494C', marginLeft: '10px' }}>
-                            {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, totalResults)} of {totalResults} results
-                        </span>
-                    </div>
-
-                    <div className="overview-pagination">
-                        <button
-                            className="page-btn"
-                            onClick={() => handlePageChange(currentPage - 1)}
-                            disabled={currentPage === 1}
-                            style={{ opacity: currentPage === 1 ? 0.5 : 1 }}
-                        >
-                            ‹
-                        </button>
-                        <button
-                            className="page-btn"
-                            onClick={() => handlePageChange(currentPage + 1)}
-                            disabled={currentPage === totalPages}
-                            style={{ opacity: currentPage === totalPages ? 0.5 : 1 }}
-                        >
-                            ›
-                        </button>
-                    </div>
-                </footer>
-
+                <AdminTable
+                    key={activeTab} // Force reset pagination
+                    data={filteredData}
+                    columns={columns}
+                />
             </div>
         </div>
     );
