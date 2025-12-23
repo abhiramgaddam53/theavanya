@@ -5,13 +5,6 @@
   padding: 24px 32px 32px;
   background-color: #f3f4f6;
   overflow-y: auto;
-  min-height: calc(100vh - 56px);
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
-}
-
-.dashboard-main::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
 }
 
 .dash-header {
@@ -200,6 +193,23 @@
   border-radius: 8px;
   border: 1px solid #e5e5ec;
   background-color: #ffffff;
+  padding: 11px 14px;
+  cursor: pointer;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #161618;
+}
+
+.chart-filter1,
+.chart-expand {
+  border-radius: 8px;
+
   padding: 11px 14px;
   cursor: pointer;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -437,8 +447,9 @@
 }
 
 .overview-table-wrapper {
-  width: 100%;
-  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .overview-table {
@@ -455,8 +466,8 @@
 .overview-table td {
   padding: 10px 12px;
   text-align: left;
-  border: 1px solid #e5e7eb;
   white-space: nowrap;
+  border: 1px solid #e5e7eb;
 }
 
 .overview-table th {
@@ -468,6 +479,7 @@
   line-height: 100%;
   letter-spacing: 0;
   color: #48494c;
+  /* border: 1px solid #e5e7eb; */
 }
 
 .overview-table td {
@@ -494,9 +506,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 10px;
   font-size: 11px;
   color: #6b7280;
+  padding-left: 10px;
 }
 
 .overview-show {
@@ -519,8 +531,8 @@
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   font-weight: 400;
-  font-size: 40px;
-  margin-right: 10px;
+  font-size: 30px;
+  margin-right: 15px;
   cursor: pointer;
 }
 
@@ -584,7 +596,7 @@
 }
 
 .status-row {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .sublable {
@@ -656,6 +668,7 @@
   gap: 10px;
   padding: 8px 0;
   border-bottom: 1px solid #f3f4f6;
+  margin-bottom: 20px;
 }
 
 .feedback-item:last-child {

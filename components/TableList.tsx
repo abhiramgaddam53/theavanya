@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-const OverviewTable = ( {todayOverview }) => {
+const OverviewTable = ({ todayOverview }: { todayOverview: any }) => {
   const [currentPage, setCurrentPage] = useState(todayOverview.page || 1);
   const [pageSize, setPageSize] = useState(todayOverview.pageSize || 10);
   const totalResults = todayOverview.totalResults || 0;
@@ -14,7 +14,7 @@ const OverviewTable = ( {todayOverview }) => {
     currentPage * pageSize
   ) || [];
 
-  const getStatusBg = (statusColor:any) => {
+  const getStatusBg = (statusColor: any) => {
     if (!statusColor) return '#f3f4f6';
     const color = statusColor.toLowerCase();
     if (color.includes('green') || color === '#0d824b') return 'rgba(13, 130, 75, 0.1)';
@@ -25,9 +25,9 @@ const OverviewTable = ( {todayOverview }) => {
     return '#f3f4f6';
   };
 
-  const handlePageSizeChange = (e:any) => {
+  const handlePageSizeChange = (e: any) => {
     setPageSize(Number(e.target.value));
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
   const goToPreviousPage = () => {
@@ -54,7 +54,7 @@ const OverviewTable = ( {todayOverview }) => {
           </tr>
         </thead>
         <tbody>
-          {paginatedRows.map((row:any) => (
+          {paginatedRows.map((row: any) => (
             <tr key={row.bookingId}>
               <td>{row.bookingId}</td>
               <td>{row.guestName}</td>
@@ -67,11 +67,10 @@ const OverviewTable = ( {todayOverview }) => {
                   <span>{row.checkInTime || '-'}</span>
                   {row.checkInDelta && (
                     <span
-                      className={`time-pill ${
-                        row.checkInDelta.type === 'positive'
+                      className={`time-pill ${row.checkInDelta.type === 'positive'
                           ? 'time-pill-positive'
                           : 'time-pill-negative'
-                      }`}
+                        }`}
                     >
                       {row.checkInDelta.text}
                     </span>
@@ -96,11 +95,10 @@ const OverviewTable = ( {todayOverview }) => {
                   <span>{row.checkOutTime || '-'}</span>
                   {row.checkOutDelta && (
                     <span
-                      className={`time-pill ${
-                        row.checkOutDelta.type === 'positive'
+                      className={`time-pill ${row.checkOutDelta.type === 'positive'
                           ? 'time-pill-positive'
                           : 'time-pill-negative'
-                      }`}
+                        }`}
                     >
                       {row.checkOutDelta.text}
                     </span>
