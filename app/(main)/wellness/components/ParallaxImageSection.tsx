@@ -33,7 +33,7 @@ export default function ParallaxImageSection() {
             <div className="w-full relative h-[80vh] overflow-hidden">
                 <motion.div style={{ scale, y }} className="relative w-[80%] h-[120%] -top-[10%]">
                     <Image
-                        src="/miscellaneous/boat.jpg" // Using existing image for now as placeholder
+                        src="/wellness/parallalax.jpg" // Using existing image for now as placeholder
                         alt="Parisian Lifestyle"
                         fill
                         className="object-cover"

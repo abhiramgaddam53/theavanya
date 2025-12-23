@@ -7,12 +7,13 @@ import Image from "next/image";
 interface CommonParallaxCardProps {
     image: string;
     title: string;
+    tag?: string;
     description: string;
     variant: "square" | "portrait" | "landscape";
     className?: string;
 }
 
-export default function CommonParallaxCard({ image, title, description, variant, className = "" }: CommonParallaxCardProps) {
+export default function CommonParallaxCard({ image, title, tag, description, variant, className = "" }: CommonParallaxCardProps) {
     const cardRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: cardRef,
@@ -47,9 +48,11 @@ export default function CommonParallaxCard({ image, title, description, variant,
             <div className="flex flex-col md:flex-row justify-between items-start gap-4 mt-2">
                 <h3 className="font-serif text-3xl text-[#1a1a1a] md:w-1/3">{title}</h3>
                 <div className="md:w-1/2">
-                    <p className="font-poppins text-xs font-bold uppercase tracking-wider text-[#1a1a1a] mb-2">
-                        {title}
-                    </p>
+                    {tag && (
+                        <p className="font-poppins text-xs font-bold uppercase tracking-wider text-[#1a1a1a] mb-2">
+                            {tag}
+                        </p>
+                    )}
                     <p className="font-poppins text-sm text-[#1a1a1a]/70 font-light leading-relaxed">
                         {description}
                     </p>

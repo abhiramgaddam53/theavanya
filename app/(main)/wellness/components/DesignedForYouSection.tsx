@@ -5,37 +5,42 @@ import CommonParallaxCard from "./CommonParallaxCard";
 const lifestyleItems = [
     {
         id: 1,
-        title: "Swimming",
-        description: "Dive into serenity. Our pools are heated and designed for relaxation in every season.",
-        image: "/miscellaneous/swim.jpg",
+        title: "Forest Bathing (Shinrin-Yoku)",
+        tag: "Nature Therapy",
+        description: "Guided walks through untouched rainforest paths designed to calm the nervous system, reduce cortisol, and restore mental clarity.",
+        image: "/experiences/luxury/Forest.jpg",
         variant: "square" as const
     },
     {
         id: 2,
-        title: "Golf Getaways",
-        description: "Tee off in timeless style. Enjoy exclusive access to top-tier courses just moments away.",
-        image: "/slider/5.jpg", // Placeholder
+        title: "Ayurvedic Bio-Hacking",
+        tag: "Ancient Intelligence",
+        description: "Personalized Ayurvedic treatments adapted for modern lifestyles focused on balance, longevity, and deep restoration.",
+        image: "/experiences/luxury/Wellness.jpg",
         variant: "portrait" as const
     },
     {
         id: 3,
-        title: "In-Suite Spa",
-        description: "Wellness, reimagined in your room. Experience therapies delivered by expert therapists.",
-        image: "/slider/6.jpg", // Placeholder
+        title: "Sleep Optimization",
+        tag: "Deep Rest",
+        description: "Digital detox, EMF-free environments, circadian-aligned lighting, and natural soundscapes for profoundly restorative sleep.",
+        image: "/experiences/luxury/Silence.jpg",
         variant: "landscape" as const
     },
     {
         id: 4,
-        title: "Cultural Tours",
-        description: "Walk through history. Guided tours through museums, hidden art studios, and landmarks.",
-        image: "/slider/8.jpg", // Placeholder
+        title: "Mindful Movement",
+        tag: "Body Awareness",
+        description: "Private yoga and mobility sessions designed around your energy levels, not rigid routines.",
+        image: "/experiences/luxury/Movement.jpg",
         variant: "portrait" as const
     },
     {
         id: 5,
-        title: "Cooking Masterclass",
-        description: "Taste, create, savor. Join our chefs for a culinary experience sourcing fresh ingredients.",
-        image: "/slider/2.jpg", // Placeholder
+        title: "Regenerative Dining",
+        tag: "Nourishment",
+        description: "Seasonal, farm-to-table cuisine crafted to nourish the body without excess no menus, only intention.",
+        image: "/experiences/luxury/Culinary.jpg",
         variant: "square" as const
     }
 ];
@@ -48,8 +53,8 @@ export default function DesignedForYouSection() {
                 {/* Section Header */}
                 <div className="text-center mb-18">
                     <h2 className="font-serif text-5xl text-[#1a1a1a] leading-tight">
-                        Where Every Day is <br />
-                        <span className="italic">Designed for You</span>
+                        Where Every Day Is <br />
+                        <span className="italic">Designed for You.</span>
                     </h2>
                 </div>
 

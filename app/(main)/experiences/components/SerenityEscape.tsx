@@ -56,14 +56,14 @@ export default function SerenityEscape() {
                 <div className="grid grid-cols-2 gap-2 items-start">
                     <div className="flex flex-col gap-2">
                         <ParallaxItem
-                            src="/experiences/3.jpg"
+                            src="/experiences/serenity/1.jpg"
                             alt="Spa relaxation"
                             className="aspect-[5/5] w-full rounded-sm"
                             speed={1}
                         />
                         <div className="flex justify-end z-10">
                             <ParallaxItem
-                                src="/experiences/9.jpg"
+                                src="/experiences/serenity/2.jpg"
                                 alt="Aromatherapy detail"
                                 className="aspect-square w-2/3 rounded-sm"
                                 speed={3}
@@ -73,7 +73,7 @@ export default function SerenityEscape() {
 
                     <div className="flex flex-col self-center">
                         <ParallaxItem
-                            src="/experiences/4.jpg"
+                            src="/experiences/serenity/3.jpg"
                             alt="Massage therapy"
                             className="aspect-square w-full rounded-sm"
                             speed={2}
@@ -99,7 +99,7 @@ export default function SerenityEscape() {
                 {/* Full Width Parallax Image */}
                 <div className="w-full mt-16">
                     <ParallaxItem
-                        src="/experiences/1.jpg"
+                        src="/experiences/testimonial.jpg"
                         alt="Serene landscape or detailed experience"
                         className="aspect-21/9 w-full rounded-sm"
                         speed={3}

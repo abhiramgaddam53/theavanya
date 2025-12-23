@@ -12,7 +12,7 @@ function ExperienceHero() {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/wellness/Hero.jpg"
+                    src="/experiences/Hero.jpg"
                     alt="Serenity Landscape"
                     fill
                     className="object-cover"

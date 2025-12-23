@@ -20,7 +20,7 @@ export default function WellnessCard({ image, title, description, tag }: Wellnes
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
             </div>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
                 <h3 className="font-serif text-3xl">{title}</h3>
                 <p className="font-poppins text-sm font-light leading-relaxed">
                     {description}

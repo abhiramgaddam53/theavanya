@@ -7,39 +7,51 @@ import WellnessCard from "./WellnessCard";
 const items = [
     {
         id: 1,
-        title: "Forest Bathing",
-        subtitle: "(Shinrin-Yoku)",
-        tag: "Nature Therapy",
-        description: "Guided walks through untouched rainforest paths designed to calm the nervous system, reduce cortisol, and restore mental clarity.",
-        image: "/slider/3.jpg"
+        title: "Private Concierge",
+        description: "A dedicated point of contact who understands your preferences before you express them.",
+        image: "/wellness/service/Private Cincierfe.jpg"
     },
     {
         id: 2,
-        title: "Ayurvedic Bio-Hacking",
-        tag: "Ancient Intelligence",
-        description: "Personalized Ayurvedic treatments adapted for modern lifestyles focused on balance, longevity, and deep restoration.",
-        image: "/slider/5.jpg"
+        title: "Private Chef Experience",
+        description: "Daily meals crafted around your dietary needs, moods, and wellness goals.",
+        image: "/wellness/service/Private Chef Experience.jpg"
     },
     {
         id: 3,
-        title: "Sleep Optimization",
-        tag: "Deep Rest",
-        description: "Digital detox, EMF-free environments, circadian-aligned lighting, and natural soundscapes for profoundly restorative sleep.",
-        image: "/slider/1.jpg"
+        title: "Arrival & Departure Assistance",
+        description: "Seamless airport, helipad, and private transfer coordination.",
+        image: "/wellness/service/Arrival & Departure.jpg"
     },
     {
         id: 4,
-        title: "Mindful Movement",
-        tag: "Body Awareness",
-        description: "Private yoga and mobility sessions designed around your energy levels, not rigid routines.",
-        image: "/slider/6.jpg"
+        title: "Digital Detox Management",
+        description: "Optional complete Wi-Fi and device suspension for uninterrupted mental clarity.",
+        image: "/wellness/service/Digital Detox Management.jpg"
     },
     {
         id: 5,
-        title: "Conscious Nourishment",
-        tag: "Regenerative Dining",
-        description: "Seasonal, farm-to-table cuisine crafted to nourish the body without excess. No menus, only intention.",
-        image: "/slider/2.jpg"
+        title: "In-Villa Wellness Rituals",
+        description: "Therapies conducted in the privacy of your villa unhurried, uninterrupted.",
+        image: "/wellness/service/In-Villa Wellness Rituals.jpg"
+    },
+    {
+        id: 6,
+        title: "Personal Naturalist",
+        description: "Guided explorations into local flora, wildlife, and ecological storytelling.",
+        image: "/wellness/service/Personal Naturalist.jpg"
+    },
+    {
+        id: 7,
+        title: "Quiet Hour Protocol",
+        description: "Time windows where service becomes invisible, preserving silence.",
+        image: "/wellness/service/Quiet.jpg"
+    },
+    {
+        id: 8,
+        title: "Custom Wellness Itineraries",
+        description: "Daily experiences shaped around how you feel, not fixed schedules.",
+        image: "/wellness/service/Custom Wellness Itineraries.jpg"
     }
 ];
 
@@ -56,9 +68,8 @@ export default function CuratedDetailsSection() {
         restDelta: 0.001
     });
 
-    // 5 cards is significantly less width than 8.
-    // Approximate translation reduced from -72% to -45% to align last card to screen edge.
-    const x = useTransform(smoothProgress, [0, 1], ["0%", "-60%"]);
+    // 8 cards need more scroll distance
+    const x = useTransform(smoothProgress, [0, 1], ["0%", "-72%"]);
 
     return (
         <section ref={targetRef} className="relative h-[300vh] bg-secondary-bg text-[#F5F2EA]">
@@ -72,19 +83,18 @@ export default function CuratedDetailsSection() {
                     {/* Title Section - Takes up part of viewport to allow cards to peek */}
                     <div className="min-w-[45vw] h-screen flex items-center justify-start pr-[14vw] z-10 shrink-0">
                         <h2 className="font-serif text-6xl leading-none">
-                            Where Every Day Is <br />Designed for You.
+                            Every Detail, <br />Personally Curated.
                         </h2>
                     </div>
 
                     {/* Cards Container */}
-                    <div className="flex gap-8 items-center h-screen py-[8vh]">
+                    <div className="flex gap-2 items-center h-screen py-[8vh]">
                         {items.map((item) => (
                             <div key={item.id} className="p-4 h-full"> {/* h-full ensures wrapper fills the py-constrained height */}
                                 <WellnessCard
                                     title={item.title}
                                     description={item.description}
                                     image={item.image}
-                                    tag={item.tag}
                                 />
                             </div>
                         ))}

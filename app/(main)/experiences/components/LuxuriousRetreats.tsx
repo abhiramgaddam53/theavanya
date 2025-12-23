@@ -2,168 +2,183 @@
 
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const amenities = [
     {
         id: 1,
-        title: "Infinity Pool",
-        src: "/miscellaneous/swim.jpg", // Using available assets
-        alt: "Infinity Pool overlooking the ocean"
+        tag: "Forest",
+        title: "Guided Forest Bathing",
+        description: "Slow walks through untouched rainforest, led by naturalists trained in Shinrin-yoku practices.",
+        src: "/experiences/luxury/Forest.jpg",
+        alt: "Guided forest bathing experience"
     },
     {
         id: 2,
-        title: "Fitness Oasis",
-        src: "/wellness/threesec.jpg", // Using available wellness asset
-        alt: "Modern fitness center with a view"
+        tag: "Wellness",
+        title: "Ayurvedic Bio-Rituals",
+        description: "Bespoke therapies blending ancient Ayurvedic wisdom with modern recovery science.",
+        src: "/experiences/luxury/Wellness.jpg",
+        alt: "Ayurvedic wellness rituals"
     },
     {
         id: 3,
-        title: "Wellness Center",
-        src: "/miscellaneous/yoga.jpg", // Using available assets
-        alt: "Woman standing near a window"
+        tag: "Culinary",
+        title: "No-Menu Dining",
+        description: "Daily creations crafted entirely around your preferences, mood, and dietary rhythm.",
+        src: "/experiences/luxury/Culinary.jpg",
+        alt: "Personalized fine dining experience"
     },
     {
         id: 4,
-        title: "Concierge Excellence",
-        src: "/miscellaneous/resort.jpg", // Using available assets
-        alt: "Concierge greeting a guest"
+        tag: "Silence",
+        title: "Digital Detox Experience",
+        description: "A physical switch that disconnects the world inviting deeper rest and uninterrupted sleep.",
+        src: "/experiences/luxury/Silence.jpg",
+        alt: "Digital detox retreat"
     },
     {
         id: 5,
-        title: "Private Yacht",
-        src: "/miscellaneous/yatch.jpg",
-        alt: "Luxury yacht experience"
+        tag: "Nature",
+        title: "Private Waterfall Picnics",
+        description: "Secluded forest clearings, prepared discreetly for uninterrupted moments.",
+        src: "/experiences/luxury/Nature.jpg",
+        alt: "Private waterfall picnic"
+    },
+    {
+        id: 6,
+        tag: "Movement",
+        title: "Sunrise Yoga Pavilion",
+        description: "Open-air sessions where breath, mist, and movement align.",
+        src: "/experiences/luxury/Movement.jpg",
+        alt: "Sunrise yoga session"
+    },
+    {
+        id: 7,
+        tag: "Culture",
+        title: "Local Storytelling Evenings",
+        description: "Intimate conversations with Wayanad locals history shared, not performed.",
+        src: "/experiences/luxury/Culture.jpg",
+        alt: "Local cultural storytelling evening"
+    },
+    {
+        id: 8,
+        tag: "Privacy",
+        title: "In-Villa Experiences",
+        description: "Wellness, dining, and rituals delivered quietly to your private sanctuary.",
+        src: "/experiences/luxury/Privacy.jpg",
+        alt: "Private in-villa luxury experience"
     }
 ];
 
 export default function LuxuriousRetreats() {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
-    const [progress, setProgress] = useState(0);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
+    const [canScrollRight, setCanScrollRight] = useState(true);
 
-    // Initial scroll position handler
-    const handleScroll = () => {
+    const checkScroll = () => {
         if (scrollContainerRef.current) {
             const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-            const scrollRange = scrollWidth - clientWidth;
-            const currentProgress = scrollRange > 0 ? (scrollLeft / scrollRange) * 100 : 0;
-            setProgress(Math.min(100, Math.max(0, currentProgress)));
-            setCanScrollLeft(scrollLeft > 10); // buffer of 10px
+            setCanScrollLeft(scrollLeft > 10);
+            setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
         }
     };
 
     useEffect(() => {
         const container = scrollContainerRef.current;
         if (container) {
-            container.addEventListener("scroll", handleScroll);
-            // Check initial state
-            handleScroll();
-            return () => container.removeEventListener("scroll", handleScroll);
+            container.addEventListener("scroll", checkScroll);
+            checkScroll(); // Initial check
+            return () => container.removeEventListener("scroll", checkScroll);
         }
     }, []);
 
-    const scrollPrev = () => {
+    const scroll = (direction: 'left' | 'right') => {
         if (scrollContainerRef.current) {
             const container = scrollContainerRef.current;
-            const cardWidth = container.querySelector('div')?.clientWidth || 400;
-            container.scrollBy({ left: -(cardWidth + 24), behavior: 'smooth' });
-        }
-    };
+            const scrollAmount = container.clientWidth * 0.8; // Scroll 80% of view width
+            const targetScroll = direction === 'left'
+                ? container.scrollLeft - scrollAmount
+                : container.scrollLeft + scrollAmount;
 
-    const scrollNext = () => {
-        if (scrollContainerRef.current) {
-            const container = scrollContainerRef.current;
-            const cardWidth = container.querySelector('div')?.clientWidth || 400;
-            container.scrollBy({ left: cardWidth + 24, behavior: 'smooth' }); // width + gap
+            container.scrollTo({
+                left: targetScroll,
+                behavior: 'smooth'
+            });
         }
     };
 
     return (
-        <section className="bg-primary-bg py-14 px-6 md:px-16 overflow-hidden">
-            <div className="max-w-[1400px] mx-auto">
+        <section className="bg-primary-bg py-20 px-6 md:px-16 overflow-hidden min-h-screen flex flex-col justify-center">
 
-                {/* Header Section */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-                    <div className="max-w-2xl">
-                        <span className="font-poppins text-xs font-bold tracking-widest uppercase opacity-40 mb-4 block">
-                            Amenities
-                        </span>
-                        <h2 className="font-serif text-5xl md:text-6xl text-[#1a1a1a] tracking-tight">
-                            Luxurious retreats
-                        </h2>
-                    </div>
+            <div className="max-w-[1600px] w-full mx-auto relative">
 
-                    <div className="max-w-xs md:mb-2">
-                        <p className="font-poppins text-[#1a1a1a]/60 leading-relaxed text-sm">
-                            Discover a world of comfort and indulgence at our carefully curated facilities.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Carousel Section */}
+                {/* Horizontal Scrolling Container */}
                 <div
                     ref={scrollContainerRef}
-                    className="flex overflow-x-auto gap-6 sm:gap-8 pb-12 scrollbar-hide -mr-6 md:-mr-16 pr-6 md:pr-16 snap-x snap-mandatory"
+                    className="flex overflow-x-auto gap-5 md:gap-8 pb-12 pt-4 scrollbar-hide snap-x snap-mandatory pr-16"
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
                     {amenities.map((item) => (
                         <div
                             key={item.id}
-                            className="min-w-[280px] sm:min-w-[340px] md:min-w-[400px] shrink-0 snap-start group cursor-pointer"
+                            className="relative min-w-[280px] sm:min-w-[320px] md:min-w-[360px] aspect-9/16 md:aspect-3/5 shrink-0 snap-start snap-always rounded-[24px] overflow-hidden group cursor-pointer"
                         >
-                            <div className="relative aspect-3/4 sm:aspect-4/5 overflow-hidden mb-6">
-                                <Image
-                                    src={item.src}
-                                    alt={item.alt}
-                                    fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                    sizes="(max-width: 768px) 80vw, 30vw"
-                                />
-                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+                            {/* Background Image */}
+                            <Image
+                                src={item.src}
+                                alt={item.alt}
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                sizes="(max-width: 768px) 80vw, 30vw"
+                            />
+
+                            {/* Gradient Overlay for Text Readability */}
+                            <div className="absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
+
+                            {/* Content Overlay */}
+                            <div className="absolute top-0 left-0 w-full p-6 md:p-8 flex flex-col items-start gap-3 z-10">
+                                <span className="text-white/70 text-xs font-poppins font-semibold uppercase tracking-widest bg-black/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                                    {item.tag}
+                                </span>
+                                <h3 className="font-poppins text-white text-2xl md:text-3xl font-bold leading-tight mt-2 max-w-[80%] drop-shadow-lg">
+                                    {item.title}
+                                </h3>
                             </div>
-                            <h3 className="font-poppins text-[#1a1a1a] text-sm md:text-base font-medium">
-                                {item.title}
-                            </h3>
+
+                            {/* Description at bottom left */}
+                            <div className="font-poppins absolute bottom-0 left-0 md:bottom-8 p-6 z-10">
+                                <p className="text-white/80 text-xs md:text-sm font-poppins font-light leading-relaxed drop-shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    {item.description}
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </div>
 
-                {/* Controls */}
-                <div className="flex items-center justify-between mt-4">
-                    {/* Progress Bar */}
-                    <div className="flex gap-2">
-                        {/* Simple visual indicator matching the design (line with active state) */}
-                        <div className="h-[2px] w-12 bg-[#1a1a1a]/20 overflow-hidden relative">
-                            <motion.div
-                                className="absolute top-0 left-0 h-full bg-[#1a1a1a]"
-                                initial={{ width: "0%" }}
-                                animate={{ width: `${progress}%` }}
-                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                            />
-                        </div>
-                    </div>
-
-                    {/* Navigation Buttons */}
-                    <div className="flex gap-4">
-                        {canScrollLeft && (
-                            <button
-                                onClick={scrollPrev}
-                                className="w-12 h-12 cursor-pointer rounded-full border border-[#6B6B55] text-[#6B6B55] hover:bg-[#6B6B55] hover:text-white flex items-center justify-center transition-all duration-300 active:scale-95"
-                                aria-label="Previous slide"
-                            >
-                                <ArrowLeft size={20} />
-                            </button>
-                        )}
-                        <button
-                            onClick={scrollNext}
-                            className="w-12 h-12 cursor-pointer rounded-full bg-[#6B6B55] hover:bg-[#5b5b48] text-white flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95"
-                            aria-label="Next slide"
-                        >
-                            <ArrowRight size={20} />
-                        </button>
-                    </div>
+                <div className="absolute -bottom-4 right-0 flex gap-4 pr-6 md:pr-0">
+                    <button
+                        onClick={() => scroll('left')}
+                        disabled={!canScrollLeft}
+                        className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 border border-black/10
+                            ${canScrollLeft
+                                ? 'bg-white text-black hover:bg-black hover:text-white cursor-pointer shadow-sm'
+                                : 'bg-transparent text-black/20 cursor-not-allowed'}`}
+                        aria-label="Scroll left"
+                    >
+                        <ArrowLeft size={20} />
+                    </button>
+                    <button
+                        onClick={() => scroll('right')}
+                        disabled={!canScrollRight}
+                        className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 border border-black/10
+                            ${canScrollRight
+                                ? 'bg-black text-white hover:bg-black/80 cursor-pointer shadow-lg'
+                                : 'bg-transparent text-black/20 cursor-not-allowed'}`}
+                        aria-label="Scroll right"
+                    >
+                        <ArrowRight size={20} />
+                    </button>
                 </div>
 
             </div>
