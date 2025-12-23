@@ -16,9 +16,16 @@ export const HeroSection = () => {
     return (
         <div ref={containerRef} className="relative h-screen w-full overflow-hidden font-serif text-[#F5F2EA]">
 
-            {/* Background Image */}
+            {/* Background Video */}
             <div className="absolute inset-0 z-0">
-                <Image src="/miscellaneous/Hero.jpg" alt="Hero Background" fill className="object-cover" priority />
+                <video
+                    src="homepage/Hero.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="h-full w-full object-cover"
+                />
                 {/* Bottom Shadow / Gradient */}
                 <div className="absolute bottom-0 left-0 w-full h-150 bg-linear-to-t from-black/60 to-transparent"></div>
             </div>

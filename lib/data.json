@@ -41,7 +41,7 @@
       "compareText": "from last week"
     },
     {
-     "id": "totalOccupiedRooms",
+      "id": "totalOccupiedRooms",
       "label": "Occupied Villas",
       "value": 84,
       "changePct": 4.7,
@@ -50,14 +50,11 @@
     }
   ],
   "revenue": {
-  "currency": "INR",
+    "currency": "INR",
     "total": 27599700,
     "monthlyAvg": 2299975,
     "weeklyAvg": 532800,
-    "period": [
-      "Yearly",
-      "Monthly"
-    ],
+    "period": ["Yearly", "Monthly"],
     "monthlyPoints": [
       {
         "label": "Jan",
@@ -159,7 +156,7 @@
       }
     ]
   },
- "rooms": [
+  "rooms": [
     {
       "id": "canopyVilla",
       "badge": "2 Deals",
@@ -197,7 +194,7 @@
       "currency": "INR"
     }
   ],
-"todayOverview": {
+  "todayOverview": {
     "page": 1,
     "pageSize": 20,
     "totalResults": 20,
@@ -464,7 +461,7 @@
       }
     ]
   },
- "roomStatus": {
+  "roomStatus": {
     "totalRooms": 100,
     "occupiedRooms": 82,
     "availableRooms": 14,
@@ -474,7 +471,7 @@
     "blockedPct": 4.0,
     "note": "Serenity Suites undergoing minor acoustic calibration upgrades until 24 Dec."
   },
- "guestMix": {
+  "guestMix": {
     "indianResidentsPct": 62,
     "internationalPct": 38
   },

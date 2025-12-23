@@ -24,7 +24,7 @@ export default function ReserveSection() {
             {/* Background Image - Absolute and covering the full scrollable height */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/miscellaneous/resort.jpg"
+                    src="/homepage/reserve.jpg"
                     alt="Reserve Background"
                     fill
                     className="object-cover brightness-[0.6]"

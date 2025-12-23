@@ -27,7 +27,7 @@ export default function MoreThanStay() {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/miscellaneous/boat.jpg" // Using the high-res image available
+                    src="/homepage/morethanstay.jpg" // Using the high-res image available
                     alt="Scenic Background"
                     fill
                     className="object-cover brightness-[0.7]" // Darken slightly for text contrast

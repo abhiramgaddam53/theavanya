@@ -7,16 +7,16 @@ import Button from "@/components/Button";
 
 
 const experiences = [
-    { id: 1, title: "Seclusion", image: "/experiences/1.jpg" },
-    { id: 2, title: "Silence", image: "/experiences/2.jpg" },
-    { id: 3, title: "Privacy", image: "/experiences/3.jpg" },
-    { id: 4, title: "Stillness", image: "/experiences/4.jpg" },
-    { id: 5, title: "Restoration", image: "/experiences/5.jpg" },
-    { id: 6, title: "Wellness", image: "/experiences/6.jpg" },
-    { id: 7, title: "Craft", image: "/experiences/7.jpg" },
-    { id: 8, title: "Nature", image: "/experiences/8.jpg" },
-    { id: 9, title: "Ritual", image: "/experiences/9.jpg" },
-    { id: 10, title: "Presence", image: "/experiences/10.jpg" },
+    { id: 1, title: "Seclusion", image: "/homepage/experiences/1.jpg" },
+    { id: 2, title: "Silence", image: "/homepage/experiences/2.jpg" },
+    { id: 3, title: "Privacy", image: "/homepage/experiences/3.jpg" },
+    { id: 4, title: "Stillness", image: "/homepage/experiences/4.jpg" },
+    { id: 5, title: "Restoration", image: "/homepage/experiences/5.jpg" },
+    { id: 6, title: "Wellness", image: "/homepage/experiences/6.jpg" },
+    { id: 7, title: "Craft", image: "/homepage/experiences/7.jpg" },
+    { id: 8, title: "Nature", image: "/homepage/experiences/8.jpg" },
+    { id: 9, title: "Ritual", image: "/homepage/experiences/9.jpg" },
+    { id: 10, title: "Presence", image: "/homepage/experiences/10.jpg" },
 ];
 
 const ExperienceItem = ({

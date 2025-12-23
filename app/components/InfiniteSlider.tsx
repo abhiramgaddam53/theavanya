@@ -4,18 +4,18 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const images = [
-    "/slider/1.jpg",
-    "/slider/2.jpg",
-    "/slider/3.jpg",
-    "/slider/4.jpg",
-    "/slider/5.jpg",
-    "/slider/6.jpg",
-    "/slider/7.jpg",
-    "/slider/8.jpg",
-    "/slider/9.jpg",
-    "/slider/10.jpg",
-    "/slider/11.jpg",
-    "/slider/12.jpg",
+    "/homepage/slider/1.jpg",
+    "/homepage/slider/2.jpg",
+    "/homepage/slider/3.jpg",
+    "/homepage/slider/4.jpg",
+    "/homepage/slider/5.jpg",
+    "/homepage/slider/6.jpg",
+    "/homepage/slider/7.jpg",
+    "/homepage/slider/8.jpg",
+    "/homepage/slider/9.jpg",
+    "/homepage/slider/10.jpg",
+    "/homepage/slider/11.jpg",
+    "/homepage/slider/12.jpg",
 ];
 
 export default function InfiniteSlider() {

@@ -17,7 +17,7 @@
 }
 
 :root {
-  --primary-bg: #e5e1d8;
+  --primary-bg: #fff;
   --secondary-bg: #170f0b;
   --radius: 0.625rem;
   --background: oklch(1 0 0);

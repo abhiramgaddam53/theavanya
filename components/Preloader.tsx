@@ -57,7 +57,7 @@ export default function Preloader() {
         <AnimatePresence mode="wait">
             {isLoading && (
                 <motion.div
-                    className="fixed inset-0 gap-2 z-50 flex flex-col items-center justify-center bg-[#F5F2EA]"
+                    className="fixed inset-0 gap-2 z-50 flex flex-col items-center justify-center bg-primary-bg"
                     initial={{ y: 0 }}
                     exit={{ y: "-100%", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
                 >

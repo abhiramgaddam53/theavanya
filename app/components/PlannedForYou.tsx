@@ -23,7 +23,7 @@ export default function PlannedForYou() {
                 {/* Background Image */}
                 <div className="absolute inset-0">
                     <Image
-                        src="/miscellaneous/yatch.jpg"
+                        src="/homepage/plannedforyou.jpg"
                         alt="Planned for you"
                         fill
                         className="object-cover brightness-75"

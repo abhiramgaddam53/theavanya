@@ -16,7 +16,6 @@ export default function Home() {
   return (
     <>
       <Preloader />
-
       <HeroSection />
       <WelcomeSection />
       <InfiniteSlider />
@@ -27,7 +26,6 @@ export default function Home() {
       <LuxuryRooms />
       <MapSection />
       <ReserveSection />
-
     </>
   );
 }
