@@ -53,22 +53,27 @@ export default function GuestListPage() {
     const [activeTab, setActiveTab] = useState<'Check In' | 'Check Out'>('Check In');
     const [searchQuery, setSearchQuery] = useState('');
 
-    const filteredGuests = MOCK_GUESTS.filter((guest) => {
-        // Tab logic
-        let matchesTab = true;
-        if (activeTab === 'Check In') {
-            matchesTab = guest.status === 'Expected' || guest.status === 'Checked-In';
-        } else if (activeTab === 'Check Out') {
-            matchesTab = guest.status === 'Checked-Out' || guest.status === 'Checked-In'; // Assuming checked-in guests might be checking out
-        }
+ const filteredGuests = MOCK_GUESTS.filter((guest) => {
+  // Tab logic
+  let matchesTab = true;
+  if (activeTab === 'Check In') {
+    matchesTab = guest.status === 'Expected' || guest.status === 'Checked-In';
+  } else if (activeTab === 'Check Out') {
+    // OLD:
+    // matchesTab = guest.status === 'Checked-Out' || guest.status === 'Checked-In';
 
-        const matchesSearch =
-            guest.guestName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            guest.originalId.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            guest.roomNumber.toLowerCase().includes(searchQuery.toLowerCase());
+    // NEW: only show Checked-Out guests
+    matchesTab = guest.status === 'Checked-Out';
+  }
 
-        return matchesTab && matchesSearch;
-    });
+  const matchesSearch =
+    guest.guestName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    guest.originalId.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    guest.roomNumber.toLowerCase().includes(searchQuery.toLowerCase());
+
+  return matchesTab && matchesSearch;
+});
+
 
     const handleExportCSV = () => {
         const headers = ["Reservation ID", "Guest Name", "Room Number", "Total Amount", "Amount Paid", "Status", "Check In", "Check Out"];

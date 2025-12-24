@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { CreateBookingDialog } from './CreateBookingDialog';
+import { CreateBookingDrawer } from './CreateBookingDrawer';
 
 const DashNavbar = () => {
   return (
@@ -23,12 +24,16 @@ const DashNavbar = () => {
           />
         </div>
 
-        <CreateBookingDialog>
-          <button className="navbar-button">
-            <span style={{ fontSize: '20px', marginRight: '5px' }}>+ </span>
-            <span style={{ paddingTop: '7px' }}>Create Booking</span>
-          </button>
-        </CreateBookingDialog>
+        {/* <CreateBookingDialog> */}
+        <CreateBookingDrawer
+          trigger={
+            <button className="navbar-button">
+              <span style={{ fontSize: "20px", marginRight: "5px" }}>+ </span>
+              <span style={{ paddingTop: "7px" }}>Create Booking</span>
+            </button>
+          }
+        />
+        {/* </CreateBookingDialog> */}
       </div>
     </header>
   );
