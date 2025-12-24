@@ -81,7 +81,7 @@ export default function Navbar() {
           </svg>
         </button>
         <div className="absolute left-0 top-full mt-2 w-48 bg-white/95 backdrop-blur-md shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-white/20">
-          <Link href="/booking" className="block px-6 py-3 text-[#1a1a1a] hover:bg-gray-100 rounded-t-xl transition-colors">Overview</Link>
+          <Link href="/booking/over-view" className="block px-6 py-3 text-[#1a1a1a] hover:bg-gray-100 rounded-t-xl transition-colors">Overview</Link>
           <Link href="/booking/gallery" className="block px-6 py-3 text-[#1a1a1a] hover:bg-gray-100 transition-colors">Gallery</Link>
           <Link href="/booking/accommodations" className="block px-6 py-3 text-[#1a1a1a] hover:bg-gray-100 transition-colors">Accommodations</Link>
           <Link href="/booking/wellness" className="block px-6 py-3 text-[#1a1a1a] hover:bg-gray-100 rounded-b-xl transition-colors">Wellness</Link>
