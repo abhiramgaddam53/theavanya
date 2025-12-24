@@ -139,7 +139,7 @@ export default function WellnessPage() {
       </div>
 
       {/* 3. On-Site Outlets Section */}
-      <div className="w-full py-8 md:py-16 min-h-screen flex items-center">
+      <div className="w-full py-8 md:py-16 min-h-screen flex items-center justify-center">
         <CustomContainer>
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-4">
             <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-[#1a1a1a] leading-tight">
@@ -224,11 +224,10 @@ export default function WellnessPage() {
                 <button
                   key={filter}
                   className={`px-4 py-2 rounded-full text-xs uppercase tracking-wider border transition-all
-                  ${
-                    i === 0
+                  ${i === 0
                       ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
                       : "bg-white text-[#4A4A4A] border-[#1a1a1a]/20 hover:border-[#1a1a1a]/40"
-                  }`}
+                    }`}
                 >
                   {filter}
                 </button>

@@ -9,37 +9,37 @@ const items = [
         id: 1,
         title: "Private Concierge",
         description: "A dedicated point of contact who understands your preferences before you express them.",
-        image: "/wellness/service/Private Cincierfe.jpg"
+        image: "/wellness/service/Cincierfe.jpg"
     },
     {
         id: 2,
         title: "Private Chef Experience",
         description: "Daily meals crafted around your dietary needs, moods, and wellness goals.",
-        image: "/wellness/service/Private Chef Experience.jpg"
+        image: "/wellness/service/Experience.jpg"
     },
     {
         id: 3,
         title: "Arrival & Departure Assistance",
         description: "Seamless airport, helipad, and private transfer coordination.",
-        image: "/wellness/service/Arrival & Departure.jpg"
+        image: "/wellness/service/Departure.jpg"
     },
     {
         id: 4,
         title: "Digital Detox Management",
         description: "Optional complete Wi-Fi and device suspension for uninterrupted mental clarity.",
-        image: "/wellness/service/Digital Detox Management.jpg"
+        image: "/wellness/service/Management.jpg"
     },
     {
         id: 5,
         title: "In-Villa Wellness Rituals",
         description: "Therapies conducted in the privacy of your villa unhurried, uninterrupted.",
-        image: "/wellness/service/In-Villa Wellness Rituals.jpg"
+        image: "/wellness/service/Rituals.jpg"
     },
     {
         id: 6,
         title: "Personal Naturalist",
         description: "Guided explorations into local flora, wildlife, and ecological storytelling.",
-        image: "/wellness/service/Personal Naturalist.jpg"
+        image: "/wellness/service/Naturalist.jpg"
     },
     {
         id: 7,
@@ -51,7 +51,7 @@ const items = [
         id: 8,
         title: "Custom Wellness Itineraries",
         description: "Daily experiences shaped around how you feel, not fixed schedules.",
-        image: "/wellness/service/Custom Wellness Itineraries.jpg"
+        image: "/wellness/service/Itineraries.jpg"
     }
 ];
 

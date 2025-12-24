@@ -1,6 +1,6 @@
 import { villas } from "@/app/data/villas";
 import { notFound } from "next/navigation";
-import BookingRoomCard from "@/components/BookingRoomCard";
+import CommonRoomCard from "@/components/RoomCard";
 import Button from "@/components/Button";
 import Link from "next/link";
 import HeroCarousel from "./HeroCarousel";
@@ -32,7 +32,7 @@ export default async function VillaPage({ params, searchParams }: PageProps) {
       <HeroCarousel images={villa.images} title={villa.title} />
 
       {/* Content Section */}
-      <section className="w-full bg-primary-bg py-24 px-6">
+      <section className="w-full bg-primary-bg py-24 px-28">
         <div className="max-w-[1400px] mx-auto">
           {/* Intro / Description */}
           <div className="mb-20 max-w-4xl mx-auto text-center">
@@ -84,7 +84,7 @@ export default async function VillaPage({ params, searchParams }: PageProps) {
           </div>
 
           {/* Rooms Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
             {villa.availableRooms.map((room) => {
               let isAvailable = true;
               if (checkInDate && checkOutDate && room.bookedDates) {
@@ -104,14 +104,14 @@ export default async function VillaPage({ params, searchParams }: PageProps) {
                     }&checkOut=${checkOut || ""}`}
                   className="block group"
                 >
-                  <BookingRoomCard
+                  <CommonRoomCard
                     image={room.imageSrc}
                     name={room.title}
                     price={room.price}
                     description={room.description}
                     bed={room.features[0]}
                     capacity={room.features[1]}
-                    isAvailable={true}
+                    cta="View Details"
                   />
                 </Link>
               );
@@ -120,7 +120,7 @@ export default async function VillaPage({ params, searchParams }: PageProps) {
           </div>
 
           {/* Back Button */}
-          <div className="mt-20 flex justify-center">
+          <div className="mt-12 flex justify-center">
             <Button
               text="Back to Villas"
               variant="link-arrow"

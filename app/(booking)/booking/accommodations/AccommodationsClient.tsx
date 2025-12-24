@@ -5,6 +5,7 @@ import Image from "next/image";
 import { villas } from "@/app/data/villas";
 import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
+import CommonRoomCard from "@/components/RoomCard";
 
 export function AccommodationsClient() {
   const searchParams = useSearchParams();
@@ -71,67 +72,35 @@ export function AccommodationsClient() {
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {filteredVillas.map((villa) => {
           const isAvailable = (villa as any).isAvailable !== false; // Default true if property undefined
 
           return (
             <div
               key={villa.id}
-              className={`group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 relative ${
-                !isAvailable ? "opacity-70 grayscale-[0.5]" : ""
-              }`}
+              className={`group relative rounded-lg overflow-hidden transition-all duration-300 ${!isAvailable ? "opacity-70 grayscale-[0.5]" : ""
+                }`}
             >
-              {/* Image */}
-              <Link
-                href={`/booking/accommodations/${villa.slug}`}
-                className="block relative aspect-[4/3] overflow-hidden"
-              >
-                <Image
-                  src={villa.imageSrc}
-                  alt={villa.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
-
-                {!isAvailable && (
-                  <div className="absolute inset-0 z-20 bg-black/40 flex items-center justify-center">
-                    <span className="bg-red-500 text-white px-4 py-2 text-xs font-bold uppercase tracking-widest rounded shadow-md">
-                      Sold Out
-                    </span>
-                  </div>
-                )}
-              </Link>
-
-              {/* Content */}
-              <div className="p-8">
-                <h3 className="font-serif text-2xl md:text-3xl text-[#1a1a1a] mb-3 group-hover:text-[#BEA585] transition-colors">
-                  <Link href={`/booking/accommodations/${villa.slug}`}>
-                    {villa.title}
-                  </Link>
-                </h3>
-                <p className="font-poppins text-sm text-[#1a1a1a]/60 line-clamp-2 md:line-clamp-3 mb-6 leading-relaxed">
-                  {villa.description}
-                </p>
-
-                <div className="flex justify-between items-center pt-6 border-t border-gray-100">
-                  <div className="flex flex-col">
-                    <span className="font-poppins text-xs text-[#1a1a1a]/50 uppercase tracking-wider">
-                      Starting From
-                    </span>
-                    <span className="font-poppins font-semibold text-lg text-[#1a1a1a]">
-                      {villa.price}
-                    </span>
-                  </div>
-                  <Link
-                    href={`/booking/accommodations/${villa.slug}`}
-                    className="bg-[#1a1a1a] text-white px-6 py-3 rounded-full text-xs font-poppins font-medium uppercase tracking-wide hover:bg-[#333] transition-colors"
-                  >
-                    View Details
-                  </Link>
+              {!isAvailable && (
+                <div className="absolute inset-0 z-50 bg-black/40 flex items-center justify-center pointer-events-none">
+                  <span className="bg-red-500 text-white px-4 py-2 text-xs font-bold uppercase tracking-widest rounded shadow-md">
+                    Sold Out
+                  </span>
                 </div>
-              </div>
+              )}
+
+              <Link href={`/booking/accommodations/${villa.slug}`} className="block">
+                <CommonRoomCard
+                  image={villa.imageSrc}
+                  name={villa.title}
+                  price={villa.price}
+                  description={villa.description}
+                  bed={villa.bed}
+                  capacity={villa.capacity}
+                  cta="View Details"
+                />
+              </Link>
             </div>
           );
         })}

@@ -64,8 +64,8 @@ export default function FAQSection({ tagline, description, faqs }: FAQSectionPro
     };
 
     return (
-        <section className="py-16 bg-white">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-16">
+        <section className="pt-16 bg-white">
+            <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
                 <div className="mb-6 space-y-6">
                     <h2 className="font-serif text-6xl text-[#1a1a1a] leading-none">
@@ -77,17 +77,15 @@ export default function FAQSection({ tagline, description, faqs }: FAQSectionPro
                 </div>
 
                 {/* FAQ List */}
-                <div className="w-full">
-                    {faqs.map((faq, index) => (
-                        <FAQItem
-                            key={index}
-                            question={faq.question}
-                            answer={faq.answer}
-                            isOpen={openIndex === index}
-                            toggle={() => handleToggle(index)}
-                        />
-                    ))}
-                </div>
+                {faqs.map((faq, index) => (
+                    <FAQItem
+                        key={index}
+                        question={faq.question}
+                        answer={faq.answer}
+                        isOpen={openIndex === index}
+                        toggle={() => handleToggle(index)}
+                    />
+                ))}
             </div>
         </section>
     );

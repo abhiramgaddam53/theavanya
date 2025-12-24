@@ -22,7 +22,7 @@ function CompleteBookingContent() {
   const price = priceString.replace(/[^0-9.]/g, "");
 
   return (
-    <main className=" min-h-screen pt-32 pb-24 px-6 md:px-16">
+    <main className=" min-h-screen py-16 px-12">
       <div className="max-w-[1400px] mx-auto">
         <h1 className="font-poppins text-5xl md:text-6xl text-[#1a1a1a] mb-12">
           Complete Your Booking
@@ -244,7 +244,7 @@ function CompleteBookingContent() {
               <Button
                 text="Book Now"
                 variant="outline-dark"
-                className="w-full md:w-auto px-12 py-4 bg-[#1a1a1a] text-white hover:bg-[#1a1a1a]/90 hover:text-white"
+                className="w-full md:w-auto px-12 py-4 bg-[#1a1a1a] text-black hover:bg-[#1a1a1a]/90 hover:text-white"
               />
             </section>
           </div>
