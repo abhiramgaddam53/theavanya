@@ -1,154 +1,129 @@
-import React, { useRef } from "react";
-import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // Imported ChevronRight
+"use client";
+
+import React, { useRef, useState, useEffect } from "react";
+import Image from "next/image";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import CustomContainer from "./CustomContainer";
 import SectionHeading from "./SectionHeading";
-import Button from "../../../../../components/Button";
 import { OFFERS } from "../constants";
 
 const AppleCardsOffers = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-  const totalCards = OFFERS.length;
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
-  // Updated handler to accept direction
-  const handleScroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = 450; // Adjusted scroll distance for card width + gap
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
+  const checkScroll = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 10);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener("scroll", checkScroll);
+      checkScroll(); // Initial check
+      return () => container.removeEventListener("scroll", checkScroll);
+    }
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const scrollAmount = container.clientWidth * 0.8; // Scroll 80% of view width
+      const targetScroll = direction === 'left'
+        ? container.scrollLeft - scrollAmount
+        : container.scrollLeft + scrollAmount;
+
+      container.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
       });
     }
   };
 
-  // Track scroll position for dots
-  React.useEffect(() => {
-    const handleScrollUpdate = () => {
-      if (scrollRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-        const scrollPercentage = scrollLeft / (scrollWidth - clientWidth);
-        const index = Math.round(scrollPercentage * (totalCards - 1));
-        setCurrentIndex(index);
-      }
-    };
-
-    const ref = scrollRef.current;
-    if (ref) {
-      ref.addEventListener("scroll", handleScrollUpdate);
-      return () => ref.removeEventListener("scroll", handleScrollUpdate);
-    }
-  }, [totalCards]);
-
   return (
-    <section className="py-8 md:py-12 bg-white">
-      <CustomContainer noRightPadding>
-        <SectionHeading sub="Specials" title="Offers & Packages" align="left" />
-
-        <div className="mt-4 relative">
-          {/* Scrollable Container */}
+    <section className="py-10 bg-white border-t border-neutral-100/50">
+      <CustomContainer>
+        <div className="mb-8">
+          <h2 className="font-serif text-5xl tracking-tighter text-[#1a1a1a] leading-tight">
+            Curated Moments. Singular Memories.
+          </h2>
+        </div>
+        <div className="relative mt-8 md:mt-12">
+          {/* Horizontal Scrolling Container */}
           <div
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide -mr-6"
-            style={{
-              scrollBehavior: "smooth",
-              scrollbarWidth: "none",
-              msOverflowStyle: "none",
-              WebkitOverflowScrolling: "touch",
-            }}
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto gap-5 md:gap-4 pb-12 pt-4 scrollbar-hide snap-x snap-mandatory pr-16"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {OFFERS.map((offer, idx) => (
-              <motion.div
-                key={offer.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="relative rounded-xl overflow-hidden shadow-2xl cursor-pointer group shrink-0 md:!h-[520px] md:!w-[calc(28.57%-17px)]"
-                style={{
-                  height: "400px",
-                  width: "calc(85vw - 16px)",
-                }}
+            {OFFERS.map((item) => (
+              <div
+                key={item.id}
+                className="relative min-w-[280px] sm:min-w-[320px] md:min-w-[360px] aspect-9/16 md:aspect-3/5 shrink-0 snap-start snap-always rounded-[24px] overflow-hidden group cursor-pointer"
               >
-                <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-black/40 transition-colors duration-500" />
-                <img
-                  src={offer.image}
-                  alt={offer.title}
-                  className="w-full h-full object-cover"
+                {/* Background Image */}
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 80vw, 30vw"
                 />
 
-                <div className="absolute top-0 left-0 p-4 md:p-10 z-20 w-full h-full flex flex-col justify-between">
-                  <div>
-                    <p className="text-sm uppercase text-white/90 font-poppins tracking-widest">
-                      {offer.category}
-                    </p>
-                    <h3 className="text-2xl md:text-4xl lg:text-5xl font-serif text-white leading-[1.1] max-w-[90%] shadow-black/10 drop-shadow-lg mt-3">
-                      {offer.title}
-                    </h3>
-                  </div>
+                {/* Gradient Overlay for Text Readability */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
 
-                  <div className="transition-colors duration-300">
-                    <p className="text-white/90 text-lg font-poppins mb-6 leading-relaxed max-w-[80%] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
-                      {offer.desc}
-                    </p>
+                {/* Content Overlay */}
+                <div className="absolute top-0 left-0 w-full p-6 md:p-8 flex flex-col items-start gap-3 z-10">
+                  <span className="text-white/70 text-xs font-poppins font-semibold uppercase tracking-widest bg-black/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                    {item.category}
+                  </span>
+                  <h3 className="font-poppins text-white text-2xl md:text-3xl font-bold leading-tight mt-2 max-w-[80%] drop-shadow-lg">
+                    {item.title}
+                  </h3>
+                </div>
 
-                    <div className="pointer-events-auto">
-                      <Button
-                        text="View Offer"
-                        variant="underline-white"
-                        size="none"
-                        className="drop-shadow-md text-xs"
-                      />
-                    </div>
+                {/* Description at bottom left */}
+                <div className="font-poppins absolute bottom-0 left-0 md:bottom-8 px-6 z-10">
+                  <p className="text-white/80 text-xs md:text-sm font-poppins font-light leading-relaxed drop-shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {item.desc}
+                  </p>
+                  <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                    <span className="text-white text-xs font-bold uppercase tracking-widest border-b border-white/50 pb-1 hover:border-white transition-colors">
+                      {item.cta || "View Details ->"}
+                    </span>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
-          {/* Navigation below cards */}
-          <div className="flex items-center justify-between mt-4 pr-0 md:pr-[91px]">
-            {/* Dots Indicator */}
-            <div className="flex gap-2">
-              {OFFERS.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    if (scrollRef.current) {
-                      const cardWidth =
-                        scrollRef.current.scrollWidth / totalCards;
-                      scrollRef.current.scrollTo({
-                        left: cardWidth * idx,
-                        behavior: "smooth",
-                      });
-                    }
-                  }}
-                  className={`h-[2px] transition-all duration-300 ${
-                    idx === currentIndex
-                      ? "w-8 bg-neutral-900"
-                      : "w-8 bg-neutral-300 hover:bg-neutral-500"
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
-
-            {/* Navigation Buttons */}
-            <div className="flex gap-4">
-              <button
-                onClick={() => handleScroll("left")}
-                className="p-2.5 rounded-full border border-neutral-300 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition-all duration-300 flex items-center justify-center group"
-                aria-label="Scroll Left"
-              >
-                <ChevronLeft size={18} />
-              </button>
-              <button
-                onClick={() => handleScroll("right")}
-                className="p-2.5 rounded-full border border-neutral-300 hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition-all duration-300 flex items-center justify-center group"
-                aria-label="Scroll Right"
-              >
-                <ChevronRight size={18} />
-              </button>
-            </div>
+          <div className="absolute -bottom-4 right-0 flex gap-4 pr-6 md:pr-0 z-20">
+            <button
+              onClick={() => scroll('left')}
+              disabled={!canScrollLeft}
+              className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 border border-black/10
+                            ${canScrollLeft
+                  ? 'bg-white text-black hover:bg-black hover:text-white cursor-pointer shadow-sm'
+                  : 'bg-transparent text-black/20 cursor-not-allowed'}`}
+              aria-label="Scroll left"
+            >
+              <ArrowLeft size={20} />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              disabled={!canScrollRight}
+              className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 border border-black/10
+                            ${canScrollRight
+                  ? 'bg-black text-white hover:bg-black/80 cursor-pointer shadow-lg'
+                  : 'bg-transparent text-black/20 cursor-not-allowed'}`}
+              aria-label="Scroll right"
+            >
+              <ArrowRight size={20} />
+            </button>
           </div>
         </div>
       </CustomContainer>

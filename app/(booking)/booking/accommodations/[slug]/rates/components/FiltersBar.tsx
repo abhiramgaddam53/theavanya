@@ -1,6 +1,6 @@
 "use client";
 
-import { SlidersHorizontal, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 interface FiltersBarProps {
     bedType: string;
@@ -26,12 +26,6 @@ export default function FiltersBar({
 
             {/* Left: Filters */}
             <div className="flex flex-wrap items-center gap-3">
-                <button className="flex items-center gap-2 px-4 py-2 border border-[#1a1a1a]/20 rounded-md bg-white hover:bg-gray-50 transition-colors cursor-pointer">
-                    <SlidersHorizontal size={16} />
-                    <span className="font-poppins text-sm font-medium">All Filters</span>
-                </button>
-
-                <div className="h-6 w-px bg-gray-300 mx-2 hidden md:block"></div>
 
                 {/* Accommodation Type */}
                 <div className="relative">

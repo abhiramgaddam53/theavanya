@@ -64,8 +64,8 @@ export default function FAQSection({ tagline, description, faqs }: FAQSectionPro
     };
 
     return (
-        <section className="px-25 py-25">
-            <div className="max-w-[1400px] mx-auto">
+        <section className="py-16 bg-white">
+            <div className="max-w-[1400px] mx-auto px-6 md:px-16">
                 {/* Header */}
                 <div className="mb-6 space-y-6">
                     <h2 className="font-serif text-6xl text-[#1a1a1a] leading-none">

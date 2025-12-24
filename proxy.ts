@@ -5,6 +5,14 @@ export function proxy(request: NextRequest) {
     const path = request.nextUrl.pathname;
     const isAuth = request.cookies.get('admin_auth')?.value === 'true';
 
+    const showLogin = false;
+    if (!showLogin) {
+        if (path === '/admin') {
+            return NextResponse.redirect(new URL('/admin/dashboard', request.url));
+        }
+        return NextResponse.next();
+    }
+
     // If user is accessing protected admin route (anything other than /admin login page)
     if (path.startsWith('/admin/') && !isAuth) {
         return NextResponse.redirect(new URL('/admin', request.url));

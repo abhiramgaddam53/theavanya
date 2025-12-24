@@ -5,14 +5,14 @@ import CustomContainer from "./CustomContainer";
 import { WAYS_TO_ENJOY } from "../constants";
 
 const WaysToEnjoySection = () => {
-  const [activeTab, setActiveTab] = useState("spa");
+  const [activeTab, setActiveTab] = useState("wellness");
 
   return (
-    <section className="py-12 md:py-24 bg-white text-neutral-900">
+    <section className="py-16 md:py-24 bg-white text-neutral-900">
       <CustomContainer>
         <div className="text-center mb-8 md:mb-16">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-serif mb-8 md:mb-12">
-            More Ways to Enjoy Your Stay
+            Choose Your Pace. We’ll Handle the Rest.
           </h2>
 
           {/* Tabs */}
@@ -21,11 +21,10 @@ const WaysToEnjoySection = () => {
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`pb-3 md:pb-4 text-xs md:text-sm font-bold uppercase tracking-widest transition-all relative ${
-                  activeTab === item.id
-                    ? "text-neutral-900"
-                    : "text-neutral-400 hover:text-neutral-600"
-                }`}
+                className={`pb-3 cursor-pointer font-poppins md:pb-4 text-xs md:text-sm font-bold uppercase tracking-widest transition-all relative ${activeTab === item.id
+                  ? "text-neutral-900"
+                  : "text-neutral-400 hover:text-neutral-600"
+                  }`}
               >
                 {item.label}
                 {activeTab === item.id && (
@@ -41,7 +40,7 @@ const WaysToEnjoySection = () => {
         </div>
 
         {/* Content */}
-        <div className="max-w-7xl mx-auto">
+        <div className="w-full">
           <AnimatePresence mode="wait">
             {WAYS_TO_ENJOY.map(
               (item) =>
@@ -73,7 +72,7 @@ const WaysToEnjoySection = () => {
                     </div>
                     <div className="w-full md:w-1/2">
                       <span className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500 mb-4 block">
-                        {item.label.toUpperCase()}
+                        {item.tag ? item.tag.toUpperCase() : item.label.toUpperCase()}
                       </span>
                       <h3 className="text-2xl md:text-4xl font-serif mb-4 md:mb-8">
                         {item.title}
@@ -82,11 +81,11 @@ const WaysToEnjoySection = () => {
                         {item.desc}
                       </p>
                       <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3 md:gap-6">
-                        <button className="px-6 md:px-8 py-3 md:py-4 bg-neutral-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-[#c6a87c] transition-colors shadow-lg">
-                          Book Now
+                        <button className="px-6 font-poppins md:px-8 py-3 md:py-4 bg-neutral-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-[#c6a87c] transition-colors shadow-lg">
+                          {item.cta1 || "Book Now"}
                         </button>
-                        <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:text-[#c6a87c] transition-colors">
-                          Learn More <ChevronRight size={14} />
+                        <button className="flex font-poppins items-center gap-2 text-xs font-bold uppercase tracking-widest hover:text-[#c6a87c] transition-colors">
+                          {item.cta2 || "Learn More"} <ChevronRight size={14} />
                         </button>
                       </div>
                     </div>

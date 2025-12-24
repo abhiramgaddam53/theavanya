@@ -374,7 +374,7 @@ const SectionHeader = ({
   title: string;
   description?: string;
 }) => (
-  <div className="flex flex-col items-center justify-center mb-4 md:mb-6 lg:mb-8 text-center">
+  <div className="flex flex-col items-center justify-center mb-4 text-center">
     <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-3 md:mb-4 font-medium font-poppins">
       {title}
     </h2>
@@ -392,7 +392,7 @@ const GallerySection = ({ category }: { category: GalleryCategory }) => {
   return (
     <section
       id={category.id}
-      className="mb-16 md:mb-32 last:mb-0 scroll-mt-16 md:scroll-mt-32"
+      className="min-h-screen flex flex-col justify-center pt-10 scroll-mt-20"
     >
       <SectionHeader
         title={category.title}
@@ -438,7 +438,7 @@ const GallerySection = ({ category }: { category: GalleryCategory }) => {
 
 export default function GalleryPage() {
   return (
-    <div className="min-h-screen bg-white pt-12 md:pt-32 pb-16 md:pb-32">
+    <div className="min-h-screen bg-white pt-4 md:pb-32">
       <CustomContainer>
         <div className="flex flex-col">
           {galleryData.map((category) => (
