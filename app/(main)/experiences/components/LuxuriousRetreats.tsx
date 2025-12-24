@@ -116,7 +116,7 @@ export default function LuxuriousRetreats() {
                 {/* Horizontal Scrolling Container */}
                 <div
                     ref={scrollContainerRef}
-                    className="flex overflow-x-auto gap-5 md:gap-8 pb-12 pt-4 scrollbar-hide snap-x snap-mandatory pr-16"
+                    className="flex overflow-x-auto gap-5 md:gap-4 pb-12 pt-4 scrollbar-hide snap-x snap-mandatory pr-16"
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
                     {amenities.map((item) => (

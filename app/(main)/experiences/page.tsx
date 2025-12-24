@@ -27,7 +27,7 @@ function ExperienceHero() {
                     Discover
                 </span>
                 <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight mb-8">
-                    Serenity <span className="italic font-light">Awaits</span> You
+                    Serenity <span className="font-light">Awaits</span> You
                 </h1>
                 <p className="font-poppins text-xs md:text-sm max-w-lg mx-auto leading-relaxed opacity-90">
                     Uncover a world of blissful solitude and adventure at Avanya Kute, where every moment is a celebration of life.
@@ -35,7 +35,6 @@ function ExperienceHero() {
 
                 {/* Scroll Indicator */}
                 <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
-                    <div className="w-px h-12 bg-white/50" />
                 </div>
             </div>
         </section>

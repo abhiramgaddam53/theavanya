@@ -37,7 +37,7 @@ export default function DiningTestimonial() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <section className="bg-secondary-bg text-[#e5e1d8] py-32 px-6 md:px-16 relative overflow-hidden">
+        <section className="bg-[grey] text-[#e5e1d8] py-38 px-6 md:px-16 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto flex flex-col justify-between min-h-[60vh]">
 
                 {/* Main Quote Slider */}

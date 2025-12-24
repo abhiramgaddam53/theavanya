@@ -39,7 +39,7 @@ export default function OurAwards() {
                         const Icon = award.icon;
                         return (
                             <div key={award.id} className="flex flex-col items-center gap-6 group">
-                                <div className="w-16 h-16 rounded-full border border-[#1a1a1a]/10 flex items-center justify-center text-[#6B6B55] group-hover:bg-[#6B6B55] group-hover:text-white transition-all duration-500">
+                                <div className="w-16 h-16 rounded-full border border-[#1a1a1a]/10 flex items-center justify-center text-[#6B6B55] group-hover:bg-[#bea5857d] group-hover:text-white transition-all duration-500">
                                     <Icon strokeWidth={1} size={32} />
                                 </div>
                                 <span className="font-poppins text-xs font-bold tracking-widest uppercase text-[#1a1a1a]/80">

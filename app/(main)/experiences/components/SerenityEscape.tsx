@@ -82,7 +82,7 @@ export default function SerenityEscape() {
                 </div>
 
                 {/* Quote / Text Section */}
-                <div className="max-w-2xl mx-auto text-center mt-32 mb-32">
+                <div className="max-w-2xl mx-auto text-center mt-32 mb-32 py-50">
                     <h3 className="font-serif text-3xl md:text-4xl text-[#1a1a1a] leading-tight mb-8">
                         “Our meals are crafted with <span className="italic font-light">carefully chosen ingredients</span>, creating dishes that tell a story of passion and local culture.”
                     </h3>
