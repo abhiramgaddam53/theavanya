@@ -54,7 +54,7 @@
     "total": 27599700,
     "monthlyAvg": 2299975,
     "weeklyAvg": 532800,
-    "period": ["Yearly", "Monthly"],
+    "period": ["Weekly", "Monthly"],
     "monthlyPoints": [
       {
         "label": "Jan",
@@ -106,55 +106,12 @@
       }
     ],
     "yearlyPoints": [
-      {
-        "label": "2013",
-        "value": 820
-      },
-      {
-        "label": "2014",
-        "value": 900
-      },
-      {
-        "label": "2015",
-        "value": 760
-      },
-      {
-        "label": "2016",
-        "value": 880
-      },
-      {
-        "label": "2017",
-        "value": 940
-      },
-      {
-        "label": "2018",
-        "value": 1020
-      },
-      {
-        "label": "2019",
-        "value": 1100
-      },
-      {
-        "label": "2020",
-        "value": 980
-      },
-      {
-        "label": "2021",
-        "value": 1200
-      },
-      {
-        "label": "2022",
-        "value": 1350
-      },
-      {
-        "label": "2023",
-        "value": 1500
-      },
-      {
-        "label": "2024",
-        "value": 1650
-      }
-    ]
+  {"label": "Week 1", "value": 75.0},
+  {"label": "Week 2", "value": 56.2},
+  {"label": "Week 3", "value": 56.2},
+  {"label": "Week 4", "value": 56.2},
+  {"label": "Week 5", "value": 56.2}
+      ]
   },
   "rooms": [
     {
