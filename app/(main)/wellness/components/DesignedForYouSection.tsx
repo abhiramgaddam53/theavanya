@@ -24,7 +24,7 @@ const lifestyleItems = [
         title: "Sleep Optimization",
         tag: "Deep Rest",
         description: "Digital detox, EMF-free environments, circadian-aligned lighting, and natural soundscapes for profoundly restorative sleep.",
-        image: "/experiences/luxury/Silence.jpg",
+        image: "/wellness/Sleep Optimisation.jpg",
         variant: "landscape" as const
     },
     {
@@ -32,7 +32,7 @@ const lifestyleItems = [
         title: "Mindful Movement",
         tag: "Body Awareness",
         description: "Private yoga and mobility sessions designed around your energy levels, not rigid routines.",
-        image: "/experiences/luxury/Movement.jpg",
+        image: "/wellness/Mindful Movements.jpg",
         variant: "portrait" as const
     },
     {
@@ -40,7 +40,7 @@ const lifestyleItems = [
         title: "Regenerative Dining",
         tag: "Nourishment",
         description: "Seasonal, farm-to-table cuisine crafted to nourish the body without excess no menus, only intention.",
-        image: "/experiences/luxury/Culinary.jpg",
+        image: "/wellness/Regenetative Dining.jpg",
         variant: "square" as const
     }
 ];
