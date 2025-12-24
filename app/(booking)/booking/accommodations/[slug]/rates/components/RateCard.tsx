@@ -65,7 +65,7 @@ export default function RateCard({ room, villaName, villaSlug, villaImages, isAv
                 )}
 
                 {/* Left: Image Carousel */}
-                <div className="relative w-full md:w-[40%] aspect-[4/3] md:aspect-auto">
+                <div className="relative w-full md:w-[40%] h-[220px]">
                     <Image
                         src={images[currentImageIndex]}
                         alt={room.title}
@@ -99,7 +99,7 @@ export default function RateCard({ room, villaName, villaSlug, villaImages, isAv
                 </div>
 
                 {/* Right: Details & Rates */}
-                <div className="flex-1 p-6 flex flex-col">
+                <div className="flex-1 px-6 py-8 flex flex-col">
 
                     {/* Header */}
                     <div className="flex justify-between items-start mb-6">

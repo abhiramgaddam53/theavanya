@@ -127,7 +127,7 @@ export default function BookingNavbar() {
 
       {/* 3. Bottom Bar: Booking Widget */}
       {(!isCompleteBookingPage && !isGallaryPage) && (
-        <div className="bg-white border-t border-gray-100 px-6 md:px-16 py-4 shadow-sm">
+        <div className="bg-white border-t border-gray-100 px-28 py-4 shadow-sm">
           <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Dates */}
             <div className="flex-1 w-full md:w-auto flex flex-col gap-1 border-b md:border-b-0 md:border-r border-gray-200 pb-2 md:pb-0 md:pr-6 cursor-pointer hover:bg-gray-50 transition-colors rounded px-2 py-1">
