@@ -59,7 +59,7 @@ export default function DesignedForYouSection() {
                 </div>
 
                 {/* Grid Layout - Asymmetrical Board Layout */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-12">
 
                     {/* Row 1: Square (Left) + Portrait (Right) */}
                     <div className="flex flex-col justify-start">

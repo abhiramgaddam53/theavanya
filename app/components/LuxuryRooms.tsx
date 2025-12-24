@@ -28,7 +28,7 @@ export default function LuxuryRooms() {
                 </div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {selectedVillas.map((villa) => (
                         <Link href={`/booking/accommodations/${villa.slug}`} key={villa.id} className="block group">
                             <CommonRoomCard

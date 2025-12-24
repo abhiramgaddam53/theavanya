@@ -22,7 +22,7 @@ export default function MoreThanStay() {
     const yCenter = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
     return (
-        <section ref={containerRef} className="bg-primary-bg relative h-[150vh] w-full overflow-hidden flex flex-col items-center justify-between py-32">
+        <section ref={containerRef} className="bg-primary-bg relative h-[120vh] w-full overflow-hidden flex flex-col items-center justify-between py-32">
 
             {/* Background Image */}
             <div className="absolute inset-0 z-0">

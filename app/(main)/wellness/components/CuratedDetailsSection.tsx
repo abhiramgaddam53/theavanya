@@ -81,7 +81,7 @@ export default function CuratedDetailsSection() {
                     className="flex items-center justify-center pl-[20vw]"
                 >
                     {/* Title Section - Takes up part of viewport to allow cards to peek */}
-                    <div className="min-w-[45vw] h-screen flex items-center justify-start pr-[14vw] z-10 shrink-0">
+                    <div className="min-w-[45vw] h-screen flex items-center justify-start pr-[30vw] z-10 shrink-0">
                         <h2 className="font-serif text-6xl leading-none">
                             Every Detail, <br />Personally Curated.
                         </h2>

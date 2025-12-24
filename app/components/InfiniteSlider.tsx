@@ -25,10 +25,10 @@ export default function InfiniteSlider() {
             {/* Slider wrapper — controls visible area */}
             <div className="w-full max-w-[95vw] h-fit mx-auto overflow-hidden">
                 <motion.div
-                    className="flex gap-8 items-center"
+                    className="flex gap-4 items-center"
                     animate={{ x: ["0%", "-50%"] }}
                     transition={{
-                        duration: 20,
+                        duration: 30,
                         ease: "linear",
                         repeat: Infinity,
                     }}
@@ -36,7 +36,7 @@ export default function InfiniteSlider() {
                     {[...images, ...images].map((src, index) => (
                         <div
                             key={index}
-                            className="relative h-[80vh] aspect-3/4 shrink-0"
+                            className="relative h-[80vh] aspect-3/4 shrink-0 overflow-hidden rounded-[8px]"
                         >
                             <Image
                                 src={src}
@@ -45,6 +45,7 @@ export default function InfiniteSlider() {
                                 className="object-cover"
                             />
                         </div>
+
                     ))}
                 </motion.div>
 

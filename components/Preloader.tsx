@@ -69,13 +69,15 @@ export default function Preloader() {
                             initial="initial"
                             animate="animate"
                         >
-                            <Image
-                                src="/logos/logo.png"
-                                alt="Logo"
-                                fill
-                                className="object-contain"
-                                priority
-                            />
+                            <div style={{ position: 'relative', height: '90px', width: 'auto' }}>
+                                <Image
+                                    src="/logos/logo.png"
+                                    alt="Logo"
+                                    fill
+                                    style={{ objectFit: 'contain' }}
+                                    priority
+                                />
+                            </div>
                         </motion.div>
 
                         <div className="h-[4px] w-40 overflow-hidden bg-[#e0ded5] relative z-10">

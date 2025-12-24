@@ -17,7 +17,7 @@ export default function PlannedForYou() {
     const opacity = useTransform(scrollYProgress, [0.2, 0.5, 0.8], [0, 1, 0]);
 
     return (
-        <section ref={containerRef} className="relative h-[200vh] bg-primary-bg">
+        <section ref={containerRef} className="relative h-[120vh] bg-primary-bg">
             <div className="sticky top-0 h-screen w-full overflow-hidden">
 
                 {/* Background Image */}
@@ -52,7 +52,7 @@ export default function PlannedForYou() {
                         className="absolute bottom-24 text-center max-w-lg px-4"
                     >
                         <p className="text-3xl text-white">
-                            Every moment curated, every experience unforgettable — leave the planning to us.
+                            Every moment curated, every experience unforgettable leave the planning to us.
                         </p>
                     </motion.div>
 

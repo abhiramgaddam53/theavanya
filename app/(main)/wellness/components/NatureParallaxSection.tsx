@@ -39,7 +39,7 @@ export default function NatureParallaxSection() {
     const scale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
 
     return (
-        <section ref={sectionRef} className="relative h-screen w-full overflow-hidden flex bg-black">
+        <section ref={sectionRef} className="relative h-screen w-full overflow-hidden flex bg-black" style={{paddingBottom:'50px'}}>
 
             {/* Background Parallax Image (One large image shared across columns or individual?) 
                 The reference image looks like one continuous panoramic shot split by lines.

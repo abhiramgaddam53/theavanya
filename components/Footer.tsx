@@ -28,9 +28,9 @@ export default function Footer() {
                 {/* Navigation Links */}
                 <nav className="flex items-center gap-8 md:gap-16">
                     {[
-                        { label: "MENU", href: "#" },
-                        { label: "ABOUT", href: "#" },
-                        { label: "CONTACT", href: "#" }
+                        { label: "Accomodations", href: "/booking/accommodations" },
+                        { label: "Experiences", href: "/experiences" },
+                        { label: "Wellness", href: "/wellness" }
                     ].map((link) => (
                         <Link
                             key={link.label}

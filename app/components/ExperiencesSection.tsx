@@ -73,7 +73,7 @@ export default function ExperiencesSection() {
                             {experiences.map((exp) => (
                                 <motion.div
                                     key={exp.id}
-                                    className="absolute inset-0"
+                                    className="absolute inset-0 overflow-hidden rounded-lg"  
                                     animate={{
                                         opacity: activeId === exp.id ? 1 : 0,
                                         scale: activeId === exp.id ? 1 : 1.05,
@@ -83,14 +83,16 @@ export default function ExperiencesSection() {
                                         ease: "easeInOut",
                                     }}
                                 >
-                                    <Image
-                                        src={exp.image}
-                                        alt={exp.title}
-                                        fill
-                                        objectFit="cover"
-                                        className="object-cover"
-                                        priority={exp.id === 1}
-                                    />
+                                    <div className="relative h-full w-full overflow-hidden rounded-lg"> {/* 8px radius */}
+                                        <Image
+                                            src={exp.image}
+                                            alt={exp.title}
+                                            fill
+                                            className="object-cover"
+                                            priority={exp.id === 1}
+                                        />
+                                    </div>
+
                                 </motion.div>
                             ))}
                         </div>

@@ -11,7 +11,7 @@ export default function WelcomeSection() {
 
                 <div className="mb-3">
                     <Image
-                        src="/logos/king.png"
+                        src="/logos/logo.png"
                         alt="Logo"
                         height={50}
                         width={50}

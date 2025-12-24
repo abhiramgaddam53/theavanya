@@ -7,16 +7,6 @@ import Button from "@/components/Button";
 
 export default function ReserveSection() {
     const containerRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "center center"],
-    });
-
-    // Rotation from tilted left (-15deg) to straight (0deg) based on scroll
-    const rotate = useTransform(scrollYProgress, [0, 1], [-15, 0]);
-
-    // Slight downward movement to center it as we scroll, but stopping "in the middle"
-    const y = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
 
     return (
         <section ref={containerRef} className="relative w-full h-[150vh]">
@@ -32,17 +22,16 @@ export default function ReserveSection() {
             </div>
 
             {/* Sticky Container for the Card */}
-            <div className="sticky top-0 h-screen w-full flex items-start justify-center z-10 px-4 pt-[20vh]">
+            <div className="sticky top-0 h-screen w-full flex items-start justify-center z-10 px-4 pt-[20vh] " style={{borderRadius:'8px'}}>
 
                 {/* Popup Card */}
-                <motion.div
-                    style={{ rotate, y }}
+                <div
                     className="bg-primary-bg px-16 py-24 max-w-2xl text-center shadow-2xl origin-bottom"
                 >
                     {/* Icon */}
                     <div className="flex justify-center mb-6 text-[#1a1a1a]">
                         <Image
-                            src="/logos/king.png"
+                            src="/logos/logo.png"
                             alt="Logo"
                             height={50}
                             width={50}
@@ -58,7 +47,7 @@ export default function ReserveSection() {
 
                     {/* Description */}
                     <p className="font-poppins text-sm md:text-base text-black leading-relaxed mb-6 max-w-lg mx-auto">
-                        Booking with Avanya means more than just selecting dates — it’s about tailoring every detail to suit your stay. Whether you’d like to include curated add-on services or keep things minimal, you have full control over your experience.
+                        Booking with Avanya means more than just selecting dates it’s about tailoring every detail to suit your stay.
                     </p>
 
                     {/* Button */}
@@ -70,7 +59,7 @@ export default function ReserveSection() {
                         className="font-bold text-md"
                     />
 
-                </motion.div>
+                </div>
             </div>
 
         </section>
