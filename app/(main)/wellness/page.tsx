@@ -55,6 +55,7 @@ export default function WellnessPage() {
                 description="Because true luxury anticipates questions before they are asked."
                 faqs={wellnessFAQs}
             />
+            <div className="pb-16"></div>
         </main>
     );
 }

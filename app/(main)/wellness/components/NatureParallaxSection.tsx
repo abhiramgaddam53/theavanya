@@ -39,7 +39,7 @@ export default function NatureParallaxSection() {
     const scale = useTransform(scrollYProgress, [0, 1], [1.1, 1]);
 
     return (
-        <section ref={sectionRef} className="relative h-screen w-full overflow-hidden flex bg-black" style={{paddingBottom:'50px'}}>
+        <section ref={sectionRef} className="relative h-screen w-full overflow-hidden flex bg-black" style={{ paddingBottom: '50px' }}>
 
             {/* Background Parallax Image (One large image shared across columns or individual?) 
                 The reference image looks like one continuous panoramic shot split by lines.
@@ -57,7 +57,7 @@ export default function NatureParallaxSection() {
             </motion.div>
 
             {/* Grid Content Overlay */}
-            <div className="relative z-10 w-full h-full grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/20">
+            <div className="relative z-10 w-full h-[110%] grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/20">
                 {panels.map((panel) => (
                     <div key={panel.id} className="h-full flex flex-col justify-end items-center text-center p-8 pb-16 group hover:bg-white/5 transition-colors duration-500">
                         <div className="flex flex-col gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
