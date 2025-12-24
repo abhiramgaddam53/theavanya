@@ -12,9 +12,8 @@ const CustomContainer: React.FC<CustomContainerProps> = ({
   noRightPadding = false,
 }) => (
   <div
-    className={`w-full px-4 md:pl-[91px] ${
-      noRightPadding ? "md:pr-0" : "md:pr-[91px]"
-    } ${className}`}
+    className={`w-full px-28 ${noRightPadding ? "pr-0 md:pr-0" : ""
+      } ${className}`}
   >
     {children}
   </div>

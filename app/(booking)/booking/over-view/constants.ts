@@ -1,5 +1,5 @@
-import { 
-  Star, 
+import {
+  Star,
   CheckCircle,
   Briefcase,
   Droplets,
@@ -108,91 +108,106 @@ export const ROOMS = [
 export const OFFERS = [
   {
     id: 1,
-    category: "Dining",
-    title: "Festive Celebrations",
-    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2000&auto=format&fit=crop",
-    desc: "Indulge in the joy of the season with curated cuisine."
+    category: "Wellness",
+    title: "Forest Immersion Retreat",
+    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2000&auto=format&fit=crop",
+    desc: "A guided journey into stillness combining forest bathing, breathwork, and Ayurvedic restoration crafted for deep mental reset.",
+    cta: "View Retreat →"
   },
   {
     id: 2,
-    category: "Members",
-    title: "Stay Longer, Save More",
+    category: "Culinary",
+    title: "The No-Menu Dining Experience",
     image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2000&auto=format&fit=crop",
-    desc: "Earn up to 4 Free Nights and Silver Elite Status."
+    desc: "Every meal is a conversation. Our chef designs bespoke dishes daily based on your preferences, the harvest, and intuition.",
+    cta: "Learn More →"
   },
   {
     id: 3,
-    category: "Wellness",
-    title: "Weekend Escape",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2000&auto=format&fit=crop",
-    desc: "Rejuvenate with our exclusive spa package."
+    category: "Privacy",
+    title: "Complete Digital Detox",
+    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2000&auto=format&fit=crop",
+    desc: "Activate the in-villa Digital Detox Switch and disconnect entirely; Wi-Fi, EMF signals, and distractions fade into silence.",
+    cta: "Experience Silence →"
   },
   {
     id: 4,
-    category: "Adventure",
-    title: "Explore Hyderabad",
-    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2000&auto=format&fit=crop",
-    desc: "Discover the best attractions and experiences in the city."
+    category: "Wellness",
+    title: "Ayurvedic Bio-Hacking",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop",
+    desc: "Precision wellness rituals combining ancient Ayurvedic wisdom with modern diagnostics tailored to your body’s rhythms.",
+    cta: "Explore Treatments →"
   },
   {
     id: 5,
-    category: "Corporate",
-    title: "Business Retreat",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop",
-    desc: "Perfect venue for team building and corporate events."
+    category: "Nature",
+    title: "Guided Forest Expeditions",
+    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2000&auto=format&fit=crop",
+    desc: "Walk ancient trails with naturalists who understand the forest as a living archive—not an attraction.",
+    cta: "View Trails →"
   },
   {
     id: 6,
-    category: "Romance",
-    title: "Honeymoon Bliss",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2000&auto=format&fit=crop",
-    desc: "Create unforgettable memories with your special someone."
+    category: "Arrival",
+    title: "Private Transfers",
+    image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2000&auto=format&fit=crop",
+    desc: "Arrive by private drive or helipad transfer seamlessly arranged to preserve your privacy from the first moment.",
+    cta: "Plan Arrival →"
   }
 ];
 
 export const AMENITIES = [
-  { icon: Droplets, label: "Sustainability" },
-  { icon: Utensils, label: "Restaurant On-Site" },
-  { icon: Briefcase, label: "Meeting Space" },
-  { icon: Droplets, label: "Outdoor Pool" },
-  { icon: Dumbbell, label: "Fitness Center" },
-  { icon: Wind, label: "Spa Services" },
+  { icon: Droplets, label: "Infinity Plunge Pools" },
+  { icon: Wind, label: "Forest Spa Pavilion" },
+  { icon: Utensils, label: "Private Dining Spaces" },
+  { icon: Star, label: "Digital Detox Villas" },
+  { icon: CheckCircle, label: "Naturalist-Led Walks" },
+  { icon: Briefcase, label: "Bespoke Butler Service" },
 ];
 
 export const WAYS_TO_ENJOY = [
   {
-    id: 'spa',
-    label: 'Spa',
-    title: 'Heavenly Spa by avanya™',
-    desc: 'Treat yourself to a full day of spa services for total body wellness at Heavenly Spa by avanya. Choose invigorating a la carte treatments for a peaceful moment away from the hustle and bustle of Hitech City.',
+    id: 'wellness',
+    label: 'Wellness',
+    tag: 'Restoration',
+    title: 'Personalized Wellness Journeys',
+    desc: 'From detox programs to sleep optimization, every wellness plan is crafted after arrival never pre-packaged.',
+    cta1: 'Explore Wellness',
+    cta2: 'Speak to Concierge',
     image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop'
   },
   {
-    id: 'fitness',
-    label: 'Fitness',
-    title: 'avanyaWORKOUT® Fitness Studio',
-    desc: 'Fuel your day with a workout in our state-of-the-art fitness center, featuring free weights, cardiovascular equipment, and plenty of space to stretch and move.',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop'
+    id: 'experiences',
+    label: 'Experiences',
+    tag: 'Discovery',
+    title: 'Experiences Beyond the Itinerary',
+    desc: 'Private picnics, waterfall rituals, and silent sunrise walks designed around your mood, not schedules.',
+    cta1: 'View Experiences',
+    cta2: 'Customize Stay',
+    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2000&auto=format&fit=crop'
   },
   {
-    id: 'swimming',
-    label: 'Swimming',
-    title: 'Outdoor Pool',
-    desc: 'Take a refreshing dip in our sparkling outdoor pool, the perfect place to unwind after a busy day of meetings or sightseeing in Hyderabad.',
-    image: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=2070&auto=format&fit=crop'
+    id: 'dining',
+    label: 'Dining',
+    tag: 'Culinary',
+    title: 'Dining Without Menus',
+    desc: 'Every meal is a dialogue between you, the chef, and the forest’s seasonal offering.',
+    cta1: 'Learn More',
+    cta2: 'Request Preferences',
+    image: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2000&auto=format&fit=crop'
   }
 ];
 
 export const AWARDS = [
-  { id: 1, title: "2021 Trip Advisor Travelers Choice Hotel", icon: Trophy },
-  { id: 2, title: "Times Food and Nightlife Awards 2023", icon: Star },
-  { id: 3, title: "Five Star Award of Excellence - Telangana Tourism", icon: CheckCircle }
+  { id: 1, title: "Condé Nast Traveller — India’s Most Private Eco-Luxury Retreat", icon: Trophy },
+  { id: 2, title: "Architectural Digest India — Best Biophilic Hospitality Design", icon: Star },
+  { id: 3, title: "World Travel Awards — Leading Sustainable Luxury Resort – South Asia", icon: CheckCircle }
 ];
 
 export const FAQS = [
-  { q: "What are the check-in and check-out times?", a: "Check-in is at 3:00 pm and Check-out is at 12:00 pm." },
-  { q: "Does The avanya Hyderabad Mindspace allow pets?", a: "Pets are not allowed at our property." },
-  { q: "What are the parking options?", a: "We offer complimentary on-site parking and valet parking for all guests." },
-  { q: "What property amenities are available?", a: "Guests can enjoy our fitness center, outdoor pool, multiple restaurants, and the Heavenly Spa." },
-  { q: "Does the hotel have in-room Wi-Fi?", a: "Yes, complimentary high-speed Wi-Fi is available in all guest rooms and public areas." }
+  { q: "Is The Avanya suitable for families?", a: "The Avanya is designed primarily for adults seeking deep rest. Select villas accommodate families upon request." },
+  { q: "Do you offer Wi-Fi across the property?", a: "Yes high-speed connectivity is available throughout, with optional full digital detox in private villas." },
+  { q: "How private is the resort?", a: "Each villa is secluded with natural forest buffers. There are no shared corridors or public lobbies." },
+  { q: "Are wellness programs mandatory?", a: "Not at all. Wellness is available by choice never imposed." },
+  { q: "How far is the nearest airport?", a: "Calicut International Airport is approximately a 2.5-hour scenic drive. Private transfers can be arranged." }
 ];

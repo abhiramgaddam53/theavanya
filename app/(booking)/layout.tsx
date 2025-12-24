@@ -5,6 +5,7 @@ import BookingNavbar from "@/components/BookingNavbar";
 import MinimalLoader from "@/components/MinimalLoader";
 
 import { BookingProvider } from "@/context/BookingContext";
+import Footer from "@/components/Footer";
 
 export default function BookingLayout({
   children,
@@ -22,11 +23,7 @@ export default function BookingLayout({
         </Suspense>
         <main>{children}</main>
         {/* Placeholder BookingFooter or just standard Footer for now if not specified. User requested "footer of its own". */}
-        <footer className="bg-[#1a1a1a] text-white py-12 text-center">
-          <p className="font-poppins text-sm opacity-60">
-            © 2024 The Avanya Booking. All rights reserved.
-          </p>
-        </footer>
+        <Footer />
       </div>
     </BookingProvider>
   );

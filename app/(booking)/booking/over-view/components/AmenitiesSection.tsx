@@ -7,23 +7,21 @@ import { AMENITIES } from "../constants";
 
 const AmenitiesSection = () => {
   return (
-    <section className="py-8 md:py-16 bg-[#1a1a1a] text-white">
+    <section className="py-16 md:py-24 bg-[#1a1a1a] text-white">
       <CustomContainer>
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start mb-12 md:mb-12">
           <div>
             <SectionHeading
-              sub="Amenities"
-              title="Curated For You"
+              sub="Designed for Stillness"
+              title="Luxury That Exists Only When You Need It."
               align="left"
               light={true}
             />
             <p className="text-gray-300 font-poppins mb-8 md:mb-12 leading-relaxed max-w-md text-sm md:text-base">
-              From our world-class fitness studio to the serene outdoor pool,
-              every detail is designed to elevate your stay. Experience a
-              seamless blend of productivity and relaxation.
+              Every amenity at The Avanya is intentionally understated appearing precisely when required, and disappearing when not.
             </p>
             <button className="px-8 py-4 bg-[#f5f1eb] text-secondary-bg text-xs font-bold uppercase tracking-widest hover:bg-[#ede8df] transition-colors">
-              Explore All Amenities
+              Explore Amenities →
             </button>
           </div>
 

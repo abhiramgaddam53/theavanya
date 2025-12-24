@@ -6,13 +6,13 @@ import { AWARDS } from "../constants";
 
 const AwardsSection = () => {
   return (
-    <section className="py-8 md:py-16 bg-white border-t border-neutral-100">
+    <section className="py-16 bg-white">
       <CustomContainer>
-        <SectionHeading sub="Recognition" title="Awards" align="center" />
+        <SectionHeading sub="Honors & Distinctions" title="Recognized for What We Preserve, Not What We Display." align="center" />
 
-        <div className="mt-8 md:mt-12 flex flex-col gap-6 md:gap-12 items-center">
+        <div className="mt-4 md:mt-12 flex flex-col gap-4 items-center">
           {/* Row 1 */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 w-full">
+          <div className="flex flex-wrap justify-center gap-4 w-full">
             {AWARDS.slice(0, 2).map((award) => (
               <motion.div
                 key={award.id}
@@ -28,7 +28,7 @@ const AwardsSection = () => {
                   <award.icon size={24} />
                 </div>
 
-                <h4 className="font-serif text-lg text-neutral-800">
+                <h4 className="font-poppins text-lg text-neutral-800">
                   {award.title}
                 </h4>
               </motion.div>
