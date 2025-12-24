@@ -11,7 +11,7 @@ import OverviewTable from "@/components/TableList";
 export default function Home() {
     const { header, summaryCards, revenue, rooms, todayOverview, roomStatus, feedback } =
         dashboardData;
-    const [selectedPeriod, setSelectedPeriod] = useState<'Monthly' | 'Yearly'>('Monthly');
+    const [selectedPeriod, setSelectedPeriod] = useState<'Monthly' | 'Weekly'>('Monthly');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const chartPoints =
@@ -53,7 +53,7 @@ export default function Home() {
                                     className={`metric-change-pill ${card.direction === "up" ? "up" : "down"
                                         }`}
                                 >
-                                    {card.direction === "up" ? <img src="./miscellaneous/trending_up.png" alt="" /> : "▼"} {card.changePct}%
+                                    {card.direction === "up" ? <img src="/miscellaneous/trending_up.png" alt="" /> : "▼"} {card.changePct}%
                                 </span>
                                 <span className="metric-change-text">{card.compareText}</span>
                             </p>
@@ -107,7 +107,7 @@ export default function Home() {
                                             <button
                                                 key={period}
                                                 onClick={() => {
-                                                    setSelectedPeriod(period as 'Monthly' | 'Yearly');
+                                                    setSelectedPeriod(period as 'Monthly' | 'Weekly');
                                                     setIsDropdownOpen(false);
                                                 }}
                                                 className=" chart-filter1 w-full text-left px-4 py-3 text-sm font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-800 border-b border-gray-100 last:border-b-0 first:rounded-t-2xl last:rounded-b-2xl transition-all duration-150"
@@ -118,7 +118,7 @@ export default function Home() {
                                     </div>
                                 )}
                             </div>
-                            <button className="chart-expand"><img src="./miscellaneous/DiagonalArrow.png" alt="" /></button>
+                            <button className="chart-expand"><img src="/miscellaneous/DiagonalArrow.png" alt="" /></button>
 
                         </div>
                     </header>
@@ -157,8 +157,8 @@ export default function Home() {
                     <header className="overview-header">
                         <h2 className="section-title1">Today’s Overview</h2>
                         <div className="overview-actions">
-                            <button className="chart-expand"><img src="./miscellaneous/DiagonalArrow.png" alt="" /></button>
-                            <button className="chart-expand"><img src="./miscellaneous/3dot.png" alt="" /></button>
+                            <button className="chart-expand"><img src="/miscellaneous/DiagonalArrow.png" alt="" /></button>
+                            <button className="chart-expand"><img src="/miscellaneous/3dot.png" alt="" /></button>
                         </div>
                     </header>
 
@@ -257,7 +257,7 @@ export default function Home() {
                 <section className="bottom-section">
                     <div className="room-status-card">
                         <div className="section-title2">
-                            <span className="status-icon" style={{ paddingTop: '10px' }}><img src="./miscellaneous/roomicon.png" alt="" /></span> <span > Room Status</span>
+                            <span className="status-icon" style={{ paddingTop: '10px' }}><img src="/miscellaneous/roomicon.png" alt="" /></span> <span > Room Status</span>
                         </div>
                         <p className="status-subtitle">Track your Rooms!</p>
 

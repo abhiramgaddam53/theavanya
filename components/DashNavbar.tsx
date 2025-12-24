@@ -8,7 +8,7 @@ const DashNavbar = () => {
     <header className="navbar">
       <div className="navbar-left">
         <div className="navbar-logo">
-          <img className="icon" src="/logos/DLogo.png" alt="logo" />
+          <img className="icon" src="/logos/DLogo.png" alt="logo" style={{height:'30px'}}/>
         </div>
         <span className="navbar-title">Dashboard</span>
       </div>
