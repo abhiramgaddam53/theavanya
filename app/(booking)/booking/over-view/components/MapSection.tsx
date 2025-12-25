@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 
 const MapSection = () => {
   return (
-    <section className="bg-[#1a1a1a] text-white py-24 min-h-screen flex items-center justify-center">
+    <section className="bg-[#1a1a1a] text-white py-24 h-screen flex items-center justify-center">
       <CustomContainer>
         <div className="flex flex-col md:flex-row gap-8 md:gap-16">
           <div className="w-full md:w-1/3 space-y-12">

@@ -110,7 +110,7 @@ export const OFFERS = [
     id: 1,
     category: "Wellness",
     title: "Forest Immersion Retreat",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2000&auto=format&fit=crop",
+    image: "/booking/over-view/applecards/Forest Immersion Retreat.jpg",
     desc: "A guided journey into stillness combining forest bathing, breathwork, and Ayurvedic restoration crafted for deep mental reset.",
     cta: "View Retreat →"
   },
@@ -118,7 +118,7 @@ export const OFFERS = [
     id: 2,
     category: "Culinary",
     title: "The No-Menu Dining Experience",
-    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2000&auto=format&fit=crop",
+    image: "/booking/over-view/applecards/No Menu Dining.JPG",
     desc: "Every meal is a conversation. Our chef designs bespoke dishes daily based on your preferences, the harvest, and intuition.",
     cta: "Learn More →"
   },
@@ -126,7 +126,7 @@ export const OFFERS = [
     id: 3,
     category: "Privacy",
     title: "Complete Digital Detox",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2000&auto=format&fit=crop",
+    image: "/booking/over-view/applecards/Digital Detox Management.JPG",
     desc: "Activate the in-villa Digital Detox Switch and disconnect entirely; Wi-Fi, EMF signals, and distractions fade into silence.",
     cta: "Experience Silence →"
   },
@@ -134,7 +134,7 @@ export const OFFERS = [
     id: 4,
     category: "Wellness",
     title: "Ayurvedic Bio-Hacking",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop",
+    image: "/booking/over-view/applecards/Ayurvedic Bio Hacking.jpg",
     desc: "Precision wellness rituals combining ancient Ayurvedic wisdom with modern diagnostics tailored to your body’s rhythms.",
     cta: "Explore Treatments →"
   },
@@ -142,7 +142,7 @@ export const OFFERS = [
     id: 5,
     category: "Nature",
     title: "Guided Forest Expeditions",
-    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2000&auto=format&fit=crop",
+    image: "/booking/over-view/applecards/Guided Forest.JPG",
     desc: "Walk ancient trails with naturalists who understand the forest as a living archive—not an attraction.",
     cta: "View Trails →"
   },
@@ -150,7 +150,7 @@ export const OFFERS = [
     id: 6,
     category: "Arrival",
     title: "Private Transfers",
-    image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2000&auto=format&fit=crop",
+    image: "/booking/over-view/applecards/Private Transfers.JPG",
     desc: "Arrive by private drive or helipad transfer seamlessly arranged to preserve your privacy from the first moment.",
     cta: "Plan Arrival →"
   }

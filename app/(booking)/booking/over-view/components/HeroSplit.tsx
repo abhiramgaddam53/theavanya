@@ -37,7 +37,7 @@ const HeroSplit = () => {
       </section>
 
       {/* Bottom Content Section */}
-      <section className="bg-white py-10 h-screen">
+      <section className="bg-white py-24 min-h-screen flex items-center justify-center">
         <CustomContainer>
           <div className="flex flex-col items-center">
             {/* Welcome Text */}

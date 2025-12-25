@@ -22,15 +22,13 @@ export default function OverviewPage() {
       <WaysToEnjoySection />
       <MapSection />
       <AwardsSection />
-      <div className="min-h-screen flex items-center justify-center py-24">
-        <CustomContainer>
-          <FAQSection
-            tagline="Everything You Need to Know Without the Noise."
-            description=" "
-            faqs={formattedFaqs}
-          />
-        </CustomContainer>
-      </div>
+      <CustomContainer>
+        <FAQSection
+          tagline="Everything You Need to Know Without the Noise."
+          description=" "
+          faqs={formattedFaqs}
+        />
+      </CustomContainer>
       <div className="pb-16"></div>
     </div>
   );
