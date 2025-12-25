@@ -9,49 +9,49 @@ const items = [
         id: 1,
         title: "Private Concierge",
         description: "A dedicated point of contact who understands your preferences before you express them.",
-        image: "/wellness/serv/Cincierfe.jpg"
+        image: "/wellness/serv/Private Concierge.jpg"
     },
     {
         id: 2,
         title: "Private Chef Experience",
         description: "Daily meals crafted around your dietary needs, moods, and wellness goals.",
-        image: "/wellness/serv/Experience.jpg"
+        image: "/wellness/serv/Private Chef Experience.jpg"
     },
     {
         id: 3,
         title: "Arrival & Departure Assistance",
         description: "Seamless airport, helipad, and private transfer coordination.",
-        image: "/wellness/serv/Departure.jpg"
+        image: "/wellness/serv/Arrival & Departure Assistance.jpg"
     },
     {
         id: 4,
         title: "Digital Detox Management",
         description: "Optional complete Wi-Fi and device suspension for uninterrupted mental clarity.",
-        image: "/wellness/serv/Management.jpg"
+        image: "/wellness/serv/Digital Detox Management.jpg"
     },
     {
         id: 5,
         title: "In-Villa Wellness Rituals",
         description: "Therapies conducted in the privacy of your villa unhurried, uninterrupted.",
-        image: "/wellness/serv/Rituals.jpg"
+        image: "/wellness/serv/In-Villa Wellness Rituals.jpg"
     },
     {
         id: 6,
         title: "Personal Naturalist",
         description: "Guided explorations into local flora, wildlife, and ecological storytelling.",
-        image: "/wellness/serv/Naturalist.jpg"
+        image: "/wellness/serv/Personal Naturalist.jpg"
     },
     {
         id: 7,
         title: "Quiet Hour Protocol",
         description: "Time windows where service becomes invisible, preserving silence.",
-        image: "/wellness/serv/Quiet.jpg"
+        image: "/wellness/serv/Quiet Hour Protocol.jpg"
     },
     {
         id: 8,
         title: "Custom Wellness Itineraries",
         description: "Daily experiences shaped around how you feel, not fixed schedules.",
-        image: "/wellness/serv/Itineraries.jpg"
+        image: "/wellness/serv/Custom Wellness Itineraries.jpg"
     }
 ];
 
