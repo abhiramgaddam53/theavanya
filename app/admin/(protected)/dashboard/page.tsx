@@ -53,7 +53,7 @@ export default function Home() {
                                     className={`metric-change-pill ${card.direction === "up" ? "up" : "down"
                                         }`}
                                 >
-                                    {card.direction === "up" ? <img src="/miscellaneous/trending_up.png" alt="" /> : <img src="/miscellaneous/down1.png"/> }{card.changePct}%
+                                    {card.direction === "up" ? <img src="/miscellaneous/trending_up.png" alt="" /> : <img src="/miscellaneous/down1.png" style={{height:'14px'}}/> }{card.changePct}%
                                 </span>
                                 <span className="metric-change-text">{card.compareText}</span>
                             </p>
