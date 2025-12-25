@@ -106,11 +106,11 @@
       }
     ],
     "yearlyPoints": [
-  {"label": "Week 1", "value": 75.0},
-  {"label": "Week 2", "value": 56.2},
-  {"label": "Week 3", "value": 56.2},
-  {"label": "Week 4", "value": 56.2},
-  {"label": "Week 5", "value": 56.2}
+  {"label": "Week 1", "value": 45.0},
+  {"label": "Week 2", "value": 35.2},
+  {"label": "Week 3", "value": 65.2},
+  {"label": "Week 4", "value": 50.2},
+  {"label": "Week 5", "value": 65.2}
       ]
   },
   "rooms": [
