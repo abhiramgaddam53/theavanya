@@ -38,7 +38,7 @@ function ParallaxItem({ src, alt, className, speed = 1 }: ParallaxItemProps) {
 
 export default function SerenityEscape() {
     return (
-        <section className="bg-primary-bg py-24 px-6 md:px-16 overflow-hidden">
+        <section className="bg-primary-bg py-24 px-16 overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16 max-w-3xl mx-auto">

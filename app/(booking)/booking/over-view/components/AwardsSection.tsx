@@ -6,7 +6,7 @@ import { AWARDS } from "../constants";
 
 const AwardsSection = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-24 min-h-screen flex items-center justify-center bg-white">
       <CustomContainer>
         <SectionHeading sub="Honors & Distinctions" title="Recognized for What We Preserve, Not What We Display." align="center" />
 

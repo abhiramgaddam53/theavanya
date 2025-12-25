@@ -7,7 +7,7 @@ import { AMENITIES } from "../constants";
 
 const AmenitiesSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-[#1a1a1a] text-white">
+    <section className="py-24 min-h-screen flex items-center justify-center bg-[#1a1a1a] text-white">
       <CustomContainer>
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start mb-12 md:mb-12">
           <div>

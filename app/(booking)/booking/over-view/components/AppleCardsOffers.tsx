@@ -45,7 +45,7 @@ const AppleCardsOffers = () => {
   };
 
   return (
-    <section className="py-10 bg-white border-t border-neutral-100/50">
+    <section className="py-24 min-h-screen flex items-center justify-center bg-white border-t border-neutral-100/50">
       <CustomContainer>
         <div className="mb-8">
           <h2 className="font-serif text-5xl tracking-tighter text-[#1a1a1a] leading-tight">

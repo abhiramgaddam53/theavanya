@@ -6,7 +6,7 @@ import Button from "@/components/Button";
 
 const RoomsSection = () => {
   return (
-    <section className="bg-white py-8 w-full">
+    <section className="bg-white py-24 min-h-screen w-full flex items-center justify-center">
       <CustomContainer>
 
         <div className="max-w-[1400px] mx-auto">

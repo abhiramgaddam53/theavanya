@@ -8,7 +8,7 @@ const WaysToEnjoySection = () => {
   const [activeTab, setActiveTab] = useState("wellness");
 
   return (
-    <section className="py-16 md:py-24 bg-white text-neutral-900">
+    <section className="py-24 min-h-screen flex items-center justify-center bg-white text-neutral-900">
       <CustomContainer>
         <div className="text-center mb-8 md:mb-16">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-serif mb-8 md:mb-12">

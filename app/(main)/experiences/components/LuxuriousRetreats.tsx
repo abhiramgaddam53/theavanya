@@ -109,7 +109,7 @@ export default function LuxuriousRetreats() {
     };
 
     return (
-        <section className="bg-primary-bg py-20 px-6 md:px-16 overflow-hidden min-h-screen flex flex-col justify-center">
+        <section className="bg-primary-bg py-20 px-16 overflow-hidden min-h-screen flex flex-col justify-center">
 
             <div className="max-w-[1600px] w-full mx-auto relative">
 
