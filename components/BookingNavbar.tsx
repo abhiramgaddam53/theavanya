@@ -2,36 +2,60 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { MapPin, Phone, ChevronDown } from "lucide-react";
+import { MapPin, Phone, ChevronDown, Minus, Plus } from "lucide-react";
 import { useBooking } from "@/context/BookingContext";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function BookingNavbar() {
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { checkIn, checkOut, guests, setCheckIn, setCheckOut, setGuests } =
-    useBooking();
+  const {
+    checkIn, checkOut, adults, children,
+    setCheckIn, setCheckOut, setAdults, setChildren
+  } = useBooking();
+
+  const [isGuestOpen, setIsGuestOpen] = useState(false);
+  const guestRef = useRef<HTMLDivElement>(null);
 
   const isActive = (path: string) => pathname.startsWith(path);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (guestRef.current && !guestRef.current.contains(event.target as Node)) {
+        setIsGuestOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   // Sync URL params to Context on load/change
   useEffect(() => {
     const checkInParam = searchParams.get("checkIn");
     const checkOutParam = searchParams.get("checkOut");
+    const adultsParam = searchParams.get("adults");
+    const childrenParam = searchParams.get("children");
     const guestsParam = searchParams.get("guests");
 
     if (checkInParam) setCheckIn(new Date(checkInParam));
     if (checkOutParam) setCheckOut(new Date(checkOutParam));
-    if (guestsParam) setGuests(parseInt(guestsParam));
-  }, [searchParams, setCheckIn, setCheckOut, setGuests]);
+
+    if (adultsParam) setAdults(parseInt(adultsParam));
+    else if (guestsParam && !adultsParam) setAdults(parseInt(guestsParam));
+
+    if (childrenParam) setChildren(parseInt(childrenParam));
+  }, [searchParams, setCheckIn, setCheckOut, setAdults, setChildren]);
 
   const handleViewRates = () => {
     // Build query params
     const query = new URLSearchParams();
     if (checkIn) query.set("checkIn", checkIn.toISOString().split("T")[0]);
     if (checkOut) query.set("checkOut", checkOut.toISOString().split("T")[0]);
-    query.set("guests", guests.toString());
+    query.set("adults", adults.toString());
+    query.set("children", children.toString());
+    query.set("guests", (adults + children).toString());
 
     // Update current URL with new params
     router.push(`${pathname}?${query.toString()}`);
@@ -140,6 +164,7 @@ export default function BookingNavbar() {
                   min={new Date().toISOString().split("T")[0]}
                   className="font-poppins text-sm font-medium bg-transparent outline-none w-full cursor-pointer"
                   onChange={(e) => setCheckIn(e.target.valueAsDate)}
+                  onClick={(e) => (e.target as HTMLInputElement).showPicker()}
                 />
                 <span className="text-gray-400">→</span>
                 <input
@@ -152,26 +177,83 @@ export default function BookingNavbar() {
                   disabled={!checkIn}
                   className="font-poppins text-sm font-medium bg-transparent outline-none w-full cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
                   onChange={(e) => setCheckOut(e.target.valueAsDate)}
+                  onClick={(e) => (e.target as HTMLInputElement).showPicker()}
                 />
               </div>
             </div>
 
-            {/* Rooms & Guests */}
-            <div className="flex-1 w-full md:w-auto flex flex-col gap-1 border-b md:border-b-0 md:border-r border-gray-200 pb-2 md:pb-0 md:px-6 cursor-pointer hover:bg-gray-50 transition-colors rounded px-2 py-1">
-              <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase">
-                Guests
-              </span>
-              <div className="flex items-center justify-between">
-                <input
-                  type="number"
-                  min={1}
-                  max={10}
-                  value={guests}
-                  onChange={(e) => setGuests(parseInt(e.target.value) || 1)}
-                  className="font-poppins text-sm font-medium bg-transparent outline-none w-full cursor-pointer"
-                />
-                <ChevronDown size={14} className="opacity-40" />
+            {/* Rooms & Guests - Updated to Adults & Children */}
+            <div
+              ref={guestRef}
+              className="relative flex-1 w-full md:w-auto"
+            >
+              <div
+                onClick={() => setIsGuestOpen(!isGuestOpen)}
+                className="flex flex-col gap-1 border-b md:border-b-0 md:border-r border-gray-200 pb-2 md:pb-0 md:px-6 cursor-pointer hover:bg-gray-50 transition-colors rounded px-2 py-1"
+              >
+                <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase">
+                  Guests
+                </span>
+                <div className="flex items-center justify-between min-w-[140px]">
+                  <span className="font-poppins text-sm font-medium">
+                    {adults} Adults, {children} Child
+                  </span>
+                  <ChevronDown size={14} className={`opacity-40 transition-transform ${isGuestOpen ? 'rotate-180' : ''}`} />
+                </div>
               </div>
+
+              {/* Guest Dropdown */}
+              {isGuestOpen && (
+                <div className="absolute top-full left-0 md:left-6 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 p-4 z-50 animate-in fade-in zoom-in-95 duration-200">
+                  {/* Adults */}
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex flex-col">
+                      <span className="font-poppins text-sm font-medium">Adults</span>
+                      <span className="text-[10px] text-gray-400">Ages 13+</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <button
+                        onClick={() => adults > 1 && setAdults(adults - 1)}
+                        className={`w-8 h-8 rounded-full border flex items-center justify-center transition-colors ${adults > 1 ? 'border-gray-300 hover:border-black text-black' : 'border-gray-100 text-gray-300 cursor-not-allowed'}`}
+                        disabled={adults <= 1}
+                      >
+                        <Minus size={14} />
+                      </button>
+                      <span className="font-poppins text-sm font-semibold w-4 text-center">{adults}</span>
+                      <button
+                        onClick={() => setAdults(adults + 1)}
+                        className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:border-black transition-colors"
+                      >
+                        <Plus size={14} />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Children */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex flex-col">
+                      <span className="font-poppins text-sm font-medium">Children</span>
+                      <span className="text-[10px] text-gray-400">Ages 0-12</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <button
+                        onClick={() => children > 0 && setChildren(children - 1)}
+                        className={`w-8 h-8 rounded-full border flex items-center justify-center transition-colors ${children > 0 ? 'border-gray-300 hover:border-black text-black' : 'border-gray-100 text-gray-300 cursor-not-allowed'}`}
+                        disabled={children <= 0}
+                      >
+                        <Minus size={14} />
+                      </button>
+                      <span className="font-poppins text-sm font-semibold w-4 text-center">{children}</span>
+                      <button
+                        onClick={() => setChildren(children + 1)}
+                        className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:border-black transition-colors"
+                      >
+                        <Plus size={14} />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* CTA */}
