@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import axios from "axios";
 
-const WHATSAPP_TOKEN = process.env.WHATSAPP_TOKEN!;
-const WHATSAPP_PHONE_ID = process.env.WHATSAPP_PHONE_ID!;
+const WHATSAPP_TOKEN ="EAAcbUxdNGukBQfS2zfC6bOt1hrkSMAqdKEIst0LVgsZALv1qM2qNZA53G4jRfJp2ABZBkZCxc0XCHxVNp5fsisyJnjqmsSKnYoJY81NaDnh2eaP9LWDfl3kBAC9GKDM9NXD0r5ClDTo9lM2ds1md5ut8xp3gyX90P8A5XuGxICCOuTRDZBVU4M8CuqeJSPcVJrwZDZD";
+const WHATSAPP_PHONE_ID = "995735710279634";
 const OWNER_EMAIL = "asterisks.inc@gmail.com";
 
 export async function POST(req: NextRequest) {
@@ -67,7 +67,7 @@ export async function POST(req: NextRequest) {
       service: "gmail",
       auth: {
         user: OWNER_EMAIL,
-        pass: process.env.OWNER_GMAIL_APP_PASSWORD!,
+        pass: "imuovkllykurhgup",
       },
     });
 
