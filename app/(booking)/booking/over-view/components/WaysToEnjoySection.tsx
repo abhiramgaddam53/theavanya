@@ -5,14 +5,14 @@ import CustomContainer from "./CustomContainer";
 import { WAYS_TO_ENJOY } from "../constants";
 
 const WaysToEnjoySection = () => {
-  const [activeTab, setActiveTab] = useState("wellness");
+  const [activeTab, setActiveTab] = useState("Stays");
 
   return (
     <section className="py-24 min-h-screen flex items-center justify-center bg-white text-neutral-900">
       <CustomContainer>
         <div className="text-center mb-8 md:mb-16">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-serif mb-8 md:mb-12">
-            Choose Your Pace. We’ll Handle the Rest.
+          <h2 className="text-3xl lg:text-5xl font-serif mb-8 md:mb-12">
+            Choose Your Pace. <br></br> We’ll Handle the Rest.
           </h2>
 
           {/* Tabs */}
@@ -80,14 +80,7 @@ const WaysToEnjoySection = () => {
                       <p className="text-neutral-500 font-poppins leading-relaxed mb-6 md:mb-10 text-sm md:text-lg">
                         {item.desc}
                       </p>
-                      <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3 md:gap-6">
-                        <button className="px-6 font-poppins md:px-8 py-3 md:py-4 bg-neutral-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-[#c6a87c] transition-colors shadow-lg">
-                          {item.cta1 || "Book Now"}
-                        </button>
-                        <button className="flex font-poppins items-center gap-2 text-xs font-bold uppercase tracking-widest hover:text-[#c6a87c] transition-colors">
-                          {item.cta2 || "Learn More"} <ChevronRight size={14} />
-                        </button>
-                      </div>
+                       
                     </div>
                   </motion.div>
                 )

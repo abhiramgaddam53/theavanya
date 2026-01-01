@@ -45,11 +45,11 @@ const AppleCardsOffers = () => {
   };
 
   return (
-    <section className="h-screen flex items-center justify-center mb-10 bg-white border-t border-neutral-100/50">
+    <section className="flex py-6 items-center justify-center mb-10 bg-white border-t border-neutral-100/50">
       <CustomContainer>
         <div className="mb-4">
-          <h2 className="font-serif text-5xl tracking-tighter text-[#1a1a1a] leading-tight">
-            Curated Moments. Singular Memories.
+          <h2 className="font-serif text-3xl md:text-5xl  tracking-tighter text-[#1a1a1a] leading-tight">
+          More Than A Stay, <br/> It’s A Reset.
           </h2>
         </div>
         <div className="relative mt-4">
@@ -62,7 +62,7 @@ const AppleCardsOffers = () => {
             {OFFERS.map((item) => (
               <div
                 key={item.id}
-                className="relative min-w-[280px] sm:min-w-[320px] md:min-w-[360px] aspect-[3/4] shrink-0 snap-start snap-always rounded-xl overflow-hidden group cursor-pointer"
+                className="relative min-w-[280px] sm:min-w-[320px] md:min-w-[360px] aspect-[2/3] shrink-0 snap-start snap-always rounded-sm overflow-hidden group cursor-pointer"
               >
                 {/* Background Image */}
                 <Image
@@ -81,7 +81,7 @@ const AppleCardsOffers = () => {
                   <span className="text-white/70 text-xs font-poppins font-semibold uppercase tracking-widest bg-black/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
                     {item.category}
                   </span>
-                  <h3 className="font-poppins text-white text-xl md:text-2xl font-medium leading-tight mt-2 max-w-[80%] drop-shadow-lg">
+                  <h3 className="font-poppins text-white text-md md:text-2xl font-medium leading-tight mt-2 max-w-[80%] drop-shadow-lg">
                     {item.title}
                   </h3>
                 </div>

@@ -24,7 +24,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
     }`}
   >
     <span
-      className={`block text-xs font-bold tracking-[0.2em] uppercase mb-1 font-poppins ${
+      className={`block text-[10px] font-bold tracking-[0.2em] uppercase mb-1 font-poppins ${
         light ? "text-neutral-400" : "text-neutral-500"
       }`}
     >
@@ -32,7 +32,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
     </span>
 
     <h2
-      className={`text-2xl md:text-4xl lg:text-5xl font-serif leading-tight ${
+      className={`text-3xl md:text-4xl lg:text-5xl font-serif leading-tight ${
         light ? "text-white" : "text-neutral-900"
       }`}
     >

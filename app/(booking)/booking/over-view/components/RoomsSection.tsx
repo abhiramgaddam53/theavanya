@@ -13,14 +13,15 @@ const RoomsSection = () => {
 
           {/* Section Heading */}
           <div className="mb-8">
-            <h2 className="font-serif text-5xl tracking-tighter text-[#1a1a1a] leading-tight">
-              Your Private Sanctuary
+            <h2 className="font-serif text-3xl md:text-5xl tracking-tighter text-[#1a1a1a] leading-tight">
+            Three Stays,<br></br> One Quiet Little World.
+
             </h2>
           </div>
 
           {/* Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4">
-            {villas.slice(0, 6).map((room) => (
+            {villas.slice(0, 3).map((room) => (
               <Link href={`/booking/accommodations/${room.slug}`} key={room.id} className="block group">
                 <CommonRoomCard
                   image={room.imageSrc}

@@ -67,7 +67,7 @@ export default async function VillaPage({ params, searchParams }: PageProps) {
           {/* Available Rooms Header */}
           <div className="mb-8">
             <h3 className="font-serif text-3xl md:text-4xl text-[#1a1a1a] tracking-tight">
-              Available Accommodations
+            Pick Your Kind Of Escape
             </h3>
             {checkInDate && checkOutDate && (
               <p className="mt-2 text-sm font-poppins text-gray-500">

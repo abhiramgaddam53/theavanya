@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Leaf, Crown } from "lucide-react";
+import { Leaf, Crown ,Flame } from "lucide-react";
 import CustomContainer from "./CustomContainer";
 import { HERO_SLIDES } from "../constants";
 
@@ -17,7 +17,7 @@ const HeroSplit = () => {
   return (
     <>
       {/* Top 70% VH Image Carousel */}
-      <section className="relative h-[50vh] md:h-[70vh] w-full overflow-hidden bg-neutral-900">
+      <section className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden bg-neutral-900">
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -38,7 +38,7 @@ const HeroSplit = () => {
 
       {/* Bottom Content Section */}
       <section className="bg-white py-24 min-h-screen flex items-center justify-center">
-        <CustomContainer>
+        <CustomContainer  >
           <div className="flex flex-col items-center">
             {/* Welcome Text */}
             <motion.div
@@ -48,11 +48,11 @@ const HeroSplit = () => {
               transition={{ duration: 0.8 }}
               className="text-center w-full mb-8 md:mb-20"
             >
-              <h2 className="text-5xl font-serif leading-tight mb-4 md:mb-6 text-neutral-900">
-                Begin Where the Forest Takes Over.
+              <h2 className="text-3xl md:text-5xl font-serif leading-tight mb-4 md:mb-6 text-neutral-900">
+                Where Hyderabad Comes To Breathe Again.
               </h2>
-              <p className="text-neutral-500 font-poppins font-light text-sm md:text-lg leading-relaxed max-w-5xl mx-auto px-2">
-                Tucked deep within the mist-laced hills of Wayanad, The Avanya is a private eco-heritage sanctuary designed for those who seek stillness over spectacle.
+              <p className="text-neutral-500 font-poppins font-light text-[12px] md:text-lg leading-relaxed max-w-5xl mx-auto px-2">
+              A 5‑acre organic farm retreat with just three unique cabins, crafted for slow mornings, starry bonfires, and intimate gatherings minutes away from the city.
               </p>
             </motion.div>
 
@@ -70,10 +70,12 @@ const HeroSplit = () => {
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg md:text-xl font-serif font-bold text-neutral-900 mb-2">
-                    Seasonal Forest Experiences
+                  Slow Life, Close To The City
+
                   </h3>
                   <p className="text-xs md:text-sm font-poppins text-neutral-600 leading-relaxed">
-                    From monsoon rituals to moonlit dining beneath the canopy, The Avanya curates intimate, seasonal experiences inspired by the rhythm of the land crafted for a handful of guests, never the crowd.
+                  Check into a quiet 5‑acre plantation near Kompally and swap traffic noise for birdsong, bonfires, and barefoot walks on grass.
+
                   </p>
                 </div>
                 <button className="text-xs font-bold uppercase tracking-widest text-neutral-900 border-b border-neutral-300 pb-1 hover:border-neutral-900 transition-colors whitespace-nowrap">
@@ -90,14 +92,14 @@ const HeroSplit = () => {
                 className="border border-neutral-200 rounded-lg p-4 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 shadow-sm bg-white"
               >
                 <div className="p-3 bg-neutral-100 rounded-full text-neutral-600">
-                  <Crown size={24} />
+                  <Flame size={24} />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg md:text-xl font-serif font-bold text-neutral-900 mb-2">
-                    Privileges That Travel With You
+                  Stays Made For Moments
                   </h3>
                   <p className="text-xs md:text-sm font-poppins text-neutral-600 leading-relaxed">
-                    Enjoy priority reservations, curated upgrades, and bespoke arrival experiences through our private guest privileges designed to reward loyalty without disrupting your sense of retreat.
+                  From pre‑wedding shoots and birthday nights to digital detox weekends, each cabin is designed as a cozy, camera‑ready backdrop for your stories.
                   </p>
                 </div>
                 <button className="text-xs font-bold uppercase tracking-widest text-neutral-900 border-b border-neutral-300 pb-1 hover:border-neutral-900 transition-colors whitespace-nowrap">

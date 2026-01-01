@@ -12,41 +12,42 @@ const AmenitiesSection = () => {
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-start mb-12 md:mb-12">
           <div>
             <SectionHeading
-              sub="Designed for Stillness"
-              title="Luxury That Exists Only When You Need It."
+              sub="Everything You Need, Nothing You Don’t."
+              title=" Comfortable Enough To Relax, Raw Enough To Feel Real."
               align="left"
               light={true}
             />
             <p className="text-gray-300 font-poppins mb-8 md:mb-12 leading-relaxed max-w-md text-sm md:text-base">
-              Every amenity at The Avanya is intentionally understated appearing precisely when required, and disappearing when not.
+            Essential comforts, cozy cabins, and open skies come together for a stay that feels like a private farmhouse rather than a hotel.
+
             </p>
-            <button className="px-8 py-4 bg-[#f5f1eb] text-secondary-bg text-xs font-bold uppercase tracking-widest hover:bg-[#ede8df] transition-colors">
+            <button className="px-8 py-4 bg-[#f5f1eb] hidden md:block text-secondary-bg text-xs font-bold uppercase tracking-widest hover:bg-[#ede8df] transition-colors">
               Explore Amenities →
             </button>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-4 md:gap-x-8 gap-y-6 md:gap-y-8 md:pt-6">
-            {AMENITIES.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="flex items-start gap-4"
-              >
-                <div className="p-3 bg-neutral-100 rounded-full shadow-sm text-neutral-800">
-                  <item.icon size={20} strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h4 className="font-serif text-lg mb-1">{item.label}</h4>
-                  <span className="text-xs text-neutral-500 font-poppins uppercase tracking-wider">
-                    Included
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:gap-x-8 gap-y-6 md:gap-y-8 pt-4 md:pt-6">
+          {AMENITIES.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              className="flex items-start gap-4"
+            >
+              <div className="p-3 bg-neutral-100 rounded-full shadow-sm text-neutral-800 shrink-0">
+                <item.icon size={20} strokeWidth={1.5} />
+              </div>
+              <div>
+                <h4 className="font-serif text-lg mb-1">{item.label}</h4>
+                <span className="text-xs text-neutral-500 font-poppins uppercase tracking-wider">
+                  Included
+                </span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
         </div>
 
         {/* HOTEL INFORMATION SUB-SECTION */}
