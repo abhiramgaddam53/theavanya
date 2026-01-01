@@ -12,15 +12,51 @@ import { Suspense } from "react";
 function CompleteBookingContent() {
   const [paymentMethod, setPaymentMethod] = useState("card");
   const searchParams = useSearchParams();
+  const [guestName, setGuestName] = useState("");
+const [guestPhone, setGuestPhone] = useState("");
+const [guestEmail, setGuestEmail] = useState("");
 
   const roomName = searchParams.get("roomName") || "Junior Suite King";
   const villaName = searchParams.get("villa") || "The Avanya";
   const priceString = searchParams.get("price") || "473.75";
   const image = searchParams.get("image") || "/miscellaneous/resort.jpg";
+const checkInDate = new Date("Mon, Dec 15 2025");
+const checkOutDate = new Date("Tue, Dec 18 2025");
+
+const checkIn = checkInDate.toISOString();
+const checkOut = checkOutDate.toISOString();
 
   // Extract numeric price for total if needed, or just display string
   const price = priceString.replace(/[^0-9.]/g, "");
+const handleConfirmBooking = async () => {
+  try {
+    const res = await fetch("/api/booking/confirm", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        guestName,
+        guestPhone,
+        guestEmail,
+        checkIn,
+        checkOut,
+        roomName,
+        total:priceString, // {{5}}
+      }),
+    });
 
+    const data = await res.json();
+
+    if (!data.ok) {
+      alert("Booking saved but confirmation failed");
+      return;
+    }
+
+    alert("Booking confirmed & message sent ✅");
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong");
+  }
+};
   return (
     <main className=" min-h-screen py-16 px-12">
       <div className="max-w-[1400px] mx-auto">
@@ -43,12 +79,23 @@ function CompleteBookingContent() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
-                <Input label="First Name" placeholder="Jane" />
-                <Input label="Last Name" placeholder="Doe" />
+                <Input label="First Name" placeholder="Jane" value={guestName}
+                    onChange={(e) => setGuestName(e.target.value)}/>
+                <Input label="Last Name" placeholder="Doe" value={guestName}
+                    onChange={(e) => setGuestName(e.target.value)}/>
                 <Input
                   label="Email Address"
                   type="email"
                   placeholder="jane@example.com"
+                  value={guestEmail}
+                    onChange={(e) => setGuestEmail(e.target.value)}
+                />
+                <Input
+                  label="Mobile Number"
+                  type="number"
+                  placeholder="1234567890"
+                  value={guestPhone}
+                    onChange={(e) => setGuestPhone(e.target.value)}
                 />
                 <Input label="Member Number" placeholder="Optional" />
                 <Select
@@ -245,6 +292,7 @@ function CompleteBookingContent() {
                 text="Book Now"
                 variant="outline-dark"
                 className="w-full md:w-auto px-12 py-4 bg-[#1a1a1a] text-black hover:bg-[#1a1a1a]/90 hover:text-white"
+                onClick={handleConfirmBooking}
               />
             </section>
           </div>
