@@ -13,6 +13,10 @@ export function CreateBookingDrawer({ trigger }: CreateBookingDrawerProps) {
   const [step, setStep] = useState<Step>(1);
 
   // core booking state (simplified)
+  const [guestName, setGuestName] = useState("");
+const [guestPhone, setGuestPhone] = useState("");
+const [guestEmail, setGuestEmail] = useState("");
+
   const [checkIn, setCheckIn] = useState<string>("");
   const [checkOut, setCheckOut] = useState<string>("");
   const [nights, setNights] = useState<number>(1);
@@ -45,6 +49,37 @@ export function CreateBookingDrawer({ trigger }: CreateBookingDrawerProps) {
       document.body.style.overflow = "";
     };
   }, [open]);
+const handleConfirmBooking = async () => {
+  reset();
+  try {
+    const res = await fetch("/api/booking/confirm", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        guestName,
+        guestPhone,
+        guestEmail,
+        checkIn,
+        checkOut,
+        roomType,
+        total, // {{5}}
+      }),
+    });
+
+    const data = await res.json();
+
+    if (!data.ok) {
+      alert("Booking saved but confirmation failed");
+      return;
+    }
+
+    alert("Booking confirmed & message sent ✅");
+    reset();
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong");
+  }
+};
 
   // auto-calc nights and total
   useEffect(() => {
@@ -151,6 +186,8 @@ export function CreateBookingDrawer({ trigger }: CreateBookingDrawerProps) {
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
+                    value={guestName}
+                    onChange={(e) => setGuestName(e.target.value)}
                     type="text"
                     className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
                     placeholder="Enter Full Name"
@@ -161,6 +198,8 @@ export function CreateBookingDrawer({ trigger }: CreateBookingDrawerProps) {
                     Phone Number <span className="text-red-500">*</span>
                   </label>
                   <input
+                    value={guestPhone}
+                    onChange={(e) => setGuestPhone(e.target.value)}
                     type="text"
                     className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
                     placeholder="Enter Phone Number"
@@ -175,6 +214,8 @@ export function CreateBookingDrawer({ trigger }: CreateBookingDrawerProps) {
                   </label>
                   <input
                     type="email"
+                    value={guestEmail}
+                    onChange={(e) => setGuestEmail(e.target.value)}
                     className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
                     placeholder="Enter Email"
                   />
@@ -649,10 +690,8 @@ export function CreateBookingDrawer({ trigger }: CreateBookingDrawerProps) {
                 </button>
                 <button
                   type="button"
-                  onClick={() => {
-                    // submit booking logic here
-                    reset();
-                  }}
+                    onClick={handleConfirmBooking}
+
                   className="flex-1 bg-blue-600 hover:bg-blue-700 text-white rounded-lg py-2 text-sm font-medium"
                 >
                   Confirm Booking
