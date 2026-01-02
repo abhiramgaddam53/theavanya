@@ -39,7 +39,7 @@ const handleConfirmBooking = async () => {
         guestEmail,
         checkIn,
         checkOut,
-        roomName,
+        roomType:roomName,
         total:priceString, // {{5}}
       }),
     });
