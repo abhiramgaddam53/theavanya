@@ -40,7 +40,7 @@ export default function BookingSummaryCard({
 
     return (
         <div className="sticky top-2">
-            <div className="relative w-full aspect-3/2 overflow-hidden">
+            <div className="relative  hidden md:block  w-full aspect-3/2 overflow-hidden">
                 <Image
                     src={image}
                     alt={roomName}
@@ -48,12 +48,12 @@ export default function BookingSummaryCard({
                     className="object-cover"
                 />
             </div>
-            <div className="flex flex-col gap-4 p-6 w-full h-fit">
+            <div className="flex flex-col gap-4 px-4 md:p-6 w-full h-fit">
 
                 {/* 2. Room Title & Details Link */}
                 <div className="">
                     <h3 className="font-poppins text-xl font-medium text-[#1a1a1a] leading-tight mb-2">
-                        {roomName}, {description}
+                        {roomName},<br/> {description}
                     </h3>
                     <button
                         onClick={() => setIsRoomDetailsOpen(true)}
@@ -65,9 +65,9 @@ export default function BookingSummaryCard({
                 </div>
 
                 {/* 3. Info Block */}
-                <div className="flex gap-4 font-poppins">
-                    <p className="text-sm font-poppins">{dates}</p> |
-                    <p className="text-sm font-poppins">{guests}</p>
+                <div className="flex flex-col gap-4 font-poppins">
+                    <p className="text-sm font-poppins">{dates}</p> 
+                    <p className="text-sm  font-poppins">{guests}</p>
                     {/* <button className="text-left text-sm underline hover:opacity-70 w-fit">
                         {rateCode}
                     </button> */}

@@ -10,22 +10,24 @@ import ReserveSection from "@/app/components/ReserveSection";
 
 import RoomsSection from "../components/RoomsSection";
 import MapSection from "../components/MapSection";
+import { redirect } from "next/navigation";
 
 
 export default function Home() {
-  return (
-    <>
-      <Preloader />
-      <HeroSection />
-      <WelcomeSection />
-      <InfiniteSlider />
-      <RoomsSection />
-      <MoreThanStay />
-      <ExperiencesSection />
-      <PlannedForYou />
-      <LuxuryRooms />
-      <MapSection />
-      <ReserveSection />
-    </>
-  );
+  redirect('/booking/over-view');
+  // return (
+  //   <>
+  //     <Preloader />
+  //     <HeroSection />
+  //     <WelcomeSection />
+  //     <InfiniteSlider />
+  //     <RoomsSection />
+  //     <MoreThanStay />
+  //     <ExperiencesSection />
+  //     <PlannedForYou />
+  //     <LuxuryRooms />
+  //     <MapSection />
+  //     <ReserveSection />
+  //   </>
+  // );
 }

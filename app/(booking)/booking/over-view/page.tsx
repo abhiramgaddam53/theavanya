@@ -9,7 +9,6 @@ import MapSection from "./components/MapSection";
 import AwardsSection from "./components/AwardsSection";
 import FAQSection from "@/components/FAQSection";
 import { FAQS } from "./constants";
-import CustomContainer from "./components/CustomContainer";
 
 export default function OverviewPage() {
   const formattedFaqs = FAQS.map(f => ({ question: f.q, answer: f.a }));
@@ -22,13 +21,13 @@ export default function OverviewPage() {
       <WaysToEnjoySection />
       <MapSection />
       <AwardsSection />
-      <CustomContainer>
+       
         <FAQSection
-          tagline="Everything You Need to Know Without the Noise."
+          tagline="Questions Before You Unplug."
           description=" "
           faqs={formattedFaqs}
         />
-      </CustomContainer>
+       
       <div className="pb-16"></div>
     </div>
   );

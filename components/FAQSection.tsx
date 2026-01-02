@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import CustomContainer from "@/app/(booking)/booking/over-view/components/CustomContainer" 
 
 interface FAQItemProps {
     question: string;
@@ -16,7 +17,7 @@ function FAQItem({ question, answer, isOpen, toggle }: FAQItemProps) {
             <button
                 className="w-full flex items-center justify-between text-left group cursor-pointer"
             >
-                <h3 className="font-serif text-3xl text-[#1a1a1a] pr-8 leading-tight">
+                <h3 className="font-serif text-lg md:text-2xl text-[#1a1a1a] pr-8 leading-tight">
                     {question}
                 </h3>
                 <span className="shrink-0 relative w-6 h-6 flex items-center justify-center">
@@ -37,7 +38,7 @@ function FAQItem({ question, answer, isOpen, toggle }: FAQItemProps) {
                         exit={{ height: 0, opacity: 0, marginTop: 0 }}
                         className="overflow-hidden"
                     >
-                        <p className="font-poppins text-[#1a1a1a]/70 font-light leading-relaxed max-w-3xl">
+                        <p className="font-poppins text-sm text-[#1a1a1a]/70 font-light leading-relaxed max-w-3xl">
                             {answer}
                         </p>
                     </motion.div>
@@ -64,14 +65,15 @@ export default function FAQSection({ tagline, description, faqs }: FAQSectionPro
     };
 
     return (
-        <section className="pt-16 bg-white">
+        <section className="pt-16  bg-white">
+            <CustomContainer >
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
                 <div className="mb-6 space-y-6">
-                    <h2 className="font-serif text-6xl text-[#1a1a1a] leading-none">
+                    <h2 className="font-serif text-3xl md:text-6xl text-[#1a1a1a] leading-none">
                         {tagline}
                     </h2>
-                    <p className="font-poppins text-[#1a1a1a]/70 text-xl font-light">
+                    <p className="font-poppins text-[#1a1a1a]/70 text-lg md:text-xl font-light">
                         {description}
                     </p>
                 </div>
@@ -87,6 +89,7 @@ export default function FAQSection({ tagline, description, faqs }: FAQSectionPro
                     />
                 ))}
             </div>
+            </CustomContainer> 
         </section>
     );
 }

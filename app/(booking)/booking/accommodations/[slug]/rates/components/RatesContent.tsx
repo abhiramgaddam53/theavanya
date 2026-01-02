@@ -91,7 +91,7 @@ export default function RatesContent({ villa }: RatesContentProps) {
       <div className="max-w-[1400px] mx-auto px-6 md:px-16 py-12 md:py-20">
         <div className="mb-4">
           <h3 className="font-serif text-2xl md:text-3xl text-[#1a1a1a] mb-2">
-            Available Rooms
+          Pick Your Kind Of Escape
           </h3>
           <p className="font-poppins text-[#1a1a1a]/70 mb-8">
             Select your room and rate

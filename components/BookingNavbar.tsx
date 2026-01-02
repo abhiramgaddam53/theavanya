@@ -65,10 +65,28 @@ export default function BookingNavbar() {
   const isCompleteBookingPage = pathname.includes("/complete-booking");
   const isGallaryPage = pathname.includes("/gallery");
 
+  const checkInRef = useRef<HTMLInputElement>(null);
+  const checkOutRef = useRef<HTMLInputElement>(null);
+
+  const handleCheckInChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const date = e.target.valueAsDate;
+    if (date) {
+      setCheckIn(date);
+      // Reset checkout if it's invalid (before or same as new check-in)
+      if (checkOut && date >= checkOut) {
+        setCheckOut(null);
+      }
+      // Automatically open Check-Out picker after a small delay for better UX
+      setTimeout(() => {
+        checkOutRef.current?.showPicker();
+      }, 100);
+    }
+  };
+
   return (
     <header className="w-full bg-white border-b border-gray-200 text-[#1a1a1a]">
       {/* 1. Top Bar: Navigation Links */}
-      <div className="hidden md:flex justify-end px-28 py-3 text-xs font-poppins uppercase tracking-widest border-b border-gray-100">
+      <div className="hidden md:flex justify-end px-4 md:px-28 py-3 text-xs font-poppins uppercase tracking-widest border-b border-gray-100">
         <div className="flex gap-8 opacity-70">
           <Link
             href="/booking/over-view"
@@ -110,7 +128,7 @@ export default function BookingNavbar() {
       </div>
 
       {/* 2. Middle Bar: Brand & Info */}
-      <div className="bg-white px-28 py-4 flex justify-between items-center">
+      <div className="bg-white px-4 md:px-28 py-4 flex justify-between items-center">
         {/* Brand */}
         <div className="flex flex-col">
           <Link
@@ -129,21 +147,21 @@ export default function BookingNavbar() {
         </div>
 
         {/* Right Info */}
-        <div className="hidden md:flex gap-6 text-xs font-poppins font-medium tracking-wide">
+        <div className="flex flex-rows items-end md:flex-row md:items-center gap-3 md:gap-6 text-[10px] md:text-xs font-poppins font-medium tracking-wide">
           <a
             href="https://google.com/maps/place/Asterisks+Inc+%7C+Creative+Digital+Studio/data=!4m2!3m1!1s0x0:0xff94bacf06626aa5?sa=X&ved=1t:2428&ictx=111"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:opacity-70 transition-opacity"
+            className="flex items-center gap-1 md:gap-2 hover:opacity-70 transition-opacity"
           >
-            <MapPin size={14} />
+            <MapPin size={14} className="w-4 h-4 md:w-auto md:h-auto" />
             <span className="underline">VIEW MAP</span>
           </a>
           <a
             href="tel:+919966701124"
-            className="flex items-center gap-2 hover:opacity-70 transition-opacity"
+            className="flex items-center gap-1 md:gap-2 hover:opacity-70 transition-opacity"
           >
-            <Phone size={14} />
+            <Phone size={14} className="w-4 h-4 md:w-auto md:h-auto" />
             <span>+91 9966701124</span>
           </a>
         </div>
@@ -151,22 +169,23 @@ export default function BookingNavbar() {
 
       {/* 3. Bottom Bar: Booking Widget */}
       {(!isCompleteBookingPage && !isGallaryPage) && (
-        <div className="bg-white border-t border-gray-100 px-28 py-4 shadow-sm">
-          <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-white border-t border-gray-100 px-4 md:px-28 py-4 shadow-sm">
+          <div className="max-w-[1400px] mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-3 md:gap-6">
+            
             {/* Dates */}
-            <div className="flex-1 w-full md:w-auto flex flex-col gap-1 border-b md:border-b-0 md:border-r border-gray-200 pb-2 md:pb-0 md:pr-6 cursor-pointer hover:bg-gray-50 transition-colors rounded px-2 py-1">
+            {/* <div className="w-[60%] md:w-auto md:flex-1 flex flex-col gap-1 border-r border-gray-200 pr-2 md:pr-6 cursor-pointer hover:bg-gray-50 transition-colors rounded px-2 py-1">
               <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase">
                 Dates
               </span>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 md:gap-2">
                 <input
                   type="date"
                   min={new Date().toISOString().split("T")[0]}
-                  className="font-poppins text-sm font-medium bg-transparent outline-none w-full cursor-pointer"
+                  className="font-poppins text-xs md:text-sm font-medium bg-transparent outline-none w-full cursor-pointer min-w-0"
                   onChange={(e) => setCheckIn(e.target.valueAsDate)}
                   onClick={(e) => (e.target as HTMLInputElement).showPicker()}
                 />
-                <span className="text-gray-400">→</span>
+                <span className="text-gray-400 text-xs md:text-base">→</span>
                 <input
                   type="date"
                   min={
@@ -175,36 +194,69 @@ export default function BookingNavbar() {
                       : new Date().toISOString().split("T")[0]
                   }
                   disabled={!checkIn}
-                  className="font-poppins text-sm font-medium bg-transparent outline-none w-full cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+                  className="font-poppins text-xs md:text-sm font-medium bg-transparent outline-none w-full cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 min-w-0"
                   onChange={(e) => setCheckOut(e.target.valueAsDate)}
                   onClick={(e) => (e.target as HTMLInputElement).showPicker()}
                 />
               </div>
-            </div>
+            </div> */}
+            <div className="w-[60%] md:w-auto md:flex-1 flex flex-col gap-1 border-r border-gray-200 pr-2 md:pr-6 cursor-pointer hover:bg-gray-50 transition-colors rounded px-2 py-1">
+  <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase">
+    Dates
+  </span>
+  <div className="flex items-center gap-1 md:gap-2">
+    {/* Check-In Input */}
+    <input
+      ref={checkInRef}
+      type="date"
+      min={new Date().toISOString().split("T")[0]}
+      className="font-poppins text-xs md:text-sm font-medium bg-transparent outline-none w-full cursor-pointer min-w-0"
+      onChange={handleCheckInChange}
+      onClick={() => checkInRef.current?.showPicker()}
+    />
+    
+    <span className="text-gray-400 text-xs md:text-base">→</span>
+    
+    {/* Check-Out Input */}
+    <input
+      ref={checkOutRef}
+      type="date"
+      min={
+        checkIn
+          ? new Date(checkIn.getTime() + 86400000).toISOString().split("T")[0] // Check-in + 1 Day
+          : new Date().toISOString().split("T")[0]
+      }
+      disabled={!checkIn}
+      className="font-poppins text-xs md:text-sm font-medium bg-transparent outline-none w-full cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 min-w-0"
+      onChange={(e) => setCheckOut(e.target.valueAsDate)}
+      onClick={() => checkOutRef.current?.showPicker()}
+    />
+  </div>
+</div>
 
             {/* Rooms & Guests - Updated to Adults & Children */}
             <div
               ref={guestRef}
-              className="relative flex-1 w-full md:w-auto"
+              className="relative w-[34%] md:w-auto md:flex-1"
             >
               <div
                 onClick={() => setIsGuestOpen(!isGuestOpen)}
-                className="flex flex-col gap-1 border-b md:border-b-0 md:border-r border-gray-200 pb-2 md:pb-0 md:px-6 cursor-pointer hover:bg-gray-50 transition-colors rounded px-2 py-1"
+                className="flex flex-col gap-1 border-r md:border-r border-gray-200 md:border-gray-200 px-2 md:px-6 cursor-pointer hover:bg-gray-50 transition-colors rounded py-1"
               >
-                <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase">
+                <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase truncate">
                   Guests
                 </span>
-                <div className="flex items-center justify-between min-w-[140px]">
-                  <span className="font-poppins text-sm font-medium">
+                <div className="flex items-center justify-between">
+                  <span className="font-poppins text-xs md:text-sm font-medium truncate">
                     {adults} Adults, {children} Child
                   </span>
-                  <ChevronDown size={14} className={`opacity-40 transition-transform ${isGuestOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown size={14} className={`opacity-40 transition-transform hidden md:block ${isGuestOpen ? 'rotate-180' : ''}`} />
                 </div>
               </div>
 
               {/* Guest Dropdown */}
               {isGuestOpen && (
-                <div className="absolute top-full left-0 md:left-6 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 p-4 z-50 animate-in fade-in zoom-in-95 duration-200">
+                <div className="absolute top-full right-0 md:left-6 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 p-4 z-50 animate-in fade-in zoom-in-95 duration-200">
                   {/* Adults */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex flex-col">
@@ -255,11 +307,11 @@ export default function BookingNavbar() {
                 </div>
               )}
             </div>
-
+            <div className="w-full border-t border-gray-200 my-2 md:hidden"></div>
             {/* CTA */}
             <button
               onClick={handleViewRates}
-              className="bg-[#4A4A4A] text-white px-8 py-3 rounded-full text-xs font-bold font-poppins uppercase tracking-wider hover:bg-[#333] transition-colors whitespace-nowrap w-full md:w-auto cursor-pointer"
+              className="w-full md:w-auto bg-[#4A4A4A] text-white px-8 py-3 rounded-full text-xs font-bold font-poppins uppercase tracking-wider hover:bg-[#333] transition-colors whitespace-nowrap cursor-pointer md:mt-0"
             >
               View Rates
             </button>
