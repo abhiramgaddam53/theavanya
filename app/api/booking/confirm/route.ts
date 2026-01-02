@@ -25,10 +25,12 @@ export async function POST(req: NextRequest) {
     const whatsappPayload = {
       messaging_product: "whatsapp",
      to: `91${guestPhone}`,
-      type: "template",
-      template: {
-        name: "booking",
-        language: { code: "en_US" },
+    "type": "template",
+    "template": {
+        "name": "booking",
+        "language": {
+            "code": "en"
+        },
         components: [
           {
             type: "body",
@@ -36,8 +38,9 @@ export async function POST(req: NextRequest) {
               { type: "text", text: guestName },
               { type: "text", text: checkIn },
               { type: "text", text: checkOut },
-              { type: "text", text: `${roomType} (${roomNo})` },
+              { type: "text", text: roomType }, //(${roomNo})  on in free trial
               { type: "text", text: total.toString() },
+
             ],
           },
         ],
