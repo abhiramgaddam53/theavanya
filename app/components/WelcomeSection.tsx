@@ -26,33 +26,33 @@ export default function WelcomeSection() {
                 </h3>
 
                 {/* Main Heading */}
-                <h2 className="font-serif text-5xl leading-tight tracking-tighter mb-8 text-[#4A4A4A]">
+                <h2 className="font-serif text-3xl md:text-5xl leading-tight tracking-tighter mb-8 text-[#4A4A4A]">
                     Where Luxury Learns <br />to Disappear.
                 </h2>
 
                 {/* Letter Body */}
                 <div className="font-poppins text-[#4A4A4A] space-y-6 max-w-lg leading-tight tracking-tight text-[14px]">
-                    <p className="font-poppins text-[14px]">Dear Valued Guest,</p>
+                    <p className="font-poppins text-xs md:text-[14px]">Dear Valued Guest,</p>
 
-                    <p className="font-poppins text-[14px]">
+                    <p className="font-poppins text-xs md:text-[14px]">
                         The Avanya was never meant to be discovered only arrived at.
                         Born from a forgotten 19th-century tea estate deep in the hills of Wayanad, this land was
                         reclaimed by forest long before we reclaimed it with intention.
                     </p>
 
-                    <p className="font-poppins text-[14px]">
+                    <p className="font-poppins text-xs md:text-[14px]">
                         Here, architecture yields to nature.
                         Service exists without spectacle.
                         Time slows, not by design, but by environment.
                     </p>
 
-                    <p className="font-poppins text-[14px]">
+                    <p className="font-poppins text-xs md:text-[14px]">
                         Our team operates on a single principle: anticipation without interruption.
                         If there is anything you desire, it has already been considered.
                     </p>
 
                     <div className="pt-3 flex flex-col items-center gap-4">
-                        <p className="font-poppins text-[14px]">
+                        <p className="font-poppins text-xs md:text-[14px]">
                             Warmest regards,
                         </p>
                         {/* Signature SVG */}
@@ -61,7 +61,7 @@ export default function WelcomeSection() {
                         </div>
                         {/* Name and Title */}
                         <div className="text-center">
-                            <h4 className="font-serif text-2xl text-[#1a1a1a]">Pradhyumn Dhondi</h4>
+                            <h4 className="font-serif text-xl md:text-2xl text-[#1a1a1a]">Pradhyumn Dhondi</h4>
                             <p className="font-poppins text-[10px] text-[#8e8e8e] uppercase tracking-widest mt-1">General Manager</p>
                         </div>
                     </div>

@@ -37,12 +37,12 @@ export default function PlannedForYou() {
                     {/* Main Title Row */}
                     <div className="w-full max-w-[90%] flex items-center justify-between font-serif tracking-tight leading-none mix-blend-overlay">
                         {/* "Planned" on the left */}
-                        <motion.h2 style={{ x: xLeft, y: yText }} className="text-8xl scale-y-[1.2]">
+                        <motion.h2 style={{ x: xLeft, y: yText }} className=" text-5xl md:text-8xl scale-y-[1.2]">
                             Planned
                         </motion.h2>
 
                         {/* "for You" on the right */}
-                        <motion.h2 style={{ x: xRight, y: yText }} className="text-8xl scale-y-[1.2]">
+                        <motion.h2 style={{ x: xRight, y: yText }} className="text-5xl md:text-8xl scale-y-[1.2]">
                             for You
                         </motion.h2>
                     </div>
@@ -51,7 +51,7 @@ export default function PlannedForYou() {
                     <motion.div
                         className="absolute bottom-24 text-center max-w-lg px-4"
                     >
-                        <p className="text-3xl text-white">
+                        <p className="text-2xl md:text-3xl text-white">
                             Every moment curated, every experience unforgettable leave the planning to us.
                         </p>
                     </motion.div>

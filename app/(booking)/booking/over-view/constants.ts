@@ -207,7 +207,7 @@ export const WAYS_TO_ENJOY = [
     id: 'Gatherings',
     label: 'Gatherings',
     tag: 'How You’ll Celebrate',
-    title: 'Intimate Functions, Big Memories',
+    title: `Intimate Functions, Big Memories`,
     desc: 'Host pre‑wedding shoots, haldi, birthdays, or small corporate offsites in a setup that gives you open lawns, a shed space, and the feel of a private farm without leaving Hyderabad.',
     cta1: 'Learn More',
     cta2: 'Request Preferences',

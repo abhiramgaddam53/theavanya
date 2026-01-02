@@ -99,12 +99,12 @@ export default function RateCard({ room, villaName, villaSlug, villaImages, isAv
                 </div>
 
                 {/* Right: Details & Rates */}
-                <div className="flex-1 px-6 py-8 flex flex-col">
+                <div className="flex-1 px-4 md:px-6 py-4 md:py-8 flex flex-col">
 
                     {/* Header */}
                     <div className="flex justify-between items-start mb-6">
                         <div>
-                            <h3 className="font-serif text-2xl text-[#1a1a1a] mb-1">{room.title}</h3>
+                            <h3 className="font-serif text-xl  md:text-2xl text-[#1a1a1a] mb-2">{room.title}</h3>
                             <div className="flex flex-wrap gap-2 text-xs font-poppins text-gray-500">
                                 {room.features.map((f, i) => (
                                     <span key={i} className="bg-gray-100 px-2 py-1 rounded-sm">{f}</span>
@@ -113,7 +113,7 @@ export default function RateCard({ room, villaName, villaSlug, villaImages, isAv
                         </div>
                         <button
                             onClick={() => setIsRoomDetailsOpen(true)}
-                            className="text-xs font-poppins font-bold uppercase underline tracking-wider text-[#1a1a1a]/70 hover:text-[#1a1a1a]"
+                            className="text-xs  pt-2   md:block font-poppins font-bold uppercase underline tracking-wider text-[#1a1a1a]/70 hover:text-[#1a1a1a]"
                         >
                             Room Details
                         </button>
@@ -135,11 +135,11 @@ export default function RateCard({ room, villaName, villaSlug, villaImages, isAv
                             </div>
 
                             <div className="flex items-center justify-between md:justify-end gap-6 w-full md:w-auto">
-                                <div className="text-right">
-                                    <span className="block font-poppins font-bold text-lg text-[#1a1a1a]">
-                                        ₹{basePriceStr}
+                                <div className=" ">
+                                    <span className="block font-poppins font-bold  md:text-lg text-[#1a1a1a]">
+                                        ₹{basePriceStr} <span className="text-[10px] text-gray-400 font-poppins">INR / Night</span>
                                     </span>
-                                    <span className="text-[10px] text-gray-400 font-poppins">INR / Night</span>
+                                    
                                 </div>
                                 {isAvailable ? (
                                     <Link

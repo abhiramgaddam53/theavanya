@@ -27,7 +27,7 @@ export default function RateDetailsDialog({ isOpen, onClose, rateName, price }: 
             title="Rate Details"
             className="max-w-2xl w-full"
         >
-            <div className="space-y-6">
+            <div className="space-y-6 px-4 md:px-0 ">
                 <div>
                     <h3 className="font-serif text-2xl text-[#1a1a1a] mb-2">{rateName}</h3>
                     <span className="font-poppins text-lg font-bold text-[#1a1a1a]">{price} <span className="text-sm font-normal text-gray-500">/ Night (Excl. Taxes)</span></span>

@@ -65,6 +65,24 @@ export default function BookingNavbar() {
   const isCompleteBookingPage = pathname.includes("/complete-booking");
   const isGallaryPage = pathname.includes("/gallery");
 
+  const checkInRef = useRef<HTMLInputElement>(null);
+  const checkOutRef = useRef<HTMLInputElement>(null);
+
+  const handleCheckInChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const date = e.target.valueAsDate;
+    if (date) {
+      setCheckIn(date);
+      // Reset checkout if it's invalid (before or same as new check-in)
+      if (checkOut && date >= checkOut) {
+        setCheckOut(null);
+      }
+      // Automatically open Check-Out picker after a small delay for better UX
+      setTimeout(() => {
+        checkOutRef.current?.showPicker();
+      }, 100);
+    }
+  };
+
   return (
     <header className="w-full bg-white border-b border-gray-200 text-[#1a1a1a]">
       {/* 1. Top Bar: Navigation Links */}
@@ -155,7 +173,7 @@ export default function BookingNavbar() {
           <div className="max-w-[1400px] mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-3 md:gap-6">
             
             {/* Dates */}
-            <div className="w-[60%] md:w-auto md:flex-1 flex flex-col gap-1 border-r border-gray-200 pr-2 md:pr-6 cursor-pointer hover:bg-gray-50 transition-colors rounded px-2 py-1">
+            {/* <div className="w-[60%] md:w-auto md:flex-1 flex flex-col gap-1 border-r border-gray-200 pr-2 md:pr-6 cursor-pointer hover:bg-gray-50 transition-colors rounded px-2 py-1">
               <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase">
                 Dates
               </span>
@@ -181,7 +199,40 @@ export default function BookingNavbar() {
                   onClick={(e) => (e.target as HTMLInputElement).showPicker()}
                 />
               </div>
-            </div>
+            </div> */}
+            <div className="w-[60%] md:w-auto md:flex-1 flex flex-col gap-1 border-r border-gray-200 pr-2 md:pr-6 cursor-pointer hover:bg-gray-50 transition-colors rounded px-2 py-1">
+  <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase">
+    Dates
+  </span>
+  <div className="flex items-center gap-1 md:gap-2">
+    {/* Check-In Input */}
+    <input
+      ref={checkInRef}
+      type="date"
+      min={new Date().toISOString().split("T")[0]}
+      className="font-poppins text-xs md:text-sm font-medium bg-transparent outline-none w-full cursor-pointer min-w-0"
+      onChange={handleCheckInChange}
+      onClick={() => checkInRef.current?.showPicker()}
+    />
+    
+    <span className="text-gray-400 text-xs md:text-base">→</span>
+    
+    {/* Check-Out Input */}
+    <input
+      ref={checkOutRef}
+      type="date"
+      min={
+        checkIn
+          ? new Date(checkIn.getTime() + 86400000).toISOString().split("T")[0] // Check-in + 1 Day
+          : new Date().toISOString().split("T")[0]
+      }
+      disabled={!checkIn}
+      className="font-poppins text-xs md:text-sm font-medium bg-transparent outline-none w-full cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 min-w-0"
+      onChange={(e) => setCheckOut(e.target.valueAsDate)}
+      onClick={() => checkOutRef.current?.showPicker()}
+    />
+  </div>
+</div>
 
             {/* Rooms & Guests - Updated to Adults & Children */}
             <div

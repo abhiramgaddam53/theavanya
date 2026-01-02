@@ -46,7 +46,7 @@ export default function CommonDialog({
                 )}
             >
                 {(title || description) && (
-                    <DialogHeader className="flex-shrink-0 border-b p-6">
+                    <DialogHeader className="flex-shrink-0 border-b p-4 md:p-6">
                         {title && (
                             <DialogTitle className="font-poppins text-[#1a1a1a] text-xl">
                                 {title}

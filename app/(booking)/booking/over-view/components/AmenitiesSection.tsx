@@ -40,7 +40,7 @@ const AmenitiesSection = () => {
                 <item.icon size={20} strokeWidth={1.5} />
               </div>
               <div>
-                <h4 className="font-serif text-lg mb-1">{item.label}</h4>
+                <h4 className="font-serif text-lg mb-0.5">{item.label}</h4>
                 <span className="text-xs text-neutral-500 font-poppins uppercase tracking-wider">
                   Included
                 </span>

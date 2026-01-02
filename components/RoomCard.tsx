@@ -58,7 +58,7 @@ export default function CommonRoomCard({
 
             {/* Icons (Bottom Right) */}
             {!cta && (bed || capacity) && (
-              <div className="flex items-center gap-4 text-xs md:text-sm font-poppins font-light opacity-90">
+              <div className="flex items-center gap-4 text-[10px] md:text-sm font-poppins font-light opacity-90">
                 {bed && (
                   <div className="flex items-center gap-2 drop-shadow-md">
                     <svg
@@ -76,7 +76,7 @@ export default function CommonRoomCard({
                       <path d="M2 10a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2z" />
                       <path d="M4 12v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2" />
                     </svg>
-                    <span className="inline ">{bed}</span>
+                    <span className="inline   ">{bed}</span>
                   </div>
                 )}
                 {capacity && (
@@ -116,7 +116,7 @@ export default function CommonRoomCard({
                   className="pointer-events-auto drop-shadow-md text-[10px] md:text-xs uppercase tracking-widest"
                 />
                 {(bed || capacity) && (
-                  <div className="flex items-center gap-2 md:gap-4 text-xs md:text-sm font-poppins font-light opacity-90">
+                  <div className="flex items-center gap-2 md:gap-4 text-[10px] md:text-sm font-poppins font-light opacity-90">
                     {bed && (
                       <div className="flex items-center gap-1 md:gap-2 drop-shadow-md">
                         <svg

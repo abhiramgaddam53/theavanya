@@ -65,7 +65,7 @@ export default function FAQSection({ tagline, description, faqs }: FAQSectionPro
     };
 
     return (
-        <section className="pt-16 bg-white">
+        <section className="pt-16  bg-white">
             <CustomContainer >
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
@@ -73,7 +73,7 @@ export default function FAQSection({ tagline, description, faqs }: FAQSectionPro
                     <h2 className="font-serif text-3xl md:text-6xl text-[#1a1a1a] leading-none">
                         {tagline}
                     </h2>
-                    <p className="font-poppins text-[#1a1a1a]/70 text-xl font-light">
+                    <p className="font-poppins text-[#1a1a1a]/70 text-lg md:text-xl font-light">
                         {description}
                     </p>
                 </div>

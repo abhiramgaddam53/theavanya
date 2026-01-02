@@ -5,9 +5,9 @@ import SectionHeading from "./SectionHeading";
 
 const MapSection = () => {
   return (
-    <section className="bg-[#1a1a1a] text-white py-24 h-screen flex items-center justify-center">
+    <section className="bg-[#1a1a1a] text-white py-2 md:py-24 h-screen flex items-center justify-center">
       <CustomContainer>
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-16">
           <div className="w-full md:w-1/3 space-y-12">
             <SectionHeading sub="Location" title="Getting Here" light={true} />
 
@@ -29,11 +29,8 @@ const MapSection = () => {
                 </a>
               </div>
             </div>
-
-            <div className="space-y-4 pt-6 border-t border-white/10">
-              
-               
-            </div>
+            {/* <div></div> */}
+             
           </div>
 
           <div className="w-full md:w-2/3 h-[300px] md:h-[500px] bg-neutral-800 rounded-sm overflow-hidden">

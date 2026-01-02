@@ -13,7 +13,7 @@ export default function RoomsSection() {
 
                 {/* Section Heading */}
                 <div className="mb-16">
-                    <h2 className="font-serif text-5xl tracking-tighter text-[#1a1a1a] leading-tight">
+                    <h2 className="font-serif text-3xl md:text-5xl tracking-tighter text-[#1a1a1a] leading-tight">
                         Private Villas.<br /> Singular Experiences.
                     </h2>
                 </div>

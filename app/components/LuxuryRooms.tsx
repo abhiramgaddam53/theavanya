@@ -15,7 +15,7 @@ export default function LuxuryRooms() {
 
                 {/* Header */}
                 <div className="flex items-center justify-between mb-12 gap-8">
-                    <h2 className="font-serif text-5xl tracking-tighter leading-tighter text-[#1a1a1a]">
+                    <h2 className="font-serif text-3xl md:text-5xl tracking-tighter leading-tighter text-[#1a1a1a]">
                         Spaces Designed for Stillness.
                     </h2>
 
