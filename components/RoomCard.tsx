@@ -24,7 +24,7 @@ export default function CommonRoomCard({
   cta,
 }: CommonRoomCardProps) {
   return (
-    <div className="relative w-full h-[48vh] min-h-[280px] overflow-hidden group cursor-pointer rounded-sm">
+    <div className="relative w-full h-[46vh] min-h-[280px] overflow-hidden group cursor-pointer rounded-sm">
       <Image
         src={image}
         alt={name}
@@ -42,7 +42,7 @@ export default function CommonRoomCard({
             text={price}
             variant="glass"
             size="sm"
-            className="pointer-events-none" // Usually price isn't clickable, but styling is wanted
+            className="pointer-events-none"   
           />
         </div>
       )}
@@ -58,7 +58,7 @@ export default function CommonRoomCard({
 
             {/* Icons (Bottom Right) */}
             {!cta && (bed || capacity) && (
-              <div className="flex items-center gap-4 text-xs md:text-sm font-poppins font-light opacity-90">
+              <div className="flex items-center gap-4 text-[10px] md:text-sm font-poppins font-light opacity-90">
                 {bed && (
                   <div className="flex items-center gap-2 drop-shadow-md">
                     <svg
@@ -76,7 +76,7 @@ export default function CommonRoomCard({
                       <path d="M2 10a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2z" />
                       <path d="M4 12v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2" />
                     </svg>
-                    <span className="hidden md:inline">{bed}</span>
+                    <span className="inline   ">{bed}</span>
                   </div>
                 )}
                 {capacity && (
@@ -95,7 +95,7 @@ export default function CommonRoomCard({
                       <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                       <circle cx="12" cy="7" r="4" />
                     </svg>
-                    <span className="hidden md:inline">{capacity}</span>
+                    <span className="inline">{capacity}</span>
                   </div>
                 )}
               </div>
@@ -113,12 +113,12 @@ export default function CommonRoomCard({
                   text="VIEW DETAILS"
                   variant="underline-white"
                   size="none"
-                  className="pointer-events-auto drop-shadow-md text-xs uppercase tracking-widest"
+                  className="pointer-events-auto drop-shadow-md text-[10px] md:text-xs uppercase tracking-widest"
                 />
                 {(bed || capacity) && (
-                  <div className="flex items-center gap-4 text-xs md:text-sm font-poppins font-light opacity-90">
+                  <div className="flex items-center gap-2 md:gap-4 text-[10px] md:text-sm font-poppins font-light opacity-90">
                     {bed && (
-                      <div className="flex items-center gap-2 drop-shadow-md">
+                      <div className="flex items-center gap-1 md:gap-2 drop-shadow-md">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
@@ -134,11 +134,11 @@ export default function CommonRoomCard({
                           <path d="M2 10a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2z" />
                           <path d="M4 12v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2" />
                         </svg>
-                        <span className="hidden md:inline">{bed}</span>
+                        <span className="inline">{bed}</span>
                       </div>
                     )}
                     {capacity && (
-                      <div className="flex items-center gap-2 drop-shadow-md">
+                      <div className="flex items-center gap-1 md:gap-2 drop-shadow-md">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
@@ -153,7 +153,7 @@ export default function CommonRoomCard({
                           <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                           <circle cx="12" cy="7" r="4" />
                         </svg>
-                        <span className="hidden md:inline">{capacity}</span>
+                        <span className="inline">{capacity}</span>
                       </div>
                     )}
                   </div>

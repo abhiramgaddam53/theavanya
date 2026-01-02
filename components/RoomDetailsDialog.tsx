@@ -36,8 +36,9 @@ export default function RoomDetailsDialog({ isOpen, onClose, room, villaImages }
             open={isOpen}
             onOpenChange={(open) => !open && onClose()}
             title={room.title}
+            className="max-w-2xl w-full"
         >
-            <div className="space-y-8 pb-8">
+            <div className="space-y-6  pb-8">
                 {/* Carousel Section */}
                 <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-100 group">
                     <Image
