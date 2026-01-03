@@ -309,12 +309,18 @@ export default function BookingNavbar() {
             </div>
             <div className="w-full border-t border-gray-200 my-2 md:hidden"></div>
             {/* CTA */}
+            
+            <Link
+            href="/booking/accommodations"
+            className="w-full md:w-auto bg-[#4A4A4A] text-center text-white px-8 py-3 rounded-full text-xs font-bold font-poppins uppercase tracking-wider hover:bg-[#333] transition-colors whitespace-nowrap cursor-pointer md:mt-0 "
+          >
             <button
               onClick={handleViewRates}
-              className="w-full md:w-auto bg-[#4A4A4A] text-white px-8 py-3 rounded-full text-xs font-bold font-poppins uppercase tracking-wider hover:bg-[#333] transition-colors whitespace-nowrap cursor-pointer md:mt-0"
+              className=""
             >
               View Rates
             </button>
+          </Link>
           </div>
         </div>
       )}

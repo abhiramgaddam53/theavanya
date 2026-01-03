@@ -90,7 +90,7 @@ export function AccommodationsClient() {
                 </div>
               )}
 
-              <Link href={`/booking/accommodations/${villa.slug}`} className="block">
+              <Link href={`/booking/accommodations/${villa.slug}/rates`} className="block">
                 <CommonRoomCard
                   image={villa.imageSrc}
                   name={villa.title}

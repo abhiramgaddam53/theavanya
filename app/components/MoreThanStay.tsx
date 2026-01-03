@@ -22,7 +22,7 @@ export default function MoreThanStay() {
     const yCenter = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
     return (
-        <section ref={containerRef} className="bg-primary-bg relative h-[120vh] w-full overflow-hidden flex flex-col items-center justify-between py-32">
+        <section ref={containerRef} className="bg-primary-bg relative h-[80vh] md:h-[120vh] w-full overflow-hidden flex flex-col items-center justify-between py-32">
 
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
@@ -40,15 +40,15 @@ export default function MoreThanStay() {
                 {/* Main Parallax Title - Centered in the upper/middle space */}
                 <div className="flex-1 flex items-center justify-center w-full">
                     <div className="flex items-center justify-between w-full font-serif tracking-tight leading-none mix-blend-overlay opacity-90">
-                        <motion.h2 style={{ x: xLeft }} className="font-light text-[10vw] md:text-[8vw] scale-y-[1.2]">
+                        <motion.h2 style={{ x: xLeft }} className="font-light text-[8vw] md:text-[10vw] scale-y-[1.2]">
                             More
                         </motion.h2>
 
-                        <motion.h2 style={{ y: yCenter }} className="font-light text-[10vw] md:text-[8vw] text-center mx-4 md:mx-0 scale-y-[1.2]">
+                        <motion.h2 style={{ y: yCenter }} className="font-light text-[8vw] md:text-[10vw] text-center mx-4 md:mx-0 scale-y-[1.2]">
                             than
                         </motion.h2>
 
-                        <motion.h2 style={{ x: xRight }} className="font-light text-[10vw] md:text-[8vw] scale-y-[1.2]">
+                        <motion.h2 style={{ x: xRight }} className="font-light text-[8vw] md:text-[10vw] scale-y-[1.2]">
                             stay
                         </motion.h2>
                     </div>
@@ -61,7 +61,7 @@ export default function MoreThanStay() {
                     transition={{ duration: 0.8 }}
                     className="text-center max-w-xl pb-12"
                 >
-                    <p className="font-poppins text-lg md:text-xl font-light leading-relaxed">
+                    <p className="font-poppins text-base md:text-xl font-light leading-relaxed">
                         At Avanya, every detail is designed to <br /> make you feel at home — with the elegance <br /> of Paris just beyond your door.
                     </p>
                 </motion.div>

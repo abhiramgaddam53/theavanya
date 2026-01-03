@@ -145,67 +145,169 @@ function CompleteBookingContent() {
 
       {/* --- CONFIRMATION MODAL (From Snippet 1) --- */}
       {showConfirmation && bookingData && (
+        // <div
+        //   className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-6"
+        //   onClick={closeConfirmation}
+        // >
+        //   <div
+        //     className="bg-white w-full max-w-[1150px] max-h-[95vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 shadow-2xl border-0 mx-auto relative"
+        //     onClick={(e) => e.stopPropagation()}
+        //     style={{ borderRadius: '8px' }}
+        //   >
+        //     <button
+        //       onClick={closeConfirmation}
+        //       title="Go Back To Home"
+        //       className="absolute top-4 right-6 z-10 hover:bg-white flex items-center justify-center text-gray-600 hover:text-gray-900 text-xl font-bold transition-all duration-200 hover:scale-105 active:scale-95"
+        //     >
+        //       <img src="/logos/exit.png" alt="" style={{ height: '25px' }} />
+        //     </button>
+
+        //     {/* Header Section */}
+        //     <div className="bg-gradient-to-r from-amber-50 to-orange-50/50 border-b border-amber-200/50 p-6 pt-10 pb-8 relative">
+        //       <img src="/logos/Black.png" alt="Avanya Hotel" className="absolute top-4 left-6 w-28 h-auto img-logo-class" />
+        //       <div className="text-center pt-4">
+        //         <h1 className="font-sans text-2xl font-bold text-gray-900 mb-1">Your reservation is confirmed!</h1>
+        //         <div className="bg-white border-2 border-amber-200 rounded-xl px-4 py-2 inline-block shadow-sm">
+        //           <span className="font-mono text-lg font-bold text-gray-800">{bookingData.confirmationNumber}</span>
+        //         </div>
+        //       </div>
+        //     </div>
+
+        //     {/* Receipt Details */}
+        //     <div className="border-b border-gray-200 p-6 bg-gradient-to-b from-white/80 to-gray-50/50">
+        //       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        //         <div className="space-y-4 pt-2">
+        //           <div className="grid grid-cols-2 gap-4 text-sm">
+        //             <div><div className="text-xs uppercase font-bold text-gray-500 mb-1">Name</div><div className="font-semibold text-gray-900">{bookingData.guestName}</div></div>
+        //             <div><div className="text-xs uppercase font-bold text-gray-500 mb-1">Room Type</div><div className="font-semibold text-gray-900">{bookingData.roomType}</div></div>
+        //             <div><div className="text-xs uppercase font-bold text-gray-500 mb-1">Check-in</div><div className="font-semibold text-gray-900">{bookingData.checkIn}</div></div>
+        //             <div><div className="text-xs uppercase font-bold text-gray-500 mb-1">Check-out</div><div className="font-semibold text-gray-900">{bookingData.checkOut}</div></div>
+        //           </div>
+        //           <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200">
+        //             <div><div className="text-xs uppercase font-bold text-gray-500 mb-1">Guests</div><div className="font-semibold text-gray-900">1 Adult</div></div>
+        //             <div className="text-right"><div className="text-xs uppercase font-bold text-gray-500 mb-1">Amount</div><div className="text-2xl font-bold text-gray-900">{bookingData.total}</div></div>
+        //           </div>
+        //         </div>
+        //         <div className="relative">
+        //           <img src={image} alt={bookingData.roomType} className="w-full h-48 lg:h-56 object-cover rounded-xl shadow-lg border-4 border-white" />
+        //           <div className="absolute top-3 right-3 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-gray-700 shadow-sm">{villaName}</div>
+        //         </div>
+        //       </div>
+        //     </div>
+
+        //     {/* Footer Info */}
+        //     <div className="border-b border-gray-200 p-6 bg-gray-50/50">
+        //       <div className="text-xs text-gray-600 mb-2 font-medium uppercase tracking-wide">Special Requests</div>
+        //       <div className="text-sm text-gray-700">If you have any special requests, please call +91 99667 01124</div>
+        //     </div>
+        //     <div className="p-6 bg-white border-b border-gray-100">
+        //       <div className="text-xs font-medium uppercase tracking-wide text-gray-500 mb-3">Hotel</div>
+        //       <div className="text-sm text-gray-700 font-semibold">Avanya Resort, Mumbai, India</div>
+        //     </div>
+        //   </div>
+        // </div>
         <div
-          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-6"
-          onClick={closeConfirmation}
-        >
-          <div
-            className="bg-white w-full max-w-[1150px] max-h-[95vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 shadow-2xl border-0 mx-auto relative"
-            onClick={(e) => e.stopPropagation()}
-            style={{ borderRadius: '8px' }}
-          >
-            <button
-              onClick={closeConfirmation}
-              title="Go Back To Home"
-              className="absolute top-4 right-6 z-10 hover:bg-white flex items-center justify-center text-gray-600 hover:text-gray-900 text-xl font-bold transition-all duration-200 hover:scale-105 active:scale-95"
-            >
-              <img src="/logos/exit.png" alt="" style={{ height: '25px' }} />
-            </button>
+  className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-6"
+  onClick={closeConfirmation}
+>
+  <div
+    className="bg-white w-full max-w-[1150px] max-h-[95vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 shadow-2xl border-0 mx-auto relative"
+    onClick={(e) => e.stopPropagation()}
+    style={{ borderRadius: '8px' }}
+  >
+    <button
+      onClick={closeConfirmation}
+      title="Go Back To Home"
+      className="absolute top-4 right-6 z-10 hover:bg-white flex items-center justify-center text-gray-600 hover:text-gray-900 text-xl transition-all duration-200 hover:scale-105 active:scale-95"
+    >
+      <img src="/logos/exit.png" alt="" style={{ height: '25px' }} />
+    </button>
 
-            {/* Header Section */}
-            <div className="bg-gradient-to-r from-amber-50 to-orange-50/50 border-b border-amber-200/50 p-6 pt-10 pb-8 relative">
-              <img src="/logos/Black.png" alt="Avanya Hotel" className="absolute top-4 left-6 w-28 h-auto img-logo-class" />
-              <div className="text-center pt-4">
-                <h1 className="font-sans text-2xl font-bold text-gray-900 mb-1">Your reservation is confirmed!</h1>
-                <div className="bg-white border-2 border-amber-200 rounded-xl px-4 py-2 inline-block shadow-sm">
-                  <span className="font-mono text-lg font-bold text-gray-800">{bookingData.confirmationNumber}</span>
-                </div>
-              </div>
-            </div>
+    {/* Header Section */}
+    <div className="bg-gradient-to-r from-amber-50 to-orange-50/50 border-b border-amber-200/50 p-6 pt-10 pb-8 relative">
+      <img src="/logos/Black.png" alt="Avanya Hotel" className="absolute top-4 left-6 w-28 h-auto img-logo-class" />
+      <div className="text-center pt-4">
+        {/* Playfair Display, Regular */}
+        <h1 className="font-serif text-3xl text-gray-900 mb-1">
+          Your reservation is confirmed!
+        </h1>
+        <div className="bg-white border border-amber-200 rounded-xl px-4 py-2 inline-block shadow-sm">
+          {/* Poppins, Regular */}
+          <span className="font-poppins text-lg text-gray-800">
+            {bookingData.confirmationNumber}
+          </span>
+        </div>
+      </div>
+    </div>
 
-            {/* Receipt Details */}
-            <div className="border-b border-gray-200 p-6 bg-gradient-to-b from-white/80 to-gray-50/50">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-                <div className="space-y-4 pt-2">
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div><div className="text-xs uppercase font-bold text-gray-500 mb-1">Name</div><div className="font-semibold text-gray-900">{bookingData.guestName}</div></div>
-                    <div><div className="text-xs uppercase font-bold text-gray-500 mb-1">Room Type</div><div className="font-semibold text-gray-900">{bookingData.roomType}</div></div>
-                    <div><div className="text-xs uppercase font-bold text-gray-500 mb-1">Check-in</div><div className="font-semibold text-gray-900">{bookingData.checkIn}</div></div>
-                    <div><div className="text-xs uppercase font-bold text-gray-500 mb-1">Check-out</div><div className="font-semibold text-gray-900">{bookingData.checkOut}</div></div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200">
-                    <div><div className="text-xs uppercase font-bold text-gray-500 mb-1">Guests</div><div className="font-semibold text-gray-900">1 Adult</div></div>
-                    <div className="text-right"><div className="text-xs uppercase font-bold text-gray-500 mb-1">Amount</div><div className="text-2xl font-bold text-gray-900">{bookingData.total}</div></div>
-                  </div>
-                </div>
-                <div className="relative">
-                  <img src={image} alt={bookingData.roomType} className="w-full h-48 lg:h-56 object-cover rounded-xl shadow-lg border-4 border-white" />
-                  <div className="absolute top-3 right-3 bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-gray-700 shadow-sm">{villaName}</div>
-                </div>
-              </div>
+    {/* Receipt Details */}
+    <div className="border-b border-gray-200 p-6 bg-gradient-to-b from-white/80 to-gray-50/50">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        <div className="space-y-4 pt-2">
+          {/* Stay Details */}
+          <div className="grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <div className="font-poppins text-xs uppercase tracking-wide text-gray-500 mb-1">Name</div>
+              <div className="font-serif text-gray-900">{bookingData.guestName}</div>
             </div>
+            <div>
+              <div className="font-poppins text-xs uppercase tracking-wide text-gray-500 mb-1">Room Type</div>
+              <div className="font-serif text-gray-900">{bookingData.roomType}</div>
+            </div>
+            <div>
+              <div className="font-poppins text-xs uppercase tracking-wide text-gray-500 mb-1">Check-in</div>
+              <div className="font-serif text-gray-900">{bookingData.checkIn}</div>
+            </div>
+            <div>
+              <div className="font-poppins text-xs uppercase tracking-wide text-gray-500 mb-1">Check-out</div>
+              <div className="font-serif text-gray-900">{bookingData.checkOut}</div>
+            </div>
+          </div>
 
-            {/* Footer Info */}
-            <div className="border-b border-gray-200 p-6 bg-gray-50/50">
-              <div className="text-xs text-gray-600 mb-2 font-medium uppercase tracking-wide">Special Requests</div>
-              <div className="text-sm text-gray-700">If you have any special requests, please call +91 99667 01124</div>
+          {/* Guests & Amount */}
+          <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200">
+            <div>
+              <div className="font-poppins text-xs uppercase tracking-wide text-gray-500 mb-1">Number of Guests</div>
+              <div className="font-serif text-gray-900">1 Adult</div>
             </div>
-            <div className="p-6 bg-white border-b border-gray-100">
-              <div className="text-xs font-medium uppercase tracking-wide text-gray-500 mb-3">Hotel</div>
-              <div className="text-sm text-gray-700 font-semibold">Avanya Resort, Mumbai, India</div>
+            <div className="text-right">
+              <div className="font-poppins text-xs uppercase tracking-wide text-gray-500 mb-1">Amount</div>
+              <div className="font-serif text-2xl text-gray-900">{bookingData.total}</div>
             </div>
           </div>
         </div>
+        <div className="relative">
+          <img
+            src={image}
+            alt={bookingData.roomType}
+            className="w-full h-48 lg:h-56 object-cover rounded-xl shadow-lg border-4 border-white"
+          />
+          <div className="absolute top-3 right-3 bg-white/90 px-3 py-1 rounded-full font-poppins text-xs text-gray-700 shadow-sm">
+            {villaName}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Special Requests */}
+    <div className="border-b border-gray-200 p-6 bg-gray-50/50">
+      <div className="font-poppins text-xs text-gray-600 mb-2 uppercase tracking-wide">Special Requests</div>
+      <div className="font-poppins text-sm text-gray-700">
+        If you have any special requests, please call +91 99667 01124
+      </div>
+    </div>
+
+    {/* Hotel Address */}
+    <div className="p-6 bg-white border-b border-gray-100">
+      <div className="font-poppins text-xs uppercase tracking-wide text-gray-500 mb-3">Hotel</div>
+      <div className="font-poppins text-sm text-gray-700 space-y-1">
+        <div>Avanya Resort</div>
+        <div>Charni Road, Mumbai</div>
+        <div>Maharashtra 400004, India</div>
+      </div>
+    </div>
+  </div>
+</div>
       )}
 
       {/* --- MAIN UI (From Snippet 2) --- */}
