@@ -14,7 +14,7 @@ export const HeroSection = () => {
     const yParallax = useTransform(scrollYProgress, [0, 1], [0, 150]);
 
     return (
-        <div ref={containerRef} className="relative h-[80vh] md:h-screen w-full overflow-hidden font-serif text-[#F5F2EA]">
+        <div ref={containerRef} className="relative h-screen w-full overflow-hidden font-serif text-[#F5F2EA]">
 
             {/* Background Video */}
             <div className="absolute inset-0 z-0">

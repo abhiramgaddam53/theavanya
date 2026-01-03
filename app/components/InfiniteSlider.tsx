@@ -28,7 +28,7 @@ export default function InfiniteSlider() {
                     className="flex gap-4 items-center"
                     animate={{ x: ["0%", "-50%"] }}
                     transition={{
-                        duration: 30,
+                        duration: 15,
                         ease: "linear",
                         repeat: Infinity,
                     }}
@@ -36,7 +36,7 @@ export default function InfiniteSlider() {
                     {[...images, ...images].map((src, index) => (
                         <div
                             key={index}
-                            className="relative h-[80vh] aspect-3/4 shrink-0 overflow-hidden rounded-[8px]"
+                            className="relative h-[60vh] md:h-[80vh] aspect-3/4 shrink-0 overflow-hidden rounded-[8px]"
                         >
                             <Image
                                 src={src}

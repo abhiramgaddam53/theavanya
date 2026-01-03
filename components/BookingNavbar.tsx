@@ -64,6 +64,7 @@ export default function BookingNavbar() {
   // Hide booking widget on complete-booking page
   const isCompleteBookingPage = pathname.includes("/complete-booking");
   const isGallaryPage = pathname.includes("/gallery");
+  const ismanage_booking = pathname.includes("/manage-booking");
 
   const checkInRef = useRef<HTMLInputElement>(null);
   const checkOutRef = useRef<HTMLInputElement>(null);
@@ -168,7 +169,7 @@ export default function BookingNavbar() {
       </div>
 
       {/* 3. Bottom Bar: Booking Widget */}
-      {(!isCompleteBookingPage && !isGallaryPage) && (
+      {(!isCompleteBookingPage && !isGallaryPage && !ismanage_booking ) && (
         <div className="bg-white border-t border-gray-100 px-4 md:px-28 py-4 shadow-sm">
           <div className="max-w-[1400px] mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-3 md:gap-6">
             

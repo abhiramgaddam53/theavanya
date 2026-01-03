@@ -20,11 +20,23 @@ export default function LuxuryRooms() {
                     </h2>
 
 
+                    <div className="md:hidden">
                     <Button
-                        text="Compare Villas"
-                        variant="outline-rounded-dark"
-                        href="/booking/accommodations"
+                    text="Compare Villas"
+                    variant="outline-rounded-dark"
+                    href="/booking/accommodations"
+                    size="sm"
                     />
+                </div>
+
+                {/* md and above → NO size prop */}
+                <div className="hidden md:block">
+                    <Button
+                    text="Compare Villas"
+                    variant="outline-rounded-dark"
+                    href="/booking/accommodations"
+                    />
+                </div>
                 </div>
 
                 {/* Grid */}

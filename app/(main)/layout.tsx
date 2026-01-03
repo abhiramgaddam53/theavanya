@@ -15,8 +15,8 @@ export default function MainLayout({
     return (
         <>
             <NavigationLoader />
-            <MobileBlocker />
-            {/* <Navbar /> */}
+            {/* <MobileBlocker /> */}
+            <Navbar />
             {/* <GrainOverlay /> */}
             {children}
             <Footer />

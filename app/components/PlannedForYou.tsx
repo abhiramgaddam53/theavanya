@@ -11,8 +11,8 @@ export default function PlannedForYou() {
         offset: ["start end", "end start"],
     });
 
-    const xLeft = useTransform(scrollYProgress, [0.2, 0.8], [-50, 0]);
-    const xRight = useTransform(scrollYProgress, [0.2, 0.8], [50, 0]);
+    const xLeft = useTransform(scrollYProgress, [0.2, 0.8], [-20 , 0]);
+    const xRight = useTransform(scrollYProgress, [0.2, 0.8], [30, 0]);
     const yText = useTransform(scrollYProgress, [0, 1], [100, -100]);
     const opacity = useTransform(scrollYProgress, [0.2, 0.5, 0.8], [0, 1, 0]);
 
@@ -49,9 +49,9 @@ export default function PlannedForYou() {
 
                     {/* Bottom Caption */}
                     <motion.div
-                        className="absolute bottom-24 text-center max-w-lg px-4"
+                        className="absolute bottom-10 md:bottom-24 text-center max-w-lg px-4"
                     >
-                        <p className="text-2xl md:text-3xl text-white">
+                        <p className="text-xl md:text-3xl text-white">
                             Every moment curated, every experience unforgettable leave the planning to us.
                         </p>
                     </motion.div>
