@@ -86,7 +86,7 @@ export default function BookingNavbar() {
   return (
     <header className="w-full bg-white border-b border-gray-200 text-[#1a1a1a]">
       {/* 1. Top Bar: Navigation Links */}
-      <div className="hidden md:flex justify-end px-4 md:px-28 py-3 text-xs font-poppins uppercase tracking-widest border-b border-gray-100">
+      <div className="hidden justify-end px-4 md:px-28 py-3 text-xs font-poppins uppercase tracking-widest border-b border-gray-100">
         <div className="flex gap-8 opacity-70">
           <Link
             href="/booking/over-view"
