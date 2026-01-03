@@ -311,7 +311,7 @@ export default function BookingNavbar() {
             {/* CTA */}
             
             <Link
-            href="/booking/accommodations"
+            href="/booking/accommodations/the-canopy-villa/rates"
             className="w-full md:w-auto bg-[#4A4A4A] text-center text-white px-8 py-3 rounded-full text-xs font-bold font-poppins uppercase tracking-wider hover:bg-[#333] transition-colors whitespace-nowrap cursor-pointer md:mt-0 "
           >
             <button
