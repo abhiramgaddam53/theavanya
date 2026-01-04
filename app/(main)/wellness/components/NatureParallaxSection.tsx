@@ -75,6 +75,7 @@ export default function NatureParallaxSection() {
                         </div>
                     </div>
                 ))}
+                <div className="p-4 md:hidden " ></div>
             </div>
 
         </section>

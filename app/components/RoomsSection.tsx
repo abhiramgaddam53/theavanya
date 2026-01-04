@@ -8,7 +8,7 @@ import { villas } from "../data/villas";
 
 export default function RoomsSection() {
     return (
-        <section className="w-full bg-primary-bg py-24 px-6 md:px-16">
+        <section className="w-full bg-primary-bg py-10 md:py-24 px-6 md:px-16">
             <div className="max-w-[1400px] mx-auto">
 
                 {/* Section Heading */}

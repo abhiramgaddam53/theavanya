@@ -52,7 +52,7 @@ export default function DesignedForYouSection() {
 
                 {/* Section Header */}
                 <div className="text-center mb-18">
-                    <h2 className="font-serif text-5xl text-[#1a1a1a] leading-tight">
+                    <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a1a] leading-tight">
                         Where Every Day Is <br />
                         <span className="italic">Designed for You.</span>
                     </h2>

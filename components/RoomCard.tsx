@@ -52,7 +52,7 @@ export default function CommonRoomCard({
           {/* Title & Icons Row */}
           <div className="flex items-center justify-between w-full">
             {/* Title (Bottom Left) */}
-            <h3 className="font-poppins text-xl md:text-2xl font-light tracking-wide max-w-[70%] drop-shadow-md">
+            <h3 className="font-poppins text-base md:text-2xl font-light tracking-wide max-w-[70%] drop-shadow-md">
               {name}
             </h3>
 

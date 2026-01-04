@@ -68,7 +68,7 @@ export default function ExperiencesPage() {
             <LuxuriousRetreats />
             <OurAwards />
             <DiningTestimonial />
-            <div className="p-16 pb-8 bg-primary-bg">
+            <div className=" p-10 md:p-16 pb-8 bg-primary-bg">
                 <FAQSection
                     tagline="Common Questions"
                     description="Everything you need to know about your experience"

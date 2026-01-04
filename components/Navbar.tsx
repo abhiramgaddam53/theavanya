@@ -214,7 +214,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 w-full bg-white z-40 shadow-xl transition-transform duration-300 ease-in-out ${
           isMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
-      >
+      > <div className="absolute top-2 right-4 p-4 px-2 " onClick={closeMenu} > <X></X> </div>
         <div className="pt-24 pb-8 px-6 flex flex-col max-h-[90vh] overflow-y-auto">
           
           {/* 1. Public Pages Accordion */}

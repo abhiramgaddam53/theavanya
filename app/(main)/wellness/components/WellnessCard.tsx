@@ -12,7 +12,7 @@ interface WellnessCardProps {
 export default function WellnessCard({ image, title, description, tag }: WellnessCardProps) {
     return (
         <div className="min-w-[480px] h-full flex flex-col gap-6 relative group">
-            <div className="relative w-full h-[65vh] shrink-0 overflow-hidden">
+            <div className="relative w-[85%] md:w-full h-[65vh] shrink-0 overflow-hidden">
                 <Image
                     src={image}
                     alt={title}

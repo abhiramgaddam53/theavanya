@@ -20,6 +20,7 @@ export default function MoreThanStay() {
     const xRight = useTransform(scrollYProgress, [0, 1], [ -100 ,  50]);
     // "Than" stays relatively distinct or moves slightly
     const yCenter = useTransform(scrollYProgress, [0, 1], [50, -50]);
+    const yCentersmall = useTransform(scrollYProgress, [0, 1], [10, -10]);
 
     return (
         <section ref={containerRef} className="bg-primary-bg relative h-[80vh] md:h-[120vh] w-full overflow-hidden flex flex-col items-center justify-between py-32">
@@ -44,7 +45,10 @@ export default function MoreThanStay() {
                             More
                         </motion.h2>
 
-                        <motion.h2 style={{ y: yCenter }} className="font-light text-[8vw] md:text-[10vw] text-center mx-4 md:mx-0 scale-y-[1.2]">
+                        <motion.h2 style={{ y: yCentersmall  }} className=" md:hidden font-light text-[8vw] md:text-[10vw] text-center mx-4 md:mx-0 scale-y-[1.2]">
+                            than
+                        </motion.h2>
+                        <motion.h2 style={{ y: yCenter }} className=" hidden md:block font-light text-[8vw] md:text-[10vw] text-center mx-4 md:mx-0 scale-y-[1.2]">
                             than
                         </motion.h2>
 

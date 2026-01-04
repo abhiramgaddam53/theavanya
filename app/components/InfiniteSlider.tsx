@@ -23,7 +23,7 @@ export default function InfiniteSlider() {
         <section className="w-full bg-primary-bg flex items-center justify-center overflow-hidden">
 
             {/* Slider wrapper — controls visible area */}
-            <div className="w-full max-w-[95vw] h-[80vh] rounded-sm md:h-fit mx-auto overflow-hidden">
+            <div className="w-full max-w-[95vw] h-[60vh] rounded-sm md:h-fit mx-auto overflow-hidden">
                 <motion.div
                     className="flex gap-4 items-center"
                     animate={{ x: ["0%", "-50%"] }}

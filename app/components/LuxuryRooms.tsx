@@ -15,18 +15,23 @@ export default function LuxuryRooms() {
 
                 {/* Header */}
                 <div className="flex items-center justify-between mb-12 gap-8">
-                    <h2 className="font-serif text-3xl md:text-5xl tracking-tighter leading-tighter text-[#1a1a1a]">
+                    <h2 className="font-serif text-[28px] md:text-5xl tracking-tighter leading-tighter text-[#1a1a1a]">
                         Spaces Designed for Stillness.
                     </h2>
 
 
                     <div className="md:hidden">
-                    <Button
+                    {/* <Button
                     text="Compare Villas"
                     variant="outline-rounded-dark"
                     href="/booking/accommodations"
                     size="sm"
-                    />
+                    /> */}
+                    <Link href={"/booking/accommodations"} className="
+                    font-poppins font-medium transition-colors duration-300 w-28 cursor-pointer inline-flex items-center justify-start tracking-widest relative overflow-hidden group
+                    bg-transparent px-4 py-2 text-[8px] border border-[#1a1a1a]/30 text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white rounded-full" > <button> Compare Villas </button> </Link>
+
+
                 </div>
 
                 {/* md and above → NO size prop */}

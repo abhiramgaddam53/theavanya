@@ -59,14 +59,14 @@ export default function WellnessHero() {
                     </motion.p>
                 </motion.div>
             </div> */}
-          <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-light" style={{color:'white'}}>
+          <div className="relative z-10 h-full  flex flex-col items-center justify-center text-center text-light" style={{color:'white'}}>
                 <span className="font-poppins text-xs font-bold tracking-[0.3em] uppercase mb-6 block opacity-90">
                     Wellness
                 </span>
-                <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight mb-8">
-                        <span className="block text-9xl font-light tracking-tight">Discover & Do</span>
+                <h1 className="font-serif text-5xl  md:text-7xl lg:text-8xl tracking-tight mb-8">
+                        <span className="block text-6xl md:text-9xl font-light tracking-tight">Discover & Do</span>
                 </h1>
-                <p className="font-poppins text-xs md:text-sm max-w-lg mx-auto leading-relaxed opacity-90">
+                <p className="font-poppins text-base relative top-40 md:top-0 px-2 md:px-0 md:text-sm max-w-lg mx-auto leading-relaxed opacity-90">
                         A deeply personal approach to wellness, guided by nature, silence, and ancient intelligence.
                 </p>
 
