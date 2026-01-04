@@ -122,7 +122,7 @@ export default function LuxuriousRetreats() {
                     {amenities.map((item) => (
                         <div
                             key={item.id}
-                            className="relative min-w-[280px] sm:min-w-[320px] md:min-w-[360px] aspect-9/16 md:aspect-3/5 shrink-0 snap-start snap-always rounded-[24px] overflow-hidden group cursor-pointer"
+                            className="relative min-w-[280px] sm:min-w-[320px] md:min-w-[360px] aspect-9/16 md:aspect-3/5 shrink-0 snap-start snap-always rounded-sm md:rounded-[24px] overflow-hidden group cursor-pointer"
                         >
                             {/* Background Image */}
                             <Image
@@ -138,7 +138,7 @@ export default function LuxuriousRetreats() {
 
                             {/* Content Overlay */}
                             <div className="absolute top-0 left-0 w-full p-6 md:p-8 flex flex-col items-start gap-3 z-10">
-                                <span className="text-white/70 text-xs font-poppins font-semibold uppercase tracking-widest bg-black/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                                <span className="text-white/70 text-xs font-poppins font-semibold uppercase tracking-widest bg-black/20 backdrop-blur-md px-3 py-1 rounded-[2px] md:rounded-full border border-white/10">
                                     {item.tag}
                                 </span>
                                 <h3 className="font-poppins text-white text-2xl md:text-3xl font-bold leading-tight mt-2 max-w-[80%] drop-shadow-lg">
@@ -148,7 +148,7 @@ export default function LuxuriousRetreats() {
 
                             {/* Description at bottom left */}
                             <div className="font-poppins absolute bottom-0 left-0 md:bottom-8 p-6 z-10">
-                                <p className="text-white/80 text-xs md:text-sm font-poppins font-light leading-relaxed drop-shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <p className="text-white/80 text-xs md:text-sm font-poppins font-light leading-relaxed drop-shadow-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                                     {item.description}
                                 </p>
                             </div>

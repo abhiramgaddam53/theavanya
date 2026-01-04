@@ -7,7 +7,7 @@ import { villas } from "@/app/data/villas";
 
 export default function LuxuryRooms() {
     // Select specific villas to display: Canopy Villa (ID 1) and Rainforest Pool Villa (ID 3)
-    const selectedVillas = villas.filter(v => v.id === 1 || v.id === 3);
+    const selectedVillas = villas.filter(v => v.id === 1 || v.id === 5);
 
     return (
         <section className="w-full bg-primary-bg py-24 px-6 md:px-16">
@@ -53,6 +53,7 @@ export default function LuxuryRooms() {
                                 image={villa.imageSrc}
                                 capacity={villa.capacity}
                                 bed={villa.bed}
+                                singleline={true}
                             />
                         </Link>
                     ))}

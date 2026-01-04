@@ -37,18 +37,18 @@ function ParallaxItem({ src, alt, className, speed = 1 }: ParallaxItemProps) {
 }
 
 export default function SerenityEscape() {
-    return (
-        <section className="bg-primary-bg px-6 py-8 md:py-24 md:px-16 overflow-hidden">
+    return (< >
+        <section className="bg-primary-bg px-6 py-24 md:px-16 overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
-                <div className="text-center mb-16 max-w-3xl mx-auto">
+                <div className="text-center mb-16 pt-8 max-w-3xl mx-auto">
                     <span className="font-poppins text-xs font-bold tracking-widest uppercase opacity-40 mb-4 block">
                         Experience
                     </span>
-                    <h2 className="font-serif text-4xl md:text-6xl text-[#1a1a1a] mb-6 tracking-tight">
+                    <h2 className="font-serif text-3xl md:text-6xl text-[#1a1a1a] mb-6 tracking-tight">
                         Your ultimate <br /> escape to serenity
                     </h2>
-                    <p className="font-poppins text-[#1a1a1a]/60 leading-relaxed text-[10px] md:text-base max-w-lg mx-auto">
+                    <p className="font-poppins text-[#1a1a1a]/60 w-full leading-relaxed text-[12px] md:text-base max-w-lg mx-auto">
                         Embrace serenity at Niraya's spa, where luxury treatments and an authentic touch come together to provide an unforgettable journey of relaxation.
                     </p>
                 </div>
@@ -83,7 +83,7 @@ export default function SerenityEscape() {
 
                 {/* Quote / Text Section */}
                 <div className="max-w-2xl mx-auto text-center mt-16 mb-16 py-25 md:mt-32 md:mb-32 md:py-50">
-                    <h3 className="font-serif text-3xl md:text-4xl text-[#1a1a1a] leading-tight mb-8">
+                    <h3 className="font-serif text-2xl md:text-4xl text-[#1a1a1a] leading-tight mb-8">
                         “Our meals are crafted with <span className="italic font-light">carefully chosen ingredients</span>, creating dishes that tell a story of passion and local culture.”
                     </h3>
                     <div className="flex flex-col items-center">
@@ -97,7 +97,7 @@ export default function SerenityEscape() {
                 </div>
 
                 {/* Full Width Parallax Image */}
-                <div className="w-full mt-8 md:mt-16">
+                <div className="w-full hidden md:block mt-8 md:mt-16">
                     <ParallaxItem
                         src="/experiences/testimonial.jpg"
                         alt="Serene landscape or detailed experience"
@@ -107,5 +107,15 @@ export default function SerenityEscape() {
                 </div>
             </div>
         </section>
+         {/* Full Width Parallax Image */}
+         <div className="md:hidden py-12 w-full px-0 md:mt-16">
+         <ParallaxItem
+             src="/experiences/testimonial.jpg"
+             alt="Serene landscape or detailed experience"
+             className=" aspect-25/16 md:aspect-21/9 w-full rounded-sm h-[75vh] "
+             speed={3}
+         />
+     </div>
+     </>
     );
 }

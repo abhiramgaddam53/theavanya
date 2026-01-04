@@ -52,7 +52,7 @@ export default function DesignedForYouSection() {
 
                 {/* Section Header */}
                 <div className="text-center mb-18">
-                    <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a1a] leading-tight">
+                    <h2 className="font-serif text-3xl md:text-5xl text-[#1a1a1a] leading-tight">
                         Where Every Day Is <br />
                         <span className="italic">Designed for You.</span>
                     </h2>
@@ -67,7 +67,7 @@ export default function DesignedForYouSection() {
                             {...lifestyleItems[0]}
                         />
                     </div>
-                    <div className="flex flex-col justify-start pt-24 md:pt-0"> {/* Shift right column down visually if needed, or just standard grid */}
+                    <div className="flex flex-col justify-start md:pt-0"> {/* Shift right column down visually if needed, or just standard grid */}
                         <CommonParallaxCard
                             {...lifestyleItems[1]}
                         />

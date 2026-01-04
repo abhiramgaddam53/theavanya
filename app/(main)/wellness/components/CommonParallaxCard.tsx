@@ -46,7 +46,7 @@ export default function CommonParallaxCard({ image, title, tag, description, var
 
             {/* Content - Side by Side Layout */}
             <div className="flex flex-col md:flex-row justify-between items-start gap-4 mt-2">
-                <h3 className="font-serif text-3xl text-[#1a1a1a] md:w-1/3">{title}</h3>
+                <h3 className="font-serif text-2xl text-[#1a1a1a] md:w-1/3">{title}</h3>
                 <div className="md:w-1/2">
                     {tag && (
                         <p className="font-poppins text-xs font-bold uppercase tracking-wider text-[#1a1a1a] mb-2">

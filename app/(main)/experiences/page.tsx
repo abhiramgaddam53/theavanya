@@ -26,10 +26,10 @@ function ExperienceHero() {
                 <span className="font-poppins text-xs font-bold tracking-[0.3em] uppercase mb-6 block opacity-90">
                     Discover
                 </span>
-                <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight mb-8">
-                    Serenity <span className="font-light">Awaits</span> You
+                <h1 className="font-serif font-normal  text-4xl md:text-7xl lg:text-8xl tracking-tight mb-8">
+                    Serenity <span  >Awaits</span> You
                 </h1>
-                <p className="font-poppins text-xs md:text-sm max-w-lg mx-auto leading-relaxed opacity-90">
+                <p className="font-poppins text-xs w-full md:text-sm max-w-lg mx-auto leading-relaxed opacity-90">
                     Uncover a world of blissful solitude and adventure at Avanya Kute, where every moment is a celebration of life.
                 </p>
 

@@ -12,6 +12,7 @@ interface CommonRoomCardProps {
   price?: string;
   description?: string;
   cta?: string;
+  singleline?:boolean;
 }
 
 export default function CommonRoomCard({
@@ -22,6 +23,7 @@ export default function CommonRoomCard({
   price,
   description,
   cta,
+  singleline = false,
 }: CommonRoomCardProps) {
   return (
     <div className="relative w-full h-[46vh] min-h-[280px] overflow-hidden group cursor-pointer rounded-sm">
@@ -52,9 +54,12 @@ export default function CommonRoomCard({
           {/* Title & Icons Row */}
           <div className="flex items-center justify-between w-full">
             {/* Title (Bottom Left) */}
-            <h3 className="font-poppins text-base md:text-2xl font-light tracking-wide max-w-[70%] drop-shadow-md">
+            {( singleline) ? <h3 className="font-poppins text-sm md:text-2xl font-light tracking-wide max-w-[70%] drop-shadow-md">
               {name}
-            </h3>
+            </h3> :<h3 className="font-poppins text-base md:text-2xl font-light tracking-wide max-w-[70%] drop-shadow-md">
+              {name}
+            </h3> }
+            
 
             {/* Icons (Bottom Right) */}
             {!cta && (bed || capacity) && (
@@ -116,7 +121,7 @@ export default function CommonRoomCard({
                   className="pointer-events-auto drop-shadow-md text-[10px] md:text-xs uppercase tracking-widest"
                 />
                 {(bed || capacity) && (
-                  <div className="flex items-center gap-2 md:gap-4 text-[10px] md:text-sm font-poppins font-light opacity-90">
+                  <div className="flex items-center gap-2 md:gap-4 text-[7px] md:text-sm font-poppins font-light opacity-90">
                     {bed && (
                       <div className="flex items-center gap-1 md:gap-2 drop-shadow-md">
                         <svg

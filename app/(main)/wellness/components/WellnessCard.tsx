@@ -21,7 +21,7 @@ export default function WellnessCard({ image, title, description, tag }: Wellnes
                 />
             </div>
             <div className="flex flex-col gap-2">
-                <h3 className="font-serif text-3xl">{title}</h3>
+                <h3 className="font-serif text-2xl md:text-3xl ">{title}</h3>
                 <p className="font-poppins text-sm font-light leading-relaxed">
                     {description}
                 </p>

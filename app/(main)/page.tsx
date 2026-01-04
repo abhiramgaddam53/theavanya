@@ -14,8 +14,7 @@ import { redirect } from "next/navigation";
 
 
 export default function Home() {
-  // redirect('/booking/over-view');
-  return (
+   return (
     <>
       <Preloader />
       <HeroSection />

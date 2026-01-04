@@ -13,7 +13,7 @@ const awards = [
     },
     {
         id: 3,
-        label: "GREEN HOSPITALITY 2024",
+        label: "GREEN HOSPITALITY",
         icon: Medal,
     },
     {
@@ -25,12 +25,12 @@ const awards = [
 
 export default function OurAwards() {
     return (
-        <section className="bg-primary-bg py-4 px-16 pb-16">
+        <section className="bg-primary-bg py-16 px-8 md:px-16 pb-16">
             <div className="max-w-[1400px] mx-auto text-center">
                 <span className="font-poppins text-xs font-bold tracking-widest uppercase opacity-40 mb-6 block">
                     Our Awards
                 </span>
-                <p className="font-poppins text-[#1a1a1a]/60 text-sm mb-20 max-w-lg mx-auto">
+                <p className="font-poppins text-[#1a1a1a]/60 text-lg  mb-20 max-w-lg mx-auto">
                     Recognized for excellence in luxury and sustainability
                 </p>
 
@@ -42,7 +42,7 @@ export default function OurAwards() {
                                 <div className="w-16 h-16 rounded-full border border-[#1a1a1a]/10 flex items-center justify-center text-[#6B6B55] group-hover:bg-[#bea5857d] group-hover:text-white transition-all duration-500">
                                     <Icon strokeWidth={1} size={32} />
                                 </div>
-                                <span className="font-poppins text-xs font-bold tracking-widest uppercase text-[#1a1a1a]/80">
+                                <span className="font-poppins w-full text-xs font-bold tracking-widest uppercase text-[#1a1a1a]/80">
                                     {award.label}
                                 </span>
                             </div>

@@ -155,6 +155,7 @@ export default function Navbar() {
                 <Link href="/booking/gallery" className="block px-6 py-3 text-[#1a1a1a] hover:bg-gray-100 transition-colors text-sm">Gallery</Link>
                 <Link href="/booking/accommodations" className="block px-6 py-3 text-[#1a1a1a] hover:bg-gray-100 transition-colors text-sm">Accommodations</Link>
                 <Link href="/booking/wellness" className="block px-6 py-3 text-[#1a1a1a] hover:bg-gray-100 rounded-b-xl transition-colors text-sm">Wellness</Link>
+                <Link href="/booking/manage-booking" className="block px-6 py-3 text-[#1a1a1a] hover:bg-gray-100 rounded-b-xl transition-colors text-sm">Manage Booking</Link>
               </div>
             </div>
 
@@ -264,6 +265,7 @@ export default function Navbar() {
                 <Link href="/booking/gallery" onClick={closeMenu} className="text-sm text-gray-600 font-poppins">Gallery</Link>
                 <Link href="/booking/accommodations" onClick={closeMenu} className="text-sm text-gray-600 font-poppins">Accommodations</Link>
                 <Link href="/booking/wellness" onClick={closeMenu} className="text-sm text-gray-600 font-poppins">Wellness</Link>
+                <Link href="/booking/manage-booking" onClick={closeMenu} className="text-sm text-gray-600 font-poppins">Manage Booking</Link>
               </div>
             </div>
           </div>
