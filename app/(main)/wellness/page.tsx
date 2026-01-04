@@ -50,11 +50,12 @@ export default function WellnessPage() {
             <CuratedDetailsSection />
             <NatureParallaxSection />
             <ReserveSection />
+            <div className="p-8 md:p-16 pb-8 bg-primary-bg" >
             <FAQSection
                 tagline="Thoughtfully Answered."
                 description="Because true luxury anticipates questions before they are asked."
                 faqs={wellnessFAQs}
-            />
+            /></div>
             <div className="pb-16"></div>
         </main>
     );
