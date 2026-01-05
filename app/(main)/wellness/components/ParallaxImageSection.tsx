@@ -19,7 +19,7 @@ export default function ParallaxImageSection() {
     <section ref={containerRef} className="py-18 bg-primary-bg overflow-hidden">
 
       {/* Header (Text) - Constrained to standard width */}
-      <div className="max-w-[1400px] mx-auto w-full px-6 md:px-16 mb-16">
+      <div className="max-w-[1400px] mx-auto w-full py-12 px-6 md:px-16 mb-16">
         <h2 className="font-serif text-3xl  md:text-7xl text-[#1a1a1a] leading-[1]">
           Live the <br />
           <span className="italic">Parisian Way</span>
@@ -30,16 +30,16 @@ export default function ParallaxImageSection() {
       </div>
 
       {/* Parallax Image Card - Full Bleed (No Padding) */}
-      <div className="w-full relative h-[80vh] overflow-hidden ">
+      <div className="w-full relative h-[60vh] md:h-[80vh] rounded-sm overflow-hidden ">
         <motion.div
           style={{ scale, y }}
-          className="relative w-[80%] h-[120%] -top-[10%] overflow-hidden "
+          className="relative w-[80%] rounded-sm h-[120%] -top-[10%] overflow-hidden "
         >
           <Image
             src="/wellness/hotel123.jpg"
             alt="Parisian Lifestyle"
             fill
-            className="content-fit"
+            className="content-fit rounded-sm "
           />
         </motion.div>
       </div>

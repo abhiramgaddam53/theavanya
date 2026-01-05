@@ -23,10 +23,10 @@ function ExperienceHero() {
 
             {/* Content */}
             <div className="relative z-10 text-center text-white px-6">
-                <span className="font-poppins text-xs font-bold tracking-[0.3em] uppercase mb-6 block opacity-90">
+                <span className="font-poppins text-xs font-bold tracking-[0.3em] uppercase mb-2 md:mb-8 block opacity-90">
                     Discover
                 </span>
-                <h1 className="font-serif font-normal  text-4xl md:text-7xl lg:text-8xl tracking-tight mb-8">
+                <h1 className="font-serif font-normal  text-4xl md:text-7xl lg:text-8xl tracking-tight mb-4 md:mb-6">
                     Serenity <span  >Awaits</span> You
                 </h1>
                 <p className="font-poppins text-xs w-full md:text-sm max-w-lg mx-auto leading-relaxed opacity-90">
@@ -68,7 +68,7 @@ export default function ExperiencesPage() {
             <LuxuriousRetreats />
             <OurAwards />
             <DiningTestimonial />
-            <div className=" p-10 md:p-16 pb-8 bg-primary-bg">
+            <div className=" px-2 pt-8 md:p-16 pb-20 bg-primary-bg">
                 <FAQSection
                     tagline="Common Questions"
                     description="Everything you need to know about your experience"

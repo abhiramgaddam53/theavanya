@@ -88,9 +88,20 @@ export default function CuratedDetailsSection() {
                     </div>
 
                     {/* Cards Container */}
-                    <div className="flex gap-2 items-center h-screen py-[8vh]">
+                    <div className="flex gap-2 hidden md:flex items-center h-screen py-[8vh]">
                         {items.map((item) => (
-                            <div key={item.id} className="p-4 h-full"> {/* h-full ensures wrapper fills the py-constrained height */}
+                            <div key={item.id} className="py-4 h-full"> {/* h-full ensures wrapper fills the py-constrained height */}
+                                <WellnessCard
+                                    title={item.title}
+                                    description={item.description}
+                                    image={item.image}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                    <div className="flex md:hidded gap-2 items-center h-screen py-[8vh]">
+                        {items.slice(0,6).map((item) => (
+                            <div key={item.id} className="py-4 h-full"> {/* h-full ensures wrapper fills the py-constrained height */}
                                 <WellnessCard
                                     title={item.title}
                                     description={item.description}

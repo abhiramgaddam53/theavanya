@@ -26,7 +26,7 @@ export default function CommonRoomCard({
   singleline = false,
 }: CommonRoomCardProps) {
   return (
-    <div className="relative w-full h-[46vh] min-h-[280px] overflow-hidden group cursor-pointer rounded-sm">
+    <div className="relative w-full h-[38vh] md:h-[46vh] min-h-[280px] overflow-hidden group cursor-pointer rounded-sm">
       <Image
         src={image}
         alt={name}

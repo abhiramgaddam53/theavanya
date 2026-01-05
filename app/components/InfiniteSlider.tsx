@@ -36,7 +36,7 @@ export default function InfiniteSlider() {
                     {[...images, ...images].map((src, index) => (
                         <div
                             key={index}
-                            className="relative h-[60vh] md:h-[80vh] aspect-3/4 shrink-0 overflow-hidden rounded-[8px]"
+                            className="relative h-[50vh] md:h-[80vh] aspect-3/4 shrink-0 overflow-hidden rounded-[8px]"
                         >
                             <Image
                                 src={src}

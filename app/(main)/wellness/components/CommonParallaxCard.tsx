@@ -45,7 +45,7 @@ export default function CommonParallaxCard({ image, title, tag, description, var
             </div>
 
             {/* Content - Side by Side Layout */}
-            <div className="flex flex-col md:flex-row justify-between items-start gap-4 mt-2">
+            <div className="flex hidden md:flex flex-col md:flex-row justify-between items-start gap-4 mt-2">
                 <h3 className="font-serif text-2xl text-[#1a1a1a] md:w-1/3">{title}</h3>
                 <div className="md:w-1/2">
                     {tag && (
@@ -53,6 +53,20 @@ export default function CommonParallaxCard({ image, title, tag, description, var
                             {tag}
                         </p>
                     )}
+                    <p className="font-poppins text-sm text-[#1a1a1a]/70 font-light leading-relaxed">
+                        {description}
+                    </p>
+                </div>
+            </div>
+            <div className="flex md:hidden flex-col md:flex-row justify-between items-start gap-4 mt-2">
+                
+                <div className=" ">
+                    {tag && (
+                        <p className="font-poppins text-xs font-bold uppercase tracking-wider text-[#1a1a1a] mb-2">
+                            {tag}
+                        </p>
+                    )}
+                    <h3 className="font-serif text-2xl text-[#1a1a1a] md:w-1/3">{title}</h3>
                     <p className="font-poppins text-sm text-[#1a1a1a]/70 font-light leading-relaxed">
                         {description}
                     </p>

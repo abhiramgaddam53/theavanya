@@ -38,7 +38,7 @@ function ParallaxItem({ src, alt, className, speed = 1 }: ParallaxItemProps) {
 
 export default function SerenityEscape() {
     return (< >
-        <section className="bg-primary-bg px-6 py-24 md:px-16 overflow-hidden">
+        <section className="bg-primary-bg px-6 pt-24  md:py-24 md:px-16 overflow-hidden">
             <div className="max-w-[1400px] mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16 pt-8 max-w-3xl mx-auto">
@@ -108,11 +108,11 @@ export default function SerenityEscape() {
             </div>
         </section>
          {/* Full Width Parallax Image */}
-         <div className="md:hidden py-12 w-full px-0 md:mt-16">
+         <div className="md:hidden pb-20 w-full px-0 md:mt-16">
          <ParallaxItem
              src="/experiences/testimonial.jpg"
              alt="Serene landscape or detailed experience"
-             className=" aspect-25/16 md:aspect-21/9 w-full rounded-sm h-[75vh] "
+             className=" aspect-25/16 md:aspect-21/9 w-full   h-[75vh] "
              speed={3}
          />
      </div>

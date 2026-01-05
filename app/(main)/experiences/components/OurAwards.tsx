@@ -25,7 +25,7 @@ const awards = [
 
 export default function OurAwards() {
     return (
-        <section className="bg-primary-bg py-16 px-8 md:px-16 pb-16">
+        <section className="bg-primary-bg  py-24 md:py-16  px-8 md:px-16 pb-38 md:pb-16">
             <div className="max-w-[1400px] mx-auto text-center">
                 <span className="font-poppins text-xs font-bold tracking-widest uppercase opacity-40 mb-6 block">
                     Our Awards

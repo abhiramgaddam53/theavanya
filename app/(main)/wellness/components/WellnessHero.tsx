@@ -60,10 +60,10 @@ export default function WellnessHero() {
                 </motion.div>
             </div> */}
           <div className="relative z-10 h-full  flex flex-col items-center justify-center text-center text-light" style={{color:'white'}}>
-                <span className="font-poppins text-xs font-bold tracking-[0.3em] uppercase mb-6 block opacity-90">
+                <span className="font-poppins text-xs font-bold tracking-[0.3em] uppercase mb-2 md:mb-6 block opacity-90">
                     Wellness
                 </span>
-                <h1 className="font-serif  lg:text-8xl tracking-tight mb-8">
+                <h1 className="font-serif  lg:text-8xl tracking-tight mb-3 md:mb-8">
                         <span className="block text-5xl md:text-9xl font-light tracking-tight">Discover & Do</span>
                 </h1>
                 <p className="font-poppins text-sm  px-2 md:px-0 md:text-sm max-w-lg mx-auto leading-relaxed opacity-90">

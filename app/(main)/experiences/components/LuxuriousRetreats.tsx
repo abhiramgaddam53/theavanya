@@ -116,7 +116,7 @@ export default function LuxuriousRetreats() {
                 {/* Horizontal Scrolling Container */}
                 <div
                     ref={scrollContainerRef}
-                    className="flex overflow-x-auto gap-5 md:gap-4 pb-12 pt-4 scrollbar-hide snap-x snap-mandatory pr-16"
+                    className="flex overflow-x-auto gap-5 md:gap-4 pb-12 pt-4 scrollbar-hide snap-x snap-mandatory "
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 >
                     {amenities.map((item) => (
@@ -141,7 +141,7 @@ export default function LuxuriousRetreats() {
                                 <span className="text-white/70 text-xs font-poppins font-semibold uppercase tracking-widest bg-black/20 backdrop-blur-md px-3 py-1 rounded-[2px] md:rounded-full border border-white/10">
                                     {item.tag}
                                 </span>
-                                <h3 className="font-poppins text-white text-2xl md:text-3xl font-bold leading-tight mt-2 max-w-[80%] drop-shadow-lg">
+                                <h3 className="font-poppins  text-white text-xl md:text-3xl font-bold leading-tight mt-2 max-w-[80%] drop-shadow-lg">
                                     {item.title}
                                 </h3>
                             </div>
