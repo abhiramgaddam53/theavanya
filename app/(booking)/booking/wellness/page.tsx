@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Heading1 } from "lucide-react";
 import CustomContainer from "../over-view/components/CustomContainer";
 import SectionHeading from "../over-view/components/SectionHeading";
 import FAQSection from "@/components/FAQSection";
@@ -202,15 +202,15 @@ export default function WellnessPage() {
       </div>
 
       {/* 2. Intro Text Section */}
-      <div className="w-full min-h-[50vh] md:min-h-[75vh] flex items-center justify-center pt-18 ">
+      <div className="w-full min-h-[60vh] md:min-h-[75vh] flex items-center justify-center pt-18 ">
         <CustomContainer>
           <div className="max-w-[900px] mx-auto text-center">
             <p className="text-[#4A4A4A] tracking-tight text-sm md:text-base mb-4 font-medium font-poppins">
               Wellness at The Avanya
             </p>
-            <h2 className="font-serif text-3xl md:text-5xl lg:text-5xl xl:text-7xl leading-tight mb-6 md:mb-8 text-neutral-900 max-w-4xl mx-auto">
+            <h1 className="font-serif text-[40px] md:text-5xl font-medium lg:text-5xl xl:text-7xl leading-tight mb-6 md:mb-8 text-neutral-900 max-w-4xl mx-auto">
               Where restoration becomes a way of staying.
-            </h2>
+            </h1>
           </div>
         </CustomContainer>
       </div>
@@ -232,7 +232,7 @@ export default function WellnessPage() {
           <div className="relative">
             <div
               ref={scrollContainerRef}
-              className="flex overflow-x-auto gap-5 md:gap-4 pb-12 pt-4 scrollbar-hide snap-x snap-mandatory pr-16"
+              className="flex overflow-x-auto gap-5 md:gap-4 pb-12 pt-4 scrollbar-hide snap-x snap-mandatory  "
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {OUTLETS.map((outlet) => (
@@ -305,7 +305,7 @@ export default function WellnessPage() {
       </div>
       <CustomContainer>
           {/* Info Blurbs */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 lg:gap-12 pt-2 md:pt-0 md:mb-16 border-b px-6 md:px-12 border-[#1a1a1a]/10 pb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-12 pt-6 md:pt-0 md:mb-16 border-b px-6 md:px-12 border-[#1a1a1a]/10 pb-16">
             {INFO_BLURBS.map((text, i) => (
               <div
                 key={i}
@@ -364,7 +364,7 @@ export default function WellnessPage() {
               filteredThings.map((item, i) => (
                 <div
                   key={i}
-                  className="bg-white p-8 rounded-sm border border-neutral-100 group flex flex-col gap-4"
+                  className="bg-white p-4 md:p-8 rounded-sm border border-neutral-100 group flex flex-col gap-4"
                 >
                   <div className="flex justify-between items-start">
                     <span className="text-[10px] font-poppins font-bold uppercase tracking-[0.15em] text-[#BEA585]">
@@ -394,7 +394,7 @@ export default function WellnessPage() {
       </div>
 
       {/* 5. Local Attractions */}
-      <div className="w-full flex items-center justify-center py-4 md:py-8 bg-white">
+      <div className="w-full flex items-center justify-center my-8 py-8 md:py-8 bg-white">
         <CustomContainer>
           <div className="text-center mb-6 md:mb-10">
             <h2 className="font-serif text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-[#1a1a1a] leading-tight">
@@ -405,7 +405,7 @@ export default function WellnessPage() {
             {LOCAL_ATTRACTIONS.map((attr, i) => (
               <div
                 key={i}
-                className="bg-white p-8 rounded-sm border border-neutral-100 group flex flex-col justify-center"
+                className="bg-white p-4  md:p-8 rounded-sm border border-neutral-100 group flex flex-col justify-center"
               >
                 <h3 className="font-poppins text-lg text-[#1a1a1a] font-light leading-tight mb-3">
                   {attr.name}
