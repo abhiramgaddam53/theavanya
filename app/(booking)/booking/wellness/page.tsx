@@ -232,7 +232,7 @@ export default function WellnessPage() {
           <div className="relative">
             <div
               ref={scrollContainerRef}
-              className="flex overflow-x-auto gap-5 md:gap-4 pb-12 pt-4 scrollbar-hide snap-x snap-mandatory  "
+              className="flex overflow-x-auto gap-5 md:gap-4 pb-16 pt-4 scrollbar-hide snap-x snap-mandatory  "
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {OUTLETS.map((outlet) => (
@@ -305,7 +305,7 @@ export default function WellnessPage() {
       </div>
       <CustomContainer>
           {/* Info Blurbs */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-12 pt-6 md:pt-0 md:mb-16 border-b px-6 md:px-12 border-[#1a1a1a]/10 pb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-12 pt-6 md:pt-0 md:mb-16 border-b px-6 md:px-12 border-[#1a1a1a]/10 pb-24">
             {INFO_BLURBS.map((text, i) => (
               <div
                 key={i}
@@ -320,7 +320,7 @@ export default function WellnessPage() {
           </div>
           </CustomContainer>
       {/* 4. Nearby Things To Do (Combined with Blurbs) */}
-      <div className="w-full h-auto md:min-h-screen flex  items-center justify-center py-10 md:py-24 bg-gray-50">
+      <div className="w-full h-auto md:min-h-screen flex  items-center justify-center py-12  md:py-24 bg-gray-50">
         <CustomContainer>
           <div className="text-center mb-8 md:mb-12">
             <h2 className="font-serif text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-[#1a1a1a] leading-tight mb-8 md:mb-12">
@@ -394,7 +394,7 @@ export default function WellnessPage() {
       </div>
 
       {/* 5. Local Attractions */}
-      <div className="w-full flex items-center justify-center my-8 py-8 md:py-8 bg-white">
+      <div className="w-full flex items-center justify-center my-8 py-10 md:py-8 bg-white">
         <CustomContainer>
           <div className="text-center mb-6 md:mb-10">
             <h2 className="font-serif text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-[#1a1a1a] leading-tight">
