@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import CustomContainer from "../over-view/components/CustomContainer";
 
@@ -6,7 +8,6 @@ import CustomContainer from "../over-view/components/CustomContainer";
 type GalleryImage = {
   src: string;
   alt: string;
-  // Optional overrides for specific curation
   className?: string;
 };
 
@@ -17,8 +18,7 @@ type GalleryCategory = {
   images: GalleryImage[];
 };
 
-// --- Mock Data (Masonry Grid Layout) ---
-// Uses a mix of big and small cards arranged in alternating patterns
+// --- DATA (Unchanged) ---
 const galleryData: GalleryCategory[] = [
   {
     id: "hotel-view",
@@ -59,14 +59,15 @@ const galleryData: GalleryCategory[] = [
         src: "https://images.unsplash.com/photo-1567534880682-cf7e8c1f3a65?q=80&w=1000&auto=format&fit=crop",
         alt: "Entrance Gate",
       },
-      {
-        src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop",
-        alt: "Lounge Area",
-      },
+      
       {
         src: "https://images.unsplash.com/photo-1585399363032-096c5b12dd5c?q=80&w=1000&auto=format&fit=crop",
         alt: "Hotel Night View",
         className: "md:col-span-2 md:row-span-2",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop",
+        alt: "Lounge Area",
       },
       {
         src: "https://images.unsplash.com/photo-1548068325-e7f9ab1b0eed?q=80&w=1000&auto=format&fit=crop",
@@ -84,14 +85,15 @@ const galleryData: GalleryCategory[] = [
     description: "Designed for comfort and serenity.",
     images: [
       {
-        src: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop",
-        alt: "Deluxe Room King",
-      },
-      {
         src: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1000&auto=format&fit=crop",
         alt: "Room Interior",
         className: "md:col-span-2 md:row-span-2",
       },
+      {
+        src: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=2070&auto=format&fit=crop",
+        alt: "Deluxe Room King",
+      },
+     
       {
         src: "https://images.unsplash.com/photo-1591088398332-c518a22717ec?q=80&w=1000&auto=format&fit=crop",
         alt: "Bathroom Detail",
@@ -110,14 +112,15 @@ const galleryData: GalleryCategory[] = [
         className: "md:col-span-2",
       },
       {
-        src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop",
-        alt: "Suite Bathroom",
-      },
-      {
         src: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1000&auto=format&fit=crop",
         alt: "Presidential Suite",
         className: "md:col-span-2 md:row-span-2",
       },
+      {
+        src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop",
+        alt: "Suite Bathroom",
+      },
+      
       {
         src: "https://images.unsplash.com/photo-1571403577945-b092c909e637?q=80&w=1000&auto=format&fit=crop",
         alt: "Twin Beds Room",
@@ -176,14 +179,15 @@ const galleryData: GalleryCategory[] = [
         src: "https://images.unsplash.com/photo-1591088398332-c518a22717ec?q=80&w=1000&auto=format&fit=crop",
         alt: "Luxury Bathroom",
       },
-      {
-        src: "https://images.unsplash.com/photo-1595576508898-0ad5c879a061?q=80&w=1000&auto=format&fit=crop",
-        alt: "Terrace View",
-      },
+     
       {
         src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1000&auto=format&fit=crop",
         alt: "Living Space",
         className: "md:col-span-2 md:row-span-2",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1595576508898-0ad5c879a061?q=80&w=1000&auto=format&fit=crop",
+        alt: "Terrace View",
       },
       {
         src: "https://images.unsplash.com/photo-1618840752926-6b45ce5ef26d?q=80&w=1000&auto=format&fit=crop",
@@ -200,15 +204,13 @@ const galleryData: GalleryCategory[] = [
     title: "Dining",
     description: "Culinary journeys from around the world.",
     images: [
-      {
-        src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop",
-        alt: "Fine Dining Restaurant",
-      },
+      
       {
         src: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1000&auto=format&fit=crop",
         alt: "Cocktail Bar",
         className: "md:col-span-2 md:row-span-2",
       },
+      
       {
         src: "https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=1000&auto=format&fit=crop",
         alt: "Buffet Spread",
@@ -252,6 +254,10 @@ const galleryData: GalleryCategory[] = [
         src: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1000&auto=format&fit=crop",
         alt: "Plated Dish",
       },
+      {
+        src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop",
+        alt: "Fine Dining Restaurant",
+      },
     ],
   },
   {
@@ -281,10 +287,7 @@ const galleryData: GalleryCategory[] = [
         src: "https://images.unsplash.com/photo-1574680096141-1cddd32e04ca?q=80&w=1000&auto=format&fit=crop",
         alt: "Weights Area",
       },
-      {
-        src: "https://images.unsplash.com/photo-1549576528-f5dd8b5f98d5?q=80&w=1000&auto=format&fit=crop",
-        alt: "Yoga Studio",
-      },
+      
       {
         src: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1000&auto=format&fit=crop",
         alt: "Meditation Space",
@@ -310,6 +313,10 @@ const galleryData: GalleryCategory[] = [
       {
         src: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?q=80&w=1000&auto=format&fit=crop",
         alt: "Wellness Spa",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1549576528-f5dd8b5f98d5?q=80&w=1000&auto=format&fit=crop",
+        alt: "Yoga Studio",
       },
     ],
   },
@@ -344,14 +351,15 @@ const galleryData: GalleryCategory[] = [
         src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000&auto=format&fit=crop",
         alt: "Reception Area",
       },
-      {
-        src: "https://images.unsplash.com/photo-1519336800662-d16a66e13b61?q=80&w=1000&auto=format&fit=crop",
-        alt: "Outdoor Event",
-      },
+     
       {
         src: "https://images.unsplash.com/photo-1465146072230-91cabc968266?q=80&w=1000&auto=format&fit=crop",
         alt: "Gala Setup",
         className: "md:col-span-2 md:row-span-2",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1519336800662-d16a66e13b61?q=80&w=1000&auto=format&fit=crop",
+        alt: "Outdoor Event",
       },
       {
         src: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1000&auto=format&fit=crop",
@@ -365,86 +373,101 @@ const galleryData: GalleryCategory[] = [
   },
 ];
 
-// --- Components ---
-
-const SectionHeader = ({
-  title,
-  description,
-}: {
-  title: string;
-  description?: string;
-}) => (
-  <div className="flex flex-col items-center justify-center mb-4 text-center">
-    <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-3 md:mb-4 font-medium font-poppins">
-      {title}
-    </h2>
-    {description && (
-      <p className="font-serif text-sm md:text-base text-[#1a1a1a] mb-4 md:mb-6">
-        {description}
-      </p>
-    )}
-  </div>
-);
-
-const GallerySection = ({ category }: { category: GalleryCategory }) => {
-  const { images } = category;
-
+// --- Sub-Component: Single Gallery Section (Filtered) ---
+const GalleryGrid = ({ category }: { category: GalleryCategory }) => {
   return (
-    <section
-      id={category.id}
-      className="min-h-screen flex flex-col justify-center pt-10 scroll-mt-20"
-    >
-      <SectionHeader
-        title={category.title}
-        description={category.description}
-      />
+    <div className="flex flex-col animate-in fade-in duration-500">
+      {/* Category Title & Description (The Title you missed last time is here) */}
+      <div className="text-center mb-8 px-4">
+        <h2 className="font-serif text-3xl md:text-4xl text-[#1a1a1a] mb-2">
+          {category.title}
+        </h2>
+        {category.description && (
+          <p className="font-poppins text-sm md:text-base text-[#1a1a1a]/70 max-w-2xl mx-auto">
+            {category.description}
+          </p>
+        )}
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-[250px] md:auto-rows-[300px]">
-        {images.map((image, index) => {
-          // Set default aspect ratio and size
-          let sizes =
-            "(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 400px";
-
-          // Apply custom grid span if specified
+      {/* Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 auto-rows-[250px] md:auto-rows-[300px]">
+        {category.images.map((image, index) => {
+          let sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 400px";
           let spanClass = "col-span-1 row-span-1";
+
+          // On mobile, force everything to be col-span-1 to avoid layout breaks
+          // On desktop, use the defined class
           if (image.className) {
-            spanClass = image.className;
-            // Update sizes for larger images
-            if (image.className.includes("col-span-2")) {
-              sizes =
-                "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px";
-            }
+             // We keep the classname but ensure grid-cols-1 on mobile handles it naturally
+             // because "md:col-span-2" only applies on md+ screens.
+             // So this works automatically for responsiveness.
+             spanClass = image.className;
+             
+             if (image.className.includes("col-span-2")) {
+               sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px";
+             }
           }
 
           return (
             <div
               key={index}
-              className={`relative overflow-hidden bg-gray-100 rounded-lg ${spanClass}`}
+              className={`relative overflow-hidden bg-gray-100 rounded-sm ${spanClass} group`}
             >
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover transition-transform duration-700 ease-out hover:scale-105"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 sizes={sizes}
               />
             </div>
           );
         })}
       </div>
-    </section>
+    </div>
   );
 };
 
+// --- Main Page Component ---
 export default function GalleryPage() {
+  const [activeTab, setActiveTab] = useState(galleryData[0].title);
+
+  // Derive the active category data based on the selected tab
+  const activeCategory = galleryData.find((cat) => cat.title === activeTab);
+
   return (
-    <div className="min-h-screen bg-white pt-4 md:pb-32">
+    // Changed min-h-screen to h-auto / min-h-0 to fix the "too much white space" issue on short content
+    <div className="bg-white pt-24 pb-32 h-auto min-h-0">
       <CustomContainer>
-        <div className="flex flex-col">
-          {galleryData.map((category) => (
-            <GallerySection key={category.id} category={category} />
-          ))}
+        
+        {/* --- Header & Tabs --- */}
+        <div className="text-center mb-8 md:mb-12">
+            <h2 className="font-serif text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-[#1a1a1a] leading-tight mb-8 md:mb-12">
+              Beyond the sanctuary, <br /> thoughtfully close.
+            </h2>
+            
+            {/* Tabs Container */}
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {galleryData.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => setActiveTab(item.title)}
+                  className={`px-6 py-2 rounded-full font-poppins text-xs uppercase tracking-wider border transition-all duration-300
+                  ${
+                    activeTab === item.title
+                      ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
+                      : "bg-white text-[#4A4A4A] border-[#1a1a1a]/20 hover:border-[#1a1a1a]/40 hover:bg-gray-50"
+                  }`}
+                >
+                  {item.title}
+                </button>
+              ))}
+            </div>
         </div>
+
+        {/* --- Render Active Gallery Section --- */}
+        {activeCategory && <GalleryGrid category={activeCategory} />}
+
       </CustomContainer>
     </div>
   );

@@ -191,7 +191,7 @@ export default function WellnessPage() {
   return (
     <div className="w-full bg-white">
       {/* 1. Hero Image Section */}
-      <div className="relative w-full min-h-screen bg-gray-200 flex items-center justify-center">
+      <div className="relative w-full h-[60vh] md:h-[70vh] bg-gray-200 flex items-center justify-center">
         <Image
           src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop"
           alt="Wellness Hero"
@@ -202,13 +202,13 @@ export default function WellnessPage() {
       </div>
 
       {/* 2. Intro Text Section */}
-      <div className="w-full min-h-screen flex items-center justify-center py-24">
+      <div className="w-full min-h-[50vh] md:min-h-[75vh] flex items-center justify-center pt-18 ">
         <CustomContainer>
           <div className="max-w-[900px] mx-auto text-center">
-            <p className="text-[#4A4A4A] tracking-tight text-sm md:text-base mb-8 font-medium font-poppins">
+            <p className="text-[#4A4A4A] tracking-tight text-sm md:text-base mb-4 font-medium font-poppins">
               Wellness at The Avanya
             </p>
-            <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6 md:mb-8 text-neutral-900 max-w-4xl mx-auto">
+            <h2 className="font-serif text-3xl md:text-5xl lg:text-5xl xl:text-7xl leading-tight mb-6 md:mb-8 text-neutral-900 max-w-4xl mx-auto">
               Where restoration becomes a way of staying.
             </h2>
           </div>
@@ -216,14 +216,14 @@ export default function WellnessPage() {
       </div>
 
       {/* 3. On-Site Outlets Section (Apple Cards Style) */}
-      <div className="w-full min-h-screen flex items-center justify-center py-24 bg-white">
+      <div className="w-full px-4 md:px-0 min-h-[80vh] flex items-center justify-center py-6  md:py-24 bg-white">
         <CustomContainer>
           <div className="mb-12 flex flex-col md:flex-row items-end justify-between">
             <div className="max-w-2xl">
-              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-[#1a1a1a] leading-tight mb-4">
+              <h2 className="font-serif text-3xl md:text-3xl lg:text-5xl xl:text-5xl text-[#1a1a1a] leading-tight mb-4">
                 On-Site Outlets
               </h2>
-              <p className="font-poppins text-[#4A4A4A] text-lg font-light">
+              <p className="font-poppins text-[#4A4A4A] text-base md:text-lg font-light">
                 Each experience is designed to feel unhurried, personal, and quietly indulgent.
               </p>
             </div>
@@ -238,7 +238,7 @@ export default function WellnessPage() {
               {OUTLETS.map((outlet) => (
                 <div
                   key={outlet.id}
-                  className="relative min-w-[280px] sm:min-w-[320px] md:min-w-[360px] aspect-9/16 md:aspect-3/5 shrink-0 snap-start snap-always rounded-[24px] overflow-hidden group cursor-pointer"
+                  className="relative min-w-[280px] sm:min-w-[320px] md:min-w-[360px] aspect-9/16 md:aspect-3/5 shrink-0 snap-start snap-always rounded-sm md:rounded-sm overflow-hidden group cursor-pointer"
                 >
                   {/* Background Image */}
                   <Image
@@ -254,17 +254,17 @@ export default function WellnessPage() {
 
                   {/* Content Overlay */}
                   <div className="absolute top-0 left-0 w-full p-6 md:p-8 flex flex-col items-start gap-3 z-10">
-                    <span className="text-white/70 text-xs font-poppins font-semibold uppercase tracking-widest bg-black/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                    <span className="text-white/70 text-xs font-poppins font-semibold uppercase tracking-widest bg-black/20 backdrop-blur-md px-3 py-1 rounded-sm md:rounded-sm border border-white/10">
                       {outlet.type}
                     </span>
-                    <h3 className="font-poppins text-white text-2xl md:text-3xl font-bold leading-tight mt-2 max-w-[80%] drop-shadow-lg">
+                    <h3 className="font-poppins text-white text-xl md:text-3xl font-bold leading-tight mt-2 max-w-[80%] drop-shadow-lg">
                       {outlet.title}
                     </h3>
                   </div>
 
                   {/* Description at bottom left */}
                   <div className="font-poppins absolute bottom-0 left-0 md:bottom-8 px-6 z-10 w-full">
-                    <p className="text-white/80 text-xs md:text-sm font-poppins font-light leading-relaxed drop-shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-white/80 text-[10px] md:text-sm font-poppins font-light leading-relaxed drop-shadow-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                       {outlet.desc}
                     </p>
                     <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
@@ -303,12 +303,9 @@ export default function WellnessPage() {
           </div>
         </CustomContainer>
       </div>
-
-      {/* 4. Nearby Things To Do (Combined with Blurbs) */}
-      <div className="w-full min-h-screen flex items-center justify-center py-24 bg-gray-50">
-        <CustomContainer>
+      <CustomContainer>
           {/* Info Blurbs */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 mb-16 border-b border-[#1a1a1a]/10 pb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 lg:gap-12 pt-2 md:pt-0 md:mb-16 border-b px-6 md:px-12 border-[#1a1a1a]/10 pb-12">
             {INFO_BLURBS.map((text, i) => (
               <div
                 key={i}
@@ -321,10 +318,13 @@ export default function WellnessPage() {
               </div>
             ))}
           </div>
-
+          </CustomContainer>
+      {/* 4. Nearby Things To Do (Combined with Blurbs) */}
+      <div className="w-full h-auto md:min-h-screen flex  items-center justify-center py-10 md:py-24 bg-gray-50">
+        <CustomContainer>
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-[#1a1a1a] leading-tight mb-8 md:mb-12">
-              Beyond the sanctuary, thoughtfully close.
+            <h2 className="font-serif text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-[#1a1a1a] leading-tight mb-8 md:mb-12">
+              Beyond the sanctuary, <br />  thoughtfully close.
             </h2>
             <div className="flex flex-wrap justify-center gap-2 mb-8 md:mb-12">
               {[
@@ -375,7 +375,7 @@ export default function WellnessPage() {
                     </span>
                   </div>
 
-                  <h3 className="font-poppins text-2xl text-[#1a1a1a] font-light leading-tight">
+                  <h3 className="font-poppins text-lg text-[#1a1a1a] font-light leading-tight">
                     {item.title}
                   </h3>
 
@@ -394,10 +394,10 @@ export default function WellnessPage() {
       </div>
 
       {/* 5. Local Attractions */}
-      <div className="w-full flex items-center justify-center py-8 bg-white">
+      <div className="w-full flex items-center justify-center py-4 md:py-8 bg-white">
         <CustomContainer>
           <div className="text-center mb-6 md:mb-10">
-            <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-[#1a1a1a] leading-tight">
+            <h2 className="font-serif text-3xl md:text-3xl lg:text-4xl xl:text-5xl text-[#1a1a1a] leading-tight">
               Local Attractions
             </h2>
           </div>
@@ -407,7 +407,7 @@ export default function WellnessPage() {
                 key={i}
                 className="bg-white p-8 rounded-sm border border-neutral-100 group flex flex-col justify-center"
               >
-                <h3 className="font-poppins text-xl text-[#1a1a1a] font-light leading-tight mb-3">
+                <h3 className="font-poppins text-lg text-[#1a1a1a] font-light leading-tight mb-3">
                   {attr.name}
                 </h3>
                 <p className="font-poppins text-sm text-neutral-500 font-light leading-relaxed">
@@ -421,11 +421,12 @@ export default function WellnessPage() {
 
       {/* 6. FAQ Section */}
       <CustomContainer>
+      <div className=" px-2 md:pt-0 md:p-16 pb-20 bg-primary-bg" >
         <FAQSection
           tagline="Information"
           description="Frequently Asked Questions"
           faqs={formattedFaqs}
-        />
+        /></div>
       </CustomContainer>
       <div className="pb-16"></div>
     </div>
